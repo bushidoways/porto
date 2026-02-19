@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nang — Portfolio & Jurnal Pribadi">
+  <title>Nang — Portfolio & Jurnal</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #191919; --surface: #222222; --surface2: #2a2a2a;
+      --surface-hover: #2e2e2e; --border: #313131; --border-light: #3a3a3a;
+      --text: #e2e2e2; --text-secondary: #9a9a9a; --text-muted: #606060;
+      --accent: #5c9af5; --accent-glow: rgba(92,154,245,0.12);
+      --accent-hover: #7ab0f7; --green: #57b495; --orange: #e8964d; --purple: #9b72e6;
+      --sidebar-w: 240px; --r: 6px; --r-lg: 10px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.45);
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      --mono: 'SF Mono','Cascadia Code','Fira Code','Consolas',monospace;
+    }
+    .light {
+      --bg: #f7f7f5; --surface: #ffffff; --surface2: #f0f0ed;
+      --surface-hover: #f4f4f1; --border: #e5e5e1; --border-light: #d8d8d2;
+      --text: #1a1a1a; --text-secondary: #5a5a5a; --text-muted: #9a9a9a;
+      --accent-glow: rgba(92,154,245,0.08); --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    html, body { height: 100%; font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; font-size: 15px; overflow: hidden; transition: background 0.2s, color 0.2s; }
+
+    /* ── APP LAYOUT ── */
+    .app { display: flex; height: 100vh; overflow: hidden; }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: var(--sidebar-w); min-width: var(--sidebar-w); height: 100vh;
+      background: var(--surface); border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; overflow-y: auto; overflow-x: hidden;
+      transition: width 0.25s ease, min-width 0.25s ease; z-index: 100;
+    }
+    .sidebar.collapsed { width: 56px; min-width: 56px; }
+    .sidebar.collapsed .nav-label, .sidebar.collapsed .sidebar-title,
+    .sidebar.collapsed .sidebar-meta, .sidebar.collapsed .section-header,
+    .sidebar.collapsed .nav-badge { opacity: 0; width: 0; overflow: hidden; white-space: nowrap; }
+
+    .sidebar-header { padding: 14px 12px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); min-height: 58px; }
+    .avatar {
+      width: 34px; height: 34px; min-width: 34px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--purple));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 700; color: white; cursor: pointer; user-select: none; flex-shrink: 0;
+    }
+    .sidebar-title { font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sidebar-meta { font-size: 11px; color: var(--text-muted); white-space: nowrap; overflow: hidden; }
+    .sidebar-content { flex: 1; padding: 8px 0; }
+    .section-header { padding: 14px 16px 4px; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); white-space: nowrap; overflow: hidden; }
+
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 7px 12px; margin: 1px 8px; border-radius: var(--r);
+      cursor: pointer; transition: background 0.15s; position: relative;
+      color: var(--text-secondary); font-size: 13.5px; user-select: none;
+    }
+    .nav-item:hover { background: var(--surface-hover); color: var(--text); }
+    .nav-item.active { background: var(--accent-glow); color: var(--accent); }
+    .nav-icon { font-size: 16px; min-width: 20px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .nav-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: opacity 0.2s; }
+    .nav-badge { margin-left: auto; background: var(--border-light); color: var(--text-muted); font-size: 10px; padding: 1px 6px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+
+    .sidebar.collapsed .nav-item::after {
+      content: attr(data-tooltip); position: absolute; left: calc(100% + 8px); top: 50%; transform: translateY(-50%);
+      background: var(--surface); border: 1px solid var(--border-light); color: var(--text);
+      font-size: 12px; white-space: nowrap; padding: 5px 10px; border-radius: var(--r);
+      pointer-events: none; opacity: 0; transition: opacity 0.15s; z-index: 999; box-shadow: var(--shadow);
+    }
+    .sidebar.collapsed .nav-item:hover::after { opacity: 1; }
+
+    .sidebar-footer { padding: 10px 8px; border-top: 1px solid var(--border); }
+
+    /* ── MAIN ── */
+    .main { flex: 1; display: flex; flex-direction: column; height: 100vh; overflow: hidden; min-width: 0; }
+
+    .topbar {
+      height: 50px; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; padding: 0 18px; gap: 10px;
+      background: var(--bg); flex-shrink: 0;
+    }
+    .icon-btn {
+      background: none; border: none; color: var(--text-muted); cursor: pointer;
+      padding: 6px; border-radius: var(--r); display: flex; align-items: center;
+      transition: background 0.15s, color 0.15s; font-size: 16px;
+    }
+    .icon-btn:hover { background: var(--surface2); color: var(--text); }
+    .breadcrumb { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); }
+    .breadcrumb-sep { opacity: 0.4; }
+    .breadcrumb-current { color: var(--text); font-weight: 500; }
+    .topbar-right { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+
+    .search-wrap { position: relative; }
+    .search-input {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--r);
+      padding: 5px 12px 5px 32px; color: var(--text); font-size: 13px; font-family: var(--font);
+      outline: none; transition: border-color 0.15s, width 0.2s; width: 200px;
+    }
+    .search-input:focus { border-color: var(--accent); width: 240px; }
+    .search-input::placeholder { color: var(--text-muted); }
+    .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 13px; pointer-events: none; }
+
+    .content { flex: 1; overflow-y: auto; }
+
+    /* ── PAGES ── */
+    .page { display: none; max-width: 860px; margin: 0 auto; padding: 44px 32px 80px; animation: fadeIn 0.2s ease; }
+    .page.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+    .page-emoji { font-size: 44px; margin-bottom: 14px; display: block; line-height: 1; }
+    .page-title { font-size: 32px; font-weight: 700; color: var(--text); line-height: 1.25; margin-bottom: 10px; letter-spacing: -0.5px; }
+    .page-desc { font-size: 15.5px; color: var(--text-secondary); max-width: 580px; line-height: 1.75; margin-bottom: 36px; }
+
+    /* ── HOME: STATS ── */
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 28px; }
+    .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 18px 20px; transition: border-color 0.15s, transform 0.15s; }
+    .stat-card:hover { border-color: var(--border-light); transform: translateY(-1px); }
+    .stat-value { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+    .stat-label { font-size: 11px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    .block { margin: 16px 0; padding: 18px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); }
+    .block-title { font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); margin-bottom: 14px; display: flex; align-items: center; gap: 7px; }
+
+    .recent-list { display: flex; flex-direction: column; gap: 2px; }
+    .recent-item { display: flex; align-items: center; gap: 12px; padding: 9px 8px; border-radius: var(--r); cursor: pointer; transition: background 0.12s; }
+    .recent-item:hover { background: var(--surface-hover); }
+    .recent-icon { font-size: 17px; min-width: 26px; text-align: center; }
+    .recent-info { flex: 1; min-width: 0; }
+    .recent-title { font-size: 13.5px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .recent-meta { font-size: 11.5px; color: var(--text-muted); }
+    .recent-badge { font-size: 11px; padding: 2px 8px; border-radius: 20px; background: var(--surface2); color: var(--text-muted); border: 1px solid var(--border); white-space: nowrap; }
+
+    /* ── PORTFOLIO ── */
+    .filter-bar { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 24px; }
+    .filter-btn { padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border); background: none; color: var(--text-secondary); font-size: 13px; cursor: pointer; font-family: var(--font); transition: all 0.15s; }
+    .filter-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+    .filter-btn.active { background: var(--accent-glow); border-color: var(--accent); color: var(--accent); }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 22px; transition: all 0.15s; position: relative; overflow: hidden; }
+    .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--purple)); opacity: 0; transition: opacity 0.15s; }
+    .project-card:hover { border-color: var(--border-light); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .project-card:hover::before { opacity: 1; }
+    .project-card[style*="display: none"] { display: none !important; }
+    .project-emoji { font-size: 26px; margin-bottom: 10px; display: block; }
+    .project-name { font-size: 15.5px; font-weight: 600; margin-bottom: 8px; }
+    .project-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 14px; }
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+    .tech-tag { font-size: 11px; padding: 2px 8px; border-radius: 4px; background: var(--surface2); border: 1px solid var(--border); color: var(--text-muted); font-family: var(--mono); }
+    .project-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--border); }
+    .project-status { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+    .status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+    .project-links { display: flex; gap: 6px; }
+    .project-link { font-size: 12px; color: var(--text-muted); text-decoration: none; padding: 4px 9px; border-radius: var(--r); border: 1px solid var(--border); transition: all 0.15s; }
+    .project-link:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-glow); }
+
+    /* ── JOURNAL ── */
+    .journal-filter { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 24px; }
+    .post-list { display: flex; flex-direction: column; gap: 10px; }
+    .post-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 22px 24px; cursor: pointer; transition: all 0.15s; }
+    .post-card:hover { border-color: var(--border-light); transform: translateX(3px); box-shadow: var(--shadow); }
+    .post-category { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); font-weight: 600; margin-bottom: 5px; }
+    .post-title { font-size: 17px; font-weight: 600; line-height: 1.4; margin-bottom: 8px; }
+    .post-excerpt { font-size: 13.5px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .post-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .post-tag { font-size: 12px; padding: 3px 9px; border-radius: 20px; background: var(--surface2); color: var(--text-muted); border: 1px solid var(--border); }
+    .post-date { font-size: 12px; color: var(--text-muted); }
+    .post-read-time { font-size: 12px; color: var(--text-muted); margin-left: auto; }
+
+    /* ── ARTICLE VIEW ── */
+    .article-back {
+      display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted);
+      font-size: 13px; cursor: pointer; margin-bottom: 32px; padding: 6px 10px;
+      border-radius: var(--r); background: none; border: none; font-family: var(--font);
+      transition: all 0.15s; color: var(--text-secondary);
+    }
+    .article-back:hover { background: var(--surface); color: var(--text); }
+    .article-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+    .article-category { font-size: 12px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--accent); font-weight: 600; }
+    .article-date, .article-rt { font-size: 12.5px; color: var(--text-muted); }
+    .article-title { font-size: 30px; font-weight: 700; line-height: 1.3; letter-spacing: -0.5px; margin-bottom: 10px; }
+    .article-subtitle { font-size: 17px; color: var(--text-secondary); margin-bottom: 28px; line-height: 1.7; }
+    .article-divider { height: 1px; background: var(--border); margin: 28px 0; }
+    .article-body { font-size: 15.5px; line-height: 1.85; color: var(--text-secondary); }
+    .article-body h2 { font-size: 21px; font-weight: 600; color: var(--text); margin: 32px 0 12px; letter-spacing: -0.3px; }
+    .article-body h3 { font-size: 17px; font-weight: 600; color: var(--text); margin: 22px 0 8px; }
+    .article-body p { margin-bottom: 18px; }
+    .article-body a { color: var(--accent); text-decoration: none; }
+    .article-body a:hover { text-decoration: underline; }
+    .article-body code { font-family: var(--mono); font-size: 13px; background: var(--surface); border: 1px solid var(--border); padding: 1px 5px; border-radius: 4px; color: var(--orange); }
+    .article-body pre { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 18px; overflow-x: auto; margin: 18px 0; }
+    .article-body pre code { background: none; border: none; padding: 0; color: var(--text-secondary); font-size: 13px; }
+    .article-body ul, .article-body ol { margin: 0 0 18px 22px; }
+    .article-body li { margin-bottom: 6px; }
+    .article-body blockquote { border-left: 3px solid var(--accent); padding: 12px 18px; margin: 20px 0; background: var(--accent-glow); border-radius: 0 var(--r) var(--r) 0; font-style: italic; }
+    .article-body strong { color: var(--text); font-weight: 600; }
+
+    /* ── ABOUT ── */
+    .about-hero { display: flex; align-items: flex-start; gap: 28px; margin-bottom: 36px; }
+    .about-avatar { width: 88px; height: 88px; border-radius: 16px; background: linear-gradient(135deg, var(--accent), var(--purple)); display: flex; align-items: center; justify-content: center; font-size: 38px; font-weight: 700; color: white; flex-shrink: 0; }
+    .about-hero-text h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+    .about-hero-text p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px; }
+    .info-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 16px 18px; }
+    .info-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); margin-bottom: 5px; }
+    .info-value { font-size: 14px; color: var(--text); }
+    .skills-section { margin-top: 8px; }
+    .skill-row { margin-bottom: 14px; }
+    .skill-header { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
+    .skill-bg { height: 5px; background: var(--surface2); border-radius: 3px; overflow: hidden; border: 1px solid var(--border); }
+    .skill-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--purple)); border-radius: 3px; width: 0%; transition: width 1s cubic-bezier(0.4,0,0.2,1); }
+
+    /* ── EMPTY STATE ── */
+    .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+    .empty-state .empty-icon { font-size: 40px; margin-bottom: 12px; }
+    .empty-state p { font-size: 14px; }
+
+    /* ── OVERLAY MOBILE ── */
+    .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 150; backdrop-filter: blur(2px); }
+    .overlay.active { display: block; }
+
+    @media (max-width: 768px) {
+      .sidebar { position: fixed; left: 0; top: 0; height: 100vh; z-index: 200; transform: translateX(-100%); transition: transform 0.25s ease; }
+      .sidebar.mobile-open { transform: translateX(0); width: var(--sidebar-w) !important; min-width: var(--sidebar-w) !important; }
+      .sidebar.mobile-open .nav-label, .sidebar.mobile-open .sidebar-title,
+      .sidebar.mobile-open .sidebar-meta, .sidebar.mobile-open .section-header,
+      .sidebar.mobile-open .nav-badge { opacity: 1; width: auto; overflow: visible; }
+      .page { padding: 24px 16px 60px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .search-input { width: 140px; }
+      .search-input:focus { width: 170px; }
+    }
+
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #4a4a4a; }
+  </style>
+</head>
+<body>
+
+<div class="overlay" id="overlay" onclick="closeMobileSidebar()"></div>
+
+<div class="app">
+
+  <!-- ═══ SIDEBAR ═══ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="avatar" onclick="navigate('home')">N</div>
+      <div style="overflow:hidden">
+        <div class="sidebar-title">Nang</div>
+        <div class="sidebar-meta">Data & Business Analyst</div>
+      </div>
+    </div>
+
+    <div class="sidebar-content">
+      <div class="section-header">Navigasi</div>
+
+      <div class="nav-item active" id="nav-home" onclick="navigate('home')" data-tooltip="Beranda">
+        <span class="nav-icon">🏠</span><span class="nav-label">Beranda</span>
+      </div>
+      <div class="nav-item" id="nav-portfolio" onclick="navigate('portfolio')" data-tooltip="Portfolio">
+        <span class="nav-icon">💼</span><span class="nav-label">Portfolio</span>
+        <span class="nav-badge">6</span>
+      </div>
+      <div class="nav-item" id="nav-journal" onclick="navigate('journal')" data-tooltip="Jurnal">
+        <span class="nav-icon">📝</span><span class="nav-label">Jurnal</span>
+        <span class="nav-badge">5</span>
+      </div>
+      <div class="nav-item" id="nav-about" onclick="navigate('about')" data-tooltip="Tentang">
+        <span class="nav-icon">👤</span><span class="nav-label">Tentang</span>
+      </div>
+
+      <div class="section-header">Teknologi</div>
+      <div class="nav-item" onclick="navigate('portfolio'); setTimeout(()=>filterProjects('Python'),100)" data-tooltip="Python">
+        <span class="nav-icon">🐍</span><span class="nav-label">Python</span>
+      </div>
+      <div class="nav-item" onclick="navigate('portfolio'); setTimeout(()=>filterProjects('Data'),100)" data-tooltip="Data">
+        <span class="nav-icon">📊</span><span class="nav-label">Data</span>
+      </div>
+      <div class="nav-item" onclick="navigate('portfolio'); setTimeout(()=>filterProjects('Linux'),100)" data-tooltip="Linux">
+        <span class="nav-icon">🐧</span><span class="nav-label">Linux</span>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="nav-item" id="nav-theme" onclick="toggleTheme()" data-tooltip="Ganti Tema" style="margin:0">
+        <span class="nav-icon" id="theme-icon">🌙</span><span class="nav-label">Dark Mode</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ═══ MAIN ═══ -->
+  <div class="main">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <button class="icon-btn" onclick="toggleSidebar()" title="Toggle Sidebar">☰</button>
+      <div class="breadcrumb">
+        <span>Nang</span>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current" id="breadcrumb-current">Beranda</span>
+      </div>
+      <div class="topbar-right">
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input class="search-input" type="text" placeholder="Cari..." id="search-input" oninput="handleSearch(this.value)" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content" id="content">
+
+      <!-- ═══ HOME PAGE ═══ -->
+      <div class="page active" id="page-home">
+        <span class="page-emoji">👋</span>
+        <h1 class="page-title">Halo, aku Nang</h1>
+        <p class="page-desc">Junior Data & Business Analyst dari Jakarta. Suka ngoprek Linux, nulis Python, dan dengerin data ngomong hal yang manusia males lihat langsung.</p>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" style="color: var(--accent)">6</div>
+            <div class="stat-label">Proyek Selesai</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" style="color: var(--green)">5</div>
+            <div class="stat-label">Jurnal & Tulisan</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" style="color: var(--orange)">3+</div>
+            <div class="stat-label">Tahun Belajar</div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block-title">⏱ Aktivitas Terakhir</div>
+          <div class="recent-list">
+            <div class="recent-item" onclick="navigate('portfolio')">
+              <span class="recent-icon">📊</span>
+              <div class="recent-info">
+                <div class="recent-title">Dashboard Sales Automation</div>
+                <div class="recent-meta">Diupdate 2 hari lalu</div>
+              </div>
+              <span class="recent-badge">Proyek</span>
+            </div>
+            <div class="recent-item" onclick="openArticle(0)">
+              <span class="recent-icon">📝</span>
+              <div class="recent-info">
+                <div class="recent-title">Kenapa Python + Linux Itu Kombinasi Dewa</div>
+                <div class="recent-meta">Ditulis 5 hari lalu</div>
+              </div>
+              <span class="recent-badge">Jurnal</span>
+            </div>
+            <div class="recent-item" onclick="navigate('portfolio')">
+              <span class="recent-icon">🐧</span>
+              <div class="recent-info">
+                <div class="recent-title">Linux Rice Config — Hyprland Setup</div>
+                <div class="recent-meta">Diupdate minggu lalu</div>
+              </div>
+              <span class="recent-badge">Proyek</span>
+            </div>
+            <div class="recent-item" onclick="openArticle(2)">
+              <span class="recent-icon">📝</span>
+              <div class="recent-info">
+                <div class="recent-title">Belajar Data dari Nol: Jujur Tapi Pedas</div>
+                <div class="recent-meta">Ditulis 2 minggu lalu</div>
+              </div>
+              <span class="recent-badge">Jurnal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block-title">🚀 Stack Utama</div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; padding-top:4px;">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">SQL</span>
+            <span class="tech-tag">Matplotlib</span>
+            <span class="tech-tag">Jupyter</span>
+            <span class="tech-tag">Linux</span>
+            <span class="tech-tag">Bash</span>
+            <span class="tech-tag">Git</span>
+            <span class="tech-tag">Tableau</span>
+            <span class="tech-tag">Excel</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ PORTFOLIO PAGE ═══ -->
+      <div class="page" id="page-portfolio">
+        <span class="page-emoji">💼</span>
+        <h1 class="page-title">Portfolio</h1>
+        <p class="page-desc">Kumpulan proyek dari yang serius sampai yang iseng — semuanya ada nilainya.</p>
+
+        <div class="filter-bar" id="filter-bar">
+          <button class="filter-btn active" onclick="filterProjects('Semua')">Semua</button>
+          <button class="filter-btn" onclick="filterProjects('Data')">📊 Data</button>
+          <button class="filter-btn" onclick="filterProjects('Python')">🐍 Python</button>
+          <button class="filter-btn" onclick="filterProjects('Linux')">🐧 Linux</button>
+          <button class="filter-btn" onclick="filterProjects('Web')">🌐 Web</button>
+          <button class="filter-btn" onclick="filterProjects('Automation')">⚙️ Automation</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+
+          <div class="project-card" data-category="Data Python">
+            <span class="project-emoji">📊</span>
+            <div class="project-name">Dashboard Sales Automation</div>
+            <div class="project-desc">Otomasi laporan penjualan harian pakai Python. Data dari Excel/CSV diolah jadi visualisasi interaktif yang langsung bisa dipresentasiin ke atasan.</div>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">Plotly</span>
+              <span class="tech-tag">openpyxl</span>
+            </div>
+            <div class="project-footer">
+              <div class="project-status" style="color: var(--green)">
+                <div class="status-dot"></div> Selesai
+              </div>
+              <div class="project-links">
+                <a class="project-link" href="#">GitHub</a>
+                <a class="project-link" href="#">Demo</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="Linux">
+            <span class="project-emoji">🐧</span>
+            <div class="project-name">Linux Rice — Hyprland Config</div>
+            <div class="project-desc">Setup Hyprland + Waybar + Rofi + Kitty terminal. Clean, minimalis, dark vibes. Dotfiles siap pakai buat siapa aja yang mau rice tapi males dari nol.</div>
+            <div class="tech-stack">
+              <span class="tech-tag">Hyprland</span>
+              <span class="tech-tag">Waybar</span>
+              <span class="tech-tag">Bash</span>
+              <span class="tech-tag">CSS</span>
+            </div>
+            <div class="project-footer">
+              <div class="project-status" style="color: var(--orange)">
+                <div class="status-dot"></div> Ongoing
+              </div>
+              <div class="project-links">
+                <a class="project-link" href="#">Dotfiles</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="Python Automation">
+            <span class="project-emoji">🕷️</span>
+            <div class="project-name">OSINT Web Scraper</div>
+            <div class="project-desc">Scraper ringan buat ngumpulin data publik dari beberapa sumber. Hasilnya langsung disimpen ke CSV dan bisa difilter. Cocok buat riset dan monitoring.</div>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">BeautifulSoup</span>
+              <span class="tech-tag">requests</span>
+              <span class="tech-tag">CSV</span>
+            </div>
+            <div class="project-footer">
+              <div class="project-status" style="color: var(--green)">
+                <div class="status-dot"></div> Selesai
+              </div>
+              <div class="project-links">
+                <a class="project-link" href="#">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="Data">
+            <span class="project-emoji">📦</span>
+            <div class="project-name">Analisis Stok Gudang</div>
+            <div class="project-desc">Analisis pola keluar-masuk barang gudang dari data historis. Identifikasi dead stock, prediksi kebutuhan, dan rekomendasi reorder point sederhana.</div>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">Matplotlib</span>
+              <span class="tech-tag">Excel</span>
+            </div>
+            <div class="project-footer">
+              <div class="project-status" style="color: var(--green)">
+                <div class="status-dot"></div> Selesai
+              </div>
+              <div class="project-links">
+                <a class="project-link" href="#">Notebook</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="Web">
+            <span class="project-emoji">🌐</span>
+            <div class="project-name">Personal Site — Versi Ini</div>
+            <div class="project-desc">Website portfolio ini sendiri. Pure HTML/CSS/JS, zero dependencies, Anytype-inspired dark design. Cepet, aman, dan gampang dikostumisasi.</div>
+            <div class="tech-stack">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <div class="project-footer">
+              <div class="project-status" style="color: var(--accent)">
+                <div class="status-dot"></div> Live
+              </div>
+              <div class="project-links">
+                <a class="project-link" href="#">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="Automation Python">
+            <span class="project-emoji">🤖</span>
+            <div class="project-name">Telegram Bot Notifikasi Stok</div>
+            <div class="project-desc">Bot Telegram yang auto kirim notif kalau stok barang tertentu di bawah threshold. Pakai Python + python-telegram-bot, jalan di background.</div>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">python-telegram-bot</span>
+              <span class="tech-tag">SQLite</span>
+            </div>
+            <div class="project-footer">
+              <div class="project-status" style="color: var(--orange)">
+                <div class="status-dot"></div> Ongoing
+              </div>
+              <div class="project-links">
+                <a class="project-link" href="#">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══ JOURNAL PAGE ═══ -->
+      <div class="page" id="page-journal">
+        <span class="page-emoji">📝</span>
+        <h1 class="page-title">Jurnal & Tulisan</h1>
+        <p class="page-desc">Catatan lepas — tentang teknologi, proses belajar, opini, dan hal-hal yang kebetulan kepikiran tengah malam.</p>
+
+        <div class="journal-filter filter-bar" id="journal-filter">
+          <button class="filter-btn active" onclick="filterPosts('Semua')">Semua</button>
+          <button class="filter-btn" onclick="filterPosts('Linux')">🐧 Linux</button>
+          <button class="filter-btn" onclick="filterPosts('Python')">🐍 Python</button>
+          <button class="filter-btn" onclick="filterPosts('Karir')">💼 Karir</button>
+          <button class="filter-btn" onclick="filterPosts('Opini')">💬 Opini</button>
+        </div>
+
+        <div class="post-list" id="post-list">
+          <!-- Posts dirender dari JS -->
+        </div>
+      </div>
+
+      <!-- ═══ ARTICLE VIEW ═══ -->
+      <div class="page" id="page-article">
+        <button class="article-back" onclick="navigate('journal')">← Kembali ke Jurnal</button>
+        <div id="article-content"></div>
+      </div>
+
+      <!-- ═══ ABOUT PAGE ═══ -->
+      <div class="page" id="page-about">
+        <div class="about-hero">
+          <div class="about-avatar">N</div>
+          <div class="about-hero-text">
+            <h1>Nang</h1>
+            <p>Sales Admin yang lagi transisi jadi Data Analyst & Business Analyst. Suka Linux, Python, automasi hal-hal yang bisa diotomasi, dan ngopi sambil dengerin error message.</p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="info-card">
+            <div class="info-label">📍 Lokasi</div>
+            <div class="info-value">Jakarta, Indonesia</div>
+          </div>
+          <div class="info-card">
+            <div class="info-label">💼 Pekerjaan</div>
+            <div class="info-value">Sales Admin & Warehouse Stock</div>
+          </div>
+          <div class="info-card">
+            <div class="info-label">🎯 Tujuan</div>
+            <div class="info-value">Jr. Data & Business Analyst</div>
+          </div>
+          <div class="info-card">
+            <div class="info-label">🖥️ OS</div>
+            <div class="info-value">Ubuntu Linux (daily driver)</div>
+          </div>
+          <div class="info-card">
+            <div class="info-label">📚 Sedang Belajar</div>
+            <div class="info-value">ML, Tableau, SQL Advanced</div>
+          </div>
+          <div class="info-card">
+            <div class="info-label">📧 Kontak</div>
+            <div class="info-value">email@example.com</div>
+          </div>
+        </div>
+
+        <div class="block skills-section">
+          <div class="block-title">⚡ Skill Level</div>
+          <div id="skill-bars">
+            <div class="skill-row">
+              <div class="skill-header"><span>Python</span><span>80%</span></div>
+              <div class="skill-bg"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-header"><span>Data Analysis (Pandas/SQL)</span><span>75%</span></div>
+              <div class="skill-bg"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-header"><span>Linux Administration</span><span>85%</span></div>
+              <div class="skill-bg"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-header"><span>Data Visualization</span><span>70%</span></div>
+              <div class="skill-bg"><div class="skill-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-header"><span>Bash Scripting</span><span>72%</span></div>
+              <div class="skill-bg"><div class="skill-fill" data-width="72"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-header"><span>Git & Version Control</span><span>68%</span></div>
+              <div class="skill-bg"><div class="skill-fill" data-width="68"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block-title">📖 Cerita Singkat</div>
+          <p style="color: var(--text-secondary); font-size: 14.5px; line-height: 1.8; margin-top: 4px;">
+            Mulai dari ngurusin stok gudang dan admin sales, terus nyadar kalau semuanya bisa lebih efisien kalau paham data. Dari situ mulai belajar Python, kemudian Pandas, kemudian SQL, kemudian nggak bisa berhenti. Linux awalnya iseng, sekarang jadi sistem operasi utama. Sekarang lagi dalam proses transisi formal ke dunia data — satu commit demi satu commit.
+          </p>
+        </div>
+      </div>
+
+    </div><!-- /content -->
+  </div><!-- /main -->
+</div><!-- /app -->
+
+<script>
+  // ═══════════════════════════════
+  // DATA JURNAL
+  // ═══════════════════════════════
+  const posts = [
+    {
+      id: 0,
+      category: "Linux",
+      title: "Kenapa Python + Linux Itu Kombinasi Dewa",
+      subtitle: "Dua tool yang kelihatannya biasa, tapi kalau digabung jadi senjata.",
+      excerpt: "Gue udah lama pakai Windows sebelum akhirnya pindah ke Linux. Dan pas udah di Linux sambil belajar Python, ada sesuatu yang klik — mereka itu dirancang untuk saling melengkapi.",
+      date: "15 Feb 2026",
+      readTime: "5 menit",
+      tags: ["Linux", "Python"],
+      content: `
+        <h2>Awal Mula</h2>
+        <p>Gue udah lama pakai Windows sebelum akhirnya pindah ke Linux. Dan pas udah di Linux sambil belajar Python, ada sesuatu yang <em>klik</em> — mereka itu dirancang untuk saling melengkapi.</p>
+        <p>Di Windows, kalau mau automasi sesuatu, ada banyak lapisan abstraksi yang harus kamu tembus. Di Linux? Terminal langsung ngobrol ke kernel. Python tinggal jadi jembatan.</p>
+        <h2>Contoh Konkret</h2>
+        <p>Bayangkan mau rename 500 file sekaligus. Di Windows: buka File Explorer, pusing. Di Linux + Python:</p>
+        <pre><code>import os
+for i, f in enumerate(os.listdir('.')):
+    os.rename(f, f"file_{i:03d}.jpg")</code></pre>
+        <p>Selesai. 3 detik. Kamu bisa tidur lagi.</p>
+        <h2>Ekosistemnya Nyambung</h2>
+        <p>Hampir semua library Python di-develop dan di-test di lingkungan Linux. Dependency management lebih bersih. <code>cron</code> + Python script = scheduler gratis. <code>systemd</code> + Python = service yang jalan terus.</p>
+        <blockquote>"Linux adalah OS yang dibangun oleh programmer, untuk programmer. Python adalah bahasa yang dibangun untuk dibaca manusia. Keduanya menghargai transparansi."</blockquote>
+        <h2>Kesimpulannya?</h2>
+        <p>Kalau kamu serius mau jadi Data Analyst atau software developer, invest waktu di Linux. Bukan karena keren, tapi karena produktivitas kamu bakal naik level. Dan Python jadi jauh lebih <em>fun</em> di ekosistem yang tepat.</p>
+      `
+    },
+    {
+      id: 1,
+      category: "Python",
+      title: "Pandas Itu Susah — Tapi Bukan Karena Lo Bodoh",
+      subtitle: "Kalau baru belajar Pandas dan ngerasa overwhelmed, itu normal. Ini kenapa.",
+      excerpt: "Pandas itu library yang powerful tapi punya learning curve yang nggak linear. Ada titik di mana kamu bingung, terus tiba-tiba paham, terus bingung lagi.",
+      date: "10 Feb 2026",
+      readTime: "6 menit",
+      tags: ["Python", "Data"],
+      content: `
+        <h2>Masalah Utama Pandas</h2>
+        <p>Pandas itu punya API yang <em>sangat</em> fleksibel — terlalu fleksibel malah. Satu hal bisa dikerjain dengan 5 cara berbeda, dan semua valid. Ini bikin bingung orang baru karena tutorial A pakai cara X, tutorial B pakai cara Y, dan mereka berdua benar.</p>
+        <h2>Tiga Hal yang Bikin Stuck</h2>
+        <ul>
+          <li><strong>Indexing:</strong> <code>.loc</code> vs <code>.iloc</code> vs <code>[]</code> — semuanya bisa akses data tapi dengan logic yang beda.</li>
+          <li><strong>Chaining:</strong> Method chaining itu powerful tapi bikin bingung kapan sebaiknya dipakai.</li>
+          <li><strong>Apply vs Vectorization:</strong> Kapan pakai <code>.apply()</code> dan kapan langsung operasi vektor.</li>
+        </ul>
+        <h2>Cara Belajar yang Lebih Masuk Akal</h2>
+        <p>Jangan belajar Pandas dari dokumentasi langsung. Mulai dari dataset nyata yang kamu punya — data stok, data penjualan, apapun. Terus define masalahnya dulu, baru cari cara Pandas-nya.</p>
+        <pre><code># Contoh: cari produk dengan stok di bawah minimum
+df[df['stok'] < df['min_stok']][['nama_produk', 'stok']]</code></pre>
+        <p>Belajar dari kebutuhan jauh lebih nempel daripada belajar dari teori.</p>
+        <blockquote>Pandas bukan tentang hapal syntax. Pandas tentang tahu <em>pertanyaan apa yang bisa kamu tanyakan ke data</em>.</blockquote>
+      `
+    },
+    {
+      id: 2,
+      category: "Karir",
+      title: "Belajar Data dari Nol: Jujur Tapi Pedas",
+      subtitle: "Pengalaman transisi dari admin ke data — termasuk bagian yang nggak ada di roadmap.",
+      excerpt: "Semua orang bilang 'belajar data itu mudah, tinggal ikutin roadmap'. Tapi nggak ada yang bilang tentang impostor syndrome jam 2 pagi.",
+      date: "2 Feb 2026",
+      readTime: "8 menit",
+      tags: ["Karir", "Data"],
+      content: `
+        <h2>Mulainya Dari Frustrasi</h2>
+        <p>Gue bukan tipe orang yang tiba-tiba "terinspirasi" buat belajar data. Mulainya dari frustrasi — ngeliat laporan Excel yang sama dikerjain manual tiap bulan, dan mikir <em>pasti ada cara yang lebih waras dari ini</em>.</p>
+        <h2>Yang Nggak Ada di Roadmap</h2>
+        <p>Semua roadmap belajar data selalu linier: Python → Pandas → SQL → Visualization → ML. Tapi realitanya?</p>
+        <ul>
+          <li>Kamu bakal balik ke Python basics di tengah-tengah belajar Pandas</li>
+          <li>SQL terasa asing meskipun udah "belajar" 3 bulan</li>
+          <li>Ada minggu di mana kamu nggak produktif sama sekali dan itu <strong>fine</strong></li>
+          <li>Impostor syndrome itu nyata, terutama waktu lihat portofolio orang lain di LinkedIn</li>
+        </ul>
+        <h2>Yang Benar-Benar Bantu</h2>
+        <p>Bangun proyek dari masalah yang kamu alami sendiri. Gue mulai dari bikin script Python buat generate laporan stok otomatis — karena itu masalah nyata di kerjaan gue. Relevansinya bikin semangat belajar lebih sustain.</p>
+        <blockquote>"Jangan tunggu siap. Mulai dari masalah yang kamu punya sekarang, bukan masalah hipotesis."</blockquote>
+        <h2>Soal Waktu</h2>
+        <p>Belajar sambil kerja full-time itu berat. Gue nggak akan pura-pura bilang "cukup 1 jam sehari". Ada hari di mana 15 menit pun susah. Yang penting konsistensi jangka panjang, bukan perfeksionisme jangka pendek.</p>
+      `
+    },
+    {
+      id: 3,
+      category: "Linux",
+      title: "Hyprland: Ribet Dulu, Surga Kemudian",
+      subtitle: "Setup Wayland compositor yang bikin frustrasi di awal tapi susah ditinggal setelahnya.",
+      excerpt: "Hyprland bukan untuk semua orang — tapi kalau sudah kena, susah balik ke DE konvensional.",
+      date: "28 Jan 2026",
+      readTime: "7 menit",
+      tags: ["Linux"],
+      content: `
+        <h2>Kenapa Hyprland?</h2>
+        <p>Setelah puas rice-ing GNOME dan KDE, ada itch yang nggak kegaruk — mau tiling window manager yang beneran bisa dikontrol penuh, tapi tetap smooth dan modern. Hyprland adalah jawaban yang datang dengan harga: kamu harus mau baca dokumentasi.</p>
+        <h2>Setup Awal Yang Menguji Kesabaran</h2>
+        <p>Hari pertama install Hyprland: layar blank. Normal. Setelah baca dokumentasi dan beberapa forum post, ternyata masalah di GPU driver. Setelah fix itu, Waybar nggak mau jalan. Setelah fix itu, audio rusak.</p>
+        <p>Tapi setelah semua itu beres? Workflow jadi beda level.</p>
+        <pre><code># hyprland.conf — keybinding favorit
+$mod = SUPER
+bind = $mod, Return, exec, kitty
+bind = $mod, Q, killactive
+bind = $mod SHIFT, F, fullscreen
+bind = $mod, H, movefocus, l</code></pre>
+        <h2>Yang Bikin Betah</h2>
+        <ul>
+          <li>Animasi Wayland yang genuinely smooth — bukan sekedar eye candy</li>
+          <li>Zero mouse workflow setelah hafal keybinding</li>
+          <li>Dotfiles yang readable dan mudah di-share</li>
+          <li>Komunitas yang aktif dan dokumentasi yang terus diupdate</li>
+        </ul>
+        <blockquote>Hyprland bukan tentang estetika. Ini tentang kontrol penuh atas bagaimana kamu berinteraksi dengan komputer.</blockquote>
+      `
+    },
+    {
+      id: 4,
+      category: "Opini",
+      title: "AI Tools Itu Alat, Bukan Pengganti Otak",
+      subtitle: "Gimana cara pakai AI coding assistant dengan benar tanpa jadi zombie yang nggak ngerti kodenya sendiri.",
+      excerpt: "Generasi baru developer mulai terlalu bergantung pada AI tools. Bukan berarti tools-nya salah — tapi ada cara pakai yang benar dan yang bikin kamu jadi lebih lemah.",
+      date: "20 Jan 2026",
+      readTime: "5 menit",
+      tags: ["Opini", "AI"],
+      content: `
+        <h2>Fenomena "Vibe Coding"</h2>
+        <p>Ada tren baru yang gue sebut "vibe coding" — nulis prompt ke AI, terima kode, copy-paste, harap-harap cemas. Kodenya jalan? Great. Kodenya error? Prompt lagi ke AI. Nggak pernah benar-benar ngerti yang terjadi di baliknya.</p>
+        <h2>Masalahnya Di Mana?</h2>
+        <p>AI tools itu hebat buat boost produktivitas — tapi hanya kalau kamu punya fondasi yang cukup buat evaluasi output-nya. Kalau kamu nggak bisa baca kode yang di-generate, kamu nggak bisa tahu kalau ada security hole, logic error, atau inefficiency di dalamnya.</p>
+        <ul>
+          <li>AI bisa generate kode yang <em>kelihatan</em> benar tapi punya edge case fatal</li>
+          <li>AI nggak tahu context bisnis kamu — hanya kamu yang tahu</li>
+          <li>Dependency yang di-suggest AI bisa outdated atau deprecated</li>
+        </ul>
+        <h2>Cara Pakai Yang Tepat</h2>
+        <p>Gue pakai AI sebagai <strong>pair programmer</strong>, bukan ghostwriter. Artinya: gue tetap nulis logika utamanya, AI bantu di bagian boilerplate, debugging, atau eksplorasi alternatif. Setiap baris yang masuk ke codebase, gue harus bisa jelasin kenapa ada di sana.</p>
+        <blockquote>"AI yang bagus bukan yang nulisin semua kode kamu. AI yang bagus adalah yang bikin kamu lebih cepat tanpa bikin kamu lebih bodoh."</blockquote>
+      `
+    }
+  ];
+
+  // ═══════════════════════════════
+  // STATE
+  // ═══════════════════════════════
+  let currentPage = 'home';
+  let isDark = true;
+  let sidebarCollapsed = false;
+
+  // ═══════════════════════════════
+  // RENDER POSTS
+  // ═══════════════════════════════
+  function renderPosts(filter = 'Semua') {
+    const list = document.getElementById('post-list');
+    const filtered = filter === 'Semua' ? posts : posts.filter(p => p.tags.includes(filter) || p.category === filter);
+    if (filtered.length === 0) {
+      list.innerHTML = `<div class="empty-state"><div class="empty-icon">📭</div><p>Belum ada tulisan di kategori ini.</p></div>`;
+      return;
+    }
+    list.innerHTML = filtered.map(p => `
+      <div class="post-card" onclick="openArticle(${p.id})">
+        <div class="post-category">${p.category}</div>
+        <div class="post-title">${p.title}</div>
+        <div class="post-excerpt">${p.excerpt}</div>
+        <div class="post-footer">
+          ${p.tags.map(t => `<span class="post-tag">${t}</span>`).join('')}
+          <span class="post-date">${p.date}</span>
+          <span class="post-read-time">📖 ${p.readTime}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // ═══════════════════════════════
+  // NAVIGASI
+  // ═══════════════════════════════
+  const pageNames = { home: 'Beranda', portfolio: 'Portfolio', journal: 'Jurnal', about: 'Tentang', article: 'Artikel' };
+
+  function navigate(page) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('page-' + page).classList.add('active');
+    const navEl = document.getElementById('nav-' + page);
+    if (navEl) navEl.classList.add('active');
+    document.getElementById('breadcrumb-current').textContent = pageNames[page] || page;
+    document.getElementById('content').scrollTop = 0;
+    currentPage = page;
+    if (page === 'journal') renderPosts();
+    if (page === 'about') setTimeout(animateSkills, 300);
+    closeMobileSidebar();
+  }
+
+  function openArticle(id) {
+    const post = posts.find(p => p.id === id);
+    if (!post) return;
+    document.getElementById('article-content').innerHTML = `
+      <div class="article-meta">
+        <span class="article-category">${post.category}</span>
+        <span class="article-date">${post.date}</span>
+        <span class="article-rt">📖 ${post.readTime}</span>
+      </div>
+      <h1 class="article-title">${post.title}</h1>
+      <p class="article-subtitle">${post.subtitle}</p>
+      <div class="article-divider"></div>
+      <div class="article-body">${post.content}</div>
+    `;
+    navigate('article');
+    document.getElementById('nav-journal').classList.add('active');
+  }
+
+  // ═══════════════════════════════
+  // FILTER PROYEK
+  // ═══════════════════════════════
+  function filterProjects(cat) {
+    document.querySelectorAll('#filter-bar .filter-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent.includes(cat) || (cat === 'Semua' && btn.textContent === 'Semua'));
+    });
+    document.querySelectorAll('.project-card').forEach(card => {
+      const cats = card.dataset.category || '';
+      card.style.display = (cat === 'Semua' || cats.includes(cat)) ? '' : 'none';
+    });
+  }
+
+  // ═══════════════════════════════
+  // FILTER POSTS
+  // ═══════════════════════════════
+  function filterPosts(cat) {
+    document.querySelectorAll('#journal-filter .filter-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent.includes(cat) || (cat === 'Semua' && btn.textContent === 'Semua'));
+    });
+    renderPosts(cat);
+  }
+
+  // ═══════════════════════════════
+  // SEARCH
+  // ═══════════════════════════════
+  function handleSearch(q) {
+    if (!q.trim()) return;
+    const lq = q.toLowerCase();
+    const match = posts.find(p => p.title.toLowerCase().includes(lq) || p.excerpt.toLowerCase().includes(lq));
+    if (match) { openArticle(match.id); document.getElementById('search-input').value = ''; }
+  }
+
+  // ═══════════════════════════════
+  // SIDEBAR
+  // ═══════════════════════════════
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    if (window.innerWidth <= 768) {
+      sidebar.classList.toggle('mobile-open');
+      document.getElementById('overlay').classList.toggle('active', sidebar.classList.contains('mobile-open'));
+    } else {
+      sidebarCollapsed = !sidebarCollapsed;
+      sidebar.classList.toggle('collapsed', sidebarCollapsed);
+    }
+  }
+
+  function closeMobileSidebar() {
+    document.getElementById('sidebar').classList.remove('mobile-open');
+    document.getElementById('overlay').classList.remove('active');
+  }
+
+  // ═══════════════════════════════
+  // DARK / LIGHT MODE
+  // ═══════════════════════════════
+  function toggleTheme() {
+    isDark = !isDark;
+    document.body.classList.toggle('light', !isDark);
+    const icon = document.getElementById('theme-icon');
+    const label = document.querySelector('#nav-theme .nav-label');
+    icon.textContent = isDark ? '🌙' : '☀️';
+    label.textContent = isDark ? 'Dark Mode' : 'Light Mode';
+  }
+
+  // ═══════════════════════════════
+  // SKILL BAR ANIMASI
+  // ═══════════════════════════════
+  function animateSkills() {
+    document.querySelectorAll('.skill-fill').forEach(bar => {
+      bar.style.width = bar.dataset.width + '%';
+    });
+  }
+
+  // ═══════════════════════════════
+  // KEYBOARD SHORTCUTS
+  // ═══════════════════════════════
+  document.addEventListener('keydown', e => {
+    if (e.ctrlKey || e.metaKey) {
+      if (e.key === 'k') { e.preventDefault(); document.getElementById('search-input').focus(); }
+      if (e.key === '\\') { e.preventDefault(); toggleSidebar(); }
+    }
+    if (e.key === 'Escape') {
+      closeMobileSidebar();
+      document.getElementById('search-input').blur();
+    }
+  });
+
+  // Init
+  renderPosts();
+</script>
+</body>
+</html>
