@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dari stok gudang ke Pandas — Nang</title>
+  <title>Dari Males ngerjain laporan manual, lalu mulai main Ular</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -61,49 +61,49 @@ footer span { color: var(--accent); }
 </head>
 <body>
 <nav>
-  <a href="../index.html" class="nav-logo">nang<span>.dev</span></a>
+  <a href="../index.html" class="nav-logo">Nang<span>'S</span></a>
   <a href="../index.html#journal" class="nav-back">← Kembali ke Jurnal</a>
 </nav>
 <article>
   <div class="article-meta">
-    <span class="article-date">FEB 2026</span>
+    <span class="article-date">NOV 2024</span>
     <span class="article-tag">Python</span>
     <span class="article-tag">Data</span>
     <span class="article-tag">Pengalaman</span>
     <span class="article-read-time">7 MENIT BACA</span>
   </div>
-  <h1 class="article-title">Dari stok gudang ke Pandas: bagaimana data mengubah cara kerja</h1>
-  <p class="article-intro">Momen di mana nyadar bahwa spreadsheet manual itu bisa diganti 10 baris Python yang jalannya otomatis tiap pagi.</p>
+  <h1 class="article-title">Mulai belajar tentang bagaimana data bisa mengubah cara kerja</h1>
+  <p class="article-intro">Momen di mana saya sadar bahwa spreadsheet manual itu bisa diganti 10 baris Python yang jalannya otomatis tiap pagi.</p>
   <div class="article-body">
-    <h2>Masalah yang Kelihatan Normal</h2>
-    <p>Dua tahun kerja di warehouse dan sales admin, setiap pagi rutinnya sama: buka Excel, copy-paste data stok, bikin laporan manual, kirim ke atasan. Proses ini makan waktu 45-60 menit tiap hari.</p>
-    <p>Yang bikin frustrasi bukan capeknya — tapi fakta bahwa <strong>pekerjaan ini bisa salah kapan saja</strong>. Typo, formula error, lupa update satu cell. Dan kalau salah, dampaknya ke keputusan pembelian stok.</p>
-    <h2>Titik Balik: 10 Baris Python</h2>
-    <p>Waktu pertama kali iseng buka tutorial Pandas, ekspektasinya biasa aja. Tapi waktu nulis ini:</p>
+    <h2>Masalah yang Kelihatan Normal dan sepele memang..</h2>
+    <p>Dua tahun kerja di warehouse dan sales admin, setiap pagi punya rutinitas yang kurang lebihnya begini : buka Excel, copy-paste data stok, bikin laporan manual, kirim ke atasan. Proses ini makan waktu 15-30 menit (Sometimes bisa lebih) tiap hari.</p>
+    <p>Yang bikin frustrasi itu bukan capeknya, tapi fakta bahwa <strong>pekerjaan ini bisa salah kapan saja</strong>. Entah itu typo, formula error, lupa update satu cell. Dan kalau salah, dampaknya berantai...</p>
+    <h2>Titik Balik : 10 Baris Python yang membuat saya merasa B*doh</h2>
+    <p>Waktu pertama kali iseng buka tutorial Python di YouTube, ekspektasinya sih biasa aja. Tapi waktu nulis ini :</p>
     <pre><code>import pandas as pd
 
 df = pd.read_excel('stok_gudang.xlsx')
 df_low = df[df['qty'] < df['min_stok']]
 df_low.to_excel('laporan_stok_rendah.xlsx', index=False)
 print(f"{len(df_low)} item perlu reorder")</code></pre>
-    <p>Dan itu berjalan — langsung dapat output yang sama persis dengan yang biasanya aku kerjakan manual dalam 45 menit — <strong>selesai dalam 2 detik.</strong></p>
-    <h2>Bukan Soal Kecepatan Saja</h2>
-    <p>Yang lebih penting dari kecepatan adalah <strong>konsistensi</strong>. Script nggak pernah typo. Nggak pernah lupa formula. Nggak pernah skip baris. Hasilnya reproducible — jalankan 100 kali, hasilnya sama.</p>
+    <p>Dan ketika code itu running, langsung dapat output yang sama persis dengan yang biasanya saya kerjakan manual dalam kurun waktu 15-30 menit, ternyata <strong> bisa selesai dalam 2 detik, seketika dalam hati saya bergumam "Anjaayy, Teknolojiaa".</strong></p>
+    <h2>Tapi ini bukan Soal kecepatan Processing Datanya Aja</h2>
+    <p>Sebab yang lebih penting dari kecepatan adalah <strong>konsistensi</strong>. Script nggak pernah typo. Nggak pernah lupa formula. Nggak pernah skip baris. Hasilnya reproducible dan bisa jalan 100 kali, hasilnya selalu konsisten.</p>
     <p>Ini yang membuat data analysis beda dari spreadsheet manual: kamu mendokumentasikan <em>logika</em> keputusan, bukan hanya hasilnya.</p>
     <h2>Dari Satu Script ke Pipeline</h2>
-    <p>Setelah script pertama jalan, nafsu buat otomasi makin gede. Script berikutnya: deteksi slow-moving items. Lalu: aging stock analysis. Lalu: notifikasi otomatis ke Telegram kalau stok kritis.</p>
-    <p>Tanpa sadar, aku udah punya <strong>data pipeline sederhana</strong> yang berjalan tiap pagi via cron job di Linux, tanpa perlu disentuh.</p>
+    <p>Setelah script pertama jalan, nafsu buat belajar python lebih lanjut makin gede (yahh namanya manusia gaada puasnya memang). Hal berikutnya yang saya pelajari adalah : deteksi slow-moving items, aging stock analysis biar bisa tau kalau ada yang deadstock dan dia butuh perhatian lebih.</p>
+    <p>Tanpa sadar, ternyata saya udah punya <strong>data pipeline yang sangat sederhana</strong> yang bisa dijalanin tiap pagi dan mengurangi beban kerja manual.</p>
     <h2>Yang Berubah Bukan Hanya Pekerjaan</h2>
-    <p>Yang berubah adalah cara melihat masalah. Sekarang setiap kali ada proses repetitif, otak langsung nanya: <em>bisa diotomasi nggak ini?</em> Setiap kali ada keputusan, nanya: <em>data apa yang bisa mendukung ini?</em></p>
-    <p>Itu pergeseran pola pikir yang — setelah terjadi — nggak bisa di-undo. Dan aku bersyukur untuk itu.</p>
+    <p>Yang berubah adalah cara melihat masalah. Sekarang setiap kali ada proses repetitif, otak langsung berpikir kotor untuk : <em>ini kerjaan bisa diotomasi nggak ya?</em> Setiap kali ada keputusan, isi kepala jadi mikir : <em>data apa yang bisa mendukung ini ya?</em></p>
+    <p>Itu pergeseran pola pikir yang seolah-olah, setelah terjadi ya nggak bisa di undo. Dan saya rasa, harusnya saya cukup bersyukur akan hal itu.</p>
   </div>
   <div class="article-footer">
     <a href="../index.html#journal" class="back-link">← Semua Jurnal</a>
-    <span class="article-author">— Nang · ananglesmana.my.id</span>
+    <span class="article-author">Nang's</span>
   </div>
 </article>
 <footer>
-  <span>ananglesmana.my.id</span> &nbsp;|&nbsp; Dibuat dari Jakarta dengan Python dan kopi &nbsp;|&nbsp; 2026
+  <span>ananglesmana.my.id</span> &nbsp;|&nbsp; Dibuat dari Bekasi dengan Kopi dan Polusi &nbsp;|&nbsp; 2026
 </footer>
 </body>
 </html>
