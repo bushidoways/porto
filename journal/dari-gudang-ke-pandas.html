@@ -51,6 +51,9 @@ h1.article-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; lett
 .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
 .article-body li { margin-bottom: 0.4rem; }
 .article-body blockquote { border-left: 3px solid var(--accent2); padding-left: 1.25rem; color: var(--text-dim); font-style: italic; margin: 1.5rem 0; }
+.article-body figure { margin: 1.5rem 0; }
+.article-body figure img { width: 100%; height: auto; border-radius: var(--radius); display: block; }
+.article-body figcaption { font-size: 0.78rem; color: var(--text-dim); font-family: var(--mono); text-align: center; margin-top: 0.5rem; }
 .article-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
 .back-link { display: inline-flex; align-items: center; gap: 8px; padding: 0.6rem 1.25rem; border-radius: var(--radius); border: 1px solid var(--border); color: var(--text-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: all 0.3s; }
 .back-link:hover { border-color: var(--accent); color: var(--accent); background: rgba(99,102,241,0.08); }
@@ -75,6 +78,10 @@ footer span { color: var(--accent); }
   <h1 class="article-title">Mulai belajar tentang bagaimana data bisa mengubah cara kerja</h1>
   <p class="article-intro">Momen di mana saya sadar bahwa spreadsheet manual itu bisa diganti 10 baris Python yang jalannya otomatis tiap pagi.</p>
   <div class="article-body">
+    <figure>
+      <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1106&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+      <figcaption>Foto: <a href="https://unsplash.com/@dawson2406" target="_blank" rel="noopener noreferrer">Stephen Dawson / <a href= "https://www.unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></figcaption>
+    </figure>
     <h2>Masalah yang Kelihatan Normal dan sepele memang..</h2>
     <p>Dua tahun kerja di warehouse dan sales admin, setiap pagi punya rutinitas yang kurang lebihnya begini : buka Excel, copy-paste data stok, bikin laporan manual, kirim ke atasan. Proses ini makan waktu 15-30 menit (Sometimes bisa lebih) tiap hari.</p>
     <p>Yang bikin frustrasi itu bukan capeknya, tapi fakta bahwa <strong>pekerjaan ini bisa salah kapan saja</strong>. Entah itu typo, formula error, lupa update satu cell. Dan kalau salah, dampaknya berantai...</p>
