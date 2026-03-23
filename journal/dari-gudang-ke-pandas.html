@@ -1,3 +1,12 @@
+
+<!--
+   _-=Created Without Love=- _                   
+| \ | ___ ._ _  ___  ___
+|   |<_> || ' |/ . |<_-<
+|_\_|<___||_|_|\_. |/__/
+               <___'    
+-->
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -65,52 +74,80 @@ footer span { color: var(--accent); }
 <body>
 <nav>
   <a href="../index.html" class="nav-logo">Nang<span>'S</span></a>
-  <a href="../index.html#journal" class="nav-back">← Kembali ke Jurnal</a>
+  <a href="../index.html#journal" class="nav-back" data-i18n="gudang_nav_back">← Kembali ke Jurnal</a>
 </nav>
 <article>
   <div class="article-meta">
     <span class="article-date">NOV 2024</span>
     <span class="article-tag">Python</span>
     <span class="article-tag">Data</span>
-    <span class="article-tag">Pengalaman</span>
-    <span class="article-read-time">7 MENIT BACA</span>
+    <span class="article-tag" data-i18n="gudang_tag_pengalaman">Pengalaman</span>
+    <span class="article-read-time" data-i18n="gudang_read_time">7 MENIT BACA</span>
   </div>
-  <h1 class="article-title">Mulai belajar tentang bagaimana data bisa mengubah cara kerja</h1>
-  <p class="article-intro">Momen di mana saya sadar bahwa spreadsheet manual itu bisa diganti 10 baris Python yang jalannya otomatis tiap pagi.</p>
+  <h1 class="article-title" data-i18n="gudang_title">Mulai belajar tentang bagaimana data bisa mengubah cara kerja</h1>
+  <p class="article-intro" data-i18n="gudang_intro">Momen di mana saya sadar bahwa spreadsheet manual itu bisa diganti 10 baris Python yang jalannya otomatis tiap pagi.</p>
   <div class="article-body">
     <figure>
       <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1106&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
       <figcaption>Foto: <a href="https://unsplash.com/@dawson2406" target="_blank" rel="noopener noreferrer">Stephen Dawson / <a href= "https://www.unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></figcaption>
     </figure>
-    <h2>Masalah yang Kelihatan Normal dan sepele memang..</h2>
-    <p>Dua tahun kerja di warehouse dan sales admin, setiap pagi punya rutinitas yang kurang lebihnya begini : buka Excel, copy-paste data stok, bikin laporan manual, kirim ke atasan. Proses ini makan waktu 15-30 menit (Sometimes bisa lebih) tiap hari.</p>
-    <p>Yang bikin frustrasi itu bukan capeknya, tapi fakta bahwa <strong>pekerjaan ini bisa salah kapan saja</strong>. Entah itu typo, formula error, lupa update satu cell. Dan kalau salah, dampaknya berantai...</p>
-    <h2>Titik Balik : 10 Baris Python yang membuat saya merasa B*doh</h2>
-    <p>Waktu pertama kali iseng buka tutorial Python di YouTube, ekspektasinya sih biasa aja. Tapi waktu nulis ini :</p>
+    <h2 data-i18n="gudang_h2_1">Masalah yang Kelihatan Normal dan sepele memang..</h2>
+    <p data-i18n="gudang_p1">Dua tahun kerja di warehouse dan sales admin, setiap pagi punya rutinitas yang kurang lebihnya begini : buka Excel, copy-paste data stok, bikin laporan manual, kirim ke atasan. Proses ini makan waktu 15-30 menit (Sometimes bisa lebih) tiap hari.</p>
+    <p data-i18n="gudang_p2">Yang bikin frustrasi itu bukan capeknya, tapi fakta bahwa <strong>pekerjaan ini bisa salah kapan saja</strong>. Entah itu typo, formula error, lupa update satu cell. Dan kalau salah, dampaknya berantai...</p>
+    <h2 data-i18n="gudang_h2_2">Titik Balik : 10 Baris Python yang membuat saya merasa B*doh</h2>
+    <p data-i18n="gudang_p3">Waktu pertama kali iseng buka tutorial Python di YouTube, ekspektasinya sih biasa aja. Tapi waktu nulis ini :</p>
     <pre><code>import pandas as pd
 
 df = pd.read_excel('stok_gudang.xlsx')
 df_low = df[df['qty'] < df['min_stok']]
 df_low.to_excel('laporan_stok_rendah.xlsx', index=False)
 print(f"{len(df_low)} item perlu reorder")</code></pre>
-    <p>Dan ketika code itu running, langsung dapat output yang sama persis dengan yang biasanya saya kerjakan manual dalam kurun waktu 15-30 menit, ternyata <strong> bisa selesai dalam 2 detik, seketika dalam hati saya bergumam "Anjaayy, Teknolojiaa".</strong></p>
-    <h2>Tapi ini bukan Soal kecepatan Processing Datanya Aja</h2>
-    <p>Sebab yang lebih penting dari kecepatan adalah <strong>konsistensi</strong>. Script nggak pernah typo. Nggak pernah lupa formula. Nggak pernah skip baris. Hasilnya reproducible dan bisa jalan 100 kali, hasilnya selalu konsisten.</p>
-    <p>Ini yang membuat data analysis beda dari spreadsheet manual: kamu mendokumentasikan <em>logika</em> keputusan, bukan hanya hasilnya.</p>
-    <h2>Dari Satu Script ke Pipeline</h2>
-    <p>Setelah script pertama jalan, nafsu buat belajar python lebih lanjut makin gede (yahh namanya manusia gaada puasnya memang). Hal berikutnya yang saya pelajari adalah : deteksi slow-moving items, aging stock analysis biar bisa tau kalau ada yang deadstock dan dia butuh perhatian lebih.</p>
-    <p>Tanpa sadar, ternyata saya udah punya <strong>data pipeline yang sangat sederhana</strong> yang bisa dijalanin tiap pagi dan mengurangi beban kerja manual.</p>
-    <h2>Yang Berubah Bukan Hanya Pekerjaan</h2>
-    <p>Yang berubah adalah cara melihat masalah. Sekarang setiap kali ada proses repetitif, otak langsung berpikir kotor begini <em>"ini kerjaan bisa diotomasi nggak ya?"</em> Begitu pula setiap kali ada keputusan, membuat saya jadi mikir  <em>"data apa yang bisa mendukung ini ya?"</em></p>
-    <p>Itu pergeseran pola pikir yang seolah-olah, setelah terjadi ya nggak bisa di undo. Dan saya rasa, harusnya saya cukup bersyukur akan hal itu.</p>
+    <p data-i18n="gudang_p4">Dan ketika code itu running, langsung dapat output yang sama persis dengan yang biasanya saya kerjakan manual dalam kurun waktu 15-30 menit, ternyata <strong> bisa selesai dalam 2 detik, seketika dalam hati saya bergumam "Anjaayy, Teknolojiaa".</strong></p>
+    <h2 data-i18n="gudang_h2_3">Tapi ini bukan Soal kecepatan Processing Datanya Aja</h2>
+    <p data-i18n="gudang_p5">Sebab yang lebih penting dari kecepatan adalah <strong>konsistensi</strong>. Script nggak pernah typo. Nggak pernah lupa formula. Nggak pernah skip baris. Hasilnya reproducible dan bisa jalan 100 kali, hasilnya selalu konsisten.</p>
+    <p data-i18n="gudang_p6">Ini yang membuat data analysis beda dari spreadsheet manual: kamu mendokumentasikan <em>logika</em> keputusan, bukan hanya hasilnya.</p>
+    <h2 data-i18n="gudang_h2_4">Dari Satu Script ke Pipeline</h2>
+    <p data-i18n="gudang_p7">Setelah script pertama jalan, nafsu buat belajar python lebih lanjut makin gede (yahh namanya manusia gaada puasnya memang). Hal berikutnya yang saya pelajari adalah : deteksi slow-moving items, aging stock analysis biar bisa tau kalau ada yang deadstock dan dia butuh perhatian lebih.</p>
+    <p data-i18n="gudang_p8">Tanpa sadar, ternyata saya udah punya <strong>data pipeline yang sangat sederhana</strong> yang bisa dijalanin tiap pagi dan mengurangi beban kerja manual.</p>
+    <h2 data-i18n="gudang_h2_5">Yang Berubah Bukan Hanya Pekerjaan</h2>
+    <p data-i18n="gudang_p9">Yang berubah adalah cara melihat masalah. Sekarang setiap kali ada proses repetitif, otak langsung berpikir kotor begini <em>"ini kerjaan bisa diotomasi nggak ya?"</em> Begitu pula setiap kali ada keputusan, membuat saya jadi mikir  <em>"data apa yang bisa mendukung ini ya?"</em></p>
+    <p data-i18n="gudang_p10">Itu pergeseran pola pikir yang seolah-olah, setelah terjadi ya nggak bisa di undo. Dan saya rasa, harusnya saya cukup bersyukur akan hal itu.</p>
   </div>
   <div class="article-footer">
-    <a href="../index.html#journal" class="back-link">← Semua Jurnal</a>
+    <a href="../index.html#journal" class="back-link" data-i18n="gudang_back_link">← Semua Jurnal</a>
     <span class="article-author">Nang's</span>
   </div>
 </article>
 <footer>
-  <span>ananglesmana.my.id</span> &nbsp;|&nbsp; Dibuat dari Bekasi dengan Kopi dan Polusi &nbsp;|&nbsp; 2026
+  <span>ananglesmana.my.id</span> &nbsp;|&nbsp; <span data-i18n="gudang_footer">Dibuat dari Bekasi dengan Kopi dan Polusi</span> &nbsp;|&nbsp; 2026
 </footer>
+
+<script>
+  window.PAGE_TRANSLATIONS = {
+    gudang_nav_back:       { id: '\u2190 Kembali ke Jurnal', en: '\u2190 Back to Journal' },
+    gudang_read_time:      { id: '7 MENIT BACA', en: '7 MIN READ' },
+    gudang_tag_pengalaman: { id: 'Pengalaman', en: 'Experience' },
+    gudang_title:          { id: 'Mulai belajar tentang bagaimana data bisa mengubah cara kerja', en: 'Learning How Data Can Change the Way We Work' },
+    gudang_intro:          { id: 'Momen di mana saya sadar bahwa spreadsheet manual itu bisa diganti 10 baris Python yang jalannya otomatis tiap pagi.', en: 'The moment I realized a manual spreadsheet could be replaced by 10 lines of Python running automatically every morning.' },
+    gudang_h2_1:           { id: 'Masalah yang Kelihatan Normal dan sepele memang..', en: 'A Problem That Seemed Normal and Trivial..' },
+    gudang_p1:             { id: 'Dua tahun kerja di warehouse dan sales admin, setiap pagi punya rutinitas yang kurang lebihnya begini : buka Excel, copy-paste data stok, bikin laporan manual, kirim ke atasan. Proses ini makan waktu 15-30 menit (Sometimes bisa lebih) tiap hari.', en: "Two years working in warehouse and sales admin, every morning had a routine that went roughly like this: open Excel, copy-paste stock data, make a manual report, send it to the boss. This process took 15-30 minutes (sometimes more) every day." },
+    gudang_p2:             { id: 'Yang bikin frustrasi itu bukan capeknya, tapi fakta bahwa <strong>pekerjaan ini bisa salah kapan saja</strong>. Entah itu typo, formula error, lupa update satu cell. Dan kalau salah, dampaknya berantai...', en: "What was frustrating wasn\'t the fatigue, but the fact that <strong>this work could go wrong at any time</strong>. Whether it was a typo, formula error, or forgetting to update one cell. And when it went wrong, the impact cascaded..." },
+    gudang_h2_2:           { id: 'Titik Balik : 10 Baris Python yang membuat saya merasa B*doh', en: 'Turning Point: 10 Lines of Python That Made Me Feel St*pid' },
+    gudang_p3:             { id: 'Waktu pertama kali iseng buka tutorial Python di YouTube, ekspektasinya sih biasa aja. Tapi waktu nulis ini :', en: "The first time I casually opened a Python tutorial on YouTube, my expectations were pretty low. But when I wrote this:" },
+    gudang_p4:             { id: 'Dan ketika code itu running, langsung dapat output yang sama persis dengan yang biasanya saya kerjakan manual dalam kurun waktu 15-30 menit, ternyata <strong> bisa selesai dalam 2 detik, seketika dalam hati saya bergumam \u201cAnjaayy, Teknolojiaa\u201d.</strong>', en: 'And when that code ran, it instantly produced the exact same output that I usually spent 15-30 minutes doing manually \u2014 turns out it <strong>could be done in 2 seconds. I immediately muttered to myself \u201cHoly, Technology!!\u201d.</strong>' },
+    gudang_h2_3:           { id: 'Tapi ini bukan Soal kecepatan Processing Datanya Aja', en: "But It\'s Not Just About Processing Speed" },
+    gudang_p5:             { id: 'Sebab yang lebih penting dari kecepatan adalah <strong>konsistensi</strong>. Script nggak pernah typo. Nggak pernah lupa formula. Nggak pernah skip baris. Hasilnya reproducible dan bisa jalan 100 kali, hasilnya selalu konsisten.', en: "Because what\'s more important than speed is <strong>consistency</strong>. A script never makes typos. Never forgets a formula. Never skips a row. The results are reproducible \u2014 run it 100 times and you always get the same output." },
+    gudang_p6:             { id: 'Ini yang membuat data analysis beda dari spreadsheet manual: kamu mendokumentasikan <em>logika</em> keputusan, bukan hanya hasilnya.', en: "This is what makes data analysis different from manual spreadsheets: you\'re documenting the <em>logic</em> of decisions, not just the results." },
+    gudang_h2_4:           { id: 'Dari Satu Script ke Pipeline', en: 'From One Script to a Pipeline' },
+    gudang_p7:             { id: 'Setelah script pertama jalan, nafsu buat belajar python lebih lanjut makin gede (yahh namanya manusia gaada puasnya memang). Hal berikutnya yang saya pelajari adalah : deteksi slow-moving items, aging stock analysis biar bisa tau kalau ada yang deadstock dan dia butuh perhatian lebih.', en: "After the first script ran, the hunger to learn more Python grew even bigger (well, humans are never satisfied). The next things I learned were: detecting slow-moving items, aging stock analysis so I could spot deadstock that needed more attention." },
+    gudang_p8:             { id: 'Tanpa sadar, ternyata saya udah punya <strong>data pipeline yang sangat sederhana</strong> yang bisa dijalanin tiap pagi dan mengurangi beban kerja manual.', en: "Without realizing it, I already had a <strong>very simple data pipeline</strong> that could run every morning and reduce the manual workload." },
+    gudang_h2_5:           { id: 'Yang Berubah Bukan Hanya Pekerjaan', en: "What Changed Wasn\'t Just the Work" },
+    gudang_p9:             { id: 'Yang berubah adalah cara melihat masalah. Sekarang setiap kali ada proses repetitif, otak langsung berpikir kotor begini <em>\u201cini kerjaan bisa diotomasi nggak ya?\u201d</em> Begitu pula setiap kali ada keputusan, membuat saya jadi mikir  <em>\u201cdata apa yang bisa mendukung ini ya?\u201d</em>', en: 'What changed was how I see problems. Now every time there\'s a repetitive process, my brain immediately thinks <em>\u201ccan this be automated?\u201d</em> And every time there\'s a decision to make, I think <em>\u201cwhat data can support this?\u201d</em>' },
+    gudang_p10:            { id: 'Itu pergeseran pola pikir yang seolah-olah, setelah terjadi ya nggak bisa di undo. Dan saya rasa, harusnya saya cukup bersyukur akan hal itu.', en: "That\'s a mindset shift that once it happens, you can\'t really undo it. And I think I should be grateful for that." },
+    gudang_back_link:      { id: '\u2190 Semua Jurnal', en: '\u2190 All Journals' },
+    gudang_footer:         { id: 'Dibuat dari Bekasi dengan Kopi dan Polusi', en: 'Made from Bekasi with Coffee and Pollution' },
+  };
+</script>
+<script src="../js/i18n.js"></script>
 </body>
 </html>
