@@ -812,38 +812,6 @@
   .reveal-delay-3 { transition-delay: 0.3s; }
   .reveal-delay-4 { transition-delay: 0.4s; }
 
-  /* LANGUAGE TOGGLE */
-  .lang-toggle {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 4px;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    cursor: pointer;
-    position: relative;
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    transition: border-color var(--transition);
-    margin-right: 0.5rem;
-  }
-  .lang-toggle:hover { border-color: var(--border-hover); }
-  .lang-opt {
-    padding: 4px 10px;
-    border-radius: 100px;
-    color: var(--text-dim);
-    transition: all var(--transition);
-    z-index: 1;
-    user-select: none;
-  }
-  .lang-opt.active {
-    color: white;
-    background: var(--accent);
-  }
-
   /* MOBILE NAV */
   @media (max-width: 768px) {
     .nav-links { display: none; flex-direction: column; gap: 0; position: fixed; top: 64px; left: 0; right: 0; background: rgba(10,10,15,0.97); border-bottom: 1px solid var(--border); backdrop-filter: blur(20px); padding: 1rem 0; }
@@ -856,7 +824,6 @@
     .skills-grid { grid-template-columns: 1fr; }
     .projects-grid, .journal-grid { grid-template-columns: 1fr; }
     section { padding: 4rem 1.25rem; }
-    .lang-toggle { margin-right: 0.75rem; }
   }
 </style>
 </head>
@@ -876,10 +843,6 @@
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;">
-  <div class="lang-toggle" id="langToggle" aria-label="Switch language">
-    <span class="lang-opt active" data-lang="id">ID</span>
-    <span class="lang-opt" data-lang="en">EN</span>
-  </div>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -1415,12 +1378,15 @@
     });
   });
 
-  // ===================== i18n TRANSLATION =====================
-  const i18n = {
+</script>
+
+<!-- i18n Translations -->
+<script>
+  window.PAGE_TRANSLATIONS = {
     // Hero
     hero_badge:     { id: 'Available for opportunities', en: 'Available for opportunities' },
-    hero_name:      { id: 'Halo, aku Nang.', en: 'Hi, I\'m Nang.' },
-    hero_desc:      { id: 'Junior analyst yang transisi dari dunia operasional ke dunia data. Suka ngulik Python, ngoprek Linux, dan dengerin apa yang data bilang sebelum orang lain sadar ada yang perlu didengar.', en: 'A junior analyst transitioning from operations to the world of data. Love tinkering with Python, messing around with Linux, and listening to what the data says before others realize there\'s something worth hearing.' },
+    hero_name:      { id: 'Halo, aku Nang.', en: "Hi, I'm Nang." },
+    hero_desc:      { id: 'Junior analyst yang transisi dari dunia operasional ke dunia data. Suka ngulik Python, ngoprek Linux, dan dengerin apa yang data bilang sebelum orang lain sadar ada yang perlu didengar.', en: "A junior analyst transitioning from operations to the world of data. Love tinkering with Python, messing around with Linux, and listening to what the data says before others realize there's something worth hearing." },
     hero_cta1:      { id: 'Explore Dong', en: 'Explore My Work' },
     hero_cta2:      { id: 'Hubungi Aku', en: 'Get in Touch' },
 
@@ -1440,96 +1406,60 @@
     // About — Text
     about_label:  { id: 'Tentang Saya', en: 'About Me' },
     about_title:  { id: 'Dari gudang<br/>ke dashboard.', en: 'From warehouse<br/>to dashboard.' },
-    about_story1: { id: 'Mulai dari ngurusin stok gudang dan admin sales, terus nyadar kalau semuanya bisa lebih efisien kalau paham data. Dari situ mulai belajar <span class="highlight-pill">Python</span>, kemudian <span class="highlight-pill">Pandas</span>, kemudian <span class="highlight-pill">SQL</span> dan malah keterusan lalu nggak bisa berhenti.', en: 'Started out managing warehouse stock and sales admin, then realized everything could be more efficient with data. That\'s when I picked up <span class="highlight-pill">Python</span>, then <span class="highlight-pill">Pandas</span>, then <span class="highlight-pill">SQL</span> — and honestly, I just couldn\'t stop.' },
+    about_story1: { id: 'Mulai dari ngurusin stok gudang dan admin sales, terus nyadar kalau semuanya bisa lebih efisien kalau paham data. Dari situ mulai belajar <span class="highlight-pill">Python</span>, kemudian <span class="highlight-pill">Pandas</span>, kemudian <span class="highlight-pill">SQL</span> dan malah keterusan lalu nggak bisa berhenti.', en: "Started out managing warehouse stock and sales admin, then realized everything could be more efficient with data. That's when I picked up <span class="highlight-pill">Python</span>, then <span class="highlight-pill">Pandas</span>, then <span class="highlight-pill">SQL</span> — and honestly, I just couldn't stop." },
     about_story2: { id: '<strong>Percaya</strong> bahwa cara terbaik belajar adalah langsung bikin sesuatu yang bisa dipakai.', en: '<strong>I believe</strong> the best way to learn is to build something you can actually use.' },
     about_cta:    { id: 'Butuh Ngobrol Lebih lanjut?', en: 'Want to Chat Further?' },
 
     // Skills
     skills_label:    { id: 'Kemampuan', en: 'Skills' },
     skills_title:    { id: 'Stack yang<br/>di pakai.', en: 'The stack<br/>I work with.' },
-    skills_desc:     { id: 'Tools dan teknologi yang jadi andalan sehari-hari, dari analisis data sampai sistem operasi.', en: 'Tools and technologies I rely on daily — from data analysis to operating systems.' },
+    skills_desc:     { id: 'Tools dan teknologi yang jadi andalan sehari-hari, dari analisis data sampai sistem operasi.', en: "Tools and technologies I rely on daily — from data analysis to operating systems." },
     skill_patience:  { id: 'Kesabaran', en: 'Patience' },
 
     // Projects
     projects_label:  { id: 'Proyek', en: 'Projects' },
-    projects_title:  { id: 'Yang sudah<br/>pernah dibikin.', en: 'Things I\'ve<br/>built so far.' },
+    projects_title:  { id: 'Yang sudah<br/>pernah dibikin.', en: "Things I've<br/>built so far." },
     projects_desc:   { id: 'Kumpulan proyek dari iseng sampai yang serius. Semuanya berangkat dari niat buat belajar.', en: 'A collection of projects from casual experiments to serious builds. All driven by the intent to learn.' },
-    proj1_desc:      { id: 'Analisis data penjualan dari export Excel \u2014 transformasi, cleaning, dan visualisasi tren per bulan menggunakan Pandas dan Matplotlib.', en: 'Sales data analysis from Excel exports \u2014 transformation, cleaning, and monthly trend visualization using Pandas and Matplotlib.' },
+    proj1_desc:      { id: 'Analisis data penjualan dari export Excel — transformasi, cleaning, dan visualisasi tren per bulan menggunakan Pandas dan Matplotlib.', en: 'Sales data analysis from Excel exports — transformation, cleaning, and monthly trend visualization using Pandas and Matplotlib.' },
     proj2_desc:      { id: 'Python scraper untuk mengumpulkan data publik dan menganalisis pola. Menggunakan BeautifulSoup, Requests, dan teknik dasar OSINT.', en: 'Python tool for collecting public data and analyzing patterns. Built with BeautifulSoup, Requests, and basic OSINT techniques.' },
-    proj3_desc:      { id: 'Konfigurasi Ubuntu dari nol \u2014 dotfiles, shell aliases, auto-setup script untuk dev environment yang bisa di-bootstrap di mesin baru dalam menit.', en: 'Ubuntu configuration from scratch \u2014 dotfiles, shell aliases, auto-setup script for a dev environment that bootstraps on a new machine in minutes.' },
+    proj3_desc:      { id: 'Konfigurasi Ubuntu dari nol — dotfiles, shell aliases, auto-setup script untuk dev environment yang bisa di-bootstrap di mesin baru dalam menit.', en: 'Ubuntu configuration from scratch — dotfiles, shell aliases, auto-setup script for a dev environment that bootstraps on a new machine in minutes.' },
 
     // Journal
     journal_label:  { id: 'Jurnal', en: 'Journal' },
     journal_title:  { id: 'Catatan<br/>dari tengah malam.', en: 'Notes<br/>from midnight.' },
-    journal_desc:   { id: 'Tulisan lepas tentang teknologi, proses belajar, opini, dan hal-hal yang kebetulan kepikiran waktu kopi masih panas.', en: 'Loose writings about technology, the learning process, opinions, and things that cross my mind while the coffee\'s still hot.' },
+    journal_desc:   { id: 'Tulisan lepas tentang teknologi, proses belajar, opini, dan hal-hal yang kebetulan kepikiran waktu kopi masih panas.', en: "Loose writings about technology, the learning process, opinions, and things that cross my mind while the coffee's still hot." },
     read_more:      { id: 'Baca selengkapnya <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>', en: 'Read more <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' },
 
-    j1_date:    { id: 'MAR 2024 \u2014 5 MENIT BACA', en: 'MAR 2024 \u2014 5 MIN READ' },
+    j1_date:    { id: 'MAR 2024 — 5 MENIT BACA', en: 'MAR 2024 — 5 MIN READ' },
     j1_title:   { id: 'Kenapa Berakhir di Linux', en: 'Why I Ended Up on Linux' },
-    j1_excerpt:  { id: 'Sejujurnya, ini bukan soal ideologi. Tapi juga soal efisiensi, kontrol, dan fakta bahwa harga MacBook masih belum bisa dibilang murah..', en: 'Honestly, it\'s not about ideology. It\'s about efficiency, control, and the fact that MacBooks still aren\'t exactly cheap..' },
+    j1_excerpt:  { id: 'Sejujurnya, ini bukan soal ideologi. Tapi juga soal efisiensi, kontrol, dan fakta bahwa harga MacBook masih belum bisa dibilang murah..', en: "Honestly, it's not about ideology. It's about efficiency, control, and the fact that MacBooks still aren't exactly cheap.." },
 
-    j2_date:    { id: 'NOV 2024 \u2014 7 MENIT BACA', en: 'NOV 2024 \u2014 7 MIN READ' },
+    j2_date:    { id: 'NOV 2024 — 7 MENIT BACA', en: 'NOV 2024 — 7 MIN READ' },
     j2_title:   { id: 'Mulai belajar tentang bagaimana data bisa mengubah cara kerja', en: 'Learning how data can change the way we work' },
     j2_excerpt:  { id: 'Momen di mana saya sadar bahwa Spreadsheet manual bisa diganti 10 baris Python yang jalan otomatis tiap pagi.', en: 'The moment I realized a manual spreadsheet could be replaced by 10 lines of Python running automatically every morning.' },
 
-    j3_date:    { id: 'JAN 2024 \u2014 4 MENIT BACA', en: 'JAN 2024 \u2014 4 MIN READ' },
-    j3_title:   { id: 'OSINT untuk pemula: belajar dari data yang sudah ada di depan mata', en: 'OSINT for beginners: learning from data that\'s already in plain sight' },
-    j3_excerpt:  { id: 'Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan siapa saja, dan kenapa ini relevan untuk seorang analyst.', en: 'Basic techniques for gathering public information that anyone can do, and why it\'s relevant for an analyst.' },
+    j3_date:    { id: 'JAN 2024 — 4 MENIT BACA', en: 'JAN 2024 — 4 MIN READ' },
+    j3_title:   { id: 'OSINT untuk pemula: belajar dari data yang sudah ada di depan mata', en: "OSINT for beginners: learning from data that's already in plain sight" },
+    j3_excerpt:  { id: 'Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan siapa saja, dan kenapa ini relevan untuk seorang analyst.', en: "Basic techniques for gathering public information that anyone can do, and why it's relevant for an analyst." },
 
-    j4_date:    { id: 'OCT 2024 \u2014 4 MENIT BACA', en: 'OCT 2024 \u2014 4 MIN READ' },
-    j4_title:   { id: 'Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?', en: 'Structural Poverty: Why Individual Effort Alone Isn\'t Enough?' },
+    j4_date:    { id: 'OCT 2024 — 4 MENIT BACA', en: 'OCT 2024 — 4 MIN READ' },
+    j4_title:   { id: 'Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?', en: "Structural Poverty: Why Individual Effort Alone Isn't Enough?" },
     j4_excerpt:  { id: 'Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.', en: 'What and Why?, Contributing Factors, Expert Views, Economic Inequality, and a Conclusion from the Author.' },
 
-    j5_date:    { id: 'MAR 2026 \u2014 5 MENIT BACA', en: 'MAR 2026 \u2014 5 MIN READ' },
+    j5_date:    { id: 'MAR 2026 — 5 MENIT BACA', en: 'MAR 2026 — 5 MIN READ' },
     j5_title:   { id: 'Surah Al-Kahfi', en: 'Surah Al-Kahfi' },
-    j5_excerpt:  { id: 'Mengenal wahyu yang sering dibaca setiap Jum\'at sebagai Manual Book disaat krisis.', en: 'Understanding the revelation often recited every Friday as a manual for times of crisis.' },
+    j5_excerpt:  { id: "Mengenal wahyu yang sering dibaca setiap Jum'at sebagai Manual Book disaat krisis.", en: 'Understanding the revelation often recited every Friday as a manual for times of crisis.' },
 
     // Contact
     contact_label:  { id: 'Kontak', en: 'Contact' },
-    contact_title:  { id: 'Ada yang mau disampaikan?<br/><span>Ngobrol yuk.</span>', en: 'Got something to say?<br/><span>Let\'s talk.</span>' },
+    contact_title:  { id: 'Ada yang mau disampaikan?<br/><span>Ngobrol yuk.</span>', en: "Got something to say?<br/><span>Let's talk.</span>" },
     contact_desc:   { id: 'Lagi cari peluang sebagai Data Analyst atau Business Analyst. Open untuk diskusi, kolaborasi, atau sekadar ngobrol soal data dan teknologi.', en: 'Currently looking for opportunities as a Data Analyst or Business Analyst. Open for discussions, collaborations, or just chatting about data and tech.' },
 
     // Footer
     footer_text: { id: 'Dibuat dari Bekasi dengan Kopi dan Polusi', en: 'Made from Bekasi with Coffee and Pollution' },
   };
-
-  let currentLang = 'id';
-
-  function setLang(lang) {
-    currentLang = lang;
-
-    document.documentElement.lang = lang;
-
-    // Update toggle UI
-    document.querySelectorAll('.lang-opt').forEach(opt => {
-      opt.classList.toggle('active', opt.dataset.lang === lang);
-    });
-
-    // Apply translations
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.dataset.i18n;
-      if (i18n[key] && i18n[key][lang]) {
-        el.innerHTML = i18n[key][lang];
-      }
-    });
-  }
-
-  // Toggle click handler
-  document.getElementById('langToggle').addEventListener('click', (e) => {
-    const clicked = e.target.closest('.lang-opt');
-    if (clicked) {
-      setLang(clicked.dataset.lang);
-    } else {
-      // Toggle when clicking the container
-      setLang(currentLang === 'id' ? 'en' : 'id');
-    }
-  });
-
-  // Apply saved language on load
-  if (currentLang !== 'id') {
-    setLang(currentLang);
-  }
 </script>
+<script src="js/i18n.js"></script>
 <script data-pplx-inline-edit>
 (function(){
   if(window===window.top)return;
