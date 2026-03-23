@@ -48,19 +48,18 @@
   toggle.setAttribute('aria-label', 'Switch language');
   toggle.innerHTML = '<span class="lang-opt active" data-lang="id">ID</span><span class="lang-opt" data-lang="en">EN</span>';
 
-  // Insert sebelum nav-back (di jurnal) atau nav-hamburger (di index)
   const navBack = nav.querySelector('.nav-back');
   const hamburgerWrapper = nav.querySelector('.nav-hamburger');
   
   if (navBack) {
-    // Journal pages: replace nav-back with a wrapper containing both
+
     const wrapper = document.createElement('div');
     wrapper.style.cssText = 'display:flex;align-items:center;gap:12px;';
     navBack.parentNode.insertBefore(wrapper, navBack);
     wrapper.appendChild(toggle);
     wrapper.appendChild(navBack);
   } else if (hamburgerWrapper) {
-    // Index page: insert before hamburger's parent wrapper or hamburger itself
+
     const hamParent = hamburgerWrapper.parentNode;
     if (hamParent.tagName === 'DIV' && hamParent.parentNode === nav) {
       hamParent.insertBefore(toggle, hamburgerWrapper);
@@ -71,9 +70,12 @@
     nav.appendChild(toggle);
   }
 
-  // ==================== TRANSLATION ENGINE ====================
-  const translations = window.PAGE_TRANSLATIONS || {};
+  
   let currentLang = localStorage.getItem('nang-lang') || 'id';
+
+  function getTranslations() {
+    return window.PAGE_TRANSLATIONS || {};
+  }
 
   function setLang(lang) {
     currentLang = lang;
@@ -85,11 +87,12 @@
       opt.classList.toggle('active', opt.dataset.lang === lang);
     });
 
-    // Apply translations
+    // Apply translations — always read fresh from window
+    var t = getTranslations();
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.dataset.i18n;
-      if (translations[key] && translations[key][lang] !== undefined) {
-        el.innerHTML = translations[key][lang];
+      if (t[key] && t[key][lang] !== undefined) {
+        el.innerHTML = t[key][lang];
       }
     });
   }
