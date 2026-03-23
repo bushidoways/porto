@@ -1,3 +1,12 @@
+
+<!--
+   _-=Created Without Love=- _                   
+| \ | ___ ._ _  ___  ___
+|   |<_> || ' |/ . |<_-<
+|_\_|<___||_|_|\_. |/__/
+               <___'    
+-->
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -64,50 +73,81 @@ footer span { color: var(--accent); }
 <body>
 <nav>
   <a href="../index.html" class="nav-logo">nang<span>.dev</span></a>
-  <a href="../index.html#journal" class="nav-back">← Kembali ke Jurnal</a>
+  <a href="../index.html#journal" class="nav-back" data-i18n="osint_nav_back">← Kembali ke Jurnal</a>
 </nav>
 <article>
   <div class="article-meta">
     <span class="article-date">JAN 2026</span>
     <span class="article-tag">OSINT</span>
     <span class="article-tag">Python</span>
-    <span class="article-tag">Keamanan</span>
-    <span class="article-read-time">4 MENIT BACA</span>
+    <span class="article-tag" data-i18n="osint_tag_keamanan">Keamanan</span>
+    <span class="article-read-time" data-i18n="osint_read_time">4 MENIT BACA</span>
   </div>
-  <h1 class="article-title">OSINT untuk pemula: belajar dari data yang sudah ada di depan mata</h1>
-  <p class="article-intro">Teknik-teknik dasar pengumpulan informasi publik yang bisa dipraktikkan siapa saja, dan kenapa ini relevan untuk seorang analyst.</p>
+  <h1 class="article-title" data-i18n="osint_title">OSINT untuk pemula: belajar dari data yang sudah ada di depan mata</h1>
+  <p class="article-intro" data-i18n="osint_intro">Teknik-teknik dasar pengumpulan informasi publik yang bisa dipraktikkan siapa saja, dan kenapa ini relevan untuk seorang analyst.</p>
   <div class="article-body">
-    <h2>Apa Itu OSINT?</h2>
-    <p><strong>OSINT</strong> (Open Source Intelligence) adalah seni mengumpulkan informasi dari sumber-sumber yang tersedia secara publik. Bukan hacking, bukan illegal — ini tentang tahu ke mana harus melihat dan bagaimana menginterpretasikan apa yang ditemukan.</p>
-    <p>Relevan untuk siapa saja yang bekerja dengan data: analyst, researcher, jurnalis, bahkan HR yang mau memverifikasi kandidat.</p>
-    <h2>Sumber Data Publik yang Sering Diabaikan</h2>
+    <h2 data-i18n="osint_h2_1">Apa Itu OSINT?</h2>
+    <p data-i18n="osint_p1"><strong>OSINT</strong> (Open Source Intelligence) adalah seni mengumpulkan informasi dari sumber-sumber yang tersedia secara publik. Bukan hacking, bukan illegal — ini tentang tahu ke mana harus melihat dan bagaimana menginterpretasikan apa yang ditemukan.</p>
+    <p data-i18n="osint_p2">Relevan untuk siapa saja yang bekerja dengan data: analyst, researcher, jurnalis, bahkan HR yang mau memverifikasi kandidat.</p>
+    <h2 data-i18n="osint_h2_2">Sumber Data Publik yang Sering Diabaikan</h2>
     <ul>
-      <li><strong>LinkedIn</strong> — struktur organisasi, jabatan, perpindahan karir</li>
-      <li><strong>GitHub</strong> — teknologi yang dipakai seseorang/perusahaan, pola kerja</li>
-      <li><strong>WHOIS &amp; DNS records</strong> — informasi domain, infrastruktur</li>
-      <li><strong>Wayback Machine</strong> — versi lama website yang sudah dihapus</li>
-      <li><strong>Google Dorks</strong> — pencarian advanced yang tidak diketahui kebanyakan orang</li>
+      <li data-i18n="osint_li1"><strong>LinkedIn</strong> — struktur organisasi, jabatan, perpindahan karir</li>
+      <li data-i18n="osint_li2"><strong>GitHub</strong> — teknologi yang dipakai seseorang/perusahaan, pola kerja</li>
+      <li data-i18n="osint_li3"><strong>WHOIS &amp; DNS records</strong> — informasi domain, infrastruktur</li>
+      <li data-i18n="osint_li4"><strong>Wayback Machine</strong> — versi lama website yang sudah dihapus</li>
+      <li data-i18n="osint_li5"><strong>Google Dorks</strong> — pencarian advanced yang tidak diketahui kebanyakan orang</li>
     </ul>
-    <h2>Google Dorks: Mulai dari Sini</h2>
-    <p>Cara paling cepat belajar OSINT adalah lewat Google Dorks — operator pencarian Google yang powerful:</p>
+    <h2 data-i18n="osint_h2_3">Google Dorks: Mulai dari Sini</h2>
+    <p data-i18n="osint_p3">Cara paling cepat belajar OSINT adalah lewat Google Dorks — operator pencarian Google yang powerful:</p>
     <pre><code>site:github.com "nama perusahaan" config
 filetype:pdf "laporan keuangan" site:idx.co.id
 intitle:"index of" "database" "2024"</code></pre>
-    <p>Masing-masing baris di atas bisa menemukan informasi yang tidak akan muncul di pencarian biasa.</p>
-    <h2>Otomasi dengan Python</h2>
-    <p>Begitu paham pola manualnya, langkah berikutnya adalah otomasi. Dengan <code>requests</code> dan <code>BeautifulSoup</code>, kamu bisa mengumpulkan dan mengstrukturisasi data publik secara sistematis.</p>
-    <p>Kunci etisnya: <strong>hanya akses data yang memang public</strong>, hormati <code>robots.txt</code>, dan jangan membebani server target dengan request berlebihan.</p>
-    <h2>Relevansi untuk Data Analyst</h2>
-    <p>Skill OSINT membuat seorang analyst lebih baik dalam satu hal krusial: <strong>tahu di mana harus mencari data</strong>. Sebelum beli data mahal atau minta akses database internal, sering kali jawabannya sudah ada di luar — tinggal tahu cara menemukannya.</p>
-    <blockquote>Data terbaik bukan yang paling banyak — tapi yang paling relevan untuk pertanyaan yang sedang dijawab.</blockquote>
+    <p data-i18n="osint_p4">Masing-masing baris di atas bisa menemukan informasi yang tidak akan muncul di pencarian biasa.</p>
+    <h2 data-i18n="osint_h2_4">Otomasi dengan Python</h2>
+    <p data-i18n="osint_p5">Begitu paham pola manualnya, langkah berikutnya adalah otomasi. Dengan <code>requests</code> dan <code>BeautifulSoup</code>, kamu bisa mengumpulkan dan mengstrukturisasi data publik secara sistematis.</p>
+    <p data-i18n="osint_p6">Kunci etisnya: <strong>hanya akses data yang memang public</strong>, hormati <code>robots.txt</code>, dan jangan membebani server target dengan request berlebihan.</p>
+    <h2 data-i18n="osint_h2_5">Relevansi untuk Data Analyst</h2>
+    <p data-i18n="osint_p7">Skill OSINT membuat seorang analyst lebih baik dalam satu hal krusial: <strong>tahu di mana harus mencari data</strong>. Sebelum beli data mahal atau minta akses database internal, sering kali jawabannya sudah ada di luar — tinggal tahu cara menemukannya.</p>
+    <blockquote data-i18n="osint_blockquote">Data terbaik bukan yang paling banyak — tapi yang paling relevan untuk pertanyaan yang sedang dijawab.</blockquote>
   </div>
   <div class="article-footer">
-    <a href="../index.html#journal" class="back-link">← Semua Jurnal</a>
+    <a href="../index.html#journal" class="back-link" data-i18n="osint_back_link">← Semua Jurnal</a>
     <span class="article-author">— Nang · ananglesmana.my.id</span>
   </div>
 </article>
 <footer>
-  <span>ananglesmana.my.id</span> &nbsp;|&nbsp; Dibuat dari Jakarta dengan Python dan kopi &nbsp;|&nbsp; 2026
+  <span>ananglesmana.my.id</span> &nbsp;|&nbsp; <span data-i18n="osint_footer">Dibuat dari Jakarta dengan Python dan kopi</span> &nbsp;|&nbsp; 2026
 </footer>
+
+<script>
+  window.PAGE_TRANSLATIONS = {
+    osint_nav_back:      { id: '\u2190 Kembali ke Jurnal', en: '\u2190 Back to Journal' },
+    osint_read_time:     { id: '4 MENIT BACA', en: '4 MIN READ' },
+    osint_tag_keamanan:  { id: 'Keamanan', en: 'Security' },
+    osint_title:         { id: 'OSINT untuk pemula: belajar dari data yang sudah ada di depan mata', en: "OSINT for Beginners: Learning from Data That\'s Already in Plain Sight" },
+    osint_intro:         { id: 'Teknik-teknik dasar pengumpulan informasi publik yang bisa dipraktikkan siapa saja, dan kenapa ini relevan untuk seorang analyst.', en: "Basic techniques for gathering public information that anyone can practice, and why it\'s relevant for an analyst." },
+    osint_h2_1:          { id: 'Apa Itu OSINT?', en: 'What Is OSINT?' },
+    osint_p1:            { id: '<strong>OSINT</strong> (Open Source Intelligence) adalah seni mengumpulkan informasi dari sumber-sumber yang tersedia secara publik. Bukan hacking, bukan illegal \u2014 ini tentang tahu ke mana harus melihat dan bagaimana menginterpretasikan apa yang ditemukan.', en: "<strong>OSINT</strong> (Open Source Intelligence) is the art of gathering information from publicly available sources. It\'s not hacking, it\'s not illegal \u2014 it\'s about knowing where to look and how to interpret what you find." },
+    osint_p2:            { id: 'Relevan untuk siapa saja yang bekerja dengan data: analyst, researcher, jurnalis, bahkan HR yang mau memverifikasi kandidat.', en: 'Relevant for anyone who works with data: analysts, researchers, journalists, even HR folks who want to verify candidates.' },
+    osint_h2_2:          { id: 'Sumber Data Publik yang Sering Diabaikan', en: 'Public Data Sources Often Overlooked' },
+    osint_li1:           { id: '<strong>LinkedIn</strong> \u2014 struktur organisasi, jabatan, perpindahan karir', en: '<strong>LinkedIn</strong> \u2014 organizational structure, job titles, career transitions' },
+    osint_li2:           { id: '<strong>GitHub</strong> \u2014 teknologi yang dipakai seseorang/perusahaan, pola kerja', en: '<strong>GitHub</strong> \u2014 technologies used by a person/company, work patterns' },
+    osint_li3:           { id: '<strong>WHOIS &amp; DNS records</strong> \u2014 informasi domain, infrastruktur', en: '<strong>WHOIS &amp; DNS records</strong> \u2014 domain information, infrastructure' },
+    osint_li4:           { id: '<strong>Wayback Machine</strong> \u2014 versi lama website yang sudah dihapus', en: '<strong>Wayback Machine</strong> \u2014 old versions of websites that have been removed' },
+    osint_li5:           { id: '<strong>Google Dorks</strong> \u2014 pencarian advanced yang tidak diketahui kebanyakan orang', en: '<strong>Google Dorks</strong> \u2014 advanced searches that most people don\'t know about' },
+    osint_h2_3:          { id: 'Google Dorks: Mulai dari Sini', en: 'Google Dorks: Start Here' },
+    osint_p3:            { id: 'Cara paling cepat belajar OSINT adalah lewat Google Dorks \u2014 operator pencarian Google yang powerful:', en: 'The fastest way to learn OSINT is through Google Dorks \u2014 powerful Google search operators:' },
+    osint_p4:            { id: 'Masing-masing baris di atas bisa menemukan informasi yang tidak akan muncul di pencarian biasa.', en: "Each line above can find information that won\'t show up in a regular search." },
+    osint_h2_4:          { id: 'Otomasi dengan Python', en: 'Automation with Python' },
+    osint_p5:            { id: 'Begitu paham pola manualnya, langkah berikutnya adalah otomasi. Dengan <code>requests</code> dan <code>BeautifulSoup</code>, kamu bisa mengumpulkan dan mengstrukturisasi data publik secara sistematis.', en: 'Once you understand the manual patterns, the next step is automation. With <code>requests</code> and <code>BeautifulSoup</code>, you can systematically collect and structure public data.' },
+    osint_p6:            { id: 'Kunci etisnya: <strong>hanya akses data yang memang public</strong>, hormati <code>robots.txt</code>, dan jangan membebani server target dengan request berlebihan.', en: 'The ethical key: <strong>only access data that is truly public</strong>, respect <code>robots.txt</code>, and don\'t overload the target server with excessive requests.' },
+    osint_h2_5:          { id: 'Relevansi untuk Data Analyst', en: 'Relevance for Data Analysts' },
+    osint_p7:            { id: 'Skill OSINT membuat seorang analyst lebih baik dalam satu hal krusial: <strong>tahu di mana harus mencari data</strong>. Sebelum beli data mahal atau minta akses database internal, sering kali jawabannya sudah ada di luar \u2014 tinggal tahu cara menemukannya.', en: 'OSINT skills make an analyst better at one crucial thing: <strong>knowing where to look for data</strong>. Before buying expensive data or requesting internal database access, the answer is often already out there \u2014 you just need to know how to find it.' },
+    osint_blockquote:    { id: 'Data terbaik bukan yang paling banyak \u2014 tapi yang paling relevan untuk pertanyaan yang sedang dijawab.', en: "The best data isn\'t the most abundant \u2014 it\'s the most relevant to the question being answered." },
+    osint_back_link:     { id: '\u2190 Semua Jurnal', en: '\u2190 All Journals' },
+    osint_footer:        { id: 'Dibuat dari Jakarta dengan Python dan kopi', en: 'Made from Jakarta with Python and Coffee' },
+  };
+</script>
+<script src="../js/i18n.js"></script>
 </body>
 </html>
