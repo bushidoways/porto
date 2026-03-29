@@ -950,22 +950,30 @@
 
   .dv-cta {
     display: block;
+    width: 100%;
     font-size: 0.75rem;
     font-family: var(--mono);
     font-weight: 600;
     color: var(--accent);
     text-decoration: none;
+    background: transparent;
     border: 1px solid rgba(99, 102, 241, 0.25);
     border-radius: 8px;
     padding: 7px 12px;
     text-align: center;
     transition: all 0.2s;
     letter-spacing: 0.02em;
+    cursor: pointer;
   }
 
   .dv-cta:hover {
     background: rgba(99, 102, 241, 0.1);
     border-color: var(--accent);
+  }
+
+  .dv-cta:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 
   .dv-pill {
@@ -1410,9 +1418,9 @@
       <p class="dv-arabic" id="dv-arabic"></p>
       <p class="dv-translation" id="dv-translation"></p>
       <p class="dv-meta" id="dv-meta"></p>
-      <a class="dv-cta" href="https://daily.ananglesmana.my.id" target="_blank">
-        Baca Tafsir Lengkap &rarr;
-      </a>
+      <button class="dv-cta" id="dv-next-btn">
+        Ayat Lainnya &rarr;
+      </button>
     </div>
   </div>
 </div>
@@ -1599,8 +1607,16 @@
       return (dayOfYear % 6236) + 1;
     }
 
-    async function loadVerse() {
-      const ayahNum = getDailyAyahNumber();
+    function getRandomAyahNumber() {
+      return Math.floor(Math.random() * 6236) + 1;
+    }
+
+    async function loadVerse(ayahNum) {
+      document.getElementById('dv-content').style.display = 'none';
+      document.getElementById('dv-loading').style.display = 'flex';
+      const btn = document.getElementById('dv-next-btn');
+      if (btn) btn.disabled = true;
+
       try {
         const res = await fetch(
           'https://api.alquran.cloud/v1/ayah/' + ayahNum + '/editions/quran-simple,id.indonesian'
@@ -1620,13 +1636,18 @@
 
         document.getElementById('dv-loading').style.display  = 'none';
         document.getElementById('dv-content').style.display  = 'block';
+        if (btn) btn.disabled = false;
       } catch (err) {
         document.getElementById('dv-loading').innerHTML =
           '<span style="color:#f87171;font-size:0.75rem;">Gagal memuat ayat.</span>';
       }
     }
 
-    loadVerse();
+    loadVerse(getDailyAyahNumber());
+
+    document.getElementById('dv-next-btn').addEventListener('click', () => {
+      loadVerse(getRandomAyahNumber());
+    });
 
     document.getElementById('dv-close').addEventListener('click', () => {
       localStorage.setItem(STORAGE_KEY, today);
