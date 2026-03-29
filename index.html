@@ -14,7 +14,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -825,6 +825,181 @@
     .projects-grid, .journal-grid { grid-template-columns: 1fr; }
     section { padding: 4rem 1.25rem; }
   }
+
+  /* ── DAILY VERSE WIDGET ── */
+  .dv-widget {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 310px;
+    background: rgba(10, 10, 20, 0.94);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(99,102,241,0.05);
+    z-index: 10000;
+    font-family: var(--font);
+    overflow: hidden;
+    animation: dvSlideIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes dvSlideIn {
+    from { opacity: 0; transform: translateY(18px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .dv-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 13px;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.12);
+    background: rgba(99, 102, 241, 0.05);
+  }
+
+  .dv-label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .dv-controls {
+    display: flex;
+    gap: 5px;
+  }
+
+  .dv-controls button {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--text-dim);
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-family: var(--mono);
+  }
+
+  .dv-controls button:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--text);
+    border-color: rgba(255,255,255,0.15);
+  }
+
+  .dv-body {
+    padding: 14px 13px 13px;
+  }
+
+  .dv-loading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-dim);
+    font-size: 0.78rem;
+    font-family: var(--mono);
+    padding: 6px 0;
+  }
+
+  .dv-spinner {
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid rgba(99, 102, 241, 0.2);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: dvSpin 0.75s linear infinite;
+  }
+
+  @keyframes dvSpin { to { transform: rotate(360deg); } }
+
+  .dv-arabic {
+    font-family: 'Amiri', 'Traditional Arabic', serif;
+    font-size: 19px;
+    line-height: 2;
+    color: #f1f5f9;
+    text-align: right;
+    direction: rtl;
+    margin: 0 0 10px;
+  }
+
+  .dv-translation {
+    font-size: 0.8rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin: 0 0 9px;
+    font-style: italic;
+  }
+
+  .dv-meta {
+    font-size: 0.68rem;
+    font-family: var(--mono);
+    color: var(--accent);
+    opacity: 0.8;
+    margin: 0 0 12px;
+    letter-spacing: 0.04em;
+  }
+
+  .dv-cta {
+    display: block;
+    font-size: 0.75rem;
+    font-family: var(--mono);
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: 8px;
+    padding: 7px 12px;
+    text-align: center;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+
+  .dv-cta:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--accent);
+  }
+
+  .dv-pill {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: rgba(10, 10, 20, 0.94);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 50px;
+    padding: 9px 16px;
+    font-size: 0.68rem;
+    font-family: var(--mono);
+    font-weight: 700;
+    color: var(--accent);
+    cursor: pointer;
+    z-index: 10000;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    transition: all 0.2s;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    animation: dvSlideIn 0.3s ease both;
+  }
+
+  .dv-pill:hover {
+    background: rgba(20, 20, 40, 0.97);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 480px) {
+    .dv-widget { width: calc(100vw - 32px); right: 16px; bottom: 16px; }
+    .dv-pill { right: 16px; bottom: 16px; }
+  }
 </style>
 </head>
 <body>
@@ -900,7 +1075,7 @@
         <div class="t-out">Linux 6.19.4-061904-generic x86_64</div>
         <br/>
         <div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~ $ echo $GOAL</span></div>
-        <div class="t-out" data-i18n="about_terminal_goal"><strong>Become a Data + Business Analyst</strong></div>
+        <div class="t-out" data--i18n="about_terminal_goal"><strong>Become a Data + Business Analyst</strong></div>
         <br/>
         <div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~ $ <span class="t-cursor"></span></span></div>
       </div>
@@ -1149,8 +1324,7 @@
       <div class="journal-date" data-i18n="j3_date">JAN 2024 — 4 MENIT BACA</div>
       <div class="journal-title" data-i18n="j3_title">OSINT untuk pemula: belajar dari data yang sudah ada di depan mata</div>
       <div class="journal-excerpt" data-i18n="j3_excerpt">
-        Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan
-        siapa saja, dan kenapa ini relevan untuk seorang analyst.
+        Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan siapa saja, dan kenapa ini relevan untuk seorang analyst.
       </div>
       <div class="journal-read" data-i18n="read_more">
         Baca selengkapnya
@@ -1217,6 +1391,35 @@
 <footer>
   <span>nang.dev</span> &nbsp;|&nbsp; <span data-i18n="footer_text">Dibuat dari Bekasi dengan Kopi dan Polusi</span> &nbsp;|&nbsp; 2024
 </footer>
+
+<!-- DAILY VERSE WIDGET -->
+<div id="dv-widget" class="dv-widget">
+  <div class="dv-header">
+    <span class="dv-label">Ayat Hari Ini</span>
+    <div class="dv-controls">
+      <button id="dv-minimize" title="Sembunyikan">&#8722;</button>
+      <button id="dv-close" title="Tutup hari ini">&#215;</button>
+    </div>
+  </div>
+  <div class="dv-body">
+    <div class="dv-loading" id="dv-loading">
+      <div class="dv-spinner"></div>
+      <span>Memuat ayat...</span>
+    </div>
+    <div id="dv-content" style="display:none">
+      <p class="dv-arabic" id="dv-arabic"></p>
+      <p class="dv-translation" id="dv-translation"></p>
+      <p class="dv-meta" id="dv-meta"></p>
+      <a class="dv-cta" href="https://daily.ananglesmana.my.id" target="_blank">
+        Baca Tafsir Lengkap &rarr;
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="dv-pill" class="dv-pill" style="display:none">
+  Ayat Hari Ini
+</div>
 
 <script>
   // ===================== CURSOR (desktop only) =====================
@@ -1315,7 +1518,6 @@
     });
   }
 
-  // Re-observe section for counters
   const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1378,6 +1580,70 @@
     });
   });
 
+  // ===================== DAILY VERSE WIDGET =====================
+  (function () {
+    const STORAGE_KEY = 'dv_closed_date';
+    const today = new Date().toISOString().slice(0, 10);
+    const widget = document.getElementById('dv-widget');
+    const pill   = document.getElementById('dv-pill');
+
+    if (localStorage.getItem(STORAGE_KEY) === today) {
+      widget.style.display = 'none';
+      return;
+    }
+
+    function getDailyAyahNumber() {
+      const start = new Date(new Date().getFullYear(), 0, 0);
+      const diff  = new Date() - start;
+      const dayOfYear = Math.floor(diff / 86400000);
+      return (dayOfYear % 6236) + 1;
+    }
+
+    async function loadVerse() {
+      const ayahNum = getDailyAyahNumber();
+      try {
+        const res = await fetch(
+          'https://api.alquran.cloud/v1/ayah/' + ayahNum + '/editions/quran-simple,id.indonesian'
+        );
+        const data = await res.json();
+        if (data.code !== 200) throw new Error('API error');
+
+        const arabic      = data.data[0].text;
+        const translation = data.data[1].text;
+        const surahAr     = data.data[0].surah.name;
+        const surahEn     = data.data[0].surah.englishName;
+        const ayahInSurah = data.data[0].numberInSurah;
+
+        document.getElementById('dv-arabic').textContent      = arabic;
+        document.getElementById('dv-translation').textContent = '\u201c' + translation + '\u201d';
+        document.getElementById('dv-meta').textContent        = surahAr + ' (' + surahEn + ') : ' + ayahInSurah;
+
+        document.getElementById('dv-loading').style.display  = 'none';
+        document.getElementById('dv-content').style.display  = 'block';
+      } catch (err) {
+        document.getElementById('dv-loading').innerHTML =
+          '<span style="color:#f87171;font-size:0.75rem;">Gagal memuat ayat.</span>';
+      }
+    }
+
+    loadVerse();
+
+    document.getElementById('dv-close').addEventListener('click', () => {
+      localStorage.setItem(STORAGE_KEY, today);
+      widget.style.display = 'none';
+    });
+
+    document.getElementById('dv-minimize').addEventListener('click', () => {
+      widget.style.display = 'none';
+      pill.style.display = 'block';
+    });
+
+    pill.addEventListener('click', () => {
+      pill.style.display = 'none';
+      widget.style.display = 'block';
+    });
+  })();
+
 </script>
 
 <!-- i18n Translations -->
@@ -1390,33 +1656,28 @@
     hero_cta1:      { id: 'Explore Dong', en: 'Explore My Work' },
     hero_cta2:      { id: 'Hubungi Aku', en: 'Get in Touch' },
 
-    // About — Terminal
     about_terminal_whoami:  { id: '<strong>Anang</strong> - Sales Admin, soon Data Analyst', en: '<strong>Anang</strong> - Sales Admin, soon Data Analyst' },
     about_terminal_skill1:  { id: ' Problem Solving, Inventory & Marketing Support', en: ' Problem Solving, Inventory & Marketing Support' },
     about_terminal_skill2:  { id: ' Reporting, Trend Analysis & Forecasting', en: ' Reporting, Trend Analysis & Forecasting' },
     about_terminal_goal:    { id: '<strong>Become a Data + Business Analyst</strong>', en: '<strong>Become a Data + Business Analyst</strong>' },
 
-    // About — Stats
     stat_ops:           { id: 'Tahun di Operasional', en: 'Years in Operations' },
     stat_projects:      { id: 'Proyek Python', en: 'Python Projects' },
     stat_projects_note: { id: '(menyesuaikan pekerjaan)', en: '(work-related)' },
     stat_tools:         { id: 'Tools Dikuasai', en: 'Tools Mastered' },
     stat_learn:         { id: 'Pelajaran Baru Setiap Hari', en: 'New Lesson Every Day' },
 
-    // About — Text
     about_label:  { id: 'Tentang Saya', en: 'About Me' },
     about_title:  { id: 'Dari gudang<br/>ke dashboard.', en: 'From warehouse<br/>to dashboard.' },
     about_story1: { id: 'Mulai dari ngurusin stok gudang dan admin sales, terus nyadar kalau semuanya bisa lebih efisien kalau paham data. Dari situ mulai belajar <span class="highlight-pill">Python</span>, kemudian <span class="highlight-pill">Pandas</span>, kemudian <span class="highlight-pill">SQL</span> dan malah keterusan lalu nggak bisa berhenti.', en: "Started out managing warehouse stock and sales admin, then realized everything could be more efficient with data. That's when I picked up <span class='highlight-pill'>Python</span>, then <span class='highlight-pill'>Pandas</span>, then <span class='highlight-pill'>SQL</span> — and honestly, I just couldn't stop." },
     about_story2: { id: '<strong>Percaya</strong> bahwa cara terbaik belajar adalah langsung bikin sesuatu yang bisa dipakai.', en: '<strong>I believe</strong> the best way to learn is to build something you can actually use.' },
     about_cta:    { id: 'Butuh Ngobrol Lebih lanjut?', en: 'Want to Chat Further?' },
 
-    // Skills
     skills_label:    { id: 'Kemampuan', en: 'Skills' },
     skills_title:    { id: 'Stack yang<br/>di pakai.', en: 'The stack<br/>I work with.' },
     skills_desc:     { id: 'Tools dan teknologi yang jadi andalan sehari-hari, dari analisis data sampai sistem operasi.', en: "Tools and technologies I rely on daily — from data analysis to operating systems." },
     skill_patience:  { id: 'Kesabaran', en: 'Patience' },
 
-    // Projects
     projects_label:  { id: 'Proyek', en: 'Projects' },
     projects_title:  { id: 'Yang sudah<br/>pernah dibikin.', en: "Things I've<br/>built so far." },
     projects_desc:   { id: 'Kumpulan proyek dari iseng sampai yang serius. Semuanya berangkat dari niat buat belajar.', en: 'A collection of projects from casual experiments to serious builds. All driven by the intent to learn.' },
@@ -1424,7 +1685,6 @@
     proj2_desc:      { id: 'Python scraper untuk mengumpulkan data publik dan menganalisis pola. Menggunakan BeautifulSoup, Requests, dan teknik dasar OSINT.', en: 'Python tool for collecting public data and analyzing patterns. Built with BeautifulSoup, Requests, and basic OSINT techniques.' },
     proj3_desc:      { id: 'Konfigurasi Ubuntu dari nol — dotfiles, shell aliases, auto-setup script untuk dev environment yang bisa di-bootstrap di mesin baru dalam menit.', en: 'Ubuntu configuration from scratch — dotfiles, shell aliases, auto-setup script for a dev environment that bootstraps on a new machine in minutes.' },
 
-    // Journal
     journal_label:  { id: 'Jurnal', en: 'Journal' },
     journal_title:  { id: 'Catatan<br/>dari tengah malam.', en: 'Notes<br/>from midnight.' },
     journal_desc:   { id: 'Tulisan lepas tentang teknologi, proses belajar, opini, dan hal-hal yang kebetulan kepikiran waktu kopi masih panas.', en: "Loose writings about technology, the learning process, opinions, and things that cross my mind while the coffee's still hot." },
@@ -1450,76 +1710,13 @@
     j5_title:   { id: 'Surah Al-Kahfi', en: 'Surah Al-Kahfi' },
     j5_excerpt:  { id: "Mengenal wahyu yang sering dibaca setiap Jum'at sebagai Manual Book disaat krisis.", en: 'Understanding the revelation often recited every Friday as a manual for times of crisis.' },
 
-    // Contact
     contact_label:  { id: 'Kontak', en: 'Contact' },
     contact_title:  { id: 'Ada yang mau disampaikan?<br/><span>Ngobrol yuk.</span>', en: "Got something to say?<br/><span>Let's talk.</span>" },
     contact_desc:   { id: 'Lagi cari peluang sebagai Data Analyst atau Business Analyst. Open untuk diskusi, kolaborasi, atau sekadar ngobrol soal data dan teknologi.', en: 'Currently looking for opportunities as a Data Analyst or Business Analyst. Open for discussions, collaborations, or just chatting about data and tech.' },
 
-    // Footer
     footer_text: { id: 'Dibuat dari Bekasi dengan Kopi dan Polusi', en: 'Made from Bekasi with Coffee and Pollution' },
   };
 </script>
 <script src="js/i18n.js"></script>
-<script data-pplx-inline-edit>
-(function(){
-  if(window===window.top)return;
-  function inlineAll(orig,clone){
-    if(orig.nodeType!==1)return;
-    try{
-      var cs=getComputedStyle(orig);
-      var t='';
-      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
-      clone.style.cssText=t;
-    }catch(e){}
-    var oc=orig.children,cc=clone.children;
-    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
-  }
-  function stripExternal(clone){
-    var imgs=clone.querySelectorAll('img');
-    for(var i=0;i<imgs.length;i++){
-      var s=imgs[i].getAttribute('src');
-      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
-    }
-    var all=clone.querySelectorAll('*');
-    for(var i=0;i<all.length;i++){
-      var st=all[i].style.cssText;
-      if(st&&st.indexOf('url(')>=0){
-        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
-      }
-    }
-  }
-  window.addEventListener('message',function(e){
-    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
-    var scrollX=window.scrollX||window.pageXOffset||0;
-    var scrollY=window.scrollY||window.pageYOffset||0;
-    var w=window.innerWidth,h=window.innerHeight;
-    try{
-      var clone=document.documentElement.cloneNode(true);
-      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
-      for(var i=0;i<rm.length;i++){rm[i].remove();}
-      inlineAll(document.documentElement,clone);
-      stripExternal(clone);
-      var html=new XMLSerializer().serializeToString(clone);
-      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
-        +'<foreignObject width="100%" height="100%">'
-        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
-        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
-        +html+'</div></div></foreignObject></svg>';
-      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
-      var img=new Image();
-      img.onload=function(){
-        var c=document.createElement('canvas');c.width=w;c.height=h;
-        c.getContext('2d').drawImage(img,0,0);
-        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
-      };
-      img.onerror=function(){
-        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
-      };
-      img.src=svgUrl;
-    }catch(err){
-      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
-    }
-  });
-})();
-</script></body>
+</body>
 </html>
