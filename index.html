@@ -1406,7 +1406,7 @@
     <span class="dv-label">Ayat Hari Ini</span>
     <div class="dv-controls">
       <button id="dv-minimize" title="Sembunyikan">&#8722;</button>
-      <button id="dv-close" title="Tutup hari ini">&#215;</button>
+      <button id="dv-close" title="Tutup">&#215;</button>
     </div>
   </div>
   <div class="dv-body">
@@ -1590,14 +1590,16 @@
 
   // ===================== DAILY VERSE WIDGET =====================
   (function () {
-    const STORAGE_KEY = 'dv_closed_date';
-    const today = new Date().toISOString().slice(0, 10);
     const widget = document.getElementById('dv-widget');
     const pill   = document.getElementById('dv-pill');
 
-    if (localStorage.getItem(STORAGE_KEY) === today) {
+    // Deteksi mobile: pointer coarse = touch device
+    const isMobile = window.matchMedia('(pointer: coarse)').matches;
+
+    // Di mobile: mulai dalam keadaan minimized (pill)
+    if (isMobile) {
       widget.style.display = 'none';
-      return;
+      pill.style.display = 'block';
     }
 
     function getDailyAyahNumber() {
@@ -1649,9 +1651,11 @@
       loadVerse(getRandomAyahNumber());
     });
 
+    // Tombol × hanya minimize ke pill, TIDAK menyimpan ke localStorage
+    // Sehingga setelah refresh widget tetap ada
     document.getElementById('dv-close').addEventListener('click', () => {
-      localStorage.setItem(STORAGE_KEY, today);
       widget.style.display = 'none';
+      pill.style.display = 'block';
     });
 
     document.getElementById('dv-minimize').addEventListener('click', () => {
