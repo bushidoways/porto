@@ -33,7 +33,6 @@ html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;scroll-padding-to
   --color-success-highlight:#1e2e15;
   --color-error:#d16060;
   --color-error-highlight:#2e1515;
-  --color-gold:#c9a227;
   --shadow-sm:0 1px 3px rgba(0,0,0,0.4);
   --shadow-md:0 4px 16px rgba(0,0,0,0.5);
   --shadow-lg:0 12px 40px rgba(0,0,0,0.6);
@@ -65,20 +64,8 @@ button{cursor:pointer;background:none;border:none}
 a,button,[role="button"]{transition:color var(--transition),background var(--transition),border-color var(--transition),box-shadow var(--transition)}
 :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
 
-/* ── NAV ── */
-.nav{
-  position:sticky;top:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:var(--space-4) var(--space-8);
-  background:rgba(14,13,11,0.85);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--color-divider);
-}
-.nav-brand{
-  display:flex;align-items:center;gap:var(--space-3);
-  text-decoration:none;
-  font-size:var(--text-sm);color:var(--color-text-muted);
-}
+.nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:var(--space-4) var(--space-8);background:rgba(14,13,11,0.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--color-divider)}
+.nav-brand{display:flex;align-items:center;gap:var(--space-3);text-decoration:none;font-size:var(--text-sm);color:var(--color-text-muted)}
 .nav-brand:hover{color:var(--color-text)}
 .nav-brand svg{color:var(--color-primary)}
 .nav-breadcrumb{display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm)}
@@ -87,174 +74,63 @@ a,button,[role="button"]{transition:color var(--transition),background var(--tra
 .nav-breadcrumb span{color:var(--color-text-faint)}
 .nav-breadcrumb strong{color:var(--color-primary)}
 
-/* ── HERO ── */
-.hero{
-  padding:var(--space-16) var(--space-8) var(--space-12);
-  max-width:960px;margin-inline:auto;
-  text-align:center;
-}
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:var(--space-2);
-  font-size:var(--text-xs);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--color-primary);
-  background:var(--color-primary-highlight);
-  padding:var(--space-1) var(--space-3);
-  border-radius:var(--radius-full);
-  margin-bottom:var(--space-6);
-}
-.hero-title{
-  font-family:var(--font-display);
-  font-size:var(--text-2xl);
-  color:var(--color-text);
-  margin-bottom:var(--space-4);
-  font-style:italic;
-}
+.hero{padding:var(--space-16) var(--space-8) var(--space-12);max-width:960px;margin-inline:auto;text-align:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-primary);background:var(--color-primary-highlight);padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);margin-bottom:var(--space-6)}
+.hero-title{font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-text);margin-bottom:var(--space-4);font-style:italic}
 .hero-title em{font-style:normal;color:var(--color-primary)}
 .hero-subtitle{font-size:var(--text-base);color:var(--color-text-muted);margin-bottom:var(--space-10);margin-inline:auto}
 
-/* ── LIVE PRICE CARD ── */
-.price-bar{
-  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:var(--space-6);
-  background:var(--color-surface);
-  border:1px solid var(--color-border);
-  border-radius:var(--radius-xl);
-  padding:var(--space-6) var(--space-8);
-  margin-bottom:var(--space-10);
-  max-width:860px;margin-inline:auto;
-  box-shadow:var(--shadow-md);
-}
+.price-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:var(--space-6);background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6) var(--space-8);margin-bottom:var(--space-10);max-width:860px;margin-inline:auto;box-shadow:var(--shadow-md)}
 .price-item{text-align:center}
 .price-label{font-size:var(--text-xs);color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:var(--space-1)}
-.price-value{
-  font-size:var(--text-xl);font-weight:700;
-  color:var(--color-primary);
-  font-variant-numeric:tabular-nums;
-  transition:color 0.3s;
-}
+.price-value{font-size:var(--text-xl);font-weight:700;color:var(--color-primary);font-variant-numeric:tabular-nums;transition:color 0.3s}
 .price-value.loading{color:var(--color-text-faint)}
 .price-divider{width:1px;height:48px;background:var(--color-divider)}
-.price-refresh-btn{
-  display:inline-flex;align-items:center;gap:var(--space-2);
-  font-size:var(--text-xs);color:var(--color-text-muted);
-  border:1px solid var(--color-border);
-  border-radius:var(--radius-full);
-  padding:var(--space-2) var(--space-4);
-  transition:all var(--transition);
-}
+.price-refresh-btn{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);color:var(--color-text-muted);border:1px solid var(--color-border);border-radius:var(--radius-full);padding:var(--space-2) var(--space-4);transition:all var(--transition)}
 .price-refresh-btn:hover{color:var(--color-primary);border-color:var(--color-primary)}
+.price-refresh-btn:disabled{opacity:0.5;cursor:not-allowed}
 .price-status{font-size:var(--text-xs);color:var(--color-text-faint)}
 
-/* ── TABS ── */
+/* spin icon */
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinning{animation:spin 0.8s linear infinite}
+
 .tabs-wrap{max-width:860px;margin-inline:auto;padding:0 var(--space-4)}
-.tabs-nav{
-  display:flex;gap:var(--space-2);
-  border-bottom:1px solid var(--color-divider);
-  margin-bottom:var(--space-8);
-  overflow-x:auto;
-  scrollbar-width:none;
-}
+.tabs-nav{display:flex;gap:var(--space-2);border-bottom:1px solid var(--color-divider);margin-bottom:var(--space-8);overflow-x:auto;scrollbar-width:none}
 .tabs-nav::-webkit-scrollbar{display:none}
-.tab-btn{
-  flex-shrink:0;
-  font-size:var(--text-sm);font-weight:500;
-  color:var(--color-text-muted);
-  padding:var(--space-3) var(--space-5);
-  border-radius:var(--radius-md) var(--radius-md) 0 0;
-  border-bottom:2px solid transparent;
-  margin-bottom:-1px;
-  transition:all var(--transition);
-  display:flex;align-items:center;gap:var(--space-2);
-}
+.tab-btn{flex-shrink:0;font-size:var(--text-sm);font-weight:500;color:var(--color-text-muted);padding:var(--space-3) var(--space-5);border-radius:var(--radius-md) var(--radius-md) 0 0;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all var(--transition);display:flex;align-items:center;gap:var(--space-2)}
 .tab-btn:hover{color:var(--color-text)}
 .tab-btn.active{color:var(--color-primary);border-bottom-color:var(--color-primary)}
 .tab-panel{display:none}
 .tab-panel.active{display:block}
 
-/* ── CARD ── */
-.card{
-  background:var(--color-surface);
-  border:1px solid var(--color-border);
-  border-radius:var(--radius-xl);
-  padding:var(--space-8);
-  box-shadow:var(--shadow-sm);
-  margin-bottom:var(--space-6);
-}
-.card-title{
-  font-size:var(--text-lg);font-weight:600;
-  color:var(--color-text);
-  margin-bottom:var(--space-6);
-  display:flex;align-items:center;gap:var(--space-3);
-}
+.card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-8);box-shadow:var(--shadow-sm);margin-bottom:var(--space-6)}
+.card-title{font-size:var(--text-lg);font-weight:600;color:var(--color-text);margin-bottom:var(--space-6);display:flex;align-items:center;gap:var(--space-3)}
 .card-title svg{color:var(--color-primary)}
 
-/* ── FORM ── */
 .form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--space-5)}
 .form-group{display:flex;flex-direction:column;gap:var(--space-2)}
 .form-label{font-size:var(--text-xs);font-weight:500;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.06em}
-.form-input{
-  background:var(--color-surface-offset);
-  border:1px solid var(--color-border);
-  border-radius:var(--radius-md);
-  padding:var(--space-3) var(--space-4);
-  font-size:var(--text-sm);
-  color:var(--color-text);
-  width:100%;
-  transition:border-color var(--transition),box-shadow var(--transition);
-}
+.form-input{background:var(--color-surface-offset);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-text);width:100%;transition:border-color var(--transition),box-shadow var(--transition)}
 .form-input:focus{outline:none;border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(201,162,39,0.15)}
 .form-hint{font-size:var(--text-xs);color:var(--color-text-faint)}
 
-/* ── BUTTON ── */
-.btn{
-  display:inline-flex;align-items:center;gap:var(--space-2);
-  font-size:var(--text-sm);font-weight:600;
-  padding:var(--space-3) var(--space-6);
-  border-radius:var(--radius-md);
-  transition:all var(--transition);
-  cursor:pointer;
-}
-.btn-primary{
-  background:var(--color-primary);
-  color:var(--color-text-inverse);
-  border:none;
-}
+.btn{display:inline-flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);font-weight:600;padding:var(--space-3) var(--space-6);border-radius:var(--radius-md);transition:all var(--transition);cursor:pointer}
+.btn-primary{background:var(--color-primary);color:var(--color-text-inverse);border:none}
 .btn-primary:hover{background:var(--color-primary-hover)}
-.btn-ghost{
-  background:transparent;
-  color:var(--color-text-muted);
-  border:1px solid var(--color-border);
-}
+.btn-ghost{background:transparent;color:var(--color-text-muted);border:1px solid var(--color-border)}
 .btn-ghost:hover{color:var(--color-text);border-color:var(--color-text-muted)}
 .btn-actions{display:flex;gap:var(--space-3);margin-top:var(--space-6);flex-wrap:wrap}
 
-/* ── RESULT ── */
-.result-box{
-  background:var(--color-surface-2);
-  border:1px solid var(--color-border);
-  border-radius:var(--radius-lg);
-  padding:var(--space-6);
-  margin-top:var(--space-6);
-  display:none;
-}
+.result-box{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-6);margin-top:var(--space-6);display:none}
 .result-box.visible{display:block}
 .result-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--space-4)}
-.result-item{}
 .result-item-label{font-size:var(--text-xs);color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--space-1)}
 .result-item-value{font-size:var(--text-lg);font-weight:700;font-variant-numeric:tabular-nums}
 .result-profit{color:var(--color-success)}
 .result-loss{color:var(--color-error)}
 .result-neutral{color:var(--color-text)}
-.result-pct-badge{
-  display:inline-block;
-  font-size:var(--text-xs);font-weight:600;
-  padding:2px var(--space-2);
-  border-radius:var(--radius-sm);
-  margin-left:var(--space-2);
-}
-.badge-profit{background:var(--color-success-highlight);color:var(--color-success)}
-.badge-loss{background:var(--color-error-highlight);color:var(--color-error)}
 
-/* ── TABLE ── */
 .table-wrap{overflow-x:auto;margin-top:var(--space-6)}
 table{border-collapse:collapse;width:100%;font-size:var(--text-sm)}
 thead{border-bottom:1px solid var(--color-divider)}
@@ -265,50 +141,25 @@ tr:hover td{background:var(--color-surface-offset)}
 .td-profit{color:var(--color-success)}
 .td-loss{color:var(--color-error)}
 
-/* ── ANALYST GRID ── */
 .analyst-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--space-4);margin-top:var(--space-6)}
-.analyst-card{
-  background:var(--color-surface-offset);
-  border:1px solid var(--color-border);
-  border-radius:var(--radius-lg);
-  padding:var(--space-5);
-}
+.analyst-card{background:var(--color-surface-offset);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5)}
 .analyst-name{font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-muted);margin-bottom:var(--space-1)}
 .analyst-target{font-size:var(--text-sm);color:var(--color-text-faint);margin-bottom:var(--space-3)}
 .analyst-value{font-size:var(--text-lg);font-weight:700;color:var(--color-primary)}
 .analyst-gain{font-size:var(--text-xs);color:var(--color-success);margin-top:var(--space-1)}
 
-/* ── CONVERSION GRID ── */
 .conv-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:var(--space-4);margin-bottom:var(--space-6)}
 .conv-arrow{font-size:1.5rem;color:var(--color-primary);text-align:center;padding-bottom:var(--space-3)}
 .conv-modes{display:flex;gap:var(--space-2);margin-bottom:var(--space-6);flex-wrap:wrap}
-.conv-mode-btn{
-  font-size:var(--text-xs);font-weight:500;
-  padding:var(--space-2) var(--space-4);
-  border-radius:var(--radius-full);
-  border:1px solid var(--color-border);
-  color:var(--color-text-muted);
-  transition:all var(--transition);
-}
+.conv-mode-btn{font-size:var(--text-xs);font-weight:500;padding:var(--space-2) var(--space-4);border-radius:var(--radius-full);border:1px solid var(--color-border);color:var(--color-text-muted);transition:all var(--transition)}
 .conv-mode-btn:hover{color:var(--color-text)}
 .conv-mode-btn.active{background:var(--color-primary-highlight);color:var(--color-primary);border-color:var(--color-primary)}
 
-/* ── FOOTER ── */
-.footer{
-  margin-top:var(--space-20);
-  padding:var(--space-10) var(--space-8);
-  border-top:1px solid var(--color-divider);
-  text-align:center;
-}
+.footer{margin-top:var(--space-20);padding:var(--space-10) var(--space-8);border-top:1px solid var(--color-divider);text-align:center}
 .footer p{font-size:var(--text-xs);color:var(--color-text-faint);max-width:60ch;margin-inline:auto;margin-bottom:var(--space-2)}
 .footer a{color:var(--color-text-muted);text-decoration:none}
 .footer a:hover{color:var(--color-primary)}
 
-/* ── SPINNER ── */
-@keyframes spin{to{transform:rotate(360deg)}}
-.spin{animation:spin 1s linear infinite;display:inline-block}
-
-/* ── MOBILE ── */
 @media(max-width:640px){
   .nav{padding:var(--space-3) var(--space-4)}
   .hero{padding:var(--space-10) var(--space-4) var(--space-8)}
@@ -316,7 +167,7 @@ tr:hover td{background:var(--color-surface-offset)}
   .price-divider{display:none}
   .tabs-wrap{padding:0 var(--space-3)}
   .card{padding:var(--space-5)}
-  .conv-grid{grid-template-columns:1fr;}
+  .conv-grid{grid-template-columns:1fr}
   .conv-arrow{display:none}
   .nav-breadcrumb{display:none}
 }
@@ -324,12 +175,9 @@ tr:hover td{background:var(--color-surface-offset)}
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
   <a href="/" class="nav-brand" target="_blank" rel="noopener">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-    </svg>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
     bushidoways
   </a>
   <div class="nav-breadcrumb">
@@ -339,7 +187,6 @@ tr:hover td{background:var(--color-surface-offset)}
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-eyebrow">
     <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
@@ -348,7 +195,6 @@ tr:hover td{background:var(--color-surface-offset)}
   <h1 class="hero-title">Kalkulator <em>Investasi Emas</em></h1>
   <p class="hero-subtitle">Hitung untung/rugi, simulasi DCA, proyeksi target analis global, dan konversi harga emas secara real-time.</p>
 
-  <!-- LIVE PRICE BAR -->
   <div class="price-bar">
     <div class="price-item">
       <div class="price-label">XAU / USD</div>
@@ -365,8 +211,8 @@ tr:hover td{background:var(--color-surface-offset)}
       <div class="price-value loading" id="px-kurs">—</div>
     </div>
     <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
-      <button class="price-refresh-btn" onclick="fetchPrices()">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      <button class="price-refresh-btn" id="refresh-btn" onclick="fetchPrices()">
+        <svg id="refresh-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
         Refresh
       </button>
       <span class="price-status" id="price-status">Memuat harga…</span>
@@ -374,32 +220,30 @@ tr:hover td{background:var(--color-surface-offset)}
   </div>
 </section>
 
-<!-- TABS -->
 <div class="tabs-wrap">
   <div class="tabs-nav" role="tablist">
-    <button class="tab-btn active" onclick="switchTab('untung')" role="tab">
+    <button class="tab-btn active" onclick="switchTab(event,'untung')" role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
       Untung / Rugi
     </button>
-    <button class="tab-btn" onclick="switchTab('dca')" role="tab">
+    <button class="tab-btn" onclick="switchTab(event,'dca')" role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
       DCA
     </button>
-    <button class="tab-btn" onclick="switchTab('analis')" role="tab">
+    <button class="tab-btn" onclick="switchTab(event,'analis')" role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
       Target Analis
     </button>
-    <button class="tab-btn" onclick="switchTab('konversi')" role="tab">
+    <button class="tab-btn" onclick="switchTab(event,'konversi')" role="tab">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
       Konversi
     </button>
   </div>
 
-  <!-- TAB: UNTUNG/RUGI -->
   <div class="tab-panel active" id="tab-untung">
     <div class="card">
       <h2 class="card-title">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         Hitung Untung / Rugi
       </h2>
       <div class="form-grid">
@@ -420,18 +264,15 @@ tr:hover td{background:var(--color-surface-offset)}
       </div>
       <div class="btn-actions">
         <button class="btn btn-primary" onclick="hitungUR()">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19l-7-7 7-7"/><path d="M20 18v-2a4 4 0 0 0-4-4H5"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 19 2 12 9 5"/><path d="M20 18v-2a4 4 0 0 0-4-4H2"/></svg>
           Hitung
         </button>
         <button class="btn btn-ghost" onclick="resetUR()">Reset</button>
       </div>
-      <div class="result-box" id="result-ur">
-        <div class="result-grid" id="result-ur-grid"></div>
-      </div>
+      <div class="result-box" id="result-ur"><div class="result-grid" id="result-ur-grid"></div></div>
     </div>
   </div>
 
-  <!-- TAB: DCA -->
   <div class="tab-panel" id="tab-dca">
     <div class="card">
       <h2 class="card-title">
@@ -469,7 +310,6 @@ tr:hover td{background:var(--color-surface-offset)}
     </div>
   </div>
 
-  <!-- TAB: ANALIS -->
   <div class="tab-panel" id="tab-analis">
     <div class="card">
       <h2 class="card-title">
@@ -498,7 +338,6 @@ tr:hover td{background:var(--color-surface-offset)}
     </div>
   </div>
 
-  <!-- TAB: KONVERSI -->
   <div class="tab-panel" id="tab-konversi">
     <div class="card">
       <h2 class="card-title">
@@ -506,11 +345,11 @@ tr:hover td{background:var(--color-surface-offset)}
         Konversi Satuan &amp; Mata Uang
       </h2>
       <div class="conv-modes">
-        <button class="conv-mode-btn active" onclick="setConvMode('gram-idr')">Gram → IDR</button>
-        <button class="conv-mode-btn" onclick="setConvMode('idr-gram')">IDR → Gram</button>
-        <button class="conv-mode-btn" onclick="setConvMode('oz-gram')">Oz → Gram</button>
-        <button class="conv-mode-btn" onclick="setConvMode('gram-oz')">Gram → Oz</button>
-        <button class="conv-mode-btn" onclick="setConvMode('usd-gram')">USD → Gram</button>
+        <button class="conv-mode-btn active" onclick="setConvMode(event,'gram-idr')">Gram → IDR</button>
+        <button class="conv-mode-btn" onclick="setConvMode(event,'idr-gram')">IDR → Gram</button>
+        <button class="conv-mode-btn" onclick="setConvMode(event,'oz-gram')">Oz → Gram</button>
+        <button class="conv-mode-btn" onclick="setConvMode(event,'gram-oz')">Gram → Oz</button>
+        <button class="conv-mode-btn" onclick="setConvMode(event,'usd-gram')">USD → Gram</button>
       </div>
       <div class="conv-grid">
         <div class="form-group">
@@ -523,15 +362,13 @@ tr:hover td{background:var(--color-surface-offset)}
           <input class="form-input" type="text" id="conv-output" readonly placeholder="—" style="background:var(--color-surface-dynamic);cursor:default">
         </div>
       </div>
-      <div class="result-box visible" id="result-konversi" style="display:block">
+      <div class="result-box visible" style="display:block">
         <p style="font-size:var(--text-xs);color:var(--color-text-muted)" id="konversi-info">Menggunakan harga live. Isi input untuk mulai konversi.</p>
       </div>
     </div>
   </div>
-
 </div>
 
-<!-- FOOTER -->
 <footer class="footer">
   <p>Harga bersumber dari <a href="https://www.goldapi.io" target="_blank" rel="noopener">Gold API</a> &amp; kurs USD/IDR publik. Data diperbarui tiap 5 menit.</p>
   <p style="margin-top:var(--space-1)">⚠️ Harga adalah estimasi. Bukan saran investasi finansial. Selalu cek harga resmi sebelum transaksi.</p>
@@ -539,218 +376,206 @@ tr:hover td{background:var(--color-surface-offset)}
 </footer>
 
 <script>
-// ── STATE ──
+const OZ_TO_GRAM = 31.1035;
 let liveUSD = 0, liveIDR = 0, liveKurs = 16300;
 let convMode = 'gram-idr';
-const OZ_TO_GRAM = 31.1035;
+let isFetching = false;
 
-// ── ANALYSTS DATA ──
 const analysts = [
-  {name:'Goldman Sachs', target:3300, period:'2025'},
-  {name:'JP Morgan',     target:3675, period:'2025'},
-  {name:'Citigroup',     target:3000, period:'2025'},
-  {name:'UBS',           target:3200, period:'2025'},
-  {name:'Bank of America',target:3500,period:'2025'},
-  {name:'Deutsche Bank', target:2800, period:'2025'},
-  {name:'ANZ Research',  target:3100, period:'2025'},
-  {name:'WisdomTree',    target:3030, period:'Q4 2025'},
+  {name:'Goldman Sachs',   target:3300, period:'2025'},
+  {name:'JP Morgan',       target:3675, period:'2025'},
+  {name:'Citigroup',       target:3000, period:'2025'},
+  {name:'UBS',             target:3200, period:'2025'},
+  {name:'Bank of America', target:3500, period:'2025'},
+  {name:'Deutsche Bank',   target:2800, period:'2025'},
+  {name:'ANZ Research',    target:3100, period:'2025'},
+  {name:'WisdomTree',      target:3030, period:'Q4 2025'},
 ];
 
-// ── FORMATTERS ──
-const fmtIDR = n => 'Rp ' + Math.round(n).toLocaleString('id-ID');
-const fmtUSD = n => 'US$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
-const fmtGram = n => n.toLocaleString('id-ID', {minimumFractionDigits:4, maximumFractionDigits:4}) + ' gr';
+const fmtIDR  = n => 'Rp ' + Math.round(n).toLocaleString('id-ID');
+const fmtUSD  = n => 'US$' + n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const fmtGram = n => n.toLocaleString('id-ID',{minimumFractionDigits:4,maximumFractionDigits:4}) + ' gr';
 
-// ── FETCH PRICES ──
+// ── FETCH dengan timeout helper ──
+function fetchWithTimeout(url, ms = 5000) {
+  const ctrl = new AbortController();
+  const id = setTimeout(() => ctrl.abort(), ms);
+  return fetch(url, { signal: ctrl.signal }).finally(() => clearTimeout(id));
+}
+
 async function fetchPrices() {
-  document.getElementById('price-status').textContent = 'Memuat harga…';
+  if (isFetching) return;
+  isFetching = true;
+
+  const btn  = document.getElementById('refresh-btn');
+  const icon = document.getElementById('refresh-icon');
+  const status = document.getElementById('price-status');
+
+  btn.disabled = true;
+  icon.classList.add('spinning');
+  status.textContent = 'Memuat harga…';
   ['px-usd','px-idr','px-kurs'].forEach(id => {
     const el = document.getElementById(id);
     el.textContent = '…';
     el.classList.add('loading');
   });
+
+  // ── PARALLEL FETCH ── kedua request jalan bareng, timeout 5 detik
+  const [goldRes, kursRes] = await Promise.allSettled([
+    fetchWithTimeout('https://api.gold-api.com/price/XAU', 5000),
+    fetchWithTimeout('https://open.er-api.com/v6/latest/USD', 5000),
+  ]);
+
+  // Parse gold
   try {
-    // Fetch XAU/USD
-    const r1 = await fetch('https://api.gold-api.com/price/XAU');
-    const d1 = await r1.json();
-    liveUSD = d1.price || d1.Price || 0;
+    if (goldRes.status === 'fulfilled' && goldRes.value.ok) {
+      const d = await goldRes.value.json();
+      liveUSD = d.price || d.Price || 0;
+    }
+  } catch(_) {}
 
-    // Fetch USD/IDR from open exchange
-    const r2 = await fetch('https://open.er-api.com/v6/latest/USD');
-    const d2 = await r2.json();
-    liveKurs = d2.rates?.IDR || 16300;
+  // Parse kurs — fallback ke hardcoded kalau gagal/timeout
+  try {
+    if (kursRes.status === 'fulfilled' && kursRes.value.ok) {
+      const d = await kursRes.value.json();
+      liveKurs = d.rates?.IDR || 16300;
+    }
+  } catch(_) { liveKurs = 16300; }
 
-    // Calculate gram IDR
-    liveIDR = (liveUSD / OZ_TO_GRAM) * liveKurs;
+  // Fallback kalau gold juga gagal
+  if (!liveUSD) liveUSD = 3300;
 
-    document.getElementById('px-usd').textContent = fmtUSD(liveUSD);
-    document.getElementById('px-idr').textContent = fmtIDR(liveIDR);
-    document.getElementById('px-kurs').textContent = 'Rp ' + Math.round(liveKurs).toLocaleString('id-ID');
-    ['px-usd','px-idr','px-kurs'].forEach(id => document.getElementById(id).classList.remove('loading'));
+  liveIDR = (liveUSD / OZ_TO_GRAM) * liveKurs;
 
-    const now = new Date().toLocaleTimeString('id-ID');
-    document.getElementById('price-status').textContent = 'Update: ' + now;
+  const goldFailed = goldRes.status !== 'fulfilled';
+  const kursFailed = kursRes.status !== 'fulfilled';
+  const suffix = (goldFailed || kursFailed) ? '*' : '';
 
-    // Auto-fill inputs
-    autoFill();
-  } catch(e) {
-    document.getElementById('price-status').textContent = 'Gagal fetch — pakai harga manual';
-    liveUSD = 3300; liveKurs = 16300;
-    liveIDR = (liveUSD / OZ_TO_GRAM) * liveKurs;
-    document.getElementById('px-usd').textContent = fmtUSD(liveUSD) + '*';
-    document.getElementById('px-idr').textContent = fmtIDR(liveIDR) + '*';
-    document.getElementById('px-kurs').textContent = 'Rp 16.300*';
-    ['px-usd','px-idr','px-kurs'].forEach(id => document.getElementById(id).classList.remove('loading'));
-    autoFill();
-  }
+  document.getElementById('px-usd').textContent  = fmtUSD(liveUSD) + suffix;
+  document.getElementById('px-idr').textContent  = fmtIDR(liveIDR) + suffix;
+  document.getElementById('px-kurs').textContent = 'Rp ' + Math.round(liveKurs).toLocaleString('id-ID') + suffix;
+  ['px-usd','px-idr','px-kurs'].forEach(id => document.getElementById(id).classList.remove('loading'));
+
+  const now = new Date().toLocaleTimeString('id-ID');
+  status.textContent = suffix ? 'Estimasi — update: ' + now : 'Update: ' + now;
+
+  icon.classList.remove('spinning');
+  btn.disabled = false;
+  isFetching = false;
+
+  autoFill();
 }
 
 function autoFill() {
-  const idrVal = Math.round(liveIDR);
-  const el1 = document.getElementById('ur-sekarang');
-  const el2 = document.getElementById('dca-harga-awal');
-  const el3 = document.getElementById('an-harga');
-  if(!el1.value) el1.value = idrVal;
-  if(!el2.value) el2.value = idrVal;
-  if(!el3.value) el3.value = idrVal;
+  const v = Math.round(liveIDR);
+  ['ur-sekarang','dca-harga-awal','an-harga'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el.value) el.value = v;
+  });
   hitungKonversi();
 }
 
-// ── TABS ──
-function switchTab(name) {
+function switchTab(e, name) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
-  event.currentTarget.classList.add('active');
+  e.currentTarget.classList.add('active');
 }
 
-// ── UNTUNG/RUGI ──
 function hitungUR() {
   const gram = parseFloat(document.getElementById('ur-gram').value);
   const beli = parseFloat(document.getElementById('ur-beli').value) || liveIDR;
   const now  = parseFloat(document.getElementById('ur-sekarang').value) || liveIDR;
-  if(!gram || !beli) return alert('Isi jumlah gram dan harga beli ya!');
-  const modal   = gram * beli;
-  const nilaiNow = gram * now;
-  const delta   = nilaiNow - modal;
-  const pct     = (delta / modal) * 100;
-  const isProfit = delta >= 0;
-  const box = document.getElementById('result-ur');
-  const grid = document.getElementById('result-ur-grid');
-  box.classList.add('visible');
-  grid.innerHTML = [
-    {label:'Modal Total', val: fmtIDR(modal), cls:'result-neutral'},
-    {label:'Nilai Sekarang', val: fmtIDR(nilaiNow), cls:'result-neutral'},
-    {label: isProfit?'Keuntungan':'Kerugian', val: fmtIDR(Math.abs(delta)), cls: isProfit?'result-profit':'result-loss'},
-    {label:'Return (%)', val: (isProfit?'+':'-') + Math.abs(pct).toFixed(2) + '%', cls: isProfit?'result-profit':'result-loss'},
-    {label:'Harga/gram Beli', val: fmtIDR(beli), cls:'result-neutral'},
-    {label:'Harga/gram Kini', val: fmtIDR(now), cls:'result-neutral'},
-  ].map(i => `<div class="result-item"><div class="result-item-label">${i.label}</div><div class="result-item-value ${i.cls}">${i.val}</div></div>`).join('');
+  if (!gram || !beli) return alert('Isi jumlah gram dan harga beli ya!');
+  const modal = gram * beli, nilaiNow = gram * now;
+  const delta = nilaiNow - modal, pct = (delta/modal)*100;
+  const ip = delta >= 0;
+  document.getElementById('result-ur').classList.add('visible');
+  document.getElementById('result-ur-grid').innerHTML = [
+    {l:'Modal Total',      v:fmtIDR(modal),          c:'result-neutral'},
+    {l:'Nilai Sekarang',   v:fmtIDR(nilaiNow),       c:'result-neutral'},
+    {l:ip?'Keuntungan':'Kerugian', v:fmtIDR(Math.abs(delta)), c:ip?'result-profit':'result-loss'},
+    {l:'Return (%)',       v:(ip?'+':'')+pct.toFixed(2)+'%', c:ip?'result-profit':'result-loss'},
+    {l:'Harga Beli/gram', v:fmtIDR(beli),            c:'result-neutral'},
+    {l:'Harga Kini/gram', v:fmtIDR(now),             c:'result-neutral'},
+  ].map(i=>`<div class="result-item"><div class="result-item-label">${i.l}</div><div class="result-item-value ${i.c}">${i.v}</div></div>`).join('');
 }
-function resetUR(){['ur-gram','ur-beli','ur-sekarang'].forEach(id=>{document.getElementById(id).value=''});document.getElementById('result-ur').classList.remove('visible');autoFill();}
+function resetUR(){['ur-gram','ur-beli','ur-sekarang'].forEach(id=>document.getElementById(id).value='');document.getElementById('result-ur').classList.remove('visible');autoFill();}
 
-// ── DCA ──
 function hitungDCA() {
-  const rutin = parseFloat(document.getElementById('dca-rutin').value);
-  const bulan = parseInt(document.getElementById('dca-bulan').value);
-  const hargaAwal = parseFloat(document.getElementById('dca-harga-awal').value) || liveIDR;
-  const naik = parseFloat(document.getElementById('dca-naik').value) || 0;
-  if(!rutin || !bulan) return alert('Isi nominal rutin dan durasi bulan!');
-  let totalModal=0, totalGram=0;
-  const rows = [];
-  for(let i=1;i<=bulan;i++) {
-    const hargaBulan = hargaAwal * Math.pow(1+(naik/100), i-1);
-    const gram = rutin / hargaBulan;
-    totalModal += rutin;
-    totalGram += gram;
-    rows.push({bulan:i, harga:hargaBulan, gram, totalGram, totalModal, nilaiKini: totalGram * hargaBulan});
+  const rutin=parseFloat(document.getElementById('dca-rutin').value);
+  const bulan=parseInt(document.getElementById('dca-bulan').value);
+  const hargaAwal=parseFloat(document.getElementById('dca-harga-awal').value)||liveIDR;
+  const naik=parseFloat(document.getElementById('dca-naik').value)||0;
+  if(!rutin||!bulan) return alert('Isi nominal rutin dan durasi bulan!');
+  let totalModal=0,totalGram=0;
+  const rows=[];
+  for(let i=1;i<=bulan;i++){
+    const h=hargaAwal*Math.pow(1+naik/100,i-1);
+    const g=rutin/h;
+    totalModal+=rutin;totalGram+=g;
+    rows.push({bulan:i,harga:h,gram:g,totalGram,totalModal,nilaiKini:totalGram*h});
   }
-  const hargaAkhir = hargaAwal * Math.pow(1+(naik/100), bulan-1);
-  const nilaiAkhir = totalGram * hargaAkhir;
-  const delta = nilaiAkhir - totalModal;
-  const pct = (delta/totalModal)*100;
-  const isProfit = delta >= 0;
-  const box = document.getElementById('result-dca');
-  box.classList.add('visible');
-  document.getElementById('result-dca-summary').innerHTML = [
-    {label:'Total Modal', val:fmtIDR(totalModal), cls:'result-neutral'},
-    {label:'Total Gram', val:fmtGram(totalGram), cls:'result-neutral'},
-    {label:'Nilai Akhir', val:fmtIDR(nilaiAkhir), cls:'result-neutral'},
-    {label:isProfit?'Keuntungan':'Kerugian', val:fmtIDR(Math.abs(delta)), cls:isProfit?'result-profit':'result-loss'},
-    {label:'Total Return', val:(isProfit?'+':'-')+Math.abs(pct).toFixed(2)+'%', cls:isProfit?'result-profit':'result-loss'},
-    {label:'Avg Harga/gram', val:fmtIDR(totalModal/totalGram), cls:'result-neutral'},
-  ].map(i=>`<div class="result-item"><div class="result-item-label">${i.label}</div><div class="result-item-value ${i.cls}">${i.val}</div></div>`).join('');
-  const show = rows.length > 24 ? rows.filter((_,i)=>i%Math.ceil(rows.length/24)===0) : rows;
-  document.getElementById('result-dca-table').innerHTML = `
-    <table><thead><tr>
-      <th>Bulan</th><th>Harga/gram</th><th>Gram Dibeli</th><th>Total Gram</th><th>Total Modal</th><th>Nilai Kini</th>
-    </tr></thead><tbody>${show.map(r=>`<tr>
-      <td>${r.bulan}</td><td>${fmtIDR(r.harga)}</td><td>${r.gram.toFixed(4)}</td>
-      <td>${r.totalGram.toFixed(4)}</td><td>${fmtIDR(r.totalModal)}</td>
-      <td class="${r.nilaiKini>=r.totalModal?'td-profit':'td-loss'}">${fmtIDR(r.nilaiKini)}</td>
-    </tr>`).join('')}</tbody></table>`;
+  const hAkhir=hargaAwal*Math.pow(1+naik/100,bulan-1);
+  const nilaiAkhir=totalGram*hAkhir;
+  const delta=nilaiAkhir-totalModal,pct=(delta/totalModal)*100,ip=delta>=0;
+  document.getElementById('result-dca').classList.add('visible');
+  document.getElementById('result-dca-summary').innerHTML=[
+    {l:'Total Modal',     v:fmtIDR(totalModal),              c:'result-neutral'},
+    {l:'Total Gram',      v:fmtGram(totalGram),              c:'result-neutral'},
+    {l:'Nilai Akhir',     v:fmtIDR(nilaiAkhir),              c:'result-neutral'},
+    {l:ip?'Keuntungan':'Kerugian', v:fmtIDR(Math.abs(delta)),c:ip?'result-profit':'result-loss'},
+    {l:'Total Return',    v:(ip?'+':'')+pct.toFixed(2)+'%',  c:ip?'result-profit':'result-loss'},
+    {l:'Avg Harga/gram',  v:fmtIDR(totalModal/totalGram),    c:'result-neutral'},
+  ].map(i=>`<div class="result-item"><div class="result-item-label">${i.l}</div><div class="result-item-value ${i.c}">${i.v}</div></div>`).join('');
+  const show=rows.length>24?rows.filter((_,i)=>i%Math.ceil(rows.length/24)===0):rows;
+  document.getElementById('result-dca-table').innerHTML=`<table><thead><tr><th>Bulan</th><th>Harga/gram</th><th>Gram Dibeli</th><th>Total Gram</th><th>Total Modal</th><th>Nilai Kini</th></tr></thead><tbody>${show.map(r=>`<tr><td>${r.bulan}</td><td>${fmtIDR(r.harga)}</td><td>${r.gram.toFixed(4)}</td><td>${r.totalGram.toFixed(4)}</td><td>${fmtIDR(r.totalModal)}</td><td class="${r.nilaiKini>=r.totalModal?'td-profit':'td-loss'}">${fmtIDR(r.nilaiKini)}</td></tr>`).join('')}</tbody></table>`;
 }
-function resetDCA(){['dca-rutin','dca-bulan','dca-harga-awal','dca-naik'].forEach(id=>{document.getElementById(id).value=''});document.getElementById('result-dca').classList.remove('visible');autoFill();}
+function resetDCA(){['dca-rutin','dca-bulan','dca-harga-awal','dca-naik'].forEach(id=>document.getElementById(id).value='');document.getElementById('result-dca').classList.remove('visible');autoFill();}
 
-// ── ANALIS ──
-function hitungAnalis() {
-  const gram = parseFloat(document.getElementById('an-gram').value);
-  const hargaBeli = parseFloat(document.getElementById('an-harga').value) || liveIDR;
+function hitungAnalis(){
+  const gram=parseFloat(document.getElementById('an-gram').value);
+  const hargaBeli=parseFloat(document.getElementById('an-harga').value)||liveIDR;
   if(!gram) return alert('Isi jumlah gram kepemilikan!');
-  const modal = gram * hargaBeli;
-  const box = document.getElementById('result-analis');
-  box.classList.add('visible');
-  document.getElementById('analyst-cards').innerHTML = analysts.map(a => {
-    const hargaTarget = (a.target / OZ_TO_GRAM) * liveKurs;
-    const nilaiTarget = gram * hargaTarget;
-    const gain = nilaiTarget - modal;
-    const pct = (gain/modal)*100;
-    return `<div class="analyst-card">
-      <div class="analyst-name">${a.name}</div>
-      <div class="analyst-target">Target XAU: US$${a.target.toLocaleString()} (${a.period})</div>
-      <div class="analyst-value">${fmtIDR(nilaiTarget)}</div>
-      <div class="analyst-gain">+${fmtIDR(gain)} (${pct>=0?'+':''}${pct.toFixed(1)}%)</div>
-    </div>`;
+  const modal=gram*hargaBeli;
+  document.getElementById('result-analis').classList.add('visible');
+  document.getElementById('analyst-cards').innerHTML=analysts.map(a=>{
+    const ht=(a.target/OZ_TO_GRAM)*liveKurs;
+    const nv=gram*ht,gain=nv-modal,pct=(gain/modal)*100;
+    return `<div class="analyst-card"><div class="analyst-name">${a.name}</div><div class="analyst-target">Target XAU: US$${a.target.toLocaleString()} (${a.period})</div><div class="analyst-value">${fmtIDR(nv)}</div><div class="analyst-gain">${pct>=0?'+':''}${fmtIDR(gain)} (${pct>=0?'+':''}${pct.toFixed(1)}%)</div></div>`;
   }).join('');
 }
-function resetAnalis(){['an-gram','an-harga'].forEach(id=>{document.getElementById(id).value=''});document.getElementById('result-analis').classList.remove('visible');autoFill();}
+function resetAnalis(){['an-gram','an-harga'].forEach(id=>document.getElementById(id).value='');document.getElementById('result-analis').classList.remove('visible');autoFill();}
 
-// ── KONVERSI ──
-function setConvMode(mode) {
-  convMode = mode;
+function setConvMode(e,mode){
+  convMode=mode;
   document.querySelectorAll('.conv-mode-btn').forEach(b=>b.classList.remove('active'));
-  event.currentTarget.classList.add('active');
-  const labels = {
-    'gram-idr':['Gram','IDR (Rupiah)'],
-    'idr-gram':['IDR (Rupiah)','Gram'],
-    'oz-gram':['Troy Ounce (oz)','Gram'],
-    'gram-oz':['Gram','Troy Ounce (oz)'],
-    'usd-gram':['USD','Gram'],
-  };
-  const [from, to] = labels[mode];
-  document.getElementById('conv-from-label').textContent = from;
-  document.getElementById('conv-to-label').textContent = to;
-  document.getElementById('conv-input').value = '';
-  document.getElementById('conv-output').value = '';
-  document.getElementById('konversi-info').textContent = 'Isi input untuk mulai konversi.';
-  hitungKonversi();
+  e.currentTarget.classList.add('active');
+  const labels={'gram-idr':['Gram','IDR (Rupiah)'],'idr-gram':['IDR (Rupiah)','Gram'],'oz-gram':['Troy Ounce (oz)','Gram'],'gram-oz':['Gram','Troy Ounce (oz)'],'usd-gram':['USD','Gram']};
+  const [f,t]=labels[mode];
+  document.getElementById('conv-from-label').textContent=f;
+  document.getElementById('conv-to-label').textContent=t;
+  document.getElementById('conv-input').value='';
+  document.getElementById('conv-output').value='';
+  document.getElementById('konversi-info').textContent='Isi input untuk mulai konversi.';
 }
 
-function hitungKonversi() {
-  const v = parseFloat(document.getElementById('conv-input').value);
-  if(!v || v<=0) {document.getElementById('conv-output').value='';return;}
-  let result = 0, info = '';
-  if(convMode==='gram-idr') { result = v * liveIDR; info = `${v} gram × ${fmtIDR(liveIDR)}/gram`; document.getElementById('conv-output').value = fmtIDR(result); }
-  else if(convMode==='idr-gram') { result = v / liveIDR; info = `${fmtIDR(v)} ÷ ${fmtIDR(liveIDR)}/gram`; document.getElementById('conv-output').value = result.toFixed(6) + ' gram'; }
-  else if(convMode==='oz-gram') { result = v * OZ_TO_GRAM; info = `${v} oz × 31.1035`; document.getElementById('conv-output').value = result.toFixed(4) + ' gram'; }
-  else if(convMode==='gram-oz') { result = v / OZ_TO_GRAM; info = `${v} gram ÷ 31.1035`; document.getElementById('conv-output').value = result.toFixed(6) + ' oz'; }
-  else if(convMode==='usd-gram') { const pricePerGramUSD = liveUSD / OZ_TO_GRAM; result = v / pricePerGramUSD; info = `${v} USD ÷ $${pricePerGramUSD.toFixed(2)}/gram`; document.getElementById('conv-output').value = result.toFixed(6) + ' gram'; }
-  document.getElementById('konversi-info').textContent = info;
+function hitungKonversi(){
+  const v=parseFloat(document.getElementById('conv-input').value);
+  if(!v||v<=0){document.getElementById('conv-output').value='';return;}
+  let out='',info='';
+  if(convMode==='gram-idr'){out=fmtIDR(v*liveIDR);info=`${v} gram × ${fmtIDR(liveIDR)}/gram`;}
+  else if(convMode==='idr-gram'){out=(v/liveIDR).toFixed(6)+' gram';info=`${fmtIDR(v)} ÷ ${fmtIDR(liveIDR)}/gram`;}
+  else if(convMode==='oz-gram'){out=(v*OZ_TO_GRAM).toFixed(4)+' gram';info=`${v} oz × 31.1035`;}
+  else if(convMode==='gram-oz'){out=(v/OZ_TO_GRAM).toFixed(6)+' oz';info=`${v} gram ÷ 31.1035`;}
+  else if(convMode==='usd-gram'){const ppg=liveUSD/OZ_TO_GRAM;out=(v/ppg).toFixed(6)+' gram';info=`${v} USD ÷ $${ppg.toFixed(2)}/gram`;}
+  document.getElementById('conv-output').value=out;
+  document.getElementById('konversi-info').textContent=info;
 }
 
-// ── INIT ──
+// Init
 fetchPrices();
-setInterval(fetchPrices, 5 * 60 * 1000);
+setInterval(fetchPrices, 5*60*1000);
 </script>
 </body>
 </html>
