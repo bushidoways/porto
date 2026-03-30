@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gold Calculator — Bushidoways</title>
+<meta name="description" content="Kalkulator investasi emas real-time: untung/rugi, DCA, proyeksi analis, dan konversi harga.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;scroll-padding-top:5rem}
+
+:root,[data-theme="dark"]{
+  --color-bg:#0e0d0b;
+  --color-surface:#141310;
+  --color-surface-2:#1a1915;
+  --color-surface-offset:#1f1e1a;
+  --color-surface-dynamic:#272520;
+  --color-divider:#2a2825;
+  --color-border:#333028;
+  --color-text:#e8e4d9;
+  --color-text-muted:#8a8478;
+  --color-text-faint:#4a4840;
+  --color-text-inverse:#0e0d0b;
+  --color-primary:#c9a227;
+  --color-primary-hover:#e0b830;
+  --color-primary-active:#f0cc50;
+  --color-primary-highlight:#2a2415;
+  --color-success:#6daa45;
+  --color-success-highlight:#1e2e15;
+  --color-error:#d16060;
+  --color-error-highlight:#2e1515;
+  --color-gold:#c9a227;
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md:0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:0 12px 40px rgba(0,0,0,0.6);
+  --radius-sm:0.375rem;
+  --radius-md:0.5rem;
+  --radius-lg:0.75rem;
+  --radius-xl:1rem;
+  --radius-full:9999px;
+  --font-body:'Inter',sans-serif;
+  --font-display:'Instrument Serif',Georgia,serif;
+  --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);
+  --text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);
+  --text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);
+  --text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);
+  --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+  --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+  --space-1:0.25rem;--space-2:0.5rem;--space-3:0.75rem;--space-4:1rem;
+  --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
+  --space-12:3rem;--space-16:4rem;--space-20:5rem;
+  --transition:180ms cubic-bezier(0.16,1,0.3,1);
+}
+
+body{font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);min-height:100dvh;line-height:1.6}
+img,svg{display:block;max-width:100%}
+input,button,select{font:inherit;color:inherit}
+h1,h2,h3,h4{text-wrap:balance;line-height:1.2}
+p{text-wrap:pretty;max-width:72ch}
+button{cursor:pointer;background:none;border:none}
+a,button,[role="button"]{transition:color var(--transition),background var(--transition),border-color var(--transition),box-shadow var(--transition)}
+:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+
+/* ── NAV ── */
+.nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:var(--space-4) var(--space-8);
+  background:rgba(14,13,11,0.85);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--color-divider);
+}
+.nav-brand{
+  display:flex;align-items:center;gap:var(--space-3);
+  text-decoration:none;
+  font-size:var(--text-sm);color:var(--color-text-muted);
+}
+.nav-brand:hover{color:var(--color-text)}
+.nav-brand svg{color:var(--color-primary)}
+.nav-breadcrumb{display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm)}
+.nav-breadcrumb a{color:var(--color-text-muted);text-decoration:none}
+.nav-breadcrumb a:hover{color:var(--color-primary)}
+.nav-breadcrumb span{color:var(--color-text-faint)}
+.nav-breadcrumb strong{color:var(--color-primary)}
+
+/* ── HERO ── */
+.hero{
+  padding:var(--space-16) var(--space-8) var(--space-12);
+  max-width:960px;margin-inline:auto;
+  text-align:center;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:var(--space-2);
+  font-size:var(--text-xs);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--color-primary);
+  background:var(--color-primary-highlight);
+  padding:var(--space-1) var(--space-3);
+  border-radius:var(--radius-full);
+  margin-bottom:var(--space-6);
+}
+.hero-title{
+  font-family:var(--font-display);
+  font-size:var(--text-2xl);
+  color:var(--color-text);
+  margin-bottom:var(--space-4);
+  font-style:italic;
+}
+.hero-title em{font-style:normal;color:var(--color-primary)}
+.hero-subtitle{font-size:var(--text-base);color:var(--color-text-muted);margin-bottom:var(--space-10);margin-inline:auto}
+
+/* ── LIVE PRICE CARD ── */
+.price-bar{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:var(--space-6);
+  background:var(--color-surface);
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-xl);
+  padding:var(--space-6) var(--space-8);
+  margin-bottom:var(--space-10);
+  max-width:860px;margin-inline:auto;
+  box-shadow:var(--shadow-md);
+}
+.price-item{text-align:center}
+.price-label{font-size:var(--text-xs);color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:var(--space-1)}
+.price-value{
+  font-size:var(--text-xl);font-weight:700;
+  color:var(--color-primary);
+  font-variant-numeric:tabular-nums;
+  transition:color 0.3s;
+}
+.price-value.loading{color:var(--color-text-faint)}
+.price-divider{width:1px;height:48px;background:var(--color-divider)}
+.price-refresh-btn{
+  display:inline-flex;align-items:center;gap:var(--space-2);
+  font-size:var(--text-xs);color:var(--color-text-muted);
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-full);
+  padding:var(--space-2) var(--space-4);
+  transition:all var(--transition);
+}
+.price-refresh-btn:hover{color:var(--color-primary);border-color:var(--color-primary)}
+.price-status{font-size:var(--text-xs);color:var(--color-text-faint)}
+
+/* ── TABS ── */
+.tabs-wrap{max-width:860px;margin-inline:auto;padding:0 var(--space-4)}
+.tabs-nav{
+  display:flex;gap:var(--space-2);
+  border-bottom:1px solid var(--color-divider);
+  margin-bottom:var(--space-8);
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.tabs-nav::-webkit-scrollbar{display:none}
+.tab-btn{
+  flex-shrink:0;
+  font-size:var(--text-sm);font-weight:500;
+  color:var(--color-text-muted);
+  padding:var(--space-3) var(--space-5);
+  border-radius:var(--radius-md) var(--radius-md) 0 0;
+  border-bottom:2px solid transparent;
+  margin-bottom:-1px;
+  transition:all var(--transition);
+  display:flex;align-items:center;gap:var(--space-2);
+}
+.tab-btn:hover{color:var(--color-text)}
+.tab-btn.active{color:var(--color-primary);border-bottom-color:var(--color-primary)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* ── CARD ── */
+.card{
+  background:var(--color-surface);
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-xl);
+  padding:var(--space-8);
+  box-shadow:var(--shadow-sm);
+  margin-bottom:var(--space-6);
+}
+.card-title{
+  font-size:var(--text-lg);font-weight:600;
+  color:var(--color-text);
+  margin-bottom:var(--space-6);
+  display:flex;align-items:center;gap:var(--space-3);
+}
+.card-title svg{color:var(--color-primary)}
+
+/* ── FORM ── */
+.form-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--space-5)}
+.form-group{display:flex;flex-direction:column;gap:var(--space-2)}
+.form-label{font-size:var(--text-xs);font-weight:500;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.06em}
+.form-input{
+  background:var(--color-surface-offset);
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-md);
+  padding:var(--space-3) var(--space-4);
+  font-size:var(--text-sm);
+  color:var(--color-text);
+  width:100%;
+  transition:border-color var(--transition),box-shadow var(--transition);
+}
+.form-input:focus{outline:none;border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(201,162,39,0.15)}
+.form-hint{font-size:var(--text-xs);color:var(--color-text-faint)}
+
+/* ── BUTTON ── */
+.btn{
+  display:inline-flex;align-items:center;gap:var(--space-2);
+  font-size:var(--text-sm);font-weight:600;
+  padding:var(--space-3) var(--space-6);
+  border-radius:var(--radius-md);
+  transition:all var(--transition);
+  cursor:pointer;
+}
+.btn-primary{
+  background:var(--color-primary);
+  color:var(--color-text-inverse);
+  border:none;
+}
+.btn-primary:hover{background:var(--color-primary-hover)}
+.btn-ghost{
+  background:transparent;
+  color:var(--color-text-muted);
+  border:1px solid var(--color-border);
+}
+.btn-ghost:hover{color:var(--color-text);border-color:var(--color-text-muted)}
+.btn-actions{display:flex;gap:var(--space-3);margin-top:var(--space-6);flex-wrap:wrap}
+
+/* ── RESULT ── */
+.result-box{
+  background:var(--color-surface-2);
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-lg);
+  padding:var(--space-6);
+  margin-top:var(--space-6);
+  display:none;
+}
+.result-box.visible{display:block}
+.result-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--space-4)}
+.result-item{}
+.result-item-label{font-size:var(--text-xs);color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:var(--space-1)}
+.result-item-value{font-size:var(--text-lg);font-weight:700;font-variant-numeric:tabular-nums}
+.result-profit{color:var(--color-success)}
+.result-loss{color:var(--color-error)}
+.result-neutral{color:var(--color-text)}
+.result-pct-badge{
+  display:inline-block;
+  font-size:var(--text-xs);font-weight:600;
+  padding:2px var(--space-2);
+  border-radius:var(--radius-sm);
+  margin-left:var(--space-2);
+}
+.badge-profit{background:var(--color-success-highlight);color:var(--color-success)}
+.badge-loss{background:var(--color-error-highlight);color:var(--color-error)}
+
+/* ── TABLE ── */
+.table-wrap{overflow-x:auto;margin-top:var(--space-6)}
+table{border-collapse:collapse;width:100%;font-size:var(--text-sm)}
+thead{border-bottom:1px solid var(--color-divider)}
+th{text-align:left;padding:var(--space-3) var(--space-4);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted);font-weight:500}
+td{padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-divider);font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--color-surface-offset)}
+.td-profit{color:var(--color-success)}
+.td-loss{color:var(--color-error)}
+
+/* ── ANALYST GRID ── */
+.analyst-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--space-4);margin-top:var(--space-6)}
+.analyst-card{
+  background:var(--color-surface-offset);
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-lg);
+  padding:var(--space-5);
+}
+.analyst-name{font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-muted);margin-bottom:var(--space-1)}
+.analyst-target{font-size:var(--text-sm);color:var(--color-text-faint);margin-bottom:var(--space-3)}
+.analyst-value{font-size:var(--text-lg);font-weight:700;color:var(--color-primary)}
+.analyst-gain{font-size:var(--text-xs);color:var(--color-success);margin-top:var(--space-1)}
+
+/* ── CONVERSION GRID ── */
+.conv-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:var(--space-4);margin-bottom:var(--space-6)}
+.conv-arrow{font-size:1.5rem;color:var(--color-primary);text-align:center;padding-bottom:var(--space-3)}
+.conv-modes{display:flex;gap:var(--space-2);margin-bottom:var(--space-6);flex-wrap:wrap}
+.conv-mode-btn{
+  font-size:var(--text-xs);font-weight:500;
+  padding:var(--space-2) var(--space-4);
+  border-radius:var(--radius-full);
+  border:1px solid var(--color-border);
+  color:var(--color-text-muted);
+  transition:all var(--transition);
+}
+.conv-mode-btn:hover{color:var(--color-text)}
+.conv-mode-btn.active{background:var(--color-primary-highlight);color:var(--color-primary);border-color:var(--color-primary)}
+
+/* ── FOOTER ── */
+.footer{
+  margin-top:var(--space-20);
+  padding:var(--space-10) var(--space-8);
+  border-top:1px solid var(--color-divider);
+  text-align:center;
+}
+.footer p{font-size:var(--text-xs);color:var(--color-text-faint);max-width:60ch;margin-inline:auto;margin-bottom:var(--space-2)}
+.footer a{color:var(--color-text-muted);text-decoration:none}
+.footer a:hover{color:var(--color-primary)}
+
+/* ── SPINNER ── */
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin{animation:spin 1s linear infinite;display:inline-block}
+
+/* ── MOBILE ── */
+@media(max-width:640px){
+  .nav{padding:var(--space-3) var(--space-4)}
+  .hero{padding:var(--space-10) var(--space-4) var(--space-8)}
+  .price-bar{padding:var(--space-4);gap:var(--space-4)}
+  .price-divider{display:none}
+  .tabs-wrap{padding:0 var(--space-3)}
+  .card{padding:var(--space-5)}
+  .conv-grid{grid-template-columns:1fr;}
+  .conv-arrow{display:none}
+  .nav-breadcrumb{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/" class="nav-brand" target="_blank" rel="noopener">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </svg>
+    bushidoways
+  </a>
+  <div class="nav-breadcrumb">
+    <a href="/" target="_blank" rel="noopener">Porto</a>
+    <span>/</span>
+    <strong>Gold Calculator</strong>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+    Live Price Tool
+  </div>
+  <h1 class="hero-title">Kalkulator <em>Investasi Emas</em></h1>
+  <p class="hero-subtitle">Hitung untung/rugi, simulasi DCA, proyeksi target analis global, dan konversi harga emas secara real-time.</p>
+
+  <!-- LIVE PRICE BAR -->
+  <div class="price-bar">
+    <div class="price-item">
+      <div class="price-label">XAU / USD</div>
+      <div class="price-value loading" id="px-usd">—</div>
+    </div>
+    <div class="price-divider"></div>
+    <div class="price-item">
+      <div class="price-label">Emas / Gram (IDR)</div>
+      <div class="price-value loading" id="px-idr">—</div>
+    </div>
+    <div class="price-divider"></div>
+    <div class="price-item">
+      <div class="price-label">USD / IDR</div>
+      <div class="price-value loading" id="px-kurs">—</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:var(--space-2)">
+      <button class="price-refresh-btn" onclick="fetchPrices()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        Refresh
+      </button>
+      <span class="price-status" id="price-status">Memuat harga…</span>
+    </div>
+  </div>
+</section>
+
+<!-- TABS -->
+<div class="tabs-wrap">
+  <div class="tabs-nav" role="tablist">
+    <button class="tab-btn active" onclick="switchTab('untung')" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+      Untung / Rugi
+    </button>
+    <button class="tab-btn" onclick="switchTab('dca')" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      DCA
+    </button>
+    <button class="tab-btn" onclick="switchTab('analis')" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Target Analis
+    </button>
+    <button class="tab-btn" onclick="switchTab('konversi')" role="tab">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      Konversi
+    </button>
+  </div>
+
+  <!-- TAB: UNTUNG/RUGI -->
+  <div class="tab-panel active" id="tab-untung">
+    <div class="card">
+      <h2 class="card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/></svg>
+        Hitung Untung / Rugi
+      </h2>
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="ur-gram">Jumlah Emas (gram)</label>
+          <input class="form-input" type="number" id="ur-gram" placeholder="mis. 10" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="ur-beli">Harga Beli (Rp/gram)</label>
+          <input class="form-input" type="number" id="ur-beli" placeholder="mis. 1.500.000" min="0" step="1000">
+          <span class="form-hint">Kosongkan untuk pakai harga live</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="ur-sekarang">Harga Sekarang (Rp/gram)</label>
+          <input class="form-input" type="number" id="ur-sekarang" placeholder="Auto dari live price">
+          <span class="form-hint">Diisi otomatis dari harga live</span>
+        </div>
+      </div>
+      <div class="btn-actions">
+        <button class="btn btn-primary" onclick="hitungUR()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19l-7-7 7-7"/><path d="M20 18v-2a4 4 0 0 0-4-4H5"/></svg>
+          Hitung
+        </button>
+        <button class="btn btn-ghost" onclick="resetUR()">Reset</button>
+      </div>
+      <div class="result-box" id="result-ur">
+        <div class="result-grid" id="result-ur-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: DCA -->
+  <div class="tab-panel" id="tab-dca">
+    <div class="card">
+      <h2 class="card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Simulasi DCA Bulanan
+      </h2>
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="dca-rutin">Beli Rutin / Bulan (Rp)</label>
+          <input class="form-input" type="number" id="dca-rutin" placeholder="mis. 500000" min="0" step="10000">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="dca-bulan">Durasi (Bulan)</label>
+          <input class="form-input" type="number" id="dca-bulan" placeholder="mis. 12" min="1" max="240">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="dca-harga-awal">Harga Emas Awal (Rp/gram)</label>
+          <input class="form-input" type="number" id="dca-harga-awal" placeholder="Auto dari live">
+          <span class="form-hint">Diisi otomatis dari harga live</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="dca-naik">Estimasi Kenaikan/Bulan (%)</label>
+          <input class="form-input" type="number" id="dca-naik" placeholder="mis. 0.8" step="0.1">
+          <span class="form-hint">Historis rata-rata ~0.5–1%/bln</span>
+        </div>
+      </div>
+      <div class="btn-actions">
+        <button class="btn btn-primary" onclick="hitungDCA()">Hitung DCA</button>
+        <button class="btn btn-ghost" onclick="resetDCA()">Reset</button>
+      </div>
+      <div class="result-box" id="result-dca">
+        <div class="result-grid" id="result-dca-summary"></div>
+        <div class="table-wrap" id="result-dca-table"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: ANALIS -->
+  <div class="tab-panel" id="tab-analis">
+    <div class="card">
+      <h2 class="card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Proyeksi Target Analis Global
+      </h2>
+      <div class="form-grid" style="margin-bottom:var(--space-4)">
+        <div class="form-group">
+          <label class="form-label" for="an-gram">Kepemilikan Emas (gram)</label>
+          <input class="form-input" type="number" id="an-gram" placeholder="mis. 50" min="0" step="0.01">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="an-harga">Harga Beli (Rp/gram)</label>
+          <input class="form-input" type="number" id="an-harga" placeholder="Auto dari live">
+          <span class="form-hint">Harga saat kamu beli</span>
+        </div>
+      </div>
+      <div class="btn-actions">
+        <button class="btn btn-primary" onclick="hitungAnalis()">Proyeksikan</button>
+        <button class="btn btn-ghost" onclick="resetAnalis()">Reset</button>
+      </div>
+      <div class="result-box" id="result-analis">
+        <p style="font-size:var(--text-xs);color:var(--color-text-faint);margin-bottom:var(--space-5)">Target harga XAU/USD dari lembaga riset global 2025–2026. Bukan saran investasi.</p>
+        <div class="analyst-grid" id="analyst-cards"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: KONVERSI -->
+  <div class="tab-panel" id="tab-konversi">
+    <div class="card">
+      <h2 class="card-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        Konversi Satuan &amp; Mata Uang
+      </h2>
+      <div class="conv-modes">
+        <button class="conv-mode-btn active" onclick="setConvMode('gram-idr')">Gram → IDR</button>
+        <button class="conv-mode-btn" onclick="setConvMode('idr-gram')">IDR → Gram</button>
+        <button class="conv-mode-btn" onclick="setConvMode('oz-gram')">Oz → Gram</button>
+        <button class="conv-mode-btn" onclick="setConvMode('gram-oz')">Gram → Oz</button>
+        <button class="conv-mode-btn" onclick="setConvMode('usd-gram')">USD → Gram</button>
+      </div>
+      <div class="conv-grid">
+        <div class="form-group">
+          <label class="form-label" id="conv-from-label">Gram</label>
+          <input class="form-input" type="number" id="conv-input" placeholder="0" min="0" step="any" oninput="hitungKonversi()">
+        </div>
+        <div class="conv-arrow">→</div>
+        <div class="form-group">
+          <label class="form-label" id="conv-to-label">IDR</label>
+          <input class="form-input" type="text" id="conv-output" readonly placeholder="—" style="background:var(--color-surface-dynamic);cursor:default">
+        </div>
+      </div>
+      <div class="result-box visible" id="result-konversi" style="display:block">
+        <p style="font-size:var(--text-xs);color:var(--color-text-muted)" id="konversi-info">Menggunakan harga live. Isi input untuk mulai konversi.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>Harga bersumber dari <a href="https://www.goldapi.io" target="_blank" rel="noopener">Gold API</a> &amp; kurs USD/IDR publik. Data diperbarui tiap 5 menit.</p>
+  <p style="margin-top:var(--space-1)">⚠️ Harga adalah estimasi. Bukan saran investasi finansial. Selalu cek harga resmi sebelum transaksi.</p>
+  <p style="margin-top:var(--space-3)"><a href="/" target="_blank" rel="noopener">← Kembali ke Portfolio</a></p>
+</footer>
+
+<script>
+// ── STATE ──
+let liveUSD = 0, liveIDR = 0, liveKurs = 16300;
+let convMode = 'gram-idr';
+const OZ_TO_GRAM = 31.1035;
+
+// ── ANALYSTS DATA ──
+const analysts = [
+  {name:'Goldman Sachs', target:3300, period:'2025'},
+  {name:'JP Morgan',     target:3675, period:'2025'},
+  {name:'Citigroup',     target:3000, period:'2025'},
+  {name:'UBS',           target:3200, period:'2025'},
+  {name:'Bank of America',target:3500,period:'2025'},
+  {name:'Deutsche Bank', target:2800, period:'2025'},
+  {name:'ANZ Research',  target:3100, period:'2025'},
+  {name:'WisdomTree',    target:3030, period:'Q4 2025'},
+];
+
+// ── FORMATTERS ──
+const fmtIDR = n => 'Rp ' + Math.round(n).toLocaleString('id-ID');
+const fmtUSD = n => 'US$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+const fmtGram = n => n.toLocaleString('id-ID', {minimumFractionDigits:4, maximumFractionDigits:4}) + ' gr';
+
+// ── FETCH PRICES ──
+async function fetchPrices() {
+  document.getElementById('price-status').textContent = 'Memuat harga…';
+  ['px-usd','px-idr','px-kurs'].forEach(id => {
+    const el = document.getElementById(id);
+    el.textContent = '…';
+    el.classList.add('loading');
+  });
+  try {
+    // Fetch XAU/USD
+    const r1 = await fetch('https://api.gold-api.com/price/XAU');
+    const d1 = await r1.json();
+    liveUSD = d1.price || d1.Price || 0;
+
+    // Fetch USD/IDR from open exchange
+    const r2 = await fetch('https://open.er-api.com/v6/latest/USD');
+    const d2 = await r2.json();
+    liveKurs = d2.rates?.IDR || 16300;
+
+    // Calculate gram IDR
+    liveIDR = (liveUSD / OZ_TO_GRAM) * liveKurs;
+
+    document.getElementById('px-usd').textContent = fmtUSD(liveUSD);
+    document.getElementById('px-idr').textContent = fmtIDR(liveIDR);
+    document.getElementById('px-kurs').textContent = 'Rp ' + Math.round(liveKurs).toLocaleString('id-ID');
+    ['px-usd','px-idr','px-kurs'].forEach(id => document.getElementById(id).classList.remove('loading'));
+
+    const now = new Date().toLocaleTimeString('id-ID');
+    document.getElementById('price-status').textContent = 'Update: ' + now;
+
+    // Auto-fill inputs
+    autoFill();
+  } catch(e) {
+    document.getElementById('price-status').textContent = 'Gagal fetch — pakai harga manual';
+    liveUSD = 3300; liveKurs = 16300;
+    liveIDR = (liveUSD / OZ_TO_GRAM) * liveKurs;
+    document.getElementById('px-usd').textContent = fmtUSD(liveUSD) + '*';
+    document.getElementById('px-idr').textContent = fmtIDR(liveIDR) + '*';
+    document.getElementById('px-kurs').textContent = 'Rp 16.300*';
+    ['px-usd','px-idr','px-kurs'].forEach(id => document.getElementById(id).classList.remove('loading'));
+    autoFill();
+  }
+}
+
+function autoFill() {
+  const idrVal = Math.round(liveIDR);
+  const el1 = document.getElementById('ur-sekarang');
+  const el2 = document.getElementById('dca-harga-awal');
+  const el3 = document.getElementById('an-harga');
+  if(!el1.value) el1.value = idrVal;
+  if(!el2.value) el2.value = idrVal;
+  if(!el3.value) el3.value = idrVal;
+  hitungKonversi();
+}
+
+// ── TABS ──
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// ── UNTUNG/RUGI ──
+function hitungUR() {
+  const gram = parseFloat(document.getElementById('ur-gram').value);
+  const beli = parseFloat(document.getElementById('ur-beli').value) || liveIDR;
+  const now  = parseFloat(document.getElementById('ur-sekarang').value) || liveIDR;
+  if(!gram || !beli) return alert('Isi jumlah gram dan harga beli ya!');
+  const modal   = gram * beli;
+  const nilaiNow = gram * now;
+  const delta   = nilaiNow - modal;
+  const pct     = (delta / modal) * 100;
+  const isProfit = delta >= 0;
+  const box = document.getElementById('result-ur');
+  const grid = document.getElementById('result-ur-grid');
+  box.classList.add('visible');
+  grid.innerHTML = [
+    {label:'Modal Total', val: fmtIDR(modal), cls:'result-neutral'},
+    {label:'Nilai Sekarang', val: fmtIDR(nilaiNow), cls:'result-neutral'},
+    {label: isProfit?'Keuntungan':'Kerugian', val: fmtIDR(Math.abs(delta)), cls: isProfit?'result-profit':'result-loss'},
+    {label:'Return (%)', val: (isProfit?'+':'-') + Math.abs(pct).toFixed(2) + '%', cls: isProfit?'result-profit':'result-loss'},
+    {label:'Harga/gram Beli', val: fmtIDR(beli), cls:'result-neutral'},
+    {label:'Harga/gram Kini', val: fmtIDR(now), cls:'result-neutral'},
+  ].map(i => `<div class="result-item"><div class="result-item-label">${i.label}</div><div class="result-item-value ${i.cls}">${i.val}</div></div>`).join('');
+}
+function resetUR(){['ur-gram','ur-beli','ur-sekarang'].forEach(id=>{document.getElementById(id).value=''});document.getElementById('result-ur').classList.remove('visible');autoFill();}
+
+// ── DCA ──
+function hitungDCA() {
+  const rutin = parseFloat(document.getElementById('dca-rutin').value);
+  const bulan = parseInt(document.getElementById('dca-bulan').value);
+  const hargaAwal = parseFloat(document.getElementById('dca-harga-awal').value) || liveIDR;
+  const naik = parseFloat(document.getElementById('dca-naik').value) || 0;
+  if(!rutin || !bulan) return alert('Isi nominal rutin dan durasi bulan!');
+  let totalModal=0, totalGram=0;
+  const rows = [];
+  for(let i=1;i<=bulan;i++) {
+    const hargaBulan = hargaAwal * Math.pow(1+(naik/100), i-1);
+    const gram = rutin / hargaBulan;
+    totalModal += rutin;
+    totalGram += gram;
+    rows.push({bulan:i, harga:hargaBulan, gram, totalGram, totalModal, nilaiKini: totalGram * hargaBulan});
+  }
+  const hargaAkhir = hargaAwal * Math.pow(1+(naik/100), bulan-1);
+  const nilaiAkhir = totalGram * hargaAkhir;
+  const delta = nilaiAkhir - totalModal;
+  const pct = (delta/totalModal)*100;
+  const isProfit = delta >= 0;
+  const box = document.getElementById('result-dca');
+  box.classList.add('visible');
+  document.getElementById('result-dca-summary').innerHTML = [
+    {label:'Total Modal', val:fmtIDR(totalModal), cls:'result-neutral'},
+    {label:'Total Gram', val:fmtGram(totalGram), cls:'result-neutral'},
+    {label:'Nilai Akhir', val:fmtIDR(nilaiAkhir), cls:'result-neutral'},
+    {label:isProfit?'Keuntungan':'Kerugian', val:fmtIDR(Math.abs(delta)), cls:isProfit?'result-profit':'result-loss'},
+    {label:'Total Return', val:(isProfit?'+':'-')+Math.abs(pct).toFixed(2)+'%', cls:isProfit?'result-profit':'result-loss'},
+    {label:'Avg Harga/gram', val:fmtIDR(totalModal/totalGram), cls:'result-neutral'},
+  ].map(i=>`<div class="result-item"><div class="result-item-label">${i.label}</div><div class="result-item-value ${i.cls}">${i.val}</div></div>`).join('');
+  const show = rows.length > 24 ? rows.filter((_,i)=>i%Math.ceil(rows.length/24)===0) : rows;
+  document.getElementById('result-dca-table').innerHTML = `
+    <table><thead><tr>
+      <th>Bulan</th><th>Harga/gram</th><th>Gram Dibeli</th><th>Total Gram</th><th>Total Modal</th><th>Nilai Kini</th>
+    </tr></thead><tbody>${show.map(r=>`<tr>
+      <td>${r.bulan}</td><td>${fmtIDR(r.harga)}</td><td>${r.gram.toFixed(4)}</td>
+      <td>${r.totalGram.toFixed(4)}</td><td>${fmtIDR(r.totalModal)}</td>
+      <td class="${r.nilaiKini>=r.totalModal?'td-profit':'td-loss'}">${fmtIDR(r.nilaiKini)}</td>
+    </tr>`).join('')}</tbody></table>`;
+}
+function resetDCA(){['dca-rutin','dca-bulan','dca-harga-awal','dca-naik'].forEach(id=>{document.getElementById(id).value=''});document.getElementById('result-dca').classList.remove('visible');autoFill();}
+
+// ── ANALIS ──
+function hitungAnalis() {
+  const gram = parseFloat(document.getElementById('an-gram').value);
+  const hargaBeli = parseFloat(document.getElementById('an-harga').value) || liveIDR;
+  if(!gram) return alert('Isi jumlah gram kepemilikan!');
+  const modal = gram * hargaBeli;
+  const box = document.getElementById('result-analis');
+  box.classList.add('visible');
+  document.getElementById('analyst-cards').innerHTML = analysts.map(a => {
+    const hargaTarget = (a.target / OZ_TO_GRAM) * liveKurs;
+    const nilaiTarget = gram * hargaTarget;
+    const gain = nilaiTarget - modal;
+    const pct = (gain/modal)*100;
+    return `<div class="analyst-card">
+      <div class="analyst-name">${a.name}</div>
+      <div class="analyst-target">Target XAU: US$${a.target.toLocaleString()} (${a.period})</div>
+      <div class="analyst-value">${fmtIDR(nilaiTarget)}</div>
+      <div class="analyst-gain">+${fmtIDR(gain)} (${pct>=0?'+':''}${pct.toFixed(1)}%)</div>
+    </div>`;
+  }).join('');
+}
+function resetAnalis(){['an-gram','an-harga'].forEach(id=>{document.getElementById(id).value=''});document.getElementById('result-analis').classList.remove('visible');autoFill();}
+
+// ── KONVERSI ──
+function setConvMode(mode) {
+  convMode = mode;
+  document.querySelectorAll('.conv-mode-btn').forEach(b=>b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  const labels = {
+    'gram-idr':['Gram','IDR (Rupiah)'],
+    'idr-gram':['IDR (Rupiah)','Gram'],
+    'oz-gram':['Troy Ounce (oz)','Gram'],
+    'gram-oz':['Gram','Troy Ounce (oz)'],
+    'usd-gram':['USD','Gram'],
+  };
+  const [from, to] = labels[mode];
+  document.getElementById('conv-from-label').textContent = from;
+  document.getElementById('conv-to-label').textContent = to;
+  document.getElementById('conv-input').value = '';
+  document.getElementById('conv-output').value = '';
+  document.getElementById('konversi-info').textContent = 'Isi input untuk mulai konversi.';
+  hitungKonversi();
+}
+
+function hitungKonversi() {
+  const v = parseFloat(document.getElementById('conv-input').value);
+  if(!v || v<=0) {document.getElementById('conv-output').value='';return;}
+  let result = 0, info = '';
+  if(convMode==='gram-idr') { result = v * liveIDR; info = `${v} gram × ${fmtIDR(liveIDR)}/gram`; document.getElementById('conv-output').value = fmtIDR(result); }
+  else if(convMode==='idr-gram') { result = v / liveIDR; info = `${fmtIDR(v)} ÷ ${fmtIDR(liveIDR)}/gram`; document.getElementById('conv-output').value = result.toFixed(6) + ' gram'; }
+  else if(convMode==='oz-gram') { result = v * OZ_TO_GRAM; info = `${v} oz × 31.1035`; document.getElementById('conv-output').value = result.toFixed(4) + ' gram'; }
+  else if(convMode==='gram-oz') { result = v / OZ_TO_GRAM; info = `${v} gram ÷ 31.1035`; document.getElementById('conv-output').value = result.toFixed(6) + ' oz'; }
+  else if(convMode==='usd-gram') { const pricePerGramUSD = liveUSD / OZ_TO_GRAM; result = v / pricePerGramUSD; info = `${v} USD ÷ $${pricePerGramUSD.toFixed(2)}/gram`; document.getElementById('conv-output').value = result.toFixed(6) + ' gram'; }
+  document.getElementById('konversi-info').textContent = info;
+}
+
+// ── INIT ──
+fetchPrices();
+setInterval(fetchPrices, 5 * 60 * 1000);
+</script>
+</body>
+</html>
