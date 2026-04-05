@@ -1,12 +1,1118 @@
+<!--
+   _-=Created With Love=- _
+| \ | ___ ._ _  ___  ___
+|   |<_> || ' |/ . |<_-<
+|_\_|<___||_|_|\_. |/__/
+               <___'
+-->
+<! - -  Dibuat untuk Ceuna !  - - >
+
+
 <!DOCTYPE html>
 <html lang="id" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kalkulator Modal — ModalKu</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<title>Kalkulator Modal Wabang </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js">window.addEventListener('resize',()=>{const a=document.querySelector('.tab-btn.active');if(a)syncMobileNav(a.dataset.tab||'modal');});
+</script>
+<style>
+:root, [data-theme="light"] {
+  --color-bg:              #faf8f4;
+  --color-surface:         #fdfcf9;
+  --color-surface-2:       #ffffff;
+  --color-surface-offset:  #f3ede4;
+  --color-surface-dynamic: #e9e0d4;
+  --color-divider:         #ddd5c8;
+  --color-border:          #d4c9bb;
+  --color-text:            #2b2218;
+  --color-text-muted:      #7a6d5e;
+  --color-text-faint:      #b8aa9a;
+  --color-text-inverse:    #fdf9f4;
+  --color-primary:         #c4601a;
+  --color-primary-hover:   #a34d13;
+  --color-primary-active:  #7e3b0d;
+  --color-primary-highlight: #f2dece;
+  --color-success:         #3d7a2b;
+  --color-success-hover:   #2b5c1d;
+  --color-success-highlight: #d4e8cc;
+  --color-warning:         #a8820e;
+  --color-warning-highlight: #f0e4c0;
+  --color-error:           #b53030;
+  --color-error-highlight: #f5d3d3;
+  --color-gold:            #c49820;
+  --color-gold-highlight:  #f0e4b0;
+  --shadow-sm: 0 1px 3px oklch(0.25 0.03 50 / 0.07);
+  --shadow-md: 0 4px 14px oklch(0.25 0.03 50 / 0.09);
+  --shadow-lg: 0 12px 36px oklch(0.25 0.03 50 / 0.13);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+  --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;
+  --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
+  --space-12:3rem;--space-16:4rem;
+  --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);
+  --text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);
+  --text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);
+  --text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);
+  --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+  --font-body:'Plus Jakarta Sans',system-ui,sans-serif;
+  --font-display:'DM Serif Display',Georgia,serif;
+  --transition:180ms cubic-bezier(0.16,1,0.3,1);
+}
+[data-theme="dark"] {
+  --color-bg:#18130e;--color-surface:#1e1812;--color-surface-2:#241d16;
+  --color-surface-offset:#1c1710;--color-surface-dynamic:#2e2519;
+  --color-divider:#2a2118;--color-border:#3a3026;
+  --color-text:#e8ddd2;--color-text-muted:#8a7d6e;--color-text-faint:#5a5048;
+  --color-text-inverse:#2b2218;
+  --color-primary:#e8834a;--color-primary-hover:#d06c34;--color-primary-active:#b35520;
+  --color-primary-highlight:#3d2c1e;
+  --color-success:#6aa84f;--color-success-hover:#4d8c37;--color-success-highlight:#2a3d22;
+  --color-warning:#d4aa2a;--color-warning-highlight:#3d3010;
+  --color-error:#e06060;--color-error-highlight:#3d1e1e;
+  --color-gold:#e0b82e;--color-gold-highlight:#3d3316;
+  --shadow-sm:0 1px 3px oklch(0 0 0/0.25);
+  --shadow-md:0 4px 14px oklch(0 0 0/0.35);
+  --shadow-lg:0 12px 36px oklch(0 0 0/0.45);
+}
+@media(max-width:0px){/* dark auto disabled */
+  :root:not([data-theme]){
+    --color-bg:#18130e;--color-surface:#1e1812;--color-surface-2:#241d16;
+    --color-surface-offset:#1c1710;--color-surface-dynamic:#2e2519;
+    --color-divider:#2a2118;--color-border:#3a3026;
+    --color-text:#e8ddd2;--color-text-muted:#8a7d6e;--color-text-faint:#5a5048;
+    --color-primary:#e8834a;--color-primary-hover:#d06c34;--color-primary-highlight:#3d2c1e;
+    --color-success:#6aa84f;--color-success-highlight:#2a3d22;
+    --color-error:#e06060;--color-error-highlight:#3d1e1e;
+    --color-gold:#e0b82e;--color-gold-highlight:#3d3316;
+    --shadow-sm:0 1px 3px oklch(0 0 0/0.25);
+    --shadow-md:0 4px 14px oklch(0 0 0/0.35);
+    --shadow-lg:0 12px 36px oklch(0 0 0/0.45);
+  }
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);line-height:1.6;}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit;}
+input,select{font:inherit;color:inherit;}
+img{display:block;max-width:100%;}
+::selection{background:oklch(from var(--color-primary) l c h/0.2);}
+:focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm);}
+a,button,[role="button"],input,select{
+  transition:color var(--transition),background var(--transition),
+  border-color var(--transition),box-shadow var(--transition),opacity var(--transition);
+}
+
+.app-wrapper{max-width:980px;margin:0 auto;padding:var(--space-4) var(--space-4) var(--space-16);}
+
+.app-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:var(--space-5) 0 var(--space-6);
+  border-bottom:1px solid var(--color-divider);
+  margin-bottom:var(--space-8);
+}
+.logo-area{display:flex;align-items:center;gap:var(--space-3);}
+.logo-svg{width:40px;height:40px;flex-shrink:0;}
+.logo-text{font-family:var(--font-display);font-size:var(--text-lg);color:var(--color-text);line-height:1.1;}
+.logo-sub{font-size:var(--text-xs);color:var(--color-text-muted);font-family:var(--font-body);font-weight:400;display:block;margin-top:1px;}
+.theme-toggle{
+  width:36px;height:36px;border-radius:var(--radius-full);
+  background:var(--color-surface-offset);color:var(--color-text-muted);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-sm);
+}
+.theme-toggle:hover{background:var(--color-surface-dynamic);color:var(--color-text);}
+
+.tab-nav{
+  display:flex;gap:var(--space-1);background:var(--color-surface-offset);
+  border-radius:var(--radius-lg);padding:var(--space-1);
+  margin-bottom:var(--space-8);overflow-x:auto;scrollbar-width:none;
+}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tab-btn{
+  flex:1;min-width:max-content;padding:var(--space-2) var(--space-4);
+  border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:500;
+  color:var(--color-text-muted);white-space:nowrap;
+}
+.tab-btn:hover{color:var(--color-text);background:oklch(from var(--color-text) l c h/0.05);}
+.tab-btn.active{background:var(--color-surface-2);color:var(--color-primary);box-shadow:var(--shadow-sm);font-weight:600;}
+
+.tab-panel{display:none;}
+.tab-panel.active{display:block;animation:fadeIn 200ms ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+
+.section-card{
+  background:var(--color-surface);
+  border:1px solid oklch(from var(--color-text) l c h/0.08);
+  border-radius:var(--radius-xl);padding:var(--space-6);
+  margin-bottom:var(--space-6);box-shadow:var(--shadow-sm);
+}
+.section-title{
+  font-size:var(--text-lg);font-weight:700;color:var(--color-text);
+  margin-bottom:var(--space-4);display:flex;align-items:center;gap:var(--space-3);
+}
+.section-icon{
+  width:30px;height:30px;border-radius:var(--radius-md);
+  background:var(--color-primary-highlight);color:var(--color-primary);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.section-desc{font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-4);}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-4);}
+@media(max-width:600px){.form-row{grid-template-columns:1fr;}}
+.form-group{display:flex;flex-direction:column;gap:var(--space-2);}
+.form-label{font-size:var(--text-sm);font-weight:600;color:var(--color-text-muted);}
+.form-label small{font-weight:400;color:var(--color-text-faint);}
+.form-input,.form-select{
+  padding:var(--space-3) var(--space-4);
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-md);
+  background:var(--color-bg);color:var(--color-text);
+  font-size:var(--text-sm);width:100%;
+}
+.form-input:focus,.form-select:focus{
+  outline:none;border-color:var(--color-primary);
+  box-shadow:0 0 0 3px oklch(from var(--color-primary) l c h/0.15);
+}
+.form-input.currency{padding-left:var(--space-10);}
+.input-wrapper{position:relative;}
+.input-prefix{
+  position:absolute;left:var(--space-4);top:50%;transform:translateY(-50%);
+  font-size:var(--text-sm);color:var(--color-text-muted);font-weight:500;pointer-events:none;
+}
+
+.item-list{display:flex;flex-direction:column;gap:var(--space-3);}
+.item-row{
+  display:grid;grid-template-columns:1fr auto auto auto;
+  gap:var(--space-3);align-items:center;
+  padding:var(--space-3) var(--space-4);
+  background:var(--color-bg);
+  border:1px solid var(--color-border);border-radius:var(--radius-lg);
+}
+@media(max-width:600px){
+  .item-row{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;}
+  .item-row .item-name{grid-column:1/-1;}
+  .item-row .del-btn{grid-row:2;grid-column:2;justify-self:end;}
+}
+.item-name-input{border:none;background:transparent;font-size:var(--text-sm);color:var(--color-text);font-weight:500;padding:0;outline:none;}
+.item-name-input:focus{color:var(--color-primary);}
+.item-price-input{
+  border:1px solid var(--color-border);border-radius:var(--radius-md);
+  background:var(--color-surface);padding:var(--space-2) var(--space-3);
+  font-size:var(--text-sm);color:var(--color-text);width:130px;text-align:right;
+}
+.item-price-input:focus{border-color:var(--color-primary);outline:none;box-shadow:0 0 0 2px oklch(from var(--color-primary) l c h/0.15);}
+.item-qty-input{
+  border:1px solid var(--color-border);border-radius:var(--radius-md);
+  background:var(--color-surface);padding:var(--space-2) var(--space-3);
+  font-size:var(--text-sm);color:var(--color-text);width:70px;text-align:center;
+}
+.item-qty-input:focus{border-color:var(--color-primary);outline:none;box-shadow:0 0 0 2px oklch(from var(--color-primary) l c h/0.15);}
+.del-btn{width:30px;height:30px;border-radius:var(--radius-full);color:var(--color-text-faint);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.del-btn:hover{background:var(--color-error-highlight);color:var(--color-error);}
+.add-item-btn{
+  display:flex;align-items:center;gap:var(--space-2);
+  padding:var(--space-3) var(--space-4);
+  border:1.5px dashed var(--color-border);border-radius:var(--radius-lg);
+  color:var(--color-text-muted);font-size:var(--text-sm);font-weight:500;
+  width:100%;justify-content:center;margin-top:var(--space-3);
+}
+.add-item-btn:hover{border-color:var(--color-primary);color:var(--color-primary);background:var(--color-primary-highlight);}
+.item-subtotal{font-size:var(--text-xs);color:var(--color-text-faint);font-variant-numeric:tabular-nums;white-space:nowrap;}
+
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-4);margin-bottom:var(--space-6);}
+.info-card{
+  background:var(--color-surface);
+  border:1px solid oklch(from var(--color-text) l c h/0.08);
+  border-radius:var(--radius-xl);padding:var(--space-5);box-shadow:var(--shadow-sm);
+}
+.info-card-label{font-size:var(--text-xs);font-weight:600;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:var(--space-2);}
+.info-card-value{font-size:var(--text-xl);font-weight:700;color:var(--color-text);font-variant-numeric:tabular-nums;line-height:1.1;}
+.info-card-value.positive{color:var(--color-success);}
+.info-card-value.negative{color:var(--color-error);}
+.info-card-sub{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-1);}
+.info-card.highlight{background:var(--color-primary-highlight);border-color:oklch(from var(--color-primary) l c h/0.2);}
+.info-card.highlight .info-card-label{color:var(--color-primary);}
+.info-card.highlight .info-card-value{color:var(--color-primary);}
+
+.btn{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-5);border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;}
+.btn-primary{background:var(--color-primary);color:var(--color-text-inverse);}
+.btn-primary:hover{background:var(--color-primary-hover);}
+.btn-primary:active{background:var(--color-primary-active);}
+.btn-ghost{background:transparent;color:var(--color-text-muted);border:1px solid var(--color-border);}
+.btn-ghost:hover{background:var(--color-surface-offset);color:var(--color-text);}
+.btn-success{background:var(--color-success);color:var(--color-text-inverse);}
+.btn-success:hover{background:var(--color-success-hover);}
+
+.summary-table{width:100%;border-collapse:collapse;font-size:var(--text-sm);}
+.summary-table th{
+  text-align:left;padding:var(--space-3) var(--space-4);
+  font-size:var(--text-xs);font-weight:700;text-transform:uppercase;
+  letter-spacing:0.05em;color:var(--color-text-muted);
+  border-bottom:1px solid var(--color-divider);
+}
+.summary-table td{padding:var(--space-3) var(--space-4);border-bottom:1px solid oklch(from var(--color-text) l c h/0.05);}
+.summary-table tr:last-child td{border-bottom:none;}
+.summary-table .total-row td{font-weight:700;color:var(--color-text);border-top:2px solid var(--color-divider);padding-top:var(--space-4);}
+.num-right{text-align:right;font-variant-numeric:tabular-nums;}
+
+.slider-group{display:flex;flex-direction:column;gap:var(--space-2);}
+.slider-row{display:flex;align-items:center;gap:var(--space-4);}
+.slider{flex:1;accent-color:var(--color-primary);}
+.slider-value{min-width:70px;text-align:right;font-size:var(--text-sm);font-weight:600;color:var(--color-primary);font-variant-numeric:tabular-nums;}
+
+.chart-card{
+  background:var(--color-surface);
+  border:1px solid oklch(from var(--color-text) l c h/0.08);
+  border-radius:var(--radius-xl);padding:var(--space-6);
+  box-shadow:var(--shadow-sm);margin-bottom:var(--space-6);
+}
+.chart-title{font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-5);display:flex;justify-content:space-between;align-items:center;}
+.chart-container{position:relative;height:280px;}
+
+.bep-meter{margin:var(--space-4) 0;}
+.bep-track{height:10px;background:var(--color-surface-offset);border-radius:var(--radius-full);overflow:hidden;}
+.bep-fill{height:100%;background:var(--color-primary);border-radius:var(--radius-full);transition:width 0.5s cubic-bezier(0.16,1,0.3,1);}
+.bep-labels{display:flex;justify-content:space-between;font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-2);}
+
+.badge{display:inline-flex;align-items:center;gap:4px;padding:2px var(--space-3);border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:600;}
+.badge-success{background:var(--color-success-highlight);color:var(--color-success);}
+.badge-warning{background:var(--color-warning-highlight);color:var(--color-warning);}
+.badge-error{background:var(--color-error-highlight);color:var(--color-error);}
+
+.divider{border:none;border-top:1px solid var(--color-divider);margin:var(--space-5) 0;}
+
+.callout{
+  padding:var(--space-4) var(--space-5);border-radius:var(--radius-lg);
+  font-size:var(--text-sm);display:flex;gap:var(--space-3);align-items:flex-start;
+  margin-bottom:var(--space-4);
+}
+.callout-success{background:var(--color-success-highlight);color:var(--color-success);}
+.callout-warning{background:var(--color-warning-highlight);color:var(--color-warning);}
+.callout-info{background:var(--color-primary-highlight);color:var(--color-primary);}
+.callout-bar{width:3px;border-radius:var(--radius-full);background:currentColor;flex-shrink:0;align-self:stretch;}
+
+.action-bar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:var(--space-4) var(--space-6);
+  background:var(--color-surface);
+  border:1px solid oklch(from var(--color-text) l c h/0.08);
+  border-radius:var(--radius-xl);box-shadow:var(--shadow-sm);
+  margin-top:var(--space-6);gap:var(--space-4);flex-wrap:wrap;
+}
+.action-bar-total{display:flex;flex-direction:column;}
+.action-bar-label{font-size:var(--text-xs);color:var(--color-text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.05em;}
+.action-bar-value{font-size:var(--text-lg);font-weight:700;color:var(--color-primary);font-variant-numeric:tabular-nums;}
+.action-bar-btns{display:flex;gap:var(--space-3);flex-wrap:wrap;}
+
+.hint{font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-1);}
+
+/* ═══════════════ MOBILE RESPONSIVE ═══════════════ */
+@media(max-width:640px){
+  .app-wrapper{padding:var(--space-3) var(--space-3) 88px;}
+  .app-header{padding:var(--space-4) 0 var(--space-5);}
+  .logo-svg{width:32px;height:32px;}
+  .logo-text{font-size:var(--text-base);}
+  .tab-nav{gap:0;padding:3px;}
+  .tab-btn{padding:var(--space-2) var(--space-3);font-size:11px;min-width:0;}
+  .section-card{padding:var(--space-4);}
+  .section-title{font-size:var(--text-base);}
+  .form-row{grid-template-columns:1fr;}
+  .item-row{grid-template-columns:1fr auto;grid-template-rows:auto auto auto;gap:var(--space-2);}
+  .item-name-input{grid-column:1/-1;}
+  .item-subtotal{grid-column:1/-1;font-size:var(--text-xs);}
+  .del-btn{grid-row:2;grid-column:2;align-self:center;}
+  .item-price-input{width:100px;}
+  .item-qty-input{width:56px;}
+  .info-grid{grid-template-columns:repeat(2,1fr);gap:var(--space-3);}
+  .info-card{padding:var(--space-3);}
+  .info-card-value{font-size:1.1rem;}
+  .chart-grid-2col{grid-template-columns:1fr !important;}
+  .summary-table{font-size:var(--text-xs);}
+  .summary-table td,.summary-table th{padding:var(--space-2);}
+  .action-bar{display:none !important;}
+  .mobile-bottom-nav{
+    display:flex;position:fixed;bottom:0;left:0;right:0;
+    gap:var(--space-2);padding:var(--space-3) var(--space-4);
+    background:var(--color-surface);border-top:1px solid var(--color-divider);
+    box-shadow:0 -2px 16px oklch(0.2 0.02 50/0.09);z-index:200;
+  }
+  .mobile-bottom-nav .btn{flex:1;justify-content:center;font-size:var(--text-sm);}
+  .mobile-bottom-nav .btn-ghost{flex:0 0 auto;min-width:76px;}
+}
+@media(min-width:641px){.mobile-bottom-nav{display:none;}}
+@media(max-width:400px){
+  .tab-btn{font-size:10px;padding:var(--space-1) var(--space-2);}
+  .info-grid{grid-template-columns:1fr;}
+}
+
+</style>
 </head>
 <body>
-<p>loading full content...</p>
+<div class="app-wrapper">
+
+  <header class="app-header">
+    <div class="logo-area">
+      <svg class="logo-svg" viewBox="0 0 40 40" fill="none" aria-label="Logo">
+        <circle cx="20" cy="20" r="19" fill="var(--color-primary-highlight)" stroke="var(--color-primary)" stroke-width="1.5"/>
+        <path d="M20 8c0 0-8 6-8 13a8 8 0 0 0 16 0C28 14 20 8 20 8z" fill="var(--color-primary)" opacity="0.9"/>
+        <ellipse cx="20" cy="21" rx="4" ry="3" fill="var(--color-primary-highlight)" opacity="0.8"/>
+        <circle cx="16" cy="27" r="2" fill="var(--color-gold)" opacity="0.9"/>
+        <circle cx="24" cy="27" r="2" fill="var(--color-gold)" opacity="0.9"/>
+      </svg>
+      <div>
+        <span class="logo-text">Modalkuu</span>
+        <span class="logo-sub">hitung dulu, meow kemudian</span>
+      </div>
+    </div>
+    <button class="theme-toggle" data-theme-toggle aria-label="Ganti tema">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </header>
+
+  <nav class="tab-nav" role="tablist">
+    <button class="tab-btn active" data-tab="modal" role="tab">Modal Awal</button>
+    <button class="tab-btn" data-tab="produksi" role="tab">Biaya Produksi</button>
+    <button class="tab-btn" data-tab="penjualan" role="tab">Rencana Jual</button>
+    <button class="tab-btn" data-tab="analisis" role="tab">Analisis Hasil</button>
+  </nav>
+
+  <!-- TAB 1 -->
+  <div id="tab-modal" class="tab-panel active">
+
+    <div class="section-card">
+      <div class="section-title">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M3 9h18M3 15h18M9 3v18M15 3v18" stroke-linecap="round"/></svg>
+        Peralatan dan Perlengkapan
+      </div>
+      <p class="section-desc">Semua barang yang dibeli untuk dapur produksi.</p>
+      <div class="item-list" id="peralatan-list"></div>
+      <button class="add-item-btn" onclick="addItem('peralatan')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        Tambah peralatan
+      </button>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 0-4 0v2" stroke-linecap="round"/></svg>
+        Stok Bahan Baku Awal
+      </div>
+      <p class="section-desc">Bahan yang dibeli sebelum mulai produksi perdana. Ini bagian dari modal awal / R & D .</p>
+      <div class="item-list" id="stok-awal-list"></div>
+      <button class="add-item-btn" onclick="addItem('stok-awal')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        Tambah bahan
+      </button>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2" stroke-linecap="round"/></svg>
+        Biaya Sekali Bayar Lainnya
+      </div>
+      <p class="section-desc">Izin usaha, desain logo, cetak stiker pertama kali, pembuatan akun marketplace atau apapun yang bayarnya cuma sekali di awal.</p>
+      <div class="item-list" id="biaya-lain-list"></div>
+      <button class="add-item-btn" onclick="addItem('biaya-lain')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        Tambah biaya
+      </button>
+    </div>
+
+    <div class="action-bar">
+      <div class="action-bar-total">
+        <span class="action-bar-label">Total Modal yang di Butuhkeun</span>
+        <span class="action-bar-value" id="total-modal-awal">Rp 0</span>
+      </div>
+      <div class="action-bar-btns">
+        <button class="btn btn-primary" onclick="switchTab('produksi')">Lanjut ke Biaya Produksi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2 -->
+  <div id="tab-produksi" class="tab-panel">
+
+    <div class="section-card">
+      <div class="section-title">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Bahan Baku per Batch
+      </div>
+      <p class="section-desc">Semua bahan yang habis terpakai tiap kali ceu masak. Ini yang nentuin seberapa mahal ongkos pwoduksinya.</p>
+      <div class="form-row" style="margin-bottom:var(--space-4);">
+        <div class="form-group">
+          <label class="form-label">Hasil per Batch <small>(jumlah jar/bungkus)</small></label>
+          <input type="number" class="form-input" id="unit-per-batch" value="50" min="1" onchange="recalc()">
+        </div>
+
+      </div>
+      <div class="item-list" id="bahan-baku-list"></div>
+      <button class="add-item-btn" onclick="addItem('bahan-baku')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        Tambah bahan
+      </button>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9" stroke-linecap="round"/></svg>
+        Packaging per Unit
+      </div>
+      <p class="section-desc">Harga satuan kemasan per unit produk. Jumlah otomatis mengikuti Hasil per Batch — tidak perlu isi manual.</p>
+      <div class="item-list" id="packaging-list"></div>
+      <button class="add-item-btn" onclick="addItem('packaging')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        Tambah packaging
+      </button>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Biaya Operasional per Batch
+      </div>
+      <p class="section-desc">Gas LPG, listrik, air,  semua yang habis tiap kali masak satu batch. Kecil kelihatannya, tapi lama-lama hurt :(.</p>
+      <div class="item-list" id="operasional-list"></div>
+      <button class="add-item-btn" onclick="addItem('operasional')">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        Tambah biaya
+      </button>
+    </div>
+
+    <div class="action-bar">
+      <div class="action-bar-total">
+        <span class="action-bar-label">HPP per Unit (Harga Pokok Pwoduksi)</span>
+        <span class="action-bar-value" id="hpp-per-unit-display">Rp 0</span>
+      </div>
+      <div class="action-bar-btns">
+        <button class="btn btn-ghost" onclick="switchTab('modal')">Kembali</button>
+        <button class="btn btn-primary" onclick="switchTab('penjualan')">Lanjut ke Rencana Jual</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3 -->
+  <div id="tab-penjualan" class="tab-panel">
+
+    <div class="section-card">
+      <div class="section-title">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Harga dan Target Penjualan
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Harga Jual per Unit</label>
+          <div class="input-wrapper">
+            <span class="input-prefix">Rp</span>
+            <input type="number" class="form-input currency" id="harga-jual" value="25000" min="0" onchange="recalc()">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Target Produksi per Bulan <small>(batch)</small></label>
+          <input type="number" class="form-input" id="batch-per-bulan" value="8" min="1" onchange="recalc()">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Estimasi Produk Terjual</label>
+          <div class="slider-group">
+            <div class="slider-row">
+              <input type="range" class="slider" id="persen-terjual" min="50" max="100" value="80" oninput="syncSlider()">
+              <span class="slider-value" id="persen-terjual-val">80%</span>
+            </div>
+          </div>
+          <span class="hint">Sisanya dianggap deadstock aja kali ya, jangan overestimate ini.</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Biaya Tenaga Kerja / Bulan <small>(kalau ada)</small></label>
+          <div class="input-wrapper">
+            <span class="input-prefix">Rp</span>
+            <input type="number" class="form-input currency" id="biaya-tenaga-kerja" value="0" min="0" onchange="recalc()">
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Biaya Tetap Bulanan</label>
+          <div class="input-wrapper">
+            <span class="input-prefix">Rp</span>
+            <input type="number" class="form-input currency" id="biaya-tetap" value="200000" min="0" onchange="recalc()">
+          </div>
+          <span class="hint">Sewa tempat, internet, dll.</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Biaya Promosi / Marketing / Bulan</label>
+          <div class="input-wrapper">
+            <span class="input-prefix">Rp</span>
+            <input type="number" class="form-input currency" id="biaya-promosi" value="100000" min="0" onchange="recalc()">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        Distribusi Kanal Penjualan
+      </div>
+      <p class="section-desc" style="margin-bottom:var(--space-4);">Berapa persen penjualan lewat masing-masing channel. Total harus pas di 100%. (misal mau di jual cuma 1 channel ya ndakpapa)</p>
+      <div class="item-list">
+        <div class="item-row">
+          <span style="font-size:var(--text-sm);font-weight:600;">COD dan Titip Warung</span>
+          <input type="number" class="item-qty-input" id="kanal-offline" value="50" min="0" max="100" onchange="recalcKanal()" style="width:80px;">
+          <span style="font-size:var(--text-sm);color:var(--color-text-muted);">%</span>
+          <span class="item-subtotal" id="kanal-offline-val">—</span>
+        </div>
+        <div class="item-row">
+          <span style="font-size:var(--text-sm);font-weight:600;">Tokopedia dan Shopee</span>
+          <input type="number" class="item-qty-input" id="kanal-market" value="30" min="0" max="100" onchange="recalcKanal()" style="width:80px;">
+          <span style="font-size:var(--text-sm);color:var(--color-text-muted);">%</span>
+          <span class="item-subtotal" id="kanal-market-val">—</span>
+        </div>
+        <div class="item-row">
+          <span style="font-size:var(--text-sm);font-weight:600;">WhatsApp dan Instagram</span>
+          <input type="number" class="item-qty-input" id="kanal-sosmed" value="20" min="0" max="100" onchange="recalcKanal()" style="width:80px;">
+          <span style="font-size:var(--text-sm);color:var(--color-text-muted);">%</span>
+          <span class="item-subtotal" id="kanal-sosmed-val">—</span>
+        </div>
+      </div>
+      <div id="kanal-warning" class="callout callout-warning" style="display:none;margin-top:var(--space-3);">
+        <div class="callout-bar"></div>
+        <span>Total persentase belum 100%. sesuaiikann heula sebelum lanjut.</span>
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <div class="action-bar-total">
+        <span class="action-bar-label">Proyeksi Omzet per Bulan</span>
+        <span class="action-bar-value" id="proyeksi-omzet">Rp 0</span>
+      </div>
+      <div class="action-bar-btns">
+        <button class="btn btn-ghost" onclick="switchTab('produksi')">Kembali</button>
+        <button class="btn btn-primary" onclick="switchTab('analisis')">Lihat Analisis</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4 -->
+  <div id="tab-analisis" class="tab-panel">
+
+    <div id="callout-analisis"></div>
+
+    <div class="info-grid">
+      <div class="info-card highlight">
+        <div class="info-card-label">Modal Awal Dibutuhkan</div>
+        <div class="info-card-value" id="kpi-modal">Rp 0</div>
+        <div class="info-card-sub">Peralatan, stok awal, dan biaya sekali bayar</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">HPP per Unit</div>
+        <div class="info-card-value" id="kpi-hpp">Rp 0</div>
+        <div class="info-card-sub">Ini batas bawah harga jual </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Profit per Unit</div>
+        <div class="info-card-value positive" id="kpi-profit-unit">Rp 0</div>
+        <div class="info-card-sub" id="kpi-margin-pct">Margin 0%</div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Laba Bersih per Bulan</div>
+        <div class="info-card-value" id="kpi-laba-bersih">Rp 0</div>
+        <div class="info-card-sub" id="kpi-omzet-sub">dari omzet Rp 0</div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3" stroke-linecap="round"/></svg>
+        Break Even Point
+      </div>
+      <div class="form-row" style="margin-bottom:0;">
+        <div>
+          <div style="font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-muted);margin-bottom:var(--space-2);">BEP Unit per Bulan</div>
+          <div style="font-size:var(--text-xl);font-weight:700;color:var(--color-text);font-variant-numeric:tabular-nums;" id="bep-unit">0 unit</div>
+          <div style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-1);">Minimum penjualan agar tidak rugi</div>
+        </div>
+        <div>
+          <div style="font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-muted);margin-bottom:var(--space-2);">BEP dalam Rupiah</div>
+          <div style="font-size:var(--text-xl);font-weight:700;color:var(--color-text);font-variant-numeric:tabular-nums;" id="bep-rupiah">Rp 0</div>
+          <div style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-1);">Omzet minimum untuk impas</div>
+        </div>
+        <div>
+          <div style="font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--color-text-muted);margin-bottom:var(--space-2);">Estimasi Balik Modal</div>
+          <div style="font-size:var(--text-xl);font-weight:700;color:var(--color-text);" id="payback-period">— bulan</div>
+          <div style="font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-1);">Sampai modal awal ketutup semua</div>
+        </div>
+      </div>
+      <hr class="divider">
+      <div class="bep-meter">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-2);">
+          <span style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-muted);">Kapasitas Jual vs Titik BEP</span>
+          <span id="bep-pct-label" style="font-size:var(--text-sm);font-weight:700;color:var(--color-primary);">0%</span>
+        </div>
+        <div class="bep-track"><div class="bep-fill" id="bep-fill" style="width:0%"></div></div>
+        <div class="bep-labels"><span>0</span><span id="bep-track-label">BEP</span><span id="bep-cap-label">Kapasitas</span></div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">
+        <span>Proyeksi Laba 6 Bulan Pertama</span>
+        <span class="badge" id="trend-badge">—</span>
+      </div>
+      <div class="chart-container"><canvas id="chartLaba"></canvas></div>
+    </div>
+
+    <div class="chart-grid-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-6);">
+      <div class="chart-card" style="margin-bottom:0;">
+        <div class="chart-title" style="font-size:var(--text-sm);">Struktur Biaya Produksi</div>
+        <div class="chart-container" style="height:220px;"><canvas id="chartBiaya"></canvas></div>
+      </div>
+      <div class="chart-card" style="margin-bottom:0;">
+        <div class="chart-title" style="font-size:var(--text-sm);">Distribusi Kanal Penjualan</div>
+        <div class="chart-container" style="height:220px;"><canvas id="chartKanal"></canvas></div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">
+        <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke-linecap="round"/></svg>
+        Ringkasan Keuangan Bulanan
+      </div>
+      <table class="summary-table">
+        <thead><tr><th>Komponen</th><th class="num-right">Nilai</th></tr></thead>
+        <tbody id="summary-tbody"></tbody>
+      </table>
+    </div>
+
+
+
+</div>
+
+<script>
+const state = {
+  peralatan:[
+    {id:'p1',name:'Kompor raksasaaa',price:350000,qty:1},
+    {id:'p2',name:'Wajan raksasaa',price:150000,qty:2},
+    {id:'p3',name:'Blender atau Chopper',price:250000,qty:1},
+    {id:'p4',name:'Spatula dan Serokan (gatau namanya apa)',price:50000,qty:2},
+    {id:'p5',name:'Timbangan Digital',price:120000,qty:1},
+    {id:'p6',name:'Toples Penyimpanan',price:30000,qty:5},
+  ],
+  'stok-awal':[
+    {id:'s1',name:'Bawang Merah (kg)',price:35000,qty:10},
+    {id:'s2',name:'Cabai Rawit Merah (kg)',price:75000,qty:3},
+    {id:'s3',name:'Minyak Goreng (liter)',price:18000,qty:5},
+  ],
+  'biaya-lain':[
+    {id:'b1',name:'Desain Logo dan Stiker',price:200000,qty:1},
+    {id:'b2',name:'Cetak Label Kemasan Perdana',price:150000,qty:1},
+  ],
+  'bahan-baku':[
+    {id:'bb1',name:'Bawang Merah (kg)',price:35000,qty:3},
+    {id:'bb2',name:'Cabai Rawit (kg)',price:55000,qty:1},
+    {id:'bb3',name:'Minyak Goreng (liter)',price:18000,qty:3},
+    {id:'bb4',name:'Garam dan Bumbu',price:10000,qty:1},
+  ],
+  packaging:[
+    {id:'pk1',name:'Toples 200ml',price:4500},
+    {id:'pk2',name:'Stiker Label',price:500},
+    {id:'pk3',name:'Shrink Wrap atau Seal',price:300},
+  ],
+  operasional:[
+    {id:'op1',name:'Gas LPG 30kg',price:22000,qty:2},
+    {id:'op2',name:'Listrik per Batch',price:15000,qty:1},
+  ],
+};
+
+let chartLaba=null,chartBiaya=null,chartKanal=null,idCounter=100;
+
+function fmt(n){
+  if(isNaN(n)||n===null)return'Rp 0';
+  return'Rp '+Math.round(n).toLocaleString('id-ID');
+}
+function fmtC(n){
+  if(n>=1e9)return'Rp '+(n/1e9).toFixed(1)+'M';
+  if(n>=1e6)return'Rp '+(n/1e6).toFixed(1)+'jt';
+  if(n>=1e3)return'Rp '+(n/1e3).toFixed(0)+'rb';
+  return'Rp '+n;
+}
+
+function getUnitLabel(key){
+  const m={peralatan:'unit','stok-awal':'unit','biaya-lain':'unit','bahan-baku':'unit',packaging:'',operasional:'unit/batch'};
+  return m[key]||'unit';
+}
+
+function renderList(key){
+  const list=document.getElementById(key+'-list');
+  if(!list)return;
+  list.innerHTML='';
+  state[key].forEach(item=>{
+    const row=document.createElement('div');
+    row.className='item-row';
+    row.dataset.id=item.id;
+    const sub=item.price*item.qty;
+    row.innerHTML=`
+      <input class="item-name-input" value="${item.name}" placeholder="Nama item"
+             oninput="updateItem('${key}','${item.id}','name',this.value)">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <span style="font-size:var(--text-xs);color:var(--color-text-faint);">Rp</span>
+        <input type="number" class="item-price-input" value="${item.price}" min="0"
+               onchange="updateItem('${key}','${item.id}','price',+this.value)">
+      </div>
+      <div style="display:flex;align-items:center;gap:4px;">
+        <input type="number" class="item-qty-input" value="${item.qty}" min="1"
+               onchange="updateItem('${key}','${item.id}','qty',+this.value)">
+        <span style="font-size:var(--text-xs);color:var(--color-text-faint);">${getUnitLabel(key)}</span>
+      </div>
+      <button class="del-btn" onclick="deleteItem('${key}','${item.id}')" aria-label="Hapus item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <span class="item-subtotal" style="grid-column:2/5;text-align:right;">Subtotal: ${fmt(sub)}</span>
+    `;
+    list.appendChild(row);
+  });
+}
+
+function renderAllLists(){
+  Object.keys(state).forEach(k=>{
+    if(k==='packaging')renderPackagingList();
+    else renderList(k);
+  });
+}
+
+function renderPackagingList(){
+  const key='packaging';
+  const list=document.getElementById(key+'-list');
+  if(!list)return;
+  const uPB=+document.getElementById('unit-per-batch').value||1;
+  list.innerHTML='';
+  state[key].forEach(item=>{
+    const row=document.createElement('div');
+    row.className='item-row';
+    row.dataset.id=item.id;
+    const sub=item.price*uPB;
+    row.innerHTML=`
+      <input class="item-name-input" value="${item.name}" placeholder="Nama item"
+             oninput="updateItem('${key}','${item.id}','name',this.value)">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <span style="font-size:var(--text-xs);color:var(--color-text-faint);">Rp</span>
+        <input type="number" class="item-price-input" value="${item.price}" min="0"
+               onchange="updateItem('${key}','${item.id}','price',+this.value)">
+      </div>
+      <div style="display:flex;align-items:center;gap:4px;font-size:var(--text-xs);color:var(--color-text-muted);white-space:nowrap;">
+        x ${uPB} unit
+      </div>
+      <button class="del-btn" onclick="deleteItem('${key}','${item.id}')" aria-label="Hapus item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <span class="item-subtotal" style="grid-column:2/5;text-align:right;">Subtotal: ${fmt(sub)}</span>
+    `;
+    list.appendChild(row);
+  });
+}
+
+function addItem(key){
+  const id='i'+(++idCounter);
+  if(key==='packaging'){state[key].push({id,name:'Item baru',price:0});}
+  else{state[key].push({id,name:'Item baru',price:0,qty:1});}
+  renderList(key);recalc();
+  const inputs=document.getElementById(key+'-list').querySelectorAll('.item-name-input');
+  if(inputs.length)inputs[inputs.length-1].focus();
+}
+
+function deleteItem(key,id){
+  state[key]=state[key].filter(i=>i.id!==id);
+  if(key==='packaging')renderPackagingList();else renderList(key);
+  recalc();
+}
+
+function updateItem(key,id,field,val){
+  const item=state[key].find(i=>i.id===id);
+  if(item){item[field]=val;}
+  if(key==='packaging'){
+    renderPackagingList();
+  } else {
+    const list=document.getElementById(key+'-list');
+    const row=list?.querySelector(`[data-id="${id}"]`);
+    if(row){
+      const sub=row.querySelector('.item-subtotal');
+      const it=state[key].find(i=>i.id===id);
+      if(sub&&it)sub.textContent='Subtotal: '+fmt(it.price*it.qty);
+    }
+  }
+  recalc();
+}
+
+function sumList(key){return state[key].reduce((a,i)=>a+(i.price*i.qty),0);}
+
+function syncSlider(){
+  const v=document.getElementById('persen-terjual').value;
+  document.getElementById('persen-terjual-val').textContent=v+'%';
+  recalc();
+}
+
+function recalcKanal(){
+  const o=+document.getElementById('kanal-offline').value||0;
+  const m=+document.getElementById('kanal-market').value||0;
+  const s=+document.getElementById('kanal-sosmed').value||0;
+  document.getElementById('kanal-warning').style.display=(o+m+s!==100)?'flex':'none';
+  recalc();
+}
+
+function recalc(){
+  const modalP=sumList('peralatan'),modalS=sumList('stok-awal'),modalL=sumList('biaya-lain');
+  const totalModal=modalP+modalS+modalL;
+  document.getElementById('total-modal-awal').textContent=fmt(totalModal);
+
+  const unitPerBatch=+document.getElementById('unit-per-batch').value||1;
+  const bahanBiaya=sumList('bahan-baku');
+  const packBiaya=state['packaging'].reduce((a,i)=>a+i.price,0)*unitPerBatch; // price/unit × unitPerBatch
+  const opsBiaya=sumList('operasional');
+  const totalPerBatch=bahanBiaya+packBiaya+opsBiaya;
+  renderPackagingList();
+  const hppPerUnit=totalPerBatch/unitPerBatch;
+  document.getElementById('hpp-per-unit-display').textContent=fmt(hppPerUnit);
+
+  const hargaJual=+document.getElementById('harga-jual').value||0;
+  const batchPerBulan=+document.getElementById('batch-per-bulan').value||1;
+  const persenTerjual=+document.getElementById('persen-terjual').value/100;
+  const biayaTK=+document.getElementById('biaya-tenaga-kerja').value||0;
+  const biayaTetap=+document.getElementById('biaya-tetap').value||0;
+  const biayaPromosi=+document.getElementById('biaya-promosi').value||0;
+
+  const unitDiproduksi=unitPerBatch*batchPerBulan;
+  const unitTerjual=Math.round(unitDiproduksi*persenTerjual);
+  const deadstockUnit=unitDiproduksi-unitTerjual;
+  const omzetBulan=unitTerjual*hargaJual;
+  // Biaya keluar saat PRODUKSI bukan saat jual — semua batch harus dihitung
+  const biayaProduksiBulanan=totalPerBatch*batchPerBulan;
+  const biayaDeadstock=hppPerUnit*deadstockUnit;
+  const biayaTetapTotal=biayaTK+biayaTetap+biayaPromosi;
+  const labaBersih=omzetBulan-biayaProduksiBulanan-biayaTetapTotal;
+  const profitPerUnit=hargaJual-hppPerUnit;
+  const marginPct=hargaJual>0?(profitPerUnit/hargaJual*100):0;
+
+  document.getElementById('proyeksi-omzet').textContent=fmt(omzetBulan);
+
+  const kontribusi=hargaJual-hppPerUnit; // info margin saja
+  // BEP harus account sell-through: effective HPP per unit terjual = hppPerUnit/sellRate
+  const hppEfektif=persenTerjual>0?hppPerUnit/persenTerjual:hppPerUnit;
+  const kontribusiEfektif=hargaJual-hppEfektif;
+  const bepUnit=kontribusiEfektif>0?Math.ceil(biayaTetapTotal/kontribusiEfektif):Infinity;
+  const bepRupiah=bepUnit*hargaJual;
+  const payback=labaBersih>0?Math.ceil(totalModal/labaBersih):null;
+
+  const kO=+document.getElementById('kanal-offline').value||0;
+  const kM=+document.getElementById('kanal-market').value||0;
+  const kS=+document.getElementById('kanal-sosmed').value||0;
+  document.getElementById('kanal-offline-val').textContent=fmt(omzetBulan*kO/100);
+  document.getElementById('kanal-market-val').textContent=fmt(omzetBulan*kM/100);
+  document.getElementById('kanal-sosmed-val').textContent=fmt(omzetBulan*kS/100);
+
+  document.getElementById('kpi-modal').textContent=fmt(totalModal);
+  document.getElementById('kpi-hpp').textContent=fmt(hppPerUnit);
+  document.getElementById('kpi-profit-unit').textContent=fmt(profitPerUnit);
+  document.getElementById('kpi-profit-unit').className='info-card-value '+(profitPerUnit>0?'positive':'negative');
+  document.getElementById('kpi-margin-pct').textContent='Margin '+marginPct.toFixed(1)+'%';
+  document.getElementById('kpi-laba-bersih').textContent=fmt(labaBersih);
+  document.getElementById('kpi-laba-bersih').className='info-card-value '+(labaBersih>=0?'positive':'negative');
+  document.getElementById('kpi-omzet-sub').textContent='dari omzet '+fmt(omzetBulan);
+  document.getElementById('bep-unit').textContent=isFinite(bepUnit)?bepUnit.toLocaleString('id-ID')+' unit':'tidak tercapai';
+  document.getElementById('bep-rupiah').textContent=isFinite(bepRupiah)?fmt(bepRupiah):'—';
+  document.getElementById('payback-period').textContent=payback?payback+' bulan':'—';
+
+  const capPct=unitTerjual>0&&isFinite(bepUnit)?Math.min(bepUnit/unitTerjual*100,100):0;
+  document.getElementById('bep-fill').style.width=capPct+'%';
+  document.getElementById('bep-pct-label').textContent=capPct.toFixed(0)+'% kapasitas untuk BEP';
+  document.getElementById('bep-track-label').textContent='BEP: '+(isFinite(bepUnit)?bepUnit:'?')+'u';
+  document.getElementById('bep-cap-label').textContent='Terjual: '+unitTerjual+'u';
+
+  const callout=document.getElementById('callout-analisis');
+  if(profitPerUnit<=0){
+    callout.innerHTML=`<div class="callout callout-warning"><div class="callout-bar"></div><span><strong>Harga jual masih di bawah HPP.</strong> Naikkan harga atau tekan biaya produksi — bisnis ini belum layak dijalan dengan angka sekarang.</span></div>`;
+  } else if(labaBersih<0){
+    callout.innerHTML=`<div class="callout callout-warning"><div class="callout-bar"></div><span><strong>Bulan ini masih minus.</strong> Coba naikkan frekuensi produksi atau kurangi biaya tetap. Kalau udah konsisten jual, angka ini bakal berubah.</span></div>`;
+  } else if(marginPct>=40){
+    callout.innerHTML=`<div class="callout callout-success"><div class="callout-bar"></div><span>Margin <strong>${marginPct.toFixed(0)}%</strong> — ruang geraknya sehat banget. Ini bisnis yang worth buat di-scale up. Fokus ke konsistensi produksi sekarang.</span></div>`;
+  } else {
+    callout.innerHTML=`<div class="callout callout-info"><div class="callout-bar"></div><span>Margin <strong>${marginPct.toFixed(1)}%</strong> — sudah jalan, tapi masih bisa dioptimasi. Coba review harga beli bahan baku atau naikkan harga jual sedikit demi sedikit.</span></div>`;
+  }
+
+  const tbody=document.getElementById('summary-tbody');
+  const rows=[
+    ['Omzet ('+unitTerjual+' unit x '+fmt(hargaJual)+')',omzetBulan,''],
+    ['Biaya Produksi ('+batchPerBulan+' batch x '+fmt(totalPerBatch)+')',-biayaProduksiBulanan,'muted'],
+    deadstockUnit>0?['\u00a0\u00a0\u00a0+ Deadstock '+deadstockUnit+' unit (Rp '+Math.round(biayaDeadstock).toLocaleString('id-ID')+' sudah termasuk)',null,'note']:null,
+    ['Laba Kotor',omzetBulan-biayaProduksiBulanan,omzetBulan-biayaProduksiBulanan>=0?'positive':'negative'],
+    biayaTK>0?['Tenaga Kerja',-biayaTK,'muted']:null,
+    biayaTetap>0?['Biaya Tetap Bulanan',-biayaTetap,'muted']:null,
+    biayaPromosi>0?['Promosi dan Marketing',-biayaPromosi,'muted']:null,
+  ].filter(Boolean);
+
+  let html='';
+  rows.forEach(([label,val,cls])=>{
+    if(cls==='note'&&val===null){
+      html+=`<tr><td colspan="2" style="font-size:var(--text-xs);color:var(--color-text-faint);padding-left:var(--space-6);">${label}</td></tr>`;
+      return;
+    }
+    const c=cls==='positive'?'color:var(--color-success)':cls==='negative'?'color:var(--color-error)':cls==='muted'?'color:var(--color-text-muted)':'';
+    html+=`<tr><td>${label}</td><td class="num-right" style="${c}">${fmt(Math.abs(val))}${val<0?' <span style="color:var(--color-text-faint)">(-)</span>':''}</td></tr>`;
+  });
+  html+=`<tr class="total-row"><td><strong>Laba Bersih Estimasi per Bulan</strong></td><td class="num-right" style="color:${labaBersih>=0?'var(--color-success)':'var(--color-error)'};font-weight:700;">${fmt(labaBersih)}</td></tr>`;
+  tbody.innerHTML=html;
+
+  const badge=document.getElementById('trend-badge');
+  if(labaBersih>0){badge.textContent='Profit';badge.className='badge badge-success';}
+  else{badge.textContent='Minus';badge.className='badge badge-error';}
+
+  updateCharts(labaBersih,bahanBiaya,packBiaya,opsBiaya,biayaTK,biayaTetap,biayaPromosi,kO,kM,kS,hargaJual,hppPerUnit,unitPerBatch,batchPerBulan,persenTerjual,biayaTetapTotal);
+}
+
+function updateCharts(labaBersih,bahanBiaya,packBiaya,opsBiaya,biayaTK,biayaTetap,biayaPromosi,kO,kM,kS,hargaJual,hppPerUnit,unitPerBatch,batchPerBulan,persenTerjual,biayaTetapTotal){
+  const isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  const gc=isDark?'rgba(255,255,255,0.05)':'rgba(0,0,0,0.05)';
+  const tc=isDark?'#8a7d6e':'#7a6d5e';
+  const months=['Bulan 1','Bulan 2','Bulan 3','Bulan 4','Bulan 5','Bulan 6'];
+  const labaData=months.map((_,i)=>Math.round(labaBersih*Math.pow(1.05,i)));
+  const omzetData=months.map((_,i)=>{
+    const u=Math.round(unitPerBatch*batchPerBulan*persenTerjual*Math.pow(1.05,i));
+    return u*hargaJual;
+  });
+
+  if(chartLaba)chartLaba.destroy();
+  chartLaba=new Chart(document.getElementById('chartLaba').getContext('2d'),{
+    type:'bar',
+    data:{
+      labels:months,
+      datasets:[
+        {label:'Omzet',data:omzetData,
+         backgroundColor:isDark?'rgba(232,131,74,0.12)':'rgba(196,96,26,0.1)',
+         borderColor:isDark?'rgba(232,131,74,0.45)':'rgba(196,96,26,0.4)',
+         borderWidth:1.5,borderRadius:6},
+        {label:'Laba Bersih',data:labaData,
+         backgroundColor:ctx=>{const v=ctx.parsed?.y;return v>=0?(isDark?'rgba(106,168,79,0.8)':'rgba(61,122,43,0.75)'):(isDark?'rgba(224,96,96,0.8)':'rgba(181,48,48,0.75)');},
+         borderRadius:6}
+      ]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{
+        legend:{labels:{color:tc,font:{family:'Plus Jakarta Sans',size:12}}},
+        tooltip:{callbacks:{label:ctx=>ctx.dataset.label+': '+fmt(ctx.parsed.y)}}
+      },
+      scales:{
+        x:{ticks:{color:tc,font:{size:11}},grid:{color:gc}},
+        y:{ticks:{color:tc,font:{size:11},callback:v=>fmtC(v)},grid:{color:gc}}
+      }
+    }
+  });
+
+  const bData=[bahanBiaya*batchPerBulan,packBiaya*batchPerBulan,opsBiaya*batchPerBulan,biayaTK,biayaTetap+biayaPromosi].filter(v=>v>0);
+  const bLabels=[];
+  if(bahanBiaya>0)bLabels.push('Bahan Baku');
+  if(packBiaya>0)bLabels.push('Packaging');
+  if(opsBiaya>0)bLabels.push('Operasional');
+  if(biayaTK>0)bLabels.push('Tenaga Kerja');
+  if(biayaTetap+biayaPromosi>0)bLabels.push('Biaya Tetap');
+  const pc=isDark?['#e8834a','#e0b82e','#6aa84f','#5591c7','#a86fdf']:['#c4601a','#c49820','#3d7a2b','#006494','#7a39bb'];
+  const brd=isDark?'#1e1812':'#fdfcf9';
+
+  if(chartBiaya)chartBiaya.destroy();
+  chartBiaya=new Chart(document.getElementById('chartBiaya').getContext('2d'),{
+    type:'doughnut',
+    data:{labels:bLabels,datasets:[{data:bData,backgroundColor:pc.slice(0,bData.length),borderWidth:2,borderColor:brd}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'62%',
+      plugins:{legend:{position:'bottom',labels:{color:tc,font:{size:11},padding:12,boxWidth:12}},
+               tooltip:{callbacks:{label:ctx=>ctx.label+': '+fmt(ctx.parsed)}}}}
+  });
+
+  if(chartKanal)chartKanal.destroy();
+  chartKanal=new Chart(document.getElementById('chartKanal').getContext('2d'),{
+    type:'doughnut',
+    data:{labels:['COD dan Warung','Marketplace','Sosial Media'],
+          datasets:[{data:[kO,kM,kS],backgroundColor:isDark?['#e8834a','#e0b82e','#6aa84f']:['#c4601a','#c49820','#3d7a2b'],borderWidth:2,borderColor:brd}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'62%',
+      plugins:{legend:{position:'bottom',labels:{color:tc,font:{size:11},padding:12,boxWidth:12}},
+               tooltip:{callbacks:{label:ctx=>ctx.label+': '+ctx.parsed+'%'}}}}
+  });
+}
+
+function syncMobileNav(name){
+  if(window.innerWidth>640)return;
+  ['modal','produksi','penjualan','analisis'].forEach(t=>{
+    const el=document.getElementById('mobile-nav-'+t);
+    if(el)el.style.display=t===name?'flex':'none';
+  });
+}
+function switchTab(name){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+name));
+  if(name==='analisis')recalc();
+  window.scrollTo({top:0,behavior:'smooth'});
+  syncMobileNav(name);
+}
+document.querySelectorAll('.tab-btn').forEach(btn=>btn.addEventListener('click',()=>switchTab(btn.dataset.tab)));
+
+(function(){
+  const btn=document.querySelector('[data-theme-toggle]');
+  const root=document.documentElement;
+  let dark=false; // default light mode
+  root.setAttribute('data-theme',dark?'dark':'light');
+  updateIcon(dark);
+  btn.addEventListener('click',()=>{dark=!dark;root.setAttribute('data-theme',dark?'dark':'light');updateIcon(dark);setTimeout(recalc,50);});
+  function updateIcon(d){
+    btn.innerHTML=d
+      ?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      :'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  }
+})();
+
+function exportData(){
+  const d={timestamp:new Date().toLocaleString('id-ID'),state,inputs:{
+    unitPerBatch:document.getElementById('unit-per-batch').value,
+    hargaJual:document.getElementById('harga-jual').value,
+    batchPerBulan:document.getElementById('batch-per-bulan').value,
+    persenTerjual:document.getElementById('persen-terjual').value,
+    biayaTK:document.getElementById('biaya-tenaga-kerja').value,
+    biayaTetap:document.getElementById('biaya-tetap').value,
+    biayaPromosi:document.getElementById('biaya-promosi').value,
+  }};
+  const blob=new Blob([JSON.stringify(d,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='modalku-sambel-'+Date.now()+'.json';
+  a.click();
+}
+
+renderAllLists();
+recalc();
+syncMobileNav('modal');
+</script>
+
+<!-- Mobile Bottom Nav -->
+<div class="mobile-bottom-nav" id="mobile-nav-modal">
+  <button class="btn btn-primary" onclick="switchTab('produksi')" style="justify-content:center;">Lanjut ke Biaya Produksi</button>
+</div>
+<div class="mobile-bottom-nav" id="mobile-nav-produksi" style="display:none;">
+  <button class="btn btn-ghost" onclick="switchTab('modal')">← Kembali</button>
+  <button class="btn btn-primary" onclick="switchTab('penjualan')" style="justify-content:center;">Lanjut ke Rencana Jual</button>
+</div>
+<div class="mobile-bottom-nav" id="mobile-nav-penjualan" style="display:none;">
+  <button class="btn btn-ghost" onclick="switchTab('produksi')">← Kembali</button>
+  <button class="btn btn-primary" onclick="switchTab('analisis')" style="justify-content:center;">Lihat Analisis</button>
+</div>
+<div class="mobile-bottom-nav" id="mobile-nav-analisis" style="display:none;">
+  <button class="btn btn-ghost" onclick="switchTab('penjualan')">← Kembali</button>
+</div>
+
 </body>
 </html>
