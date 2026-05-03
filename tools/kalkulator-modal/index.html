@@ -5,7 +5,7 @@
 |_\_|<___||_|_|\_. |/__/
                <___'
 -->
-<! - -  Dibuat untuk Ceuna !  - - >
+<!-- Dibuat untuk Ceuna ! -->
 
 <!DOCTYPE html>
 <html lang="id" data-theme="light">
@@ -29,113 +29,572 @@
 }
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text)}
 button,input{font:inherit} button{cursor:pointer}
-.shell{max-width:1400px;margin:0 auto;padding:20px}.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg) 82%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.topbar-inner{max-width:1400px;margin:0 auto;padding:14px 20px;display:flex;gap:14px;align-items:center;justify-content:space-between}.brand h1{margin:0;font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,2vw,2.4rem)}.brand p{margin:3px 0 0;color:var(--muted);font-size:.95rem}
-.toggle{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:10px 14px;color:var(--text)}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin:22px 0}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-.hero .intro{padding:26px}.hero .intro h2{margin:0 0 10px;font-size:clamp(1.6rem,2.6vw,3rem);line-height:1.05}.hero .intro p{margin:0;color:var(--muted);max-width:70ch}.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.kpi{padding:16px 18px}.kpi .label{font-size:.84rem;color:var(--muted);margin-bottom:8px}.kpi .value{font-size:1.35rem;font-weight:800}
+.shell{max-width:1400px;margin:0 auto;padding:20px}
+.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg) 82%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1400px;margin:0 auto;padding:14px 20px;display:flex;gap:14px;align-items:center;justify-content:space-between}
+.brand h1{margin:0;font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,2vw,2.4rem)}.brand p{margin:3px 0 0;color:var(--muted);font-size:.95rem}
+.toggle{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:10px 14px;color:var(--text)}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin:22px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.hero .intro{padding:26px}.hero .intro h2{margin:0 0 10px;font-size:clamp(1.6rem,2.6vw,3rem);line-height:1.05}.hero .intro p{margin:0;color:var(--muted);max-width:70ch}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.kpi{padding:16px 18px}.kpi .label{font-size:.84rem;color:var(--muted);margin-bottom:8px}.kpi .value{font-size:1.35rem;font-weight:800}
 .nav{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}.nav button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:10px 14px;font-weight:700;color:var(--text)}.nav button.active{background:var(--primary);color:#fff;border-color:var(--primary)}
-.view{display:none}.view.active{display:block}.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.section{padding:18px}.section h3{margin:0 0 12px;font-size:1.12rem}.section p.note{margin:0 0 12px;color:var(--muted);font-size:.92rem}
-.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;min-width:720px}th,td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;font-size:.93rem;vertical-align:middle}thead th{background:var(--surface-2);position:sticky;top:0;z-index:1}tbody tr:hover{background:color-mix(in srgb, var(--primary-2) 40%, transparent)}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.view{display:none}.view.active{display:block}.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.section{padding:18px}.section h3{margin:0 0 12px;font-size:1.12rem}.section p.note{margin:0 0 12px;color:var(--muted);font-size:.92rem}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;min-width:720px}
+th,td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;font-size:.93rem;vertical-align:middle}
+thead th{background:var(--surface-2);position:sticky;top:0;z-index:1}
+tbody tr:hover{background:color-mix(in srgb, var(--primary-2) 40%, transparent)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 td.num .input{min-width:70px;text-align:right}
 td:first-child{min-width:110px}
-@media (max-width:640px){
-  td.num .input{min-width:60px;padding:8px 6px;font-size:16px}
-  th,td{padding:8px 6px;font-size:.82rem}
-  .stat-list{grid-template-columns:1fr}
-  .stat input.input{font-size:16px;padding:10px}
-  .table-wrap{-webkit-overflow-scrolling:touch}
-  .table-wrap::after{content:'← geser →';display:block;text-align:center;font-size:.78rem;color:var(--muted);padding:6px 0;border-top:1px solid var(--line)}
-}
-.input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff8c6;color:#2d241b;font-size:16px;-webkit-appearance:none;appearance:none;min-width:0}[data-theme="dark"] .input{background:#5d4a17;color:#fff1bd;border-color:#86631e}
-.pill{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:var(--primary-2);color:var(--primary);font-weight:700;font-size:.82rem}.stat-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat{padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}.stat small{display:block;color:var(--muted);margin-bottom:8px}.stat strong{font-size:1.2rem}.footer-note{margin-top:18px;color:var(--muted);font-size:.9rem}
-@media (max-width:1100px){.hero,.grid-2{grid-template-columns:1fr}.kpi-grid{grid-template-columns:repeat(2,1fr)}.stat-list{grid-template-columns:1fr}}
-@media (max-width:640px){.shell{padding:14px}.topbar-inner{padding:12px 14px;align-items:flex-start;flex-direction:column}.kpi-grid{grid-template-columns:1fr}table{min-width:580px}}
+.input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff8c6;color:#2d241b;font-size:16px;-webkit-appearance:none;appearance:none;min-width:0}
+[data-theme="dark"] .input{background:#5d4a17;color:#fff1bd;border-color:#86631e}
+.pill{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:var(--primary-2);color:var(--primary);font-weight:700;font-size:.82rem}
+.stat-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.stat{padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}.stat small{display:block;color:var(--muted);margin-bottom:8px}.stat strong{font-size:1.2rem}
+.footer-note{margin-top:18px;color:var(--muted);font-size:.9rem}
+.badge-note{background:var(--primary-2);color:var(--primary);border-radius:8px;padding:10px 14px;font-size:.88rem;margin-bottom:14px;font-weight:600}
+@media(max-width:1100px){.hero,.grid-2{grid-template-columns:1fr}.kpi-grid{grid-template-columns:repeat(2,1fr)}.stat-list{grid-template-columns:1fr}}
+@media(max-width:640px){.shell{padding:14px}.topbar-inner{padding:12px 14px;flex-direction:column}.kpi-grid{grid-template-columns:1fr}table{min-width:580px}.stat-list{grid-template-columns:1fr}.stat input.input{font-size:16px;padding:10px}.table-wrap::after{content:'← geser →';display:block;text-align:center;font-size:.78rem;color:var(--muted);padding:6px 0;border-top:1px solid var(--line)}}
 </style>
 </head>
 <body>
-<div class="topbar"><div class="topbar-inner"><div class="brand"><h1>Kalkulator Wabang</h1><p>Versi HTML yang dibuat semirip mungkin dengan Sheet.</p></div><button class="toggle" id="themeToggle">🌙 / ☀️</button></div></div>
+<div class="topbar"><div class="topbar-inner">
+  <div class="brand"><h1>Kalkulator Wabang</h1><p>Versi HTML — semirip mungkin dengan Sheet, dibuat untuk Inceu 🧡</p></div>
+  <button class="toggle" id="themeToggle">🌙 / ☀️</button>
+</div></div>
+
 <div class="shell">
-<section class="hero"><div class="card intro"><span class="pill">100% dibuat untuk Inceu</span><h2>Sambel Goreng Bawang — kalkulator produksi, HPP, margin, BEP, dan proyeksi.</h2><p>Semua input utama, angka default, dan logika perhitungan mengikuti workbook: <b>Bahan Baku</b>, <b>Peralatan</b>, <b>HPP & Harga</b>, dan <b>BEP & Proyeksi</b>. Sel kuning artinya bisa diubah langsung, persis gaya sheet.</p></div><div class="kpi-grid" id="kpiGrid"></div></section>
-<nav class="nav" id="tabNav"><button class="active" data-tab="bahan">Bahan Baku</button><button data-tab="peralatan">Peralatan</button><button data-tab="hpp">HPP & Harga</button><button data-tab="bep">BEP & Proyeksi</button></nav>
-<section class="view active" id="view-bahan"><div class="grid-2"><div class="card section"><h3>Input batch</h3><p class="note">Menyamai bagian atas sheet Bahan Baku. Toples per batch dan berat per toples jadi referensi utama untuk HPP per toples.</p><div class="stat-list"><label class="stat"><small>Toples per Batch</small><input id="jarsPerBatch" class="input" type="number" min="0" step="1"></label><label class="stat"><small>Berat per Toples (gr)</small><input id="weightPerJar" class="input" type="number" min="0" step="1"></label><label class="stat"><small>Batch / Bulan (Sheet Bahan Baku)</small><input id="batchPerMonthSheet" class="input" type="number" min="0" step="1"></label><div class="stat"><small>HPP Bahan Baku / Toples</small><strong id="materialsPerJar"></strong></div></div></div><div class="card section"><h3>Ringkasan bahan</h3><div class="stat-list"><div class="stat"><small>Total HPP Bahan Baku / Batch</small><strong id="materialsBatch"></strong></div><div class="stat"><small>Jumlah bahan aktif</small><strong id="materialsCount"></strong></div><div class="stat"><small>Bahan biaya terbesar</small><strong id="topCostName"></strong></div><div class="stat"><small>Porsi biaya terbesar</small><strong id="topCostPct"></strong></div></div></div></div><div class="card section" style="margin-top:18px"><h3>Bahan Baku per Batch</h3><p class="note">Kolom kuning = input. Rumus Excel yang ditiru: Harga/unit = Harga Beli ÷ Isi Kemasan, lalu Biaya/Batch = Harga/unit × Qty. Persentase biaya = Biaya/Batch ÷ Total HPP Bahan.</p><div class="table-wrap"><table id="materialsTable"><thead><tr><th>Nama Bahan</th><th class="num">Qty</th><th>Satuan</th><th class="num">Harga Beli/Kemasan</th><th class="num">Isi/Kemasan</th><th>Sat.</th><th class="num">Harga/Unit</th><th class="num">Biaya/Batch</th><th class="num">% Biaya</th></tr></thead><tbody></tbody><tfoot><tr><th colspan="7">TOTAL HPP BAHAN BAKU per Batch</th><th class="num" id="tfootMaterialsBatch"></th><th class="num">100%</th></tr></tfoot></table></div><div class="footer-note">🟡 Kuning = input yang bisa diubah. Perubahan di sini otomatis mengubah HPP, margin, BEP, ROI, dan skenario produksi.</div></div></section>
-<section class="view" id="view-peralatan"><div class="grid-2"><div class="card section"><h3> Modal Tetap</h3><p class="note">Ini meniru sheet Peralatan: qty dan harga satuan editable, total modal tetap dihitung otomatis dari seluruh item alat.</p><div class="stat-list"><div class="stat"><small>Total Modal Tetap</small><strong id="equipmentTotal"></strong></div><div class="stat"><small>Jumlah item alat</small><strong id="equipmentCount"></strong></div></div></div><div class="card section"><h3>Biaya Tetap Bulanan</h3><p class="note">Bagian ini mengikuti blok opsional di Excel: sewa, gaji, listrik tambahan, dan item bulanan lain jika ada.</p><div id="fixedMonthlyInputs" class="stat-list"></div><div class="footer-note">Total biaya tetap bulanan: <strong id="fixedMonthlyTotal"></strong></div></div></div><div class="card section" style="margin-top:18px"><h3>Daftar Peralatan</h3><div class="table-wrap"><table id="equipmentTable"><thead><tr><th>Item Peralatan</th><th class="num">Qty</th><th class="num">Harga Satuan</th><th class="num">Total Harga</th></tr></thead><tbody></tbody><tfoot><tr><th colspan="3">TOTAL MODAL TETAP</th><th class="num" id="tfootEquipmentTotal"></th></tr></tfoot></table></div></div></section>
-<section class="view" id="view-hpp"><div class="grid-2"><div class="card section"><h3>Rekap HPP per Batch</h3><p class="note">Mengikuti sheet HPP & Harga: HPP bahan baku diambil dari sheet Bahan Baku, lalu ditambah kemasan, label, dan plastik wrap per batch.</p><div class="stat-list"><label class="stat"><small>Kemasan: Toples/Jar per Batch</small><input id="packJarBatch" class="input" type="number" min="0" step="1"></label><label class="stat"><small>Label Stiker per Batch</small><input id="packLabelBatch" class="input" type="number" min="0" step="1"></label><label class="stat"><small>Plastik Wrap per Batch</small><input id="packWrapBatch" class="input" type="number" min="0" step="1"></label><div class="stat"><small>Total HPP per Batch</small><strong id="hppBatch"></strong></div></div></div><div class="card section"><h3>Harga Jual & Margin</h3><div class="stat-list"><div class="stat"><small>HPP per Toples</small><strong id="hppPerJar"></strong></div><label class="stat"><small>Harga Jual per Toples</small><input id="sellingPrice" class="input" type="number" min="0" step="500"></label><div class="stat"><small>Profit / Toples</small><strong id="profitPerJar"></strong></div><div class="stat"><small>Markup (% dari HPP)</small><strong id="markupPct"></strong></div><div class="stat"><small>Gross Margin (% harga jual)</small><strong id="marginPct"></strong></div></div></div></div><div class="card section" style="margin-top:18px"><h3>Tabel Simulasi Harga Jual</h3><div class="table-wrap"><table id="priceSimTable"><thead><tr><th class="num">Harga Jual</th><th class="num">Profit/Toples</th><th class="num">Markup (%)</th><th class="num">Margin (%)</th></tr></thead><tbody></tbody></table></div></div></section>
-<section class="view" id="view-bep"><div class="grid-2"><div class="card section"><h3>Analisis Break Even Point</h3><div class="stat-list"><div class="stat"><small>Modal Tetap / Investasi Awal</small><strong id="bepModal"></strong></div><div class="stat"><small>Margin / Toples</small><strong id="bepMarginPerJar"></strong></div><div class="stat"><small>Margin Kontribusi Ratio</small><strong id="bepContribution"></strong></div><div class="stat"><small>BEP Unit</small><strong id="bepUnit"></strong></div><div class="stat"><small>BEP Penjualan</small><strong id="bepSales"></strong></div><div class="stat"><small>Estimasi Balik Modal</small><strong id="paybackMonths"></strong></div></div></div><div class="card section"><h3>Proyeksi Bulanan</h3><div class="stat-list"><label class="stat"><small>Batch per Bulan</small><input id="monthlyBatches" class="input" type="number" min="0" step="1"></label><div class="stat"><small>Total Produksi / Bulan</small><strong id="monthlyProduction"></strong></div><div class="stat"><small>Omset Bulanan</small><strong id="monthlyRevenue"></strong></div><div class="stat"><small>Total Biaya Variabel</small><strong id="monthlyVarTotal"></strong></div><div class="stat"><small>Laba Kotor</small><strong id="monthlyGrossProfit"></strong></div><div class="stat"><small>Laba Bersih</small><strong id="monthlyNetProfit"></strong></div><div class="stat"><small>ROI Bulanan</small><strong id="monthlyROI"></strong></div></div></div></div><div class="card section" style="margin-top:18px"><h3>]Skenario Skala Produksi</h3><p class="note">Mengikuti skema workbook: setiap skenario menghitung ulang produksi, omset, biaya variabel, laba bersih, ROI, dan estimasi payback dari batch yang dipilih.</p><div class="table-wrap"><table id="scenarioTable"><thead><tr><th>Skenario</th><th class="num">Batch/Bulan</th><th class="num">Produksi</th><th class="num">Omset</th><th class="num">Laba Bersih</th><th class="num">ROI</th><th class="num">Balik Modal</th></tr></thead><tbody></tbody></table></div></div></section>
+<section class="hero">
+  <div class="card intro">
+    <span class="pill">100% dibuat untuk Inceu</span>
+    <h2>Sambel Goreng Bawang - kalkulator produksi, HPP, margin, BEP, dan proyeksi.</h2>
+    <p>Input utama, angka default, dan logika perhitungan mengikuti workbook: <b>Bahan Baku</b>, <b>Kemasan &amp; Peralatan</b>, <b>HPP &amp; Harga</b>, dan <b>BEP &amp; Proyeksi</b>. Sel kuning = bisa diubah langsung.</p>
+    <p style="margin-top:10px;color:var(--muted);font-size:.88rem"><b>4 batch resep → 5 toples</b>. Semua kalkulasi HPP sudah menggunakan rasio ini.</p>
+  </div>
+  <div class="kpi-grid" id="kpiGrid"></div>
+</section>
+
+<nav class="nav" id="tabNav">
+  <button class="active" data-tab="bahan">Bahan Baku</button>
+  <button data-tab="kemasan">Kemasan</button>
+  <button data-tab="peralatan">Peralatan</button>
+  <button data-tab="hpp">HPP &amp; Harga</button>
+  <button data-tab="bep">BEP &amp; Proyeksi</button>
+</nav>
+
+<!-- TAB BAHAN BAKU -->
+<section class="view active" id="view-bahan">
+  <div class="grid-2">
+    <div class="card section">
+      <h3>Input Batch</h3>
+      <p class="note">4 batch resep menghasilkan 5 toples. Ubah jumlah batch produksi per run di sini.</p>
+      <div class="stat-list">
+        <label class="stat"><small>Resep per Run (batch)</small><input id="recipesPerRun" class="input" type="number" min="1" step="1"></label>
+        <div class="stat"><small>Toples Dihasilkan / Run</small><strong id="jarsPerRun"></strong></div>
+        <label class="stat"><small>Run per Bulan</small><input id="runsPerMonth" class="input" type="number" min="0" step="1"></label>
+        <div class="stat"><small>HPP Bahan Baku / Resep</small><strong id="materialsPerRecipe"></strong></div>
+      </div>
+    </div>
+    <div class="card section">
+      <h3>Ringkasan Bahan</h3>
+      <div class="stat-list">
+        <div class="stat"><small>Total HPP Bahan / Resep</small><strong id="materialsBatch"></strong></div>
+        <div class="stat"><small>Jumlah bahan aktif</small><strong id="materialsCount"></strong></div>
+        <div class="stat"><small>Bahan biaya terbesar</small><strong id="topCostName"></strong></div>
+        <div class="stat"><small>Porsi biaya terbesar</small><strong id="topCostPct"></strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="card section" style="margin-top:18px">
+    <h3>Bahan Baku per 1 Resep</h3>
+    <p class="note">Kolom kuning = input. Harga/unit = Harga Beli ÷ Isi Kemasan. Biaya/Resep = Harga/unit × Qty.</p>
+    <div class="table-wrap"><table id="materialsTable">
+      <thead><tr><th>Nama Bahan</th><th class="num">Qty</th><th>Satuan</th><th class="num">Harga Beli/Kemasan</th><th class="num">Isi/Kemasan</th><th>Sat.</th><th class="num">Harga/Unit</th><th class="num">Biaya/Resep</th><th class="num">% Biaya</th></tr></thead>
+      <tbody></tbody>
+      <tfoot><tr><th colspan="7">TOTAL HPP BAHAN BAKU per Resep</th><th class="num" id="tfootMaterialsBatch"></th><th class="num">100%</th></tr></tfoot>
+    </table></div>
+    <div class="footer-note">🟡 Kuning = bisa diubah. Perubahan otomatis update HPP, margin, BEP, dan proyeksi.</div>
+  </div>
+</section>
+
+<!-- TAB KEMASAN -->
+<section class="view" id="view-kemasan">
+  <div class="grid-2">
+    <div class="card section">
+      <h3>Harga Satuan Kemasan</h3>
+      <p class="note">Harga per pcs untuk tiap komponen kemasan. Semua dihitung per toples yang dihasilkan.</p>
+      <div class="stat-list">
+        <label class="stat"><small>Toples / Jar (Rp/pcs)</small><input id="priceJar" class="input" type="number" min="0" step="100"></label>
+        <label class="stat"><small>Stiker Label (Rp/pcs)</small><input id="priceStiker" class="input" type="number" min="0" step="100"></label>
+        <label class="stat"><small>Seal Alumunium (Rp/pcs)</small><input id="priceSeal" class="input" type="number" min="0" step="50"></label>
+        <label class="stat"><small>Segel Plastik (Rp/pcs)</small><input id="priceSegel" class="input" type="number" min="0" step="25"></label>
+        <label class="stat"><small>Silica Gel (Rp/pcs)</small><input id="priceSilica" class="input" type="number" min="0" step="25"></label>
+      </div>
+    </div>
+    <div class="card section">
+      <h3>Total Biaya Kemasan</h3>
+      <div class="stat-list">
+        <div class="stat"><small>Kemasan Total / Toples</small><strong id="packPerJar"></strong></div>
+        <div class="stat"><small>Porsi kemasan dari HPP</small><strong id="packPctHpp"></strong></div>
+        <div class="stat"><small>Kemasan / Resep (÷ 5 toples × 4)</small><strong id="packPerRecipe"></strong></div>
+        <div class="stat"><small>Kemasan Total / Bulan</small><strong id="packPerMonth"></strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="card section" style="margin-top:18px">
+    <h3>Rincian Biaya Kemasan per Toples</h3>
+    <div class="table-wrap"><table id="kemasanTable">
+      <thead><tr><th>Komponen Kemasan</th><th class="num">Harga/pcs</th><th class="num">Qty/Toples</th><th class="num">Biaya/Toples</th><th class="num">% dari Total Kemasan</th></tr></thead>
+      <tbody></tbody>
+      <tfoot><tr><th colspan="3">TOTAL KEMASAN per Toples</th><th class="num" id="tfootPackTotal"></th><th class="num">100%</th></tr></tfoot>
+    </table></div>
+  </div>
+</section>
+
+<!-- TAB PERALATAN -->
+<section class="view" id="view-peralatan">
+  <div class="grid-2">
+    <div class="card section">
+      <h3>Modal Tetap</h3>
+      <p class="note">Qty dan harga satuan editable. Total modal tetap dihitung otomatis dari seluruh item alat.</p>
+      <div class="stat-list">
+        <div class="stat"><small>Total Modal Tetap</small><strong id="equipmentTotal"></strong></div>
+        <div class="stat"><small>Jumlah item alat</small><strong id="equipmentCount"></strong></div>
+      </div>
+    </div>
+    <div class="card section">
+      <h3>Biaya Tetap Bulanan</h3>
+      <p class="note">Sewa, gaji, listrik, dan biaya tetap lainnya per bulan.</p>
+      <div id="fixedMonthlyInputs" class="stat-list"></div>
+      <div class="footer-note">Total biaya tetap bulanan: <strong id="fixedMonthlyTotal"></strong></div>
+    </div>
+  </div>
+  <div class="card section" style="margin-top:18px">
+    <h3>Daftar Peralatan</h3>
+    <div class="table-wrap"><table id="equipmentTable">
+      <thead><tr><th>Item Peralatan</th><th class="num">Qty</th><th class="num">Harga Satuan</th><th class="num">Total Harga</th></tr></thead>
+      <tbody></tbody>
+      <tfoot><tr><th colspan="3">TOTAL MODAL TETAP</th><th class="num" id="tfootEquipmentTotal"></th></tr></tfoot>
+    </table></div>
+  </div>
+</section>
+
+<!-- TAB HPP & HARGA -->
+<section class="view" id="view-hpp">
+  <div class="grid-2">
+    <div class="card section">
+      <h3>Rekap HPP per Toples</h3>
+      <p class="note">HPP total per toples = (biaya bahan baku per resep ÷ 5 toples × 4 resep) + biaya kemasan per toples.</p>
+      <div class="stat-list">
+        <div class="stat"><small>Biaya Bahan Baku / Toples</small><strong id="hppMatPerJar"></strong></div>
+        <div class="stat"><small>Biaya Kemasan / Toples</small><strong id="hppPackPerJar"></strong></div>
+        <div class="stat"><small>HPP Total / Toples</small><strong id="hppPerJar"></strong></div>
+        <div class="stat"><small>HPP Total / Resep (4 resep)</small><strong id="hppBatch"></strong></div>
+      </div>
+    </div>
+    <div class="card section">
+      <h3>Harga Jual &amp; Margin</h3>
+      <div class="stat-list">
+        <label class="stat"><small>Harga Jual per Toples</small><input id="sellingPrice" class="input" type="number" min="0" step="500"></label>
+        <div class="stat"><small>Profit / Toples</small><strong id="profitPerJar"></strong></div>
+        <div class="stat"><small>Markup (% dari HPP)</small><strong id="markupPct"></strong></div>
+        <div class="stat"><small>Gross Margin (% harga jual)</small><strong id="marginPct"></strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="card section" style="margin-top:18px">
+    <h3>Simulasi Harga Jual</h3>
+    <div class="table-wrap"><table id="priceSimTable">
+      <thead><tr><th class="num">Harga Jual</th><th class="num">Profit/Toples</th><th class="num">Markup (%)</th><th class="num">Margin (%)</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- TAB BEP & PROYEKSI -->
+<section class="view" id="view-bep">
+  <div class="grid-2">
+    <div class="card section">
+      <h3>Analisis Break Even Point</h3>
+      <div class="stat-list">
+        <div class="stat"><small>Modal Tetap / Investasi Awal</small><strong id="bepModal"></strong></div>
+        <div class="stat"><small>Profit / Toples</small><strong id="bepMarginPerJar"></strong></div>
+        <div class="stat"><small>Margin Kontribusi Ratio</small><strong id="bepContribution"></strong></div>
+        <div class="stat"><small>BEP Unit</small><strong id="bepUnit"></strong></div>
+        <div class="stat"><small>BEP Penjualan (Rp)</small><strong id="bepSales"></strong></div>
+        <div class="stat"><small>Estimasi Balik Modal</small><strong id="paybackMonths"></strong></div>
+      </div>
+    </div>
+    <div class="card section">
+      <h3>Proyeksi Bulanan</h3>
+      <div class="stat-list">
+        <label class="stat"><small>Run per Bulan</small><input id="monthlyRuns" class="input" type="number" min="0" step="1"></label>
+        <div class="stat"><small>Total Produksi / Bulan</small><strong id="monthlyProduction"></strong></div>
+        <div class="stat"><small>Omset Bulanan</small><strong id="monthlyRevenue"></strong></div>
+        <div class="stat"><small>Total Biaya Variabel</small><strong id="monthlyVarTotal"></strong></div>
+        <div class="stat"><small>Laba Kotor</small><strong id="monthlyGrossProfit"></strong></div>
+        <div class="stat"><small>Laba Bersih</small><strong id="monthlyNetProfit"></strong></div>
+        <div class="stat"><small>ROI Bulanan</small><strong id="monthlyROI"></strong></div>
+      </div>
+    </div>
+  </div>
+  <div class="card section" style="margin-top:18px">
+    <h3>Skenario Skala Produksi</h3>
+    <p class="note">Tiap skenario menghitung ulang berdasarkan jumlah run/bulan yang dipilih.</p>
+    <div class="table-wrap"><table id="scenarioTable">
+      <thead><tr><th>Skenario</th><th class="num">Run/Bulan</th><th class="num">Toples/Bulan</th><th class="num">Omset</th><th class="num">Laba Bersih</th><th class="num">ROI</th><th class="num">Balik Modal</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </div>
+</section>
 </div>
+
 <script>
-const state = {"materialsMeta": {"jarsPerBatch": 5.0, "weightPerJar": 120.0, "batchPerMonthSheet": 4.0}, "materials": [{"name": "Bawang Merah", "qty": 300.0, "unit": "gr", "buyPrice": 30000.0, "packSize": 1000.0, "packUnit": "gr"}, {"name": "Bawang Putih", "qty": 200.0, "unit": "gr", "buyPrice": 35000.0, "packSize": 1000.0, "packUnit": "gr"}, {"name": "Cabai Rawit", "qty": 300.0, "unit": "gr", "buyPrice": 65000.0, "packSize": 1000.0, "packUnit": "gr"}, {"name": "Tepung Beras", "qty": 120.0, "unit": "gr", "buyPrice": 12000.0, "packSize": 500.0, "packUnit": "gr"}, {"name": "Tepung Maizena", "qty": 120.0, "unit": "gr", "buyPrice": 17000.0, "packSize": 1000.0, "packUnit": "gr"}, {"name": "Baking Powder", "qty": 8.0, "unit": "gr", "buyPrice": 7000.0, "packSize": 45.0, "packUnit": "gr"}, {"name": "Minyak Goreng", "qty": 500.0, "unit": "ml", "buyPrice": 104000.0, "packSize": 5000.0, "packUnit": "ml"}, {"name": "Terasi", "qty": 24.0, "unit": "gr", "buyPrice": 20000.0, "packSize": 1000.0, "packUnit": "gr"}, {"name": "Garam", "qty": 16.0, "unit": "gr", "buyPrice": 1000.0, "packSize": 250.0, "packUnit": "gr"}, {"name": "Royco", "qty": 12.0, "unit": "gr", "buyPrice": 15000.0, "packSize": 220.0, "packUnit": "gr"}, {"name": "Cuka", "qty": 5.0, "unit": "ml", "buyPrice": 7500.0, "packSize": 150.0, "packUnit": "ml"}, {"name": "Merica", "qty": 4.0, "unit": "gr", "buyPrice": 27000.0, "packSize": 100.0, "packUnit": "gr"}], "equipments": [{"name": "Blender/Food Processor", "qty": 1.0, "unitPrice": 250000.0}, {"name": "Wajan / Penggorengan", "qty": 1.0, "unitPrice": 75000.0}, {"name": "Spatula & Sutil Set", "qty": 1.0, "unitPrice": 35000.0}, {"name": "Timbangan Digital", "qty": 1.0, "unitPrice": 85000.0}, {"name": "Saringan Minyak", "qty": 2.0, "unitPrice": 15000.0}, {"name": "Mangkok Besar", "qty": 3.0, "unitPrice": 20000.0}, {"name": "Sendok & Garpu Set", "qty": 1.0, "unitPrice": 25000.0}, {"name": "Kompor Gas Portable", "qty": 1.0, "unitPrice": 150000.0}, {"name": "Label Printer / Stiker", "qty": 1.0, "unitPrice": 150000.0}, {"name": "Botol/Toples Sample", "qty": 5.0, "unitPrice": 50000.0}, {"name": "Talenan", "qty": 1.0, "unitPrice": 20000.0}, {"name": "Sengkilluhan", "qty": 1.0, "unitPrice": 50000.0}], "fixedMonthly": [{"name": "Sewa Tempat Produksi", "value": 0.0}, {"name": "Gaji Tenaga Bantu", "value": 0.0}, {"name": "Biaya Listrik Tambahan", "value": 0.0}], "packagingBatch": {"jarBatch": 12500.0, "labelBatch": 2000.0, "wrapBatch": 750.0}, "sellingPrice": 20000.0, "priceSimulation": [14000.0, 16000.0, 18000.0, 20000.0, 22000.0, 25000.0, 28000.0], "monthlyBatches": 10.0, "scenarioRows": [{"name": "Pemula", "batches": 10.0}, {"name": "Medium (Rekomendasi)", "batches": 20.0}, {"name": "Pro", "batches": 40.0}]};
-const rp = n => new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(Number.isFinite(n)?n:0);
-const pct = n => Number.isFinite(n) ? (n*100).toLocaleString('id-ID',{minimumFractionDigits:1,maximumFractionDigits:1})+'%' : '—';
-const num = n => Number.isFinite(n) ? n.toLocaleString('id-ID',{maximumFractionDigits:2}) : '—';
-const months = n => Number.isFinite(n) && n > 0 ? n.toLocaleString('id-ID',{minimumFractionDigits:1,maximumFractionDigits:1})+' bulan' : 'Belum profit';
-const byId = id => document.getElementById(id);
+// ============================================================
+// STATE - 4 resep = 5 toples
+// ============================================================
+const RECIPES_TO_JARS = { recipes: 4, jars: 5 }; // 4 resep -> 5 toples
+
+const state = {
+  recipesPerRun: 4,
+  runsPerMonth: 10,
+
+  // BAHAN BAKU per 1 resep
+  materials: [
+    {name:"Bawang Merah",  qty:300,  unit:"gr",  buyPrice:30000,  packSize:1000, packUnit:"gr"},
+    {name:"Bawang Putih",  qty:200,  unit:"gr",  buyPrice:35000,  packSize:1000, packUnit:"gr"},
+    {name:"Cabai Rawit",   qty:300,  unit:"gr",  buyPrice:65000,  packSize:1000, packUnit:"gr"},
+    {name:"Daun Jeruk",    qty:24,   unit:"gr",  buyPrice:70000,  packSize:1000, packUnit:"gr"},
+    {name:"Tepung Beras",  qty:90,   unit:"gr",  buyPrice:12000,  packSize:500,  packUnit:"gr"},
+    {name:"Tepung Maizena",qty:90,   unit:"gr",  buyPrice:17000,  packSize:1000, packUnit:"gr"},
+    {name:"Baking Powder", qty:8,    unit:"gr",  buyPrice:7000,   packSize:45,   packUnit:"gr"},
+    {name:"Minyak Goreng", qty:600,  unit:"ml",  buyPrice:21000,  packSize:1000, packUnit:"ml"},
+    {name:"Terasi",        qty:12,   unit:"gr",  buyPrice:20000,  packSize:1000, packUnit:"gr"},
+    {name:"Garam",         qty:12,   unit:"gr",  buyPrice:1000,   packSize:250,  packUnit:"gr"},
+    {name:"Penyedap Rasa", qty:12,   unit:"gr",  buyPrice:15000,  packSize:220,  packUnit:"gr"},
+    {name:"Merica",        qty:4,    unit:"gr",  buyPrice:27000,  packSize:100,  packUnit:"gr"},
+  ],
+
+  // KEMASAN per toples
+  kemasan: [
+    {name:"Toples / Jar",     price:3600, qty:1},
+    {name:"Stiker Label",     price:1000, qty:1},
+    {name:"Seal Alumunium",   price:500,  qty:1},
+    {name:"Segel Plastik",    price:125,  qty:1},
+    {name:"Silica Gel",       price:135,  qty:1},
+  ],
+
+  // PERALATAN
+  equipments: [
+    {name:"Blender/Food Processor", qty:1, unitPrice:250000},
+    {name:"Wajan / Penggorengan",   qty:1, unitPrice:75000},
+    {name:"Spatula & Sutil Set",    qty:1, unitPrice:35000},
+    {name:"Timbangan Digital",      qty:1, unitPrice:85000},
+    {name:"Saringan Minyak",        qty:2, unitPrice:15000},
+    {name:"Mangkok Besar",          qty:3, unitPrice:20000},
+    {name:"Sendok & Garpu Set",     qty:1, unitPrice:25000},
+    {name:"Kompor Gas Portable",    qty:1, unitPrice:150000},
+    {name:"Label Printer / Stiker", qty:1, unitPrice:150000},
+    {name:"Toples Sample",          qty:5, unitPrice:50000},
+    {name:"Talenan",                qty:1, unitPrice:20000},
+    {name:"Sengkilluhan",           qty:1, unitPrice:50000},
+  ],
+
+  fixedMonthly: [
+    {name:"Sewa Tempat Produksi",   value:0},
+    {name:"Gaji Tenaga Bantu",      value:0},
+    {name:"Biaya Listrik Tambahan", value:0},
+  ],
+
+  sellingPrice: 20000,
+  priceSimulation: [12000,14000,16000,18000,20000,22000,25000,28000],
+  scenarioRows: [
+    {name:"Pemula",              runs:4},
+    {name:"Standar",             runs:10},
+    {name:"Medium (Rekomendasi)",runs:20},
+    {name:"Pro",                 runs:40},
+  ]
+};
+
+// ============================================================
+// HELPERS
+// ============================================================
+const rp  = n => new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(isFinite(n)?n:0);
+const pct = n => isFinite(n) ? (n*100).toLocaleString("id-ID",{minimumFractionDigits:1,maximumFractionDigits:1})+"%" : "—";
+const num = n => isFinite(n) ? n.toLocaleString("id-ID",{maximumFractionDigits:2}) : "—";
+const mo  = n => isFinite(n)&&n>0 ? n.toLocaleString("id-ID",{minimumFractionDigits:1,maximumFractionDigits:1})+" bulan" : "Belum profit";
+const $   = id => document.getElementById(id);
+const set = (id, v) => { const e=$(id); if(e) e.textContent=v; };
+
+// ============================================================
+// BUILD DOM
+// ============================================================
 function buildInputs(){
-  byId('jarsPerBatch').value = state.materialsMeta.jarsPerBatch;
-  byId('weightPerJar').value = state.materialsMeta.weightPerJar;
-  byId('batchPerMonthSheet').value = state.materialsMeta.batchPerMonthSheet;
-  byId('packJarBatch').value = state.packagingBatch.jarBatch;
-  byId('packLabelBatch').value = state.packagingBatch.labelBatch;
-  byId('packWrapBatch').value = state.packagingBatch.wrapBatch;
-  byId('sellingPrice').value = state.sellingPrice;
-  byId('monthlyBatches').value = state.monthlyBatches;
-  byId('fixedMonthlyInputs').innerHTML = state.fixedMonthly.map((row,i)=>`<label class="stat"><small>${row.name}</small><input class="input" type="number" min="0" step="1000" data-fixed="${i}" value="${row.value}"></label>`).join('');
-  document.querySelector('#materialsTable tbody').innerHTML = state.materials.map((row,i)=>`<tr><td>${row.name}</td><td class="num"><input class="input" type="number" min="0" step="0.01" data-material="${i}" data-field="qty" value="${row.qty}"></td><td>${row.unit}</td><td class="num"><input class="input" type="number" min="0" step="100" data-material="${i}" data-field="buyPrice" value="${row.buyPrice}"></td><td class="num"><input class="input" type="number" min="0" step="0.01" data-material="${i}" data-field="packSize" value="${row.packSize}"></td><td>${row.packUnit}</td><td class="num" data-out="materialUnitPrice" data-i="${i}"></td><td class="num" data-out="materialBatchCost" data-i="${i}"></td><td class="num" data-out="materialPct" data-i="${i}"></td></tr>`).join('');
-  document.querySelector('#equipmentTable tbody').innerHTML = state.equipments.map((row,i)=>`<tr><td>${row.name}</td><td class="num"><input class="input" type="number" min="0" step="1" data-equip="${i}" data-field="qty" value="${row.qty}"></td><td class="num"><input class="input" type="number" min="0" step="1000" data-equip="${i}" data-field="unitPrice" value="${row.unitPrice}"></td><td class="num" data-out="equipTotal" data-i="${i}"></td></tr>`).join('');
-  document.querySelector('#priceSimTable tbody').innerHTML = state.priceSimulation.map(v=>`<tr><td class="num">${rp(v)}</td><td class="num" data-price-profit="${v}"></td><td class="num" data-price-markup="${v}"></td><td class="num" data-price-margin="${v}"></td></tr>`).join('');
+  $("recipesPerRun").value  = state.recipesPerRun;
+  $("runsPerMonth").value   = state.runsPerMonth;
+  $("sellingPrice").value   = state.sellingPrice;
+  $("monthlyRuns").value    = state.runsPerMonth;
+
+  // KEMASAN harga inputs
+  $("priceJar").value    = state.kemasan[0].price;
+  $("priceStiker").value = state.kemasan[1].price;
+  $("priceSeal").value   = state.kemasan[2].price;
+  $("priceSegel").value  = state.kemasan[3].price;
+  $("priceSilica").value = state.kemasan[4].price;
+
+  // Fixed monthly
+  $("fixedMonthlyInputs").innerHTML = state.fixedMonthly.map((r,i)=>
+    `<label class="stat"><small>${r.name}</small><input class="input" type="number" min="0" step="1000" data-fixed="${i}" value="${r.value}"></label>`
+  ).join("");
+
+  // Materials table
+  document.querySelector("#materialsTable tbody").innerHTML = state.materials.map((r,i)=>
+    `<tr>
+      <td>${r.name}</td>
+      <td class="num"><input class="input" type="number" min="0" step="0.01" data-material="${i}" data-field="qty" value="${r.qty}"></td>
+      <td>${r.unit}</td>
+      <td class="num"><input class="input" type="number" min="0" step="100" data-material="${i}" data-field="buyPrice" value="${r.buyPrice}"></td>
+      <td class="num"><input class="input" type="number" min="0" step="0.01" data-material="${i}" data-field="packSize" value="${r.packSize}"></td>
+      <td>${r.packUnit}</td>
+      <td class="num" data-out="matUnit" data-i="${i}"></td>
+      <td class="num" data-out="matCost" data-i="${i}"></td>
+      <td class="num" data-out="matPct"  data-i="${i}"></td>
+    </tr>`
+  ).join("");
+
+  // Equipment table
+  document.querySelector("#equipmentTable tbody").innerHTML = state.equipments.map((r,i)=>
+    `<tr>
+      <td>${r.name}</td>
+      <td class="num"><input class="input" type="number" min="0" step="1" data-equip="${i}" data-field="qty" value="${r.qty}"></td>
+      <td class="num"><input class="input" type="number" min="0" step="1000" data-equip="${i}" data-field="unitPrice" value="${r.unitPrice}"></td>
+      <td class="num" data-out="equipTotal" data-i="${i}"></td>
+    </tr>`
+  ).join("");
+
+  // Price sim table
+  document.querySelector("#priceSimTable tbody").innerHTML = state.priceSimulation.map(v=>
+    `<tr>
+      <td class="num">${rp(v)}</td>
+      <td class="num" data-price-profit="${v}"></td>
+      <td class="num" data-price-markup="${v}"></td>
+      <td class="num" data-price-margin="${v}"></td>
+    </tr>`
+  ).join("");
+
+  // Kemasan table
+  document.querySelector("#kemasanTable tbody").innerHTML = state.kemasan.map((r,i)=>
+    `<tr>
+      <td>${r.name}</td>
+      <td class="num" data-out="kemPrice" data-i="${i}"></td>
+      <td class="num">${r.qty}</td>
+      <td class="num" data-out="kemCost"  data-i="${i}"></td>
+      <td class="num" data-out="kemPct"   data-i="${i}"></td>
+    </tr>`
+  ).join("");
 }
+
+// ============================================================
+// COLLECT INPUTS
+// ============================================================
 function collectInputs(){
-  state.materialsMeta.jarsPerBatch = parseFloat(byId('jarsPerBatch').value)||0;
-  state.materialsMeta.weightPerJar = parseFloat(byId('weightPerJar').value)||0;
-  state.materialsMeta.batchPerMonthSheet = parseFloat(byId('batchPerMonthSheet').value)||0;
-  state.packagingBatch.jarBatch = parseFloat(byId('packJarBatch').value)||0;
-  state.packagingBatch.labelBatch = parseFloat(byId('packLabelBatch').value)||0;
-  state.packagingBatch.wrapBatch = parseFloat(byId('packWrapBatch').value)||0;
-  state.sellingPrice = parseFloat(byId('sellingPrice').value)||0;
-  state.monthlyBatches = parseFloat(byId('monthlyBatches').value)||0;
-  document.querySelectorAll('[data-material]').forEach(el=>{const i=+el.dataset.material; state.materials[i][el.dataset.field]=parseFloat(el.value)||0;});
-  document.querySelectorAll('[data-equip]').forEach(el=>{const i=+el.dataset.equip; state.equipments[i][el.dataset.field]=parseFloat(el.value)||0;});
-  document.querySelectorAll('[data-fixed]').forEach(el=>{const i=+el.dataset.fixed; state.fixedMonthly[i].value=parseFloat(el.value)||0;});
+  state.recipesPerRun = parseFloat($("recipesPerRun").value)||4;
+  state.runsPerMonth  = parseFloat($("runsPerMonth").value)||0;
+  state.sellingPrice  = parseFloat($("sellingPrice").value)||0;
+  state.runsPerMonth  = parseFloat($("monthlyRuns").value)||0;
+
+  state.kemasan[0].price = parseFloat($("priceJar").value)||0;
+  state.kemasan[1].price = parseFloat($("priceStiker").value)||0;
+  state.kemasan[2].price = parseFloat($("priceSeal").value)||0;
+  state.kemasan[3].price = parseFloat($("priceSegel").value)||0;
+  state.kemasan[4].price = parseFloat($("priceSilica").value)||0;
+
+  document.querySelectorAll("[data-material]").forEach(el=>{
+    const i=+el.dataset.material; state.materials[i][el.dataset.field]=parseFloat(el.value)||0;
+  });
+  document.querySelectorAll("[data-equip]").forEach(el=>{
+    const i=+el.dataset.equip; state.equipments[i][el.dataset.field]=parseFloat(el.value)||0;
+  });
+  document.querySelectorAll("[data-fixed]").forEach(el=>{
+    const i=+el.dataset.fixed; state.fixedMonthly[i].value=parseFloat(el.value)||0;
+  });
 }
-function scenario(batchCount, m){
-  const production = batchCount * m.jarsPerBatch, revenue = production * m.sellingPrice;
-  const materialVar = batchCount * m.materialsBatch, packagingVar = batchCount * (m.hppPerJar - m.materialsPerJar) * m.jarsPerBatch;
-  const totalVar = materialVar + packagingVar, gross = revenue - totalVar, net = gross - m.fixedMonthlyTotal;
-  return {production,revenue,net,roi:m.equipmentTotal?net/m.equipmentTotal:0,payback:net>0?m.equipmentTotal/net:null};
-}
+
+// ============================================================
+// CALC
+// ============================================================
 function calc(){
   collectInputs();
-  const materialUnitPrices = state.materials.map(r => r.packSize > 0 ? r.buyPrice / r.packSize : 0);
-  const materialBatchCosts = state.materials.map((r,i) => materialUnitPrices[i] * r.qty);
-  const materialsBatch = materialBatchCosts.reduce((a,b)=>a+b,0);
-  const materialsPerJar = state.materialsMeta.jarsPerBatch > 0 ? materialsBatch / state.materialsMeta.jarsPerBatch : 0;
-  const topIdx = materialBatchCosts.indexOf(Math.max(...materialBatchCosts,0));
-  materialUnitPrices.forEach((v,i)=>document.querySelector(`[data-out="materialUnitPrice"][data-i="${i}"]`).textContent = rp(v));
-  materialBatchCosts.forEach((v,i)=>document.querySelector(`[data-out="materialBatchCost"][data-i="${i}"]`).textContent = rp(v));
-  materialBatchCosts.forEach((v,i)=>document.querySelector(`[data-out="materialPct"][data-i="${i}"]`).textContent = pct(materialsBatch ? v/materialsBatch : 0));
-  const equipTotals = state.equipments.map(r => r.qty * r.unitPrice), equipmentTotal = equipTotals.reduce((a,b)=>a+b,0);
-  equipTotals.forEach((v,i)=>document.querySelector(`[data-out="equipTotal"][data-i="${i}"]`).textContent = rp(v));
-  const fixedMonthlyTotal = state.fixedMonthly.reduce((a,b)=>a + (b.value||0), 0);
-  const hppBatch = materialsBatch + state.packagingBatch.jarBatch + state.packagingBatch.labelBatch + state.packagingBatch.wrapBatch;
-  const hppPerJar = state.materialsMeta.jarsPerBatch > 0 ? hppBatch / state.materialsMeta.jarsPerBatch : 0;
-  const profitPerJar = state.sellingPrice - hppPerJar, markup = hppPerJar > 0 ? profitPerJar / hppPerJar : 0, margin = state.sellingPrice > 0 ? profitPerJar / state.sellingPrice : 0;
-  const contribution = state.sellingPrice > 0 ? profitPerJar / state.sellingPrice : 0, bepUnit = profitPerJar > 0 ? Math.ceil(equipmentTotal / profitPerJar) : null, bepSales = bepUnit ? bepUnit * state.sellingPrice : null;
-  const monthlyProduction = state.monthlyBatches * state.materialsMeta.jarsPerBatch, monthlyRevenue = monthlyProduction * state.sellingPrice;
-  const monthlyVarMaterials = state.monthlyBatches * materialsBatch, monthlyPackagingOther = state.monthlyBatches * (hppPerJar - materialsPerJar) * state.materialsMeta.jarsPerBatch;
-  const monthlyVarTotal = monthlyVarMaterials + monthlyPackagingOther, monthlyGrossProfit = monthlyRevenue - monthlyVarTotal, monthlyNetProfit = monthlyGrossProfit - fixedMonthlyTotal, monthlyROI = equipmentTotal ? monthlyNetProfit / equipmentTotal : 0, payback = monthlyNetProfit > 0 ? equipmentTotal / monthlyNetProfit : null;
-  byId('materialsPerJar').textContent = rp(materialsPerJar); byId('materialsBatch').textContent = rp(materialsBatch); byId('materialsCount').textContent = num(state.materials.length) + ' item'; byId('topCostName').textContent = state.materials[topIdx]?.name || '—'; byId('topCostPct').textContent = pct(materialsBatch ? materialBatchCosts[topIdx]/materialsBatch : 0); byId('tfootMaterialsBatch').textContent = rp(materialsBatch);
-  byId('equipmentTotal').textContent = rp(equipmentTotal); byId('equipmentCount').textContent = num(state.equipments.length) + ' item'; byId('fixedMonthlyTotal').textContent = rp(fixedMonthlyTotal); byId('tfootEquipmentTotal').textContent = rp(equipmentTotal);
-  byId('hppBatch').textContent = rp(hppBatch); byId('hppPerJar').textContent = rp(hppPerJar); byId('profitPerJar').textContent = rp(profitPerJar); byId('markupPct').textContent = pct(markup); byId('marginPct').textContent = pct(margin);
-  document.querySelectorAll('[data-price-profit]').forEach(el=>{const p=+el.dataset.priceProfit; el.textContent = rp(p - hppPerJar);}); document.querySelectorAll('[data-price-markup]').forEach(el=>{const p=+el.dataset.priceMarkup; el.textContent = pct(hppPerJar ? (p-hppPerJar)/hppPerJar : 0);}); document.querySelectorAll('[data-price-margin]').forEach(el=>{const p=+el.dataset.priceMargin; el.textContent = pct(p ? (p-hppPerJar)/p : 0);});
-  byId('bepModal').textContent = rp(equipmentTotal); byId('bepMarginPerJar').textContent = rp(profitPerJar); byId('bepContribution').textContent = pct(contribution); byId('bepUnit').textContent = bepUnit ? num(bepUnit) + ' toples' : 'Belum tercapai'; byId('bepSales').textContent = bepSales ? rp(bepSales) : 'Belum tercapai'; byId('paybackMonths').textContent = months(payback);
-  byId('monthlyProduction').textContent = num(monthlyProduction) + ' toples'; byId('monthlyRevenue').textContent = rp(monthlyRevenue); byId('monthlyVarTotal').textContent = rp(monthlyVarTotal); byId('monthlyGrossProfit').textContent = rp(monthlyGrossProfit); byId('monthlyNetProfit').textContent = rp(monthlyNetProfit); byId('monthlyROI').textContent = pct(monthlyROI);
-  byId('kpiGrid').innerHTML = [['Modal Tetap', rp(equipmentTotal)], ['HPP / Toples', rp(hppPerJar)], ['Harga Jual', rp(state.sellingPrice)], ['BEP Unit', bepUnit ? num(bepUnit)+' toples' : 'Belum'], ['Laba Bersih Bulanan', rp(monthlyNetProfit)], ['ROI Bulanan', pct(monthlyROI)], ['Total Produksi', num(monthlyProduction)+' toples'], ['Balik Modal', months(payback)]].map(([label,value])=>`<div class="card kpi"><div class="label">${label}</div><div class="value">${value}</div></div>`).join('');
-  const m = {jarsPerBatch:state.materialsMeta.jarsPerBatch,sellingPrice:state.sellingPrice,materialsBatch,materialsPerJar,hppPerJar,fixedMonthlyTotal,equipmentTotal};
-  document.querySelector('#scenarioTable tbody').innerHTML = state.scenarioRows.map(r=>{const s=scenario(r.batches,m); return `<tr><td>${r.name}</td><td class="num">${num(r.batches)}</td><td class="num">${num(s.production)} toples</td><td class="num">${rp(s.revenue)}</td><td class="num">${rp(s.net)}</td><td class="num">${pct(s.roi)}</td><td class="num">${months(s.payback)}</td></tr>`;}).join('');
+  const R = state.recipesPerRun;       // resep per run (default 4)
+  const J = (R / 4) * 5;               // toples per run: rasio 4 resep = 5 toples
+  const runsPerMonth = state.runsPerMonth;
+
+  // --- BAHAN BAKU ---
+  const matUnitPrices = state.materials.map(r=> r.packSize>0 ? r.buyPrice/r.packSize : 0);
+  const matCosts      = state.materials.map((r,i)=> matUnitPrices[i]*r.qty);
+  const materialsCostPerRecipe = matCosts.reduce((a,b)=>a+b, 0); // biaya per 1 resep
+  const topIdx = matCosts.indexOf(Math.max(...matCosts, 0));
+
+  matUnitPrices.forEach((v,i)=> document.querySelector(`[data-out="matUnit"][data-i="${i}"]`).textContent = rp(v));
+  matCosts.forEach((v,i)    => document.querySelector(`[data-out="matCost"][data-i="${i}"]`).textContent = rp(v));
+  matCosts.forEach((v,i)    => document.querySelector(`[data-out="matPct"][data-i="${i}"]`).textContent  = pct(materialsCostPerRecipe ? v/materialsCostPerRecipe : 0));
+
+  // Biaya bahan baku per toples: 1 resep menghasilkan 5/4 toples
+  // Jadi per 1 resep = (5/4) toples → per toples = cost / (5/4) = cost * 4/5
+  const hppMatPerJar = materialsCostPerRecipe * (4/5);
+
+  // --- KEMASAN ---
+  const kemCosts = state.kemasan.map(r=> r.price * r.qty);
+  const packPerJar = kemCosts.reduce((a,b)=>a+b, 0);
+  const packPerRun = packPerJar * J;
+
+  kemCosts.forEach((v,i)=>{
+    document.querySelector(`[data-out="kemPrice"][data-i="${i}"]`).textContent = rp(state.kemasan[i].price);
+    document.querySelector(`[data-out="kemCost"][data-i="${i}"]`).textContent  = rp(v);
+    document.querySelector(`[data-out="kemPct"][data-i="${i}"]`).textContent   = pct(packPerJar ? v/packPerJar : 0);
+  });
+  $("tfootPackTotal").textContent = rp(packPerJar);
+
+  // --- HPP PER TOPLES ---
+  const hppPerJar  = hppMatPerJar + packPerJar;
+  const hppPerRun  = hppPerJar * J; // HPP total per run
+
+  // --- PERALATAN ---
+  const equipTotals = state.equipments.map(r=> r.qty*r.unitPrice);
+  const equipmentTotal = equipTotals.reduce((a,b)=>a+b, 0);
+  equipTotals.forEach((v,i)=> document.querySelector(`[data-out="equipTotal"][data-i="${i}"]`).textContent = rp(v));
+
+  const fixedMonthlyTotal = state.fixedMonthly.reduce((a,b)=>a+(b.value||0), 0);
+
+  // --- MARGIN ---
+  const profitPerJar = state.sellingPrice - hppPerJar;
+  const markup = hppPerJar>0 ? profitPerJar/hppPerJar : 0;
+  const margin = state.sellingPrice>0 ? profitPerJar/state.sellingPrice : 0;
+  const contribution = margin;
+  const bepUnit  = profitPerJar>0 ? Math.ceil(equipmentTotal/profitPerJar) : null;
+  const bepSales = bepUnit ? bepUnit*state.sellingPrice : null;
+
+  // --- PROYEKSI BULANAN ---
+  const monthlyJars     = J * runsPerMonth;
+  const monthlyRevenue  = monthlyJars * state.sellingPrice;
+  const monthlyVarTotal = hppPerJar * monthlyJars;
+  const monthlyGross    = monthlyRevenue - monthlyVarTotal;
+  const monthlyNet      = monthlyGross - fixedMonthlyTotal;
+  const monthlyROI      = equipmentTotal ? monthlyNet/equipmentTotal : 0;
+  const payback         = monthlyNet>0 ? equipmentTotal/monthlyNet : null;
+
+  // --- UPDATE DOM ---
+  set("jarsPerRun",           num(J)+" toples");
+  set("materialsPerRecipe",   rp(materialsCostPerRecipe));
+  set("materialsBatch",       rp(materialsCostPerRecipe));
+  set("materialsCount",       num(state.materials.length)+" item");
+  set("topCostName",          state.materials[topIdx]?.name || "—");
+  set("topCostPct",           pct(materialsCostPerRecipe ? matCosts[topIdx]/materialsCostPerRecipe : 0));
+  $("tfootMaterialsBatch").textContent = rp(materialsCostPerRecipe);
+
+  set("packPerJar",     rp(packPerJar));
+  set("packPctHpp",     pct(hppPerJar ? packPerJar/hppPerJar : 0));
+  set("packPerRecipe",  rp(packPerJar * (4/5)));
+  set("packPerMonth",   rp(packPerJar * monthlyJars));
+
+  set("equipmentTotal",     rp(equipmentTotal));
+  set("equipmentCount",     num(state.equipments.length)+" item");
+  set("fixedMonthlyTotal",  rp(fixedMonthlyTotal));
+  $("tfootEquipmentTotal").textContent = rp(equipmentTotal);
+
+  set("hppMatPerJar",   rp(hppMatPerJar));
+  set("hppPackPerJar",  rp(packPerJar));
+  set("hppPerJar",      rp(hppPerJar));
+  set("hppBatch",       rp(hppPerRun));
+
+  set("profitPerJar",  rp(profitPerJar));
+  set("markupPct",     pct(markup));
+  set("marginPct",     pct(margin));
+
+  document.querySelectorAll("[data-price-profit]").forEach(el=>{ const p=+el.dataset.priceProfit; el.textContent=rp(p-hppPerJar); });
+  document.querySelectorAll("[data-price-markup]").forEach(el=>{ const p=+el.dataset.priceMarkup; el.textContent=pct(hppPerJar?(p-hppPerJar)/hppPerJar:0); });
+  document.querySelectorAll("[data-price-margin]").forEach(el=>{ const p=+el.dataset.priceMargin; el.textContent=pct(p?(p-hppPerJar)/p:0); });
+
+  set("bepModal",       rp(equipmentTotal));
+  set("bepMarginPerJar",rp(profitPerJar));
+  set("bepContribution",pct(contribution));
+  set("bepUnit",        bepUnit ? num(bepUnit)+" toples" : "Belum tercapai");
+  set("bepSales",       bepSales ? rp(bepSales) : "Belum tercapai");
+  set("paybackMonths",  mo(payback));
+
+  set("monthlyProduction",  num(monthlyJars)+" toples");
+  set("monthlyRevenue",     rp(monthlyRevenue));
+  set("monthlyVarTotal",    rp(monthlyVarTotal));
+  set("monthlyGrossProfit", rp(monthlyGross));
+  set("monthlyNetProfit",   rp(monthlyNet));
+  set("monthlyROI",         pct(monthlyROI));
+
+  // KPI GRID
+  $("kpiGrid").innerHTML = [
+    ["Modal Tetap",      rp(equipmentTotal)],
+    ["HPP / Toples",     rp(hppPerJar)],
+    ["Harga Jual",       rp(state.sellingPrice)],
+    ["Profit / Toples",  rp(profitPerJar)],
+    ["BEP Unit",         bepUnit ? num(bepUnit)+" toples" : "Belum"],
+    ["Laba Bersih/Bulan",rp(monthlyNet)],
+    ["Toples/Bulan",     num(monthlyJars)+" pcs"],
+    ["Balik Modal",      mo(payback)],
+  ].map(([label,value])=>
+    `<div class="card kpi"><div class="label">${label}</div><div class="value">${value}</div></div>`
+  ).join("");
+
+  // SKENARIO
+  document.querySelector("#scenarioTable tbody").innerHTML = state.scenarioRows.map(r=>{
+    const jars    = (r.runs/4)*5;
+    const revenue = jars * state.sellingPrice;
+    const varCost = hppPerJar * jars;
+    const gross   = revenue - varCost;
+    const net     = gross - fixedMonthlyTotal;
+    const roi     = equipmentTotal ? net/equipmentTotal : 0;
+    const pb      = net>0 ? equipmentTotal/net : null;
+    return `<tr>
+      <td>${r.name}</td>
+      <td class="num">${num(r.runs)}</td>
+      <td class="num">${num(jars)} toples</td>
+      <td class="num">${rp(revenue)}</td>
+      <td class="num">${rp(net)}</td>
+      <td class="num">${pct(roi)}</td>
+      <td class="num">${mo(pb)}</td>
+    </tr>`;
+  }).join("");
 }
-buildInputs(); calc();
-document.addEventListener('input', e => { if (e.target.matches('input')) calc(); });
-document.querySelectorAll('#tabNav button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('#tabNav button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById('view-'+btn.dataset.tab).classList.add('active');}));
-(function(){const t=document.getElementById('themeToggle');const root=document.documentElement;let dark=matchMedia('(prefers-color-scheme: dark)').matches;root.setAttribute('data-theme', dark ? 'dark' : 'light');t.addEventListener('click',()=>{dark=!dark;root.setAttribute('data-theme', dark ? 'dark' : 'light');});})();
+
+// ============================================================
+// INIT
+// ============================================================
+buildInputs();
+calc();
+
+document.addEventListener("input", e => {
+  if (e.target.matches("input")) {
+    // sync runsPerMonth between tabs
+    if (e.target.id === "runsPerMonth") $("monthlyRuns").value = e.target.value;
+    if (e.target.id === "monthlyRuns")  $("runsPerMonth").value = e.target.value;
+    calc();
+  }
+});
+
+document.querySelectorAll("#tabNav button").forEach(btn => btn.addEventListener("click", ()=>{
+  document.querySelectorAll("#tabNav button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+  document.getElementById("view-"+btn.dataset.tab).classList.add("active");
+}));
+
+(function(){
+  const t=document.getElementById("themeToggle"), root=document.documentElement;
+  let dark = matchMedia("(prefers-color-scheme: dark)").matches;
+  root.setAttribute("data-theme", dark?"dark":"light");
+  t.addEventListener("click",()=>{ dark=!dark; root.setAttribute("data-theme",dark?"dark":"light"); });
+})();
 </script>
 </body>
 </html>
