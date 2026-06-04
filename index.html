@@ -1,64 +1,72 @@
+<!--
+   _-=Created WithOut Love=- _                   
+| \ | ___ ._ _  ___  ___
+|   |<_> || ' |/ . |<_-<
+|_\_|<___||_|_|\_. |/__/
+               <___'    
+-->
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Nang — Data & Business Analyst</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
-/*
-  Art direction: Personal portfolio → editorial warmth
-  Palette: warm cream surfaces + terracotta accent
-  Typography: Instrument Serif (display) + Inter (body)
-  Density: spacious
-*/
 
-/* ── Reset & Base ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ── RESET ─────────────────────────────────────────── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html {
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  text-rendering: optimizeLegibility;
+  scroll-padding-top: 72px;
 }
 
-/* ── Design Tokens ── */
+/* ── TOKENS ─────────────────────────────────────────── */
 :root {
+  /* Surfaces — Anthropic warm cream */
   --bg:             #F5F0E8;
-  --bg-soft:        #FBF8F2;
-  --surface:        #EDE8DF;
-  --surface-2:      #E6E0D5;
-  --border:         #D8CFC2;
-  --border-strong:  #C9BFB0;
+  --bg-soft:        #FAF7F2;
+  --surface:        #F0EBE1;
+  --surface-2:      #EAE3D8;
+  --border:         #D9D0C3;
+  --border-strong:  #C5BAA9;
+  --divider:        #E2D9CC;
 
+  /* Text */
   --text:           #1A1613;
-  --text-muted:     #6B6258;
-  --text-faint:     #9C9389;
-  --text-inverse:   #FBF8F2;
+  --text-muted:     #6B6055;
+  --text-faint:     #A09285;
+  --text-inverse:   #FAF7F2;
 
+  /* Accent — Anthropic rust/terracotta */
   --accent:         #C96442;
-  --accent-hover:   #A94F33;
-  --accent-active:  #8B3C24;
-  --accent-soft:    #F2E0D8;
-  --accent-border:  #E5C4B8;
+  --accent-hover:   #A84F31;
+  --accent-active:  #8A3D23;
+  --accent-soft:    #F0DDD6;
+  --accent-border:  #DFBCAD;
 
-  --success:        #4D6B50;
+  /* Fonts */
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
 
-  --font-display:   'Instrument Serif', Georgia, serif;
-  --font-body:      'Inter', sans-serif;
-  --font-mono:      'JetBrains Mono', monospace;
-
+  /* Type scale */
   --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
   --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
   --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
   --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
   --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
   --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
-  --text-hero: clamp(3.5rem,   1rem    + 6vw,    7rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+  --text-hero: clamp(3rem,     0.5rem  + 7vw,    7.5rem);
 
+  /* Spacing */
   --space-1:  0.25rem;
   --space-2:  0.5rem;
   --space-3:  0.75rem;
@@ -72,621 +80,926 @@ html {
   --space-20: 5rem;
   --space-24: 6rem;
 
-  --radius-sm:   0.375rem;
-  --radius-md:   0.5rem;
-  --radius-lg:   0.75rem;
-  --radius-xl:   1rem;
-  --radius-2xl:  1.5rem;
+  /* Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 1px 2px rgba(26,22,19,0.04);
-  --shadow-md: 0 4px 16px rgba(26,22,19,0.06);
-  --shadow-lg: 0 12px 40px rgba(26,22,19,0.08);
+  /* Shadow */
+  --shadow-sm: 0 1px 2px rgba(26,22,19,0.05);
+  --shadow-md: 0 4px 16px rgba(26,22,19,0.07);
+  --shadow-lg: 0 12px 40px rgba(26,22,19,0.10);
 
-  --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
-
+  /* Content widths */
   --content-narrow:  640px;
   --content-default: 960px;
-  --content-wide:    1200px;
+  --content-wide:    1160px;
+
+  --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ── BASE ─────────────────────────────────────────── */
 body {
   font-family: var(--font-body);
   font-size: var(--text-base);
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
-  min-height: 100dvh;
   overflow-x: hidden;
 }
+img, svg { display:block; max-width:100%; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+ul { list-style: none; }
+h1,h2,h3,h4,h5,h6 { text-wrap: balance; line-height: 1.15; }
+p,li { text-wrap: pretty; }
 
-img, picture, video, canvas, svg { display: block; max-width: 100%; }
-input, button, textarea, select { font: inherit; color: inherit; }
-h1, h2, h3, h4, h5, h6 { text-wrap: balance; line-height: 1.15; }
-p, li { text-wrap: pretty; max-width: 72ch; }
-ul[role="list"], ol[role="list"] { list-style: none; }
-button { cursor: pointer; background: none; border: none; }
-
-::selection { background: var(--accent-soft); color: var(--text); }
+::selection { background: rgba(201,100,66,0.18); color: var(--text); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); }
 
-a, button, [role="button"], input, textarea, select {
-  transition: color var(--transition), background var(--transition),
-              border-color var(--transition), box-shadow var(--transition);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
 
-/* ── Nav ── */
+/* ── TRANSITIONS ─────────────────────────────────────────── */
+a, button, [role="button"] {
+  transition: color var(--transition), background var(--transition),
+              border-color var(--transition), box-shadow var(--transition),
+              transform var(--transition), opacity var(--transition);
+}
+
+/* ── NAV ─────────────────────────────────────────── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   height: 64px;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 clamp(var(--space-4), 4vw, var(--space-12));
-  background: rgba(245,240,232,0.88);
+  padding: 0 var(--space-8);
+  background: rgba(245,240,232,0.75);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid transparent;
   transition: border-color var(--transition), background var(--transition);
 }
 nav.scrolled {
-  border-color: var(--border);
-  background: rgba(245,240,232,0.96);
+  border-color: var(--divider);
+  background: rgba(245,240,232,0.95);
+}
+.nav-inner {
+  width: 100%;
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo {
   font-family: var(--font-body);
-  font-size: 0.95rem; font-weight: 700;
-  color: var(--text); text-decoration: none;
+  font-weight: 700;
+  font-size: var(--text-sm);
   letter-spacing: -0.01em;
+  color: var(--text);
 }
 .nav-logo span { color: var(--accent); }
-.nav-center {
-  display: flex; align-items: center; gap: var(--space-6);
-}
 .nav-links {
-  display: flex; align-items: center; gap: var(--space-6);
-  list-style: none;
+  display: flex; gap: var(--space-8); align-items: center;
 }
 .nav-links a {
-  font-size: var(--text-sm); font-weight: 500;
-  color: var(--text-muted); text-decoration: none;
-  position: relative; padding-bottom: 2px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-muted);
+  position: relative;
 }
 .nav-links a::after {
   content: '';
-  position: absolute; bottom: -2px; left: 0; right: 0;
-  height: 1.5px; background: var(--accent);
-  transform: scaleX(0); transform-origin: right;
-  transition: transform var(--transition);
+  position: absolute; bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--accent);
+  transition: width var(--transition);
 }
 .nav-links a:hover, .nav-links a.active { color: var(--text); }
-.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); transform-origin: left; }
-
-.nav-right { display: flex; align-items: center; gap: var(--space-3); }
-
-/* Lang toggle */
-.lang-toggle {
-  display: flex; align-items: center;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius-full); padding: 3px;
-  gap: 2px;
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-cta {
+  padding: 0.4rem var(--space-4);
+  background: var(--text);
+  color: var(--text-inverse) !important;
+  border-radius: var(--radius-md);
+  font-size: 0.8rem !important;
 }
-.lang-btn {
-  font-size: 0.72rem; font-weight: 600; font-family: var(--font-mono);
-  padding: 4px 10px; border-radius: var(--radius-full);
-  color: var(--text-muted); background: transparent; border: none;
-  cursor: pointer; letter-spacing: 0.04em;
-  transition: background var(--transition), color var(--transition);
-}
-.lang-btn.active { background: var(--bg-soft); color: var(--text); }
-
-/* Hamburger */
+.nav-cta:hover { background: var(--accent) !important; }
+.nav-cta::after { display: none !important; }
 .nav-hamburger {
-  display: none; flex-direction: column; gap: 5px;
-  padding: var(--space-2); background: none; border: none; cursor: pointer;
+  display: none;
+  flex-direction: column; gap: 5px;
+  padding: var(--space-1);
 }
 .nav-hamburger span {
-  display: block; width: 20px; height: 1.5px;
-  background: var(--text); border-radius: 2px;
-  transition: transform var(--transition), opacity var(--transition);
+  display: block; width: 22px; height: 1.5px;
+  background: var(--text-muted); border-radius: 1px;
+  transition: var(--transition);
 }
-.nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
-.nav-hamburger.open span:nth-child(2) { opacity: 0; }
-.nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+@media (max-width: 720px) {
+  nav { padding: 0 var(--space-4); }
+  .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0;
+    flex-direction: column; gap: 0; background: var(--bg-soft);
+    border-bottom: 1px solid var(--divider); padding: var(--space-4) 0;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: var(--space-3) var(--space-6); width: 100%; }
+  .nav-links a::after { display: none; }
+  .nav-cta { margin: var(--space-3) var(--space-6); width: calc(100% - var(--space-12)); text-align: center; }
+  .nav-hamburger { display: flex; }
+}
 
-.nav-mobile {
-  display: none; position: fixed; top: 64px; left: 0; right: 0;
-  background: rgba(245,240,232,0.97); backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  padding: var(--space-6) clamp(var(--space-4), 4vw, var(--space-12));
-  flex-direction: column; gap: var(--space-4); z-index: 99;
+/* ── HERO ─────────────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: clamp(100px, 12vw, 140px) var(--space-8) var(--space-16);
 }
-.nav-mobile.open { display: flex; }
-.nav-mobile a {
-  font-size: var(--text-base); font-weight: 500;
-  color: var(--text-muted); text-decoration: none;
-  padding: var(--space-2) 0;
-  border-bottom: 1px solid var(--border);
-}
-.nav-mobile a:last-child { border-bottom: none; }
-.nav-mobile a:hover { color: var(--text); }
-
-/* ── Section Layout ── */
-.section-wrap { padding: clamp(var(--space-16), 8vw, var(--space-24)) clamp(var(--space-4), 4vw, var(--space-12)); }
-.section-inner { max-width: var(--content-default); margin: 0 auto; }
-.section-label {
-  font-family: var(--font-mono); font-size: 0.72rem;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: var(--space-3);
-}
-.section-title {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl); font-weight: 400;
-  color: var(--text); line-height: 1.08;
-  letter-spacing: -0.03em; margin-bottom: var(--space-4);
-}
-.section-desc {
-  font-size: var(--text-base); color: var(--text-muted);
-  max-width: 52ch; line-height: 1.8;
-  margin-bottom: var(--space-10);
-}
-.section-divider { padding: 0 clamp(var(--space-4), 4vw, var(--space-12)); }
-.section-divider hr { border: none; border-top: 1px solid var(--border); }
-
-/* ── Reveal Animation ── */
-.reveal {
-  opacity: 0; transform: translateY(16px);
-  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-delay-1 { transition-delay: 80ms; }
-.reveal-delay-2 { transition-delay: 160ms; }
-.reveal-delay-3 { transition-delay: 240ms; }
-.reveal-delay-4 { transition-delay: 320ms; }
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex; align-items: center; gap: var(--space-2);
-  padding: 0.65rem 1.4rem; border-radius: var(--radius-full);
-  font-size: var(--text-sm); font-weight: 600;
-  text-decoration: none; cursor: pointer; border: none;
-  transition: background var(--transition), color var(--transition),
-              transform var(--transition), box-shadow var(--transition);
-}
-.btn:hover { transform: translateY(-1px); }
-.btn-primary {
-  background: var(--text); color: var(--text-inverse);
-}
-.btn-primary:hover { background: var(--accent-hover); }
-.btn-ghost {
-  background: transparent; color: var(--text);
-  border: 1px solid var(--border-strong);
-}
-.btn-ghost:hover { background: var(--surface); border-color: var(--border-strong); }
-
-/* ── Hero ── */
-.hero {
-  min-height: 100dvh;
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 80px clamp(var(--space-4), 4vw, var(--space-12)) var(--space-16);
-  max-width: var(--content-wide);
-  margin: 0 auto;
+.hero-inner {
+  width: 100%; max-width: var(--content-wide); margin: 0 auto;
 }
 .hero-badge {
   display: inline-flex; align-items: center; gap: var(--space-2);
-  padding: 5px 14px; border-radius: var(--radius-full);
-  background: var(--accent-soft); border: 1px solid var(--accent-border);
-  font-size: 0.75rem; font-family: var(--font-mono);
-  color: var(--accent-hover); letter-spacing: 0.06em;
-  text-transform: uppercase; margin-bottom: var(--space-6);
-  width: fit-content;
+  padding: 5px 14px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--accent-hover);
+  letter-spacing: 0.03em;
+  margin-bottom: var(--space-8);
 }
 .hero-badge-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--success); flex-shrink: 0;
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
 }
 .hero-name {
   font-family: var(--font-display);
   font-size: var(--text-hero);
-  font-weight: 400; line-height: 0.95;
-  letter-spacing: -0.04em; color: var(--text);
-  margin-bottom: var(--space-6);
-}
-.hero-title {
-  display: flex; flex-wrap: wrap; align-items: center;
-  gap: var(--space-2); margin-bottom: var(--space-6);
-}
-.hero-title-text {
-  font-size: var(--text-lg); color: var(--text-muted);
   font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: var(--space-5);
 }
+.hero-sub {
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: var(--space-5);
+  display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap;
+}
+.hero-sub-divider { color: var(--border-strong); }
 .hero-desc {
-  font-size: var(--text-base); color: var(--text-muted);
-  max-width: 48ch; line-height: 1.85;
-  margin-bottom: var(--space-8);
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  max-width: 52ch;
+  line-height: 1.8;
+  margin-bottom: var(--space-10);
 }
-.hero-actions { display: flex; align-items: center; gap: var(--space-4); flex-wrap: wrap; }
-.hero-stats {
-  display: flex; gap: var(--space-8); margin-top: var(--space-12);
-  padding-top: var(--space-8); border-top: 1px solid var(--border);
-  flex-wrap: wrap;
+.hero-ctas { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+
+/* ── BUTTONS ─────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer; border: none;
 }
-.hero-stat-number {
+.btn-primary {
+  background: var(--text);
+  color: var(--text-inverse);
+}
+.btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+.btn-ghost:hover { border-color: var(--text-muted); transform: translateY(-1px); }
+.btn-link {
+  background: transparent; color: var(--accent);
+  padding: 0; font-size: var(--text-sm);
+  display: inline-flex; align-items: center; gap: var(--space-1);
+}
+.btn-link:hover { color: var(--accent-hover); gap: var(--space-2); }
+
+/* ── SECTION COMMON ─────────────────────────────────────────── */
+.section-wrap {
+  padding: clamp(var(--space-16), 8vw, var(--space-24)) var(--space-8);
+}
+.section-inner {
+  max-width: var(--content-wide); margin: 0 auto;
+}
+.section-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+  display: flex; align-items: center; gap: var(--space-3);
+}
+.section-label::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.section-title {
   font-family: var(--font-display);
-  font-size: var(--text-xl); font-weight: 400;
-  color: var(--text); letter-spacing: -0.03em;
-  line-height: 1;
+  font-size: var(--text-3xl);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: var(--space-4);
 }
-.hero-stat-label {
-  font-size: var(--text-xs); color: var(--text-faint);
-  margin-top: var(--space-1); font-family: var(--font-mono);
-  letter-spacing: 0.06em; text-transform: uppercase;
+.section-desc {
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  max-width: 52ch;
+  line-height: 1.8;
+  margin-bottom: var(--space-12);
 }
 
-/* ── About ── */
+/* ── DIVIDERS ─────────────────────────────────────────── */
+.section-divider {
+  max-width: var(--content-wide); margin: 0 auto;
+  padding: 0 var(--space-8);
+}
+.section-divider hr {
+  border: none; border-top: 1px solid var(--divider);
+}
+
+/* ── ABOUT ─────────────────────────────────────────── */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(var(--space-8), 5vw, var(--space-16));
+  gap: clamp(var(--space-10), 6vw, var(--space-20));
   align-items: start;
 }
-.about-text p {
-  font-size: var(--text-base); color: var(--text-muted);
-  line-height: 1.9; margin-bottom: var(--space-5);
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; }
 }
-.about-text p strong { color: var(--text); font-weight: 600; }
-.about-cards { display: flex; flex-direction: column; gap: var(--space-4); }
-.about-card {
-  background: var(--bg-soft); border: 1px solid var(--border);
-  border-radius: var(--radius-xl); padding: var(--space-5) var(--space-6);
-  display: flex; align-items: flex-start; gap: var(--space-4);
-}
-.about-card-icon {
-  width: 40px; height: 40px; flex-shrink: 0;
-  background: var(--accent-soft); border: 1px solid var(--accent-border);
-  border-radius: var(--radius-lg);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--accent); font-size: 1.1rem;
-}
-.about-card-title {
-  font-size: var(--text-sm); font-weight: 600; color: var(--text);
-  margin-bottom: var(--space-1);
-}
-.about-card-desc { font-size: var(--text-xs); color: var(--text-muted); line-height: 1.7; }
 
-/* ── Skills ── */
+/* Terminal card */
+.terminal-card {
+  background: var(--text);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.terminal-bar {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+  background: rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.t-dot { width: 10px; height: 10px; border-radius: 50%; }
+.t-dot.red    { background: #FF5F57; }
+.t-dot.yellow { background: #FEBC2E; }
+.t-dot.green  { background: #28C840; }
+.terminal-title {
+  margin-left: auto; margin-right: auto;
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  color: rgba(250,247,242,0.4);
+  letter-spacing: 0.05em;
+}
+.terminal-body {
+  padding: var(--space-5) var(--space-6);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.9;
+  color: rgba(250,247,242,0.55);
+}
+.t-prompt { color: #C96442; }
+.t-cmd    { color: rgba(250,247,242,0.9); }
+.t-out    { color: rgba(250,247,242,0.55); padding-left: var(--space-4); }
+.t-out strong { color: #A8D5A2; }
+.t-cursor {
+  display: inline-block; width: 7px; height: 13px;
+  background: #C96442; vertical-align: middle;
+  animation: blink 1.1s step-end infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+
+/* Stats */
+.about-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-3); margin-top: var(--space-4);
+}
+.stat-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-4);
+  text-align: center;
+}
+.stat-card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+.stat-num {
+  display: block;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.stat-label { font-size: var(--text-xs); color: var(--text-muted); margin-top: 2px; }
+.stat-note  { font-size: 0.7rem; color: var(--text-faint); display: block; }
+
+/* About text */
+.about-story {
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: var(--space-5);
+}
+.about-story strong { color: var(--text); font-weight: 600; }
+.pill {
+  display: inline-block;
+  padding: 1px 7px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-sm);
+  color: var(--accent-hover);
+  font-size: 0.82em;
+  font-family: var(--font-mono);
+}
+
+/* ── SKILLS ─────────────────────────────────────────── */
+.skills-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: clamp(var(--space-10), 6vw, var(--space-16));
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .skills-layout { grid-template-columns: 1fr; }
+}
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: var(--space-4);
 }
 .skill-group {
-  background: var(--bg-soft); border: 1px solid var(--border);
-  border-radius: var(--radius-xl); padding: var(--space-6);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
   transition: border-color var(--transition), transform var(--transition);
 }
 .skill-group:hover { border-color: var(--border-strong); transform: translateY(-2px); }
-.skill-group-header {
-  display: flex; align-items: center; gap: var(--space-3);
-  margin-bottom: var(--space-5);
+.skill-group-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+  font-family: var(--font-mono);
 }
-.skill-group-icon {
-  width: 36px; height: 36px;
-  background: var(--accent-soft); border: 1px solid var(--accent-border);
-  border-radius: var(--radius-md);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1rem;
+.skill-group-name {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--space-4);
 }
-.skill-group-name { font-size: var(--text-sm); font-weight: 600; color: var(--text); }
-.skill-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.skill-items { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 .skill-tag {
-  font-size: var(--text-xs); font-family: var(--font-mono);
-  padding: 4px 10px; border-radius: var(--radius-full);
-  background: var(--surface); color: var(--text-muted);
+  padding: 3px 10px;
+  background: var(--surface);
   border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  transition: border-color var(--transition), color var(--transition), background var(--transition);
+}
+.skill-tag:hover {
+  border-color: var(--accent-border);
+  color: var(--accent-hover);
+  background: var(--accent-soft);
 }
 
 /* Skill bars */
-.skill-bars { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-6); }
-.skill-bar-item { display: flex; flex-direction: column; gap: var(--space-2); }
-.skill-bar-top { display: flex; justify-content: space-between; align-items: center; }
+.skill-bars-wrap {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+}
+.skill-bars-title {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-6);
+  font-family: var(--font-mono);
+}
+.skill-bars { display: flex; flex-direction: column; gap: var(--space-5); }
+.skill-bar-top { display: flex; justify-content: space-between; margin-bottom: 6px; }
 .skill-bar-name { font-size: var(--text-sm); font-weight: 500; color: var(--text); }
-.skill-bar-pct { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--text-faint); }
+.skill-bar-pct { font-size: var(--text-xs); font-family: var(--font-mono); color: var(--text-muted); }
 .skill-bar-track {
-  height: 4px; background: var(--surface-2);
-  border-radius: var(--radius-full); overflow: hidden;
+  height: 3px; background: var(--surface-2);
+  border-radius: 2px; overflow: hidden;
 }
 .skill-bar-fill {
-  height: 100%; background: var(--accent);
-  border-radius: var(--radius-full); width: 0;
-  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+  background: var(--text);
+  border-radius: 2px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.skills-layout { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: start; }
 
-/* ── Projects ── */
-.projects-filter { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-8); }
+/* ── PROJECTS ─────────────────────────────────────────── */
+.projects-filter {
+  display: flex; gap: var(--space-2); flex-wrap: wrap;
+  margin-bottom: var(--space-8);
+}
 .filter-btn {
-  font-size: var(--text-xs); font-family: var(--font-mono);
-  padding: 5px 14px; border-radius: var(--radius-full);
-  background: transparent; color: var(--text-muted);
-  border: 1px solid var(--border); cursor: pointer;
-  letter-spacing: 0.04em;
+  padding: 5px 14px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--text-muted);
   transition: all var(--transition);
 }
-.filter-btn:hover, .filter-btn.active {
-  background: var(--text); color: var(--text-inverse);
+.filter-btn:hover { border-color: var(--border-strong); color: var(--text); }
+.filter-btn.active {
+  background: var(--text);
+  color: var(--text-inverse);
   border-color: var(--text);
 }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: var(--space-5);
 }
 .project-card {
-  background: var(--bg-soft); border: 1px solid var(--border);
-  border-radius: var(--radius-xl); padding: var(--space-6);
-  display: flex; flex-direction: column; gap: var(--space-4);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex; flex-direction: column; gap: var(--space-3);
   transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
-.project-card:hover { border-color: var(--border-strong); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
-.project-card.hidden { display: none; }
-.project-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.project-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.project-card[style*="display: none"] { display: none !important; }
+.project-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+}
 .project-icon {
-  font-family: var(--font-mono); font-size: 0.7rem;
-  font-weight: 700; color: var(--accent-hover);
-  background: var(--accent-soft); border: 1px solid var(--accent-border);
-  padding: 4px 10px; border-radius: var(--radius-full);
-  letter-spacing: 0.06em;
+  width: 36px; height: 36px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
 }
 .project-links { display: flex; gap: var(--space-2); }
 .project-link {
-  font-size: var(--text-xs); font-family: var(--font-mono);
-  padding: 4px 10px; border-radius: var(--radius-full);
-  background: var(--surface); color: var(--text-muted);
-  border: 1px solid var(--border); text-decoration: none;
+  width: 30px; height: 30px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--text-muted);
   transition: all var(--transition);
 }
-.project-link:hover { border-color: var(--text); color: var(--text); }
-.project-name { font-size: var(--text-sm); font-weight: 600; color: var(--text); }
-.project-desc { font-size: var(--text-xs); color: var(--text-muted); line-height: 1.75; flex-grow: 1; }
-.project-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.project-link:hover { border-color: var(--accent-border); color: var(--accent); background: var(--accent-soft); }
+.project-name {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text);
+  margin-top: var(--space-1);
+}
+.project-desc {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  line-height: 1.7;
+  flex-grow: 1;
+}
+.project-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: auto; }
 .project-tag {
-  font-size: 0.68rem; font-family: var(--font-mono);
-  padding: 3px 8px; border-radius: var(--radius-full);
-  background: var(--surface); color: var(--text-faint);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  background: var(--surface);
   border: 1px solid var(--border);
+  color: var(--text-muted);
 }
 
-/* ── Journal ── */
+/* ── JOURNAL ─────────────────────────────────────────── */
 .journal-shell {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
   gap: clamp(var(--space-8), 5vw, var(--space-16));
   align-items: start;
 }
-.journal-intro { position: sticky; top: 92px; }
-.journal-note {
-  max-width: 34ch; font-size: var(--text-sm);
-  color: var(--text-muted); line-height: 1.8;
+.journal-intro {
+  position: sticky;
+  top: 92px;
 }
-.journal-note strong { color: var(--text); font-weight: 600; }
-.journal-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
+.journal-note {
+  max-width: 34ch;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+.journal-note strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.journal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
 .journal-card {
-  background: var(--bg-soft); border: 1px solid var(--border);
-  border-radius: var(--radius-xl); padding: var(--space-6);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
   display: grid;
   grid-template-columns: 132px minmax(0, 1fr) auto;
-  gap: var(--space-5); align-items: start;
-  transition: border-color var(--transition), transform var(--transition),
-              box-shadow var(--transition), background var(--transition);
+  gap: var(--space-5);
+  align-items: start;
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition), background var(--transition);
   color: inherit;
 }
 .journal-card:hover {
-  border-color: var(--border-strong); transform: translateY(-2px);
-  box-shadow: var(--shadow-sm); background: #fcfaf6;
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  background: #fcfaf6;
 }
-.journal-meta { display: flex; flex-direction: column; gap: var(--space-2); }
+.journal-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
 .journal-chip {
-  display: inline-flex; align-items: center; width: fit-content;
-  padding: 3px 10px; border-radius: var(--radius-full);
-  background: var(--accent-soft); border: 1px solid var(--accent-border);
-  font-size: 0.68rem; font-family: var(--font-mono);
-  color: var(--accent-hover); letter-spacing: 0.08em; text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  color: var(--accent-hover);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .journal-date {
-  font-size: var(--text-xs); font-family: var(--font-mono);
-  color: var(--text-faint); letter-spacing: 0.08em; line-height: 1.6;
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  color: var(--text-faint);
+  letter-spacing: 0.08em;
+  line-height: 1.6;
 }
-.journal-body { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+.journal-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
 .journal-title {
   font-family: var(--font-display);
   font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.9rem);
-  font-weight: 400; color: var(--text);
-  line-height: 1.08; letter-spacing: -0.02em;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
 }
 .journal-excerpt {
-  font-size: var(--text-sm); color: var(--text-muted);
-  line-height: 1.75; max-width: 56ch;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 56ch;
 }
 .journal-read {
-  font-size: var(--text-xs); font-weight: 600; color: var(--accent);
-  display: inline-flex; align-items: center; gap: var(--space-1);
-  margin-top: var(--space-1); white-space: nowrap; align-self: center;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-1);
+  white-space: nowrap;
+  align-self: center;
   transition: gap var(--transition), color var(--transition);
 }
-.journal-card:hover .journal-read { gap: var(--space-2); color: var(--accent-hover); }
-
-/* ── Contact ── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: var(--space-4);
+.journal-card:hover .journal-read {
+  gap: var(--space-2);
+  color: var(--accent-hover);
 }
+@media (max-width: 980px) {
+  .journal-shell {
+    grid-template-columns: 1fr;
+  }
+  .journal-intro {
+    position: static;
+  }
+}
+@media (max-width: 720px) {
+  .journal-card {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+  .journal-read {
+    align-self: start;
+  }
+}
+
+/* ── CONTACT ─────────────────────────────────────────── */
+.contact-wrap {
+  text-align: left;
+}
+.contact-title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: var(--space-5);
+}
+.contact-title span {
+  font-style: italic;
+  color: var(--text-muted);
+}
+.contact-desc {
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  max-width: 52ch;
+  line-height: 1.8;
+  margin-bottom: var(--space-10);
+}
+.contact-links { display: flex; gap: var(--space-3); flex-wrap: wrap; }
 .contact-link {
-  background: var(--bg-soft); border: 1px solid var(--border);
-  border-radius: var(--radius-xl); padding: var(--space-5) var(--space-6);
-  display: flex; align-items: center; gap: var(--space-4);
-  text-decoration: none; color: var(--text);
-  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
-}
-.contact-link:hover { border-color: var(--border-strong); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
-.contact-icon {
-  width: 44px; height: 44px; flex-shrink: 0;
-  background: var(--accent-soft); border: 1px solid var(--accent-border);
+  display: inline-flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text);
+  transition: all var(--transition);
+}
+.contact-link:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.contact-link-icon {
+  width: 32px; height: 32px;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-muted);
 }
-.contact-label { font-size: var(--text-xs); color: var(--text-faint); margin-bottom: 2px; font-family: var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; }
-.contact-value { font-size: var(--text-sm); font-weight: 600; color: var(--text); }
+.contact-link:hover .contact-link-icon {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
 
-/* ── Quran Widget ── */
-.quran-widget {
-  background: var(--bg-soft); border: 1px solid var(--border);
-  border-radius: var(--radius-xl); padding: var(--space-8);
-  margin-top: var(--space-10); max-width: 640px;
-}
-.quran-label {
-  font-family: var(--font-mono); font-size: 0.7rem;
-  color: var(--text-faint); letter-spacing: 0.1em; text-transform: uppercase;
-  margin-bottom: var(--space-4);
-}
-.quran-arabic {
-  font-size: clamp(1.4rem, 3vw, 2rem); line-height: 2;
-  color: var(--text); text-align: right; direction: rtl;
-  margin-bottom: var(--space-4);
-}
-.quran-translation {
-  font-family: var(--font-display); font-style: italic;
-  font-size: var(--text-base); color: var(--text-muted);
-  line-height: 1.8; margin-bottom: var(--space-4);
-}
-.quran-source {
-  font-family: var(--font-mono); font-size: 0.7rem;
-  color: var(--text-faint); letter-spacing: 0.06em;
-}
-.quran-pill {
-  background: var(--accent-soft); border: 1px solid var(--accent-border);
-  border-radius: var(--radius-full); padding: 4px 12px;
-  font-size: 0.7rem; font-family: var(--font-mono);
-  color: var(--accent-hover); letter-spacing: 0.06em;
-  display: inline-flex; align-items: center; gap: var(--space-2);
-  cursor: pointer; transition: background var(--transition);
-}
-.quran-pill:hover { background: var(--accent-border); }
-.quran-loading { animation: pulse 1.5s ease-in-out infinite; }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
-
-/* ── Footer ── */
+/* ── FOOTER ─────────────────────────────────────────── */
 footer {
-  border-top: 1px solid var(--border);
-  padding: var(--space-8) clamp(var(--space-4), 4vw, var(--space-12));
+  padding: var(--space-8) var(--space-8);
+  border-top: 1px solid var(--divider);
+}
+.footer-inner {
+  max-width: var(--content-wide); margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: var(--space-4);
+  flex-wrap: wrap; gap: var(--space-3);
 }
-.footer-text {
-  font-family: var(--font-mono); font-size: 0.76rem; color: var(--text-faint);
+.footer-copy {
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  font-family: var(--font-mono);
 }
-.footer-text span { color: var(--accent); }
-.footer-links { display: flex; gap: var(--space-6); }
-.footer-links a {
-  font-size: var(--text-xs); color: var(--text-faint);
-  text-decoration: none; font-family: var(--font-mono);
-  transition: color var(--transition);
-}
-.footer-links a:hover { color: var(--text); }
+.footer-copy strong { color: var(--text-muted); }
 
-/* ── Responsive ── */
-@media (max-width: 768px) {
-  .nav-links, .nav-center { display: none; }
-  .nav-hamburger { display: flex; }
-
-  .about-grid, .skills-layout { grid-template-columns: 1fr; }
-  .journal-shell { grid-template-columns: 1fr; }
-  .journal-intro { position: static; }
-  .journal-card { grid-template-columns: 1fr; gap: var(--space-4); }
-  .journal-read { align-self: start; }
-
-  .hero-stats { gap: var(--space-6); }
+/* ── DAILY VERSE WIDGET ─────────────────────────────────────────── */
+.dv-widget {
+  position: fixed; bottom: var(--space-6); right: var(--space-6);
+  z-index: 200;
+  background: var(--text);
+  color: var(--text-inverse);
+  border-radius: var(--radius-xl);
+  width: 280px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
 }
+.dv-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.dv-header-title {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: rgba(250,247,242,0.5);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.dv-header-btns { display: flex; gap: var(--space-2); }
+.dv-header-btns button {
+  width: 20px; height: 20px;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem;
+  color: rgba(250,247,242,0.4);
+  transition: color var(--transition), background var(--transition);
+}
+.dv-header-btns button:hover { color: var(--text-inverse); background: rgba(255,255,255,0.08); }
+.dv-body { padding: var(--space-5); }
+.dv-loading { display: flex; align-items: center; justify-content: center; height: 80px; }
+.dv-loading-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(250,247,242,0.3);
+  animation: dvPulse 1.4s ease-in-out infinite;
+}
+.dv-loading-dot:nth-child(2) { animation-delay: 0.2s; }
+.dv-loading-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes dvPulse { 0%,80%,100%{transform:scale(0);opacity:.3;} 40%{transform:scale(1);opacity:1;} }
+.dv-loading-dots { display: flex; gap: 5px; }
+.dv-arabic {
+  font-family: 'Amiri', serif;
+  font-size: 1.1rem;
+  text-align: right;
+  direction: rtl;
+  color: rgba(250,247,242,0.9);
+  line-height: 1.9;
+  margin-bottom: var(--space-3);
+}
+.dv-translation {
+  font-size: 0.78rem;
+  color: rgba(250,247,242,0.55);
+  line-height: 1.7;
+  margin-bottom: var(--space-2);
+}
+.dv-meta {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  margin-bottom: var(--space-4);
+}
+.dv-cta {
+  display: flex; align-items: center; justify-content: center; gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(250,247,242,0.6);
+  transition: all var(--transition);
+}
+.dv-cta:hover { background: rgba(201,100,66,0.2); color: #F0C4B4; border-color: rgba(201,100,66,0.3); }
+.dv-pill {
+  position: fixed; bottom: var(--space-6); right: var(--space-6);
+  z-index: 200;
+  background: var(--text);
+  color: var(--text-inverse);
+  border-radius: var(--radius-full);
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  display: flex; align-items: center; gap: var(--space-2);
+}
+.dv-pill:hover { background: var(--accent); }
 @media (max-width: 480px) {
-  .hero-name { letter-spacing: -0.03em; }
-  .projects-grid { grid-template-columns: 1fr; }
+  .dv-widget { width: calc(100vw - var(--space-8)); bottom: var(--space-4); right: var(--space-4); }
+  .dv-pill   { bottom: var(--space-4); right: var(--space-4); }
 }
+
+/* ── REVEAL ANIMATIONS ─────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ── LANG TOGGLE ─────────────────────────────────────────── */
+.lang-toggle {
+  display: flex;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 2px;
+  gap: 2px;
+}
+.lang-btn {
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  transition: all var(--transition);
+}
+.lang-btn.active {
+  background: var(--bg-soft);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav id="mainNav">
-  <a href="#" class="nav-logo">nang<span>.</span></a>
-  <div class="nav-center">
-    <ul class="nav-links" role="list">
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">nang<span>.</span>dev</a>
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about" data-i18n="nav_about">Tentang</a></li>
-      <li><a href="#skills" data-i18n="nav_skills">Skill</a></li>
+      <li><a href="#skills" data-i18n="nav_skills">Kemampuan</a></li>
       <li><a href="#projects" data-i18n="nav_projects">Proyek</a></li>
       <li><a href="#journal" data-i18n="nav_journal">Jurnal</a></li>
-      <li><a href="#contact" data-i18n="nav_contact">Kontak</a></li>
+      <li>
+        <div class="lang-toggle" id="langToggle">
+          <button class="lang-btn active" data-lang="id">ID</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </li>
+      <li><a href="#contact" class="nav-cta" data-i18n="nav_cta">Hubungi</a></li>
     </ul>
-  </div>
-  <div class="nav-right">
-    <div class="lang-toggle" role="group" aria-label="Language switcher">
-      <button class="lang-btn active" data-lang="id" aria-pressed="true">ID</button>
-      <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-    </div>
-    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
-<div class="nav-mobile" id="navMobile" role="navigation">
-  <a href="#about" data-i18n="nav_about">Tentang</a>
-  <a href="#skills" data-i18n="nav_skills">Skill</a>
-  <a href="#projects" data-i18n="nav_projects">Proyek</a>
-  <a href="#journal" data-i18n="nav_journal">Jurnal</a>
-  <a href="#contact" data-i18n="nav_contact">Kontak</a>
-</div>
 
 <!-- HERO -->
-<section class="hero" id="home" aria-label="Hero">
-  <div class="hero-badge reveal">
-    <span class="hero-badge-dot" aria-hidden="true"></span>
-    <span data-i18n="hero_badge">Terbuka untuk peluang baru</span>
-  </div>
-  <h1 class="hero-name reveal reveal-delay-1">Anang<br/>Lesmana</h1>
-  <div class="hero-title reveal reveal-delay-2">
-    <span class="hero-title-text" data-i18n="hero_title">Data &amp; Business Analyst in progress</span>
-  </div>
-  <p class="hero-desc reveal reveal-delay-3" data-i18n="hero_desc">
-    Tertarik pada data, proses, dan sistem yang membuat pekerjaan sehari-hari jadi lebih efisien.
-    Latar belakang operasional, sedang membangun skill analitik.
-  </p>
-  <div class="hero-actions reveal reveal-delay-4">
-    <a href="#projects" class="btn btn-primary" data-i18n="hero_cta_primary">Lihat Proyek</a>
-    <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta_secondary">Hubungi Saya</a>
-  </div>
-  <div class="hero-stats reveal reveal-delay-4">
-    <div>
-      <div class="hero-stat-number">3+</div>
-      <div class="hero-stat-label" data-i18n="stat_years">Tahun Operasional</div>
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge reveal">
+      <span class="hero-badge-dot"></span>
+      <span data-i18n="hero_badge">Available for opportunities</span>
     </div>
-    <div>
-      <div class="hero-stat-number">10+</div>
-      <div class="hero-stat-label" data-i18n="stat_projects">Proyek Selesai</div>
-    </div>
-    <div>
-      <div class="hero-stat-number">∞</div>
-      <div class="hero-stat-label" data-i18n="stat_coffee">Cangkir Kopi</div>
+    <h1 class="hero-name reveal reveal-delay-1" data-i18n="hero_name">Halo, aku Nang.</h1>
+    <p class="hero-sub reveal reveal-delay-2">
+      <span>Junior Data Analyst</span>
+      <span class="hero-sub-divider">/</span>
+      <span>Tech Enthusiast</span>
+      <span class="hero-sub-divider">/</span>
+      <span>Bekasi</span>
+    </p>
+    <p class="hero-desc reveal reveal-delay-2" data-i18n="hero_desc">
+      Junior analyst yang transisi dari dunia operasional ke dunia data.
+      Suka ngulik Python, ngoprek Linux, dan dengerin apa yang data bilang
+      sebelum orang lain sadar ada yang perlu didengar.
+    </p>
+    <div class="hero-ctas reveal reveal-delay-3">
+      <a href="#projects" class="btn btn-primary" data-i18n="hero_cta1">Lihat Proyek</a>
+      <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta2">Hubungi Aku</a>
     </div>
   </div>
 </section>
@@ -697,51 +1010,70 @@ footer {
 <div class="section-wrap" id="about">
   <div class="section-inner">
     <div class="about-grid">
-      <div class="about-text reveal">
-        <div class="section-label" data-i18n="about_label">Tentang</div>
-        <h2 class="section-title" data-i18n="about_title">Halo,<br/>aku Nang.</h2>
-        <p data-i18n="about_p1">
-          Saya seorang <strong>Data &amp; Business Analyst</strong> yang sedang membangun skill dari latar belakang operasional.
-          Saya percaya bahwa data bukan sekadar angka — tapi cerita yang menunggu untuk dibaca.
-        </p>
-        <p data-i18n="about_p2">
-          Sehari-hari saya berkutat dengan Python, SQL, dan spreadsheet; mencari pola yang bisa
-          mengubah cara kerja menjadi lebih efisien. Saya juga menulis di jurnal tentang hal-hal
-          yang menarik perhatian saya.
-        </p>
-        <p data-i18n="about_p3">
-          Berbasis di <strong>Bekasi</strong>, terbuka untuk kerja remote maupun kolaborasi langsung.
-        </p>
+      <!-- LEFT: terminal + stats -->
+      <div class="reveal">
+        <div class="terminal-card">
+          <div class="terminal-bar">
+            <span class="t-dot red"></span>
+            <span class="t-dot yellow"></span>
+            <span class="t-dot green"></span>
+            <span class="terminal-title">nang@bekasi — bash</span>
+          </div>
+          <div class="terminal-body">
+            <div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ whoami</span></div>
+            <div class="t-out" data-i18n="about_terminal_whoami"><strong>Anang</strong> — Sales Admin, soon Data Analyst</div>
+            <br/>
+            <div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ cat skills.txt</span></div>
+            <div class="t-out">Problem Solving, Inventory &amp; Marketing Support</div>
+            <div class="t-out">Reporting, Trend Analysis &amp; Forecasting</div>
+            <div class="t-out">Ms. Office &amp; Google Workspace</div>
+            <div class="t-out">Python, Pandas, PostgreSQL, VSCode</div>
+            <br/>
+            <div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ uname -r</span></div>
+            <div class="t-out">Linux 7.0.0-15-generic</div>
+            <br/>
+            <div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ echo $GOAL</span></div>
+            <div class="t-out" data-i18n="about_terminal_goal"><strong>Become a Data + Business Analyst</strong></div>
+            <br/>
+            <div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ <span class="t-cursor"></span></span></div>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card reveal reveal-delay-1">
+            <span class="stat-num" data-count="3">0</span>
+            <span class="stat-label" data-i18n="stat_ops">Tahun di Operasional</span>
+          </div>
+          <div class="stat-card reveal reveal-delay-2">
+            <span class="stat-num" data-count="10">0</span>
+            <span class="stat-label" data-i18n="stat_projects">Proyek Python</span>
+            <span class="stat-note" data-i18n="stat_projects_note">(menyesuaikan pekerjaan)</span>
+          </div>
+          <div class="stat-card reveal reveal-delay-3">
+            <span class="stat-num" data-count="5">0</span>
+            <span class="stat-label" data-i18n="stat_tools">Tools Dikuasai</span>
+          </div>
+          <div class="stat-card reveal reveal-delay-4">
+            <span class="stat-num" data-count="1">0</span>
+            <span class="stat-label" data-i18n="stat_learn">Pelajaran Baru Setiap Hari</span>
+          </div>
+        </div>
       </div>
-      <div class="about-cards reveal reveal-delay-2">
-        <div class="about-card">
-          <div class="about-card-icon" aria-hidden="true">📍</div>
-          <div>
-            <div class="about-card-title" data-i18n="card_location_title">Lokasi</div>
-            <div class="about-card-desc" data-i18n="card_location_desc">Bekasi, Jawa Barat — Remote-friendly</div>
-          </div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-icon" aria-hidden="true">🎯</div>
-          <div>
-            <div class="about-card-title" data-i18n="card_focus_title">Fokus Saat Ini</div>
-            <div class="about-card-desc" data-i18n="card_focus_desc">Data Analysis, Business Intelligence, Process Automation</div>
-          </div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-icon" aria-hidden="true">📚</div>
-          <div>
-            <div class="about-card-title" data-i18n="card_learn_title">Sedang Belajar</div>
-            <div class="about-card-desc" data-i18n="card_learn_desc">Machine Learning, SQL Advanced, Power BI</div>
-          </div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-icon" aria-hidden="true">☕</div>
-          <div>
-            <div class="about-card-title" data-i18n="card_hobby_title">Di Luar Layar</div>
-            <div class="about-card-desc" data-i18n="card_hobby_desc">Kopi, Linux, Baca, dan sesekali nulis jurnal tengah malam</div>
-          </div>
-        </div>
+
+      <!-- RIGHT: text -->
+      <div class="about-text reveal reveal-delay-2">
+        <div class="section-label" data-i18n="about_label">Tentang Saya</div>
+        <h2 class="section-title" data-i18n="about_title">Dari gudang<br/>ke dashboard.</h2>
+        <p class="about-story" data-i18n="about_story1">
+          Mulai dari ngurusin stok gudang dan admin sales, terus nyadar kalau
+          semuanya bisa lebih efisien kalau paham data. Dari situ mulai belajar
+          <span class="pill">Python</span>, kemudian
+          <span class="pill">Pandas</span>, kemudian
+          <span class="pill">SQL</span> dan malah keterusan lalu nggak bisa berhenti.
+        </p>
+        <p class="about-story" data-i18n="about_story2">
+          <strong>Percaya</strong> bahwa cara terbaik belajar adalah langsung bikin sesuatu yang bisa dipakai.
+        </p>
+        <a href="#contact" class="btn btn-primary" style="margin-top:var(--space-4);" data-i18n="about_cta">Butuh Ngobrol Lebih Lanjut?</a>
       </div>
     </div>
   </div>
@@ -753,74 +1085,84 @@ footer {
 <div class="section-wrap" id="skills">
   <div class="section-inner">
     <div class="reveal">
-      <div class="section-label" data-i18n="skills_label">Skill</div>
-      <h2 class="section-title" data-i18n="skills_title">Yang bisa<br/>saya kerjakan.</h2>
+      <div class="section-label" data-i18n="skills_label">Kemampuan</div>
+      <h2 class="section-title" data-i18n="skills_title">Stack yang<br/>dipakai.</h2>
       <p class="section-desc" data-i18n="skills_desc">
-        Kombinasi skill teknis dan analitik yang terus berkembang.
+        Tools dan teknologi yang jadi andalan sehari-hari,
+        dari analisis data sampai sistem operasi.
       </p>
     </div>
     <div class="skills-layout">
       <div class="skills-grid">
-        <div class="skill-group reveal">
-          <div class="skill-group-header">
-            <div class="skill-group-icon" aria-hidden="true">🐍</div>
-            <div class="skill-group-name">Python</div>
-          </div>
-          <div class="skill-tags">
+        <div class="skill-group reveal reveal-delay-1">
+          <div class="skill-group-label">01</div>
+          <div class="skill-group-name">Python Ecosystem</div>
+          <div class="skill-items">
+            <span class="skill-tag">Python</span>
             <span class="skill-tag">Pandas</span>
             <span class="skill-tag">NumPy</span>
             <span class="skill-tag">Matplotlib</span>
-            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">Seaborn</span>
+            <span class="skill-tag">Jupyter</span>
+            <span class="skill-tag">Requests</span>
             <span class="skill-tag">BeautifulSoup</span>
-          </div>
-        </div>
-        <div class="skill-group reveal reveal-delay-1">
-          <div class="skill-group-header">
-            <div class="skill-group-icon" aria-hidden="true">🗄️</div>
-            <div class="skill-group-name">Data</div>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Google Sheets</span>
-            <span class="skill-tag">Excel</span>
-            <span class="skill-tag">Looker Studio</span>
-            <span class="skill-tag">Tableau</span>
+            <span class="skill-tag">Selenium</span>
           </div>
         </div>
         <div class="skill-group reveal reveal-delay-2">
-          <div class="skill-group-header">
-            <div class="skill-group-icon" aria-hidden="true">🐧</div>
-            <div class="skill-group-name">Linux & Tools</div>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">Ubuntu</span>
-            <span class="skill-tag">Bash</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">VS Code</span>
+          <div class="skill-group-label">02</div>
+          <div class="skill-group-name">Data &amp; Database</div>
+          <div class="skill-items">
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">Excel</span>
+            <span class="skill-tag">Google Sheets</span>
+            <span class="skill-tag">CSV / Markdown</span>
           </div>
         </div>
         <div class="skill-group reveal reveal-delay-3">
-          <div class="skill-group-header">
-            <div class="skill-group-icon" aria-hidden="true">📊</div>
-            <div class="skill-group-name">Business</div>
+          <div class="skill-group-label">03</div>
+          <div class="skill-group-name">Linux &amp; Tools</div>
+          <div class="skill-items">
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Bash / Shell</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">VSCode</span>
+            <span class="skill-tag">Neovim</span>
+            <span class="skill-tag">Docker</span>
           </div>
-          <div class="skill-tags">
-            <span class="skill-tag">SWOT Analysis</span>
-            <span class="skill-tag">Process Mapping</span>
-            <span class="skill-tag">SOP Writing</span>
+        </div>
+        <div class="skill-group reveal reveal-delay-4">
+          <div class="skill-group-label">04</div>
+          <div class="skill-group-name">Business &amp; Ops</div>
+          <div class="skill-items">
+            <span class="skill-tag">Inventory Mgmt</span>
+            <span class="skill-tag">Sales Admin</span>
+            <span class="skill-tag">Marketing Support</span>
             <span class="skill-tag">Reporting</span>
+            <span class="skill-tag">Trend Analysis</span>
           </div>
         </div>
       </div>
-      <div class="reveal reveal-delay-2">
+
+      <!-- Skill bars -->
+      <div class="skill-bars-wrap reveal reveal-delay-2">
+        <div class="skill-bars-title">Proficiency</div>
         <div class="skill-bars">
           <div class="skill-bar-item">
             <div class="skill-bar-top">
-              <span class="skill-bar-name">Python</span>
-              <span class="skill-bar-pct">75%</span>
+              <span class="skill-bar-name">Google Workspace &amp; MS Office</span>
+              <span class="skill-bar-pct">90%</span>
             </div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top">
+              <span class="skill-bar-name">Python</span>
+              <span class="skill-bar-pct">85%</span>
+            </div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
           </div>
           <div class="skill-bar-item">
             <div class="skill-bar-top">
@@ -881,7 +1223,7 @@ footer {
         <div class="project-top">
           <div class="project-icon">PY</div>
           <div class="project-links">
-            <a href="https://github.com/bushidoways" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
+            <a href="#" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
           </div>
         </div>
         <div class="project-name">Sales Analytics Dashboard</div>
@@ -896,11 +1238,12 @@ footer {
           <span class="project-tag">Excel</span>
         </div>
       </div>
+
       <div class="project-card reveal reveal-delay-1" data-category="automation python">
         <div class="project-top">
           <div class="project-icon">WEB</div>
           <div class="project-links">
-            <a href="https://github.com/bushidoways" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
+            <a href="#" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
           </div>
         </div>
         <div class="project-name">Web Scraper &amp; OSINT Tool</div>
@@ -915,6 +1258,7 @@ footer {
           <span class="project-tag">OSINT</span>
         </div>
       </div>
+
       <div class="project-card reveal reveal-delay-2" data-category="linux automation">
         <div class="project-top">
           <div class="project-icon">LNX</div>
@@ -934,40 +1278,64 @@ footer {
           <span class="project-tag">Automation</span>
         </div>
       </div>
+
       <div class="project-card reveal reveal-delay-3" data-category="python data">
         <div class="project-top">
           <div class="project-icon">SQL</div>
           <div class="project-links">
-            <a href="https://github.com/bushidoways" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
+            <a href="#" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
           </div>
         </div>
-        <div class="project-name">Inventory Query System</div>
-        <p class="project-desc" data-i18n="proj4_desc">
-          Query SQL untuk analisis stok dan perputaran barang dari database gudang.
-          Menghasilkan laporan otomatis harian.
+        <div class="project-name">Inventory Tracker CLI</div>
+        <p class="project-desc">
+          Aplikasi CLI untuk tracking stok barang sederhana menggunakan Python
+          dan SQLite. Bisa input, update, dan export laporan ke CSV.
         </p>
         <div class="project-tags">
-          <span class="project-tag">SQL</span>
           <span class="project-tag">Python</span>
-          <span class="project-tag">Automation</span>
+          <span class="project-tag">SQLite</span>
+          <span class="project-tag">CLI</span>
+          <span class="project-tag">Data</span>
         </div>
       </div>
-      <div class="project-card reveal reveal-delay-4" data-category="data">
+
+      <div class="project-card reveal reveal-delay-4" data-category="automation">
         <div class="project-top">
-          <div class="project-icon">BI</div>
+          <div class="project-icon">BOT</div>
           <div class="project-links">
-            <a href="https://github.com/bushidoways" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
+            <a href="#" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
           </div>
         </div>
-        <div class="project-name">Business Report Automation</div>
-        <p class="project-desc" data-i18n="proj5_desc">
-          Otomasi pembuatan laporan mingguan dari Google Sheets ke PDF menggunakan
-          Python dan Google Apps Script.
+        <div class="project-name">Auto Report Generator</div>
+        <p class="project-desc">
+          Script Python yang membaca data penjualan dari Google Sheets,
+          membuat summary harian, dan mengirimkan laporan otomatis via email.
         </p>
         <div class="project-tags">
           <span class="project-tag">Python</span>
-          <span class="project-tag">Google Sheets</span>
-          <span class="project-tag">Apps Script</span>
+          <span class="project-tag">Google API</span>
+          <span class="project-tag">Automation</span>
+          <span class="project-tag">SMTP</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1" data-category="data">
+        <div class="project-top">
+          <div class="project-icon">VIZ</div>
+          <div class="project-links">
+            <a href="#" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
+          </div>
+        </div>
+        <div class="project-name">EDA: Tren Harga Komoditas</div>
+        <p class="project-desc">
+          Exploratory Data Analysis tren harga komoditas pasar Indonesia
+          menggunakan data BPS. Visualisasi dengan Matplotlib dan Seaborn.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Seaborn</span>
+          <span class="project-tag">EDA</span>
+          <span class="project-tag">Data</span>
         </div>
       </div>
     </div>
@@ -992,7 +1360,7 @@ footer {
         </p>
       </div>
       <div class="journal-grid">
-        <a href="./journal/kenapa-linux.html" class="journal-card reveal" target="_blank" rel="noopener noreferrer">
+        <a href="https://ananglesmana.my.id/journal/kenapa-linux" class="journal-card reveal" target="_blank" rel="noopener noreferrer">
           <div class="journal-meta">
             <span class="journal-chip">Essay</span>
             <div class="journal-date" data-i18n="j1_date">MAR 2024 — 5 MENIT BACA</div>
@@ -1001,9 +1369,9 @@ footer {
             <div class="journal-title" data-i18n="j1_title">Kenapa Berakhir di Linux</div>
             <div class="journal-excerpt" data-i18n="j1_excerpt">Sejujurnya, ini bukan soal ideologi. Tapi juga soal efisiensi, kontrol, dan fakta bahwa harga MacBook masih belum bisa dibilang murah.</div>
           </div>
-          <div class="journal-read" data-i18n="read_more">Baca <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </a>
-        <a href="./journal/dari-gudang-ke-pandas.html" class="journal-card reveal reveal-delay-1" target="_blank" rel="noopener noreferrer">
+        <a href="https://ananglesmana.my.id/journal/dari-gudang-ke-pandas" class="journal-card reveal reveal-delay-1" target="_blank" rel="noopener noreferrer">
           <div class="journal-meta">
             <span class="journal-chip">Notes</span>
             <div class="journal-date" data-i18n="j2_date">NOV 2024 — 7 MENIT BACA</div>
@@ -1012,9 +1380,9 @@ footer {
             <div class="journal-title" data-i18n="j2_title">Mulai belajar tentang bagaimana data bisa mengubah cara kerja</div>
             <div class="journal-excerpt" data-i18n="j2_excerpt">Momen di mana saya sadar bahwa Spreadsheet manual bisa diganti 10 baris Python yang jalan otomatis tiap pagi.</div>
           </div>
-          <div class="journal-read" data-i18n="read_more">Baca <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </a>
-        <a href="./journal/osint-untuk-pemula.html" class="journal-card reveal reveal-delay-2" target="_blank" rel="noopener noreferrer">
+        <a href="https://ananglesmana.my.id/journal/osint-untuk-pemula" class="journal-card reveal reveal-delay-2" target="_blank" rel="noopener noreferrer">
           <div class="journal-meta">
             <span class="journal-chip">Guide</span>
             <div class="journal-date" data-i18n="j3_date">JAN 2024 — 4 MENIT BACA</div>
@@ -1023,9 +1391,9 @@ footer {
             <div class="journal-title" data-i18n="j3_title">OSINT untuk pemula: belajar dari data yang sudah ada di depan mata</div>
             <div class="journal-excerpt" data-i18n="j3_excerpt">Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan siapa saja, dan kenapa ini relevan untuk seorang analyst.</div>
           </div>
-          <div class="journal-read" data-i18n="read_more">Baca <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </a>
-        <a href="./journal/kemiskinan-struktural.html" class="journal-card reveal reveal-delay-3" target="_blank" rel="noopener noreferrer">
+        <a href="https://ananglesmana.my.id/journal/kemiskinan-struktural" class="journal-card reveal reveal-delay-3" target="_blank" rel="noopener noreferrer">
           <div class="journal-meta">
             <span class="journal-chip">Essay</span>
             <div class="journal-date" data-i18n="j4_date">OCT 2024 — 4 MENIT BACA</div>
@@ -1034,9 +1402,9 @@ footer {
             <div class="journal-title" data-i18n="j4_title">Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?</div>
             <div class="journal-excerpt" data-i18n="j4_excerpt">Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.</div>
           </div>
-          <div class="journal-read" data-i18n="read_more">Baca <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </a>
-        <a href="./journal/al-kahfi.html" class="journal-card reveal reveal-delay-4" target="_blank" rel="noopener noreferrer">
+        <a href="https://ananglesmana.my.id/journal/al-kahfi" class="journal-card reveal reveal-delay-4" target="_blank" rel="noopener noreferrer">
           <div class="journal-meta">
             <span class="journal-chip">Reflection</span>
             <div class="journal-date" data-i18n="j5_date">MAR 2026 — 5 MENIT BACA</div>
@@ -1045,70 +1413,39 @@ footer {
             <div class="journal-title" data-i18n="j5_title">Surah Al-Kahfi</div>
             <div class="journal-excerpt" data-i18n="j5_excerpt">Mengenal wahyu yang sering dibaca setiap Jum'at sebagai Manual Book disaat krisis.</div>
           </div>
-          <div class="journal-read" data-i18n="read_more">Baca <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </a>
       </div>
     </div>
   </div>
 </div>
-
 <div class="section-divider"><hr /></div>
 
 <!-- CONTACT -->
 <div class="section-wrap" id="contact">
   <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label" data-i18n="contact_label">Kontak</div>
-      <h2 class="section-title" data-i18n="contact_title">Mari<br/>ngobrol.</h2>
-      <p class="section-desc" data-i18n="contact_desc">
-        Terbuka untuk diskusi, kolaborasi, atau sekadar kenalan.
-        Pilih platform yang paling nyaman buat kamu.
+    <div class="contact-wrap">
+      <div class="section-label reveal" data-i18n="contact_label">Kontak</div>
+      <h2 class="contact-title reveal reveal-delay-1" data-i18n="contact_title">
+        Ada yang mau disampaikan?<br/><span>Ngobrol yuk.</span>
+      </h2>
+      <p class="contact-desc reveal reveal-delay-2" data-i18n="contact_desc">
+        Lagi cari peluang sebagai Data Analyst atau Business Analyst.
+        Open untuk diskusi, kolaborasi, atau sekadar ngobrol soal data dan teknologi.
       </p>
-    </div>
-    <div class="contact-grid">
-      <a href="mailto:haioyen98@gmail.com" class="contact-link reveal">
-        <div class="contact-icon" aria-hidden="true">✉️</div>
-        <div>
-          <div class="contact-label">Email</div>
-          <div class="contact-value">haioyen98@gmail.com</div>
-        </div>
-      </a>
-      <a href="https://github.com/bushidoways" class="contact-link reveal reveal-delay-1" target="_blank" rel="noopener noreferrer">
-        <div class="contact-icon" aria-hidden="true">🐙</div>
-        <div>
-          <div class="contact-label">GitHub</div>
-          <div class="contact-value">bushidoways</div>
-        </div>
-      </a>
-      <a href="https://linkedin.com/in/ananglesmana" class="contact-link reveal reveal-delay-2" target="_blank" rel="noopener noreferrer">
-        <div class="contact-icon" aria-hidden="true">💼</div>
-        <div>
-          <div class="contact-label">LinkedIn</div>
-          <div class="contact-value">ananglesmana</div>
-        </div>
-      </a>
-      <a href="https://ananglesmana.my.id" class="contact-link reveal reveal-delay-3" target="_blank" rel="noopener noreferrer">
-        <div class="contact-icon" aria-hidden="true">🌐</div>
-        <div>
-          <div class="contact-label">Website</div>
-          <div class="contact-value">ananglesmana.my.id</div>
-        </div>
-      </a>
-    </div>
-
-    <!-- Quran Widget -->
-    <div class="quran-widget reveal reveal-delay-2" id="quranWidget">
-      <div class="quran-label" data-i18n="quran_label">Ayat Hari Ini</div>
-      <div class="quran-arabic quran-loading" id="quranArabic">جاري التحميل...</div>
-      <div class="quran-translation quran-loading" id="quranTrans" data-i18n="quran_loading">Memuat ayat...</div>
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3)">
-        <div class="quran-source" id="quranSource"></div>
-        <button class="quran-pill" id="quranRefresh" aria-label="Muat ayat baru">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-            <path d="M10 6A4 4 0 1 1 6 2M6 2l2 2M6 2l2-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span data-i18n="quran_refresh">Ayat lain</span>
-        </button>
+      <div class="contact-links reveal reveal-delay-3">
+        <a href="mailto:hello@ananglesmana.my.id" class="contact-link">
+          <span class="contact-link-icon">@</span>
+          Email
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <span class="contact-link-icon">IN</span>
+          LinkedIn
+        </a>
+        <a href="https://www.instagram.com/lesmanasaurus/" target="_blank" rel="noopener noreferrer" class="contact-link">
+          <span class="contact-link-icon">IG</span>
+          Instagram
+        </a>
       </div>
     </div>
   </div>
@@ -1116,188 +1453,222 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <p class="footer-text" data-i18n="footer_text">Dibuat dari <span>Bekasi</span> dengan Kopi dan Polusi</p>
-  <div class="footer-links">
-    <a href="https://github.com/bushidoways/porto" target="_blank" rel="noopener noreferrer">Source</a>
-    <a href="#home">↑ Atas</a>
+  <div class="footer-inner">
+    <p class="footer-copy">
+      <strong>nang.dev</strong> &nbsp;·&nbsp;
+      <span data-i18n="footer_text">Dibuat dari Bekasi dengan Kopi dan Polusi</span>
+      &nbsp;·&nbsp; 2024–2026
+    </p>
+    <p class="footer-copy" style="opacity:0.5;">
+      nang<span style="color:var(--accent);">.</span>dev
+    </p>
   </div>
 </footer>
 
+<!-- DAILY VERSE WIDGET -->
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+<div id="dv-widget" class="dv-widget">
+  <div class="dv-header">
+    <span class="dv-header-title">Ayat Hari Ini</span>
+    <div class="dv-header-btns">
+      <button id="dv-minimize" title="Sembunyikan">&#8722;</button>
+      <button id="dv-close" title="Tutup">&#215;</button>
+    </div>
+  </div>
+  <div class="dv-body">
+    <div class="dv-loading" id="dv-loading">
+      <div class="dv-loading-dots">
+        <div class="dv-loading-dot"></div>
+        <div class="dv-loading-dot"></div>
+        <div class="dv-loading-dot"></div>
+      </div>
+    </div>
+    <div id="dv-content" style="display:none">
+      <p class="dv-arabic" id="dv-arabic"></p>
+      <p class="dv-translation" id="dv-translation"></p>
+      <p class="dv-meta" id="dv-meta"></p>
+      <button class="dv-cta" id="dv-next-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Ayat lain
+      </button>
+    </div>
+  </div>
+</div>
+<div id="dv-pill" class="dv-pill" style="display:none">
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+  Ayat Hari Ini
+</div>
+
 <script>
-// ── i18n ──
-const TRANSLATIONS = {
+// ── TRANSLATIONS ──────────────────────────────────
+const T = {
   id: {
-    nav_about: 'Tentang', nav_skills: 'Skill', nav_projects: 'Proyek',
-    nav_journal: 'Jurnal', nav_contact: 'Kontak', nav_cta: 'Hubungi',
-    hero_badge: 'Terbuka untuk peluang baru',
-    hero_title: 'Data & Business Analyst in progress',
-    hero_desc: 'Tertarik pada data, proses, dan sistem yang membuat pekerjaan sehari-hari jadi lebih efisien. Latar belakang operasional, sedang membangun skill analitik.',
-    hero_cta_primary: 'Lihat Proyek', hero_cta_secondary: 'Hubungi Saya',
-    stat_years: 'Tahun Operasional', stat_projects: 'Proyek Selesai', stat_coffee: 'Cangkir Kopi',
-    about_label: 'Tentang', about_title: 'Halo,\naku Nang.',
-    about_p1: 'Saya seorang <strong>Data & Business Analyst</strong> yang sedang membangun skill dari latar belakang operasional. Saya percaya bahwa data bukan sekadar angka — tapi cerita yang menunggu untuk dibaca.',
-    about_p2: 'Sehari-hari saya berkutat dengan Python, SQL, dan spreadsheet; mencari pola yang bisa mengubah cara kerja menjadi lebih efisien. Saya juga menulis di jurnal tentang hal-hal yang menarik perhatian saya.',
-    about_p3: 'Berbasis di <strong>Bekasi</strong>, terbuka untuk kerja remote maupun kolaborasi langsung.',
-    card_location_title: 'Lokasi', card_location_desc: 'Bekasi, Jawa Barat — Remote-friendly',
-    card_focus_title: 'Fokus Saat Ini', card_focus_desc: 'Data Analysis, Business Intelligence, Process Automation',
-    card_learn_title: 'Sedang Belajar', card_learn_desc: 'Machine Learning, SQL Advanced, Power BI',
-    card_hobby_title: 'Di Luar Layar', card_hobby_desc: 'Kopi, Linux, Baca, dan sesekali nulis jurnal tengah malam',
-    skills_label: 'Skill', skills_title: 'Yang bisa\nsaya kerjakan.',
-    skills_desc: 'Kombinasi skill teknis dan analitik yang terus berkembang.',
+    nav_about: 'Tentang', nav_skills: 'Kemampuan', nav_projects: 'Proyek',
+    nav_journal: 'Jurnal', nav_cta: 'Hubungi',
+    hero_badge: 'Available for opportunities',
+    hero_name: 'Halo, aku Nang.',
+    hero_desc: 'Junior analyst yang transisi dari dunia operasional ke dunia data. Suka ngulik Python, ngoprek Linux, dan dengerin apa yang data bilang sebelum orang lain sadar ada yang perlu didengar.',
+    hero_cta1: 'Lihat Proyek', hero_cta2: 'Hubungi Aku',
+    about_label: 'Tentang Saya',
+    about_title: 'Dari gudang<br/>ke dashboard.',
+    about_terminal_whoami: '<strong>Anang</strong> — Sales Admin, soon Data Analyst',
+    about_terminal_goal: '<strong>Become a Data + Business Analyst</strong>',
+    stat_ops: 'Tahun di Operasional', stat_projects: 'Proyek Python',
+    stat_projects_note: '(menyesuaikan pekerjaan)', stat_tools: 'Tools Dikuasai',
+    stat_learn: 'Pelajaran Baru Setiap Hari',
+    about_story1: 'Mulai dari ngurusin stok gudang dan admin sales, terus nyadar kalau semuanya bisa lebih efisien kalau paham data. Dari situ mulai belajar <span class="pill">Python</span>, kemudian <span class="pill">Pandas</span>, kemudian <span class="pill">SQL</span> dan malah keterusan lalu nggak bisa berhenti.',
+    about_story2: '<strong>Percaya</strong> bahwa cara terbaik belajar adalah langsung bikin sesuatu yang bisa dipakai.',
+    about_cta: 'Butuh Ngobrol Lebih Lanjut?',
+    skills_label: 'Kemampuan', skills_title: 'Stack yang<br/>dipakai.',
+    skills_desc: 'Tools dan teknologi yang jadi andalan sehari-hari, dari analisis data sampai sistem operasi.',
     skill_patience: 'Kesabaran',
-    projects_label: 'Proyek', projects_title: 'Yang sudah\npernah dibikin.',
+    projects_label: 'Proyek', projects_title: 'Yang sudah<br/>pernah dibikin.',
     projects_desc: 'Kumpulan proyek dari iseng sampai yang serius. Semuanya berangkat dari niat buat belajar.',
     proj1_desc: 'Analisis data penjualan dari export Excel — transformasi, cleaning, dan visualisasi tren per bulan menggunakan Pandas dan Matplotlib.',
     proj2_desc: 'Python scraper untuk mengumpulkan data publik dan menganalisis pola. Menggunakan BeautifulSoup, Requests, dan teknik dasar OSINT.',
     proj3_desc: 'Konfigurasi Ubuntu dari nol — dotfiles, shell aliases, auto-setup script untuk dev environment yang bisa di-bootstrap di mesin baru dalam menit.',
-    proj4_desc: 'Query SQL untuk analisis stok dan perputaran barang dari database gudang. Menghasilkan laporan otomatis harian.',
-    proj5_desc: 'Otomasi pembuatan laporan mingguan dari Google Sheets ke PDF menggunakan Python dan Google Apps Script.',
-    journal_label: 'Jurnal', journal_title: 'Catatan\ndari tengah malam.',
+    journal_label: 'Jurnal', journal_title: 'Catatan<br/>dari tengah malam.',
     journal_desc: 'Tulisan lepas tentang teknologi, proses belajar, opini, dan hal-hal yang kebetulan kepikiran waktu kopi masih panas.',
+    j1_date: 'MAR 2024 — 5 MENIT BACA', j1_title: 'Kenapa Berakhir di Linux', j1_excerpt: 'Sejujurnya, ini bukan soal ideologi. Tapi juga soal efisiensi, kontrol, dan fakta bahwa harga MacBook masih belum bisa dibilang murah.',
+    j2_date: 'NOV 2024 — 7 MENIT BACA', j2_title: 'Mulai belajar tentang bagaimana data bisa mengubah cara kerja', j2_excerpt: 'Momen di mana saya sadar bahwa Spreadsheet manual bisa diganti 10 baris Python yang jalan otomatis tiap pagi.',
+    j3_date: 'JAN 2024 — 4 MENIT BACA', j3_title: 'OSINT untuk pemula: belajar dari data yang sudah ada di depan mata', j3_excerpt: 'Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan siapa saja, dan kenapa ini relevan untuk seorang analyst.',
+    j4_date: 'OCT 2024 — 4 MENIT BACA', j4_title: 'Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?', j4_excerpt: 'Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.',
+    j5_date: 'MAR 2026 — 5 MENIT BACA', j5_title: 'Surah Al-Kahfi', j5_excerpt: 'Mengenal wahyu yang sering dibaca setiap Jum\'at sebagai Manual Book disaat krisis.',
+    contact_label: 'Kontak', contact_title: 'Ada yang mau disampaikan?<br/><span>Ngobrol yuk.</span>',
+    contact_desc: 'Lagi cari peluang sebagai Data Analyst atau Business Analyst. Open untuk diskusi, kolaborasi, atau sekadar ngobrol soal data dan teknologi.',
+    footer_text: 'Dibuat dari Bekasi dengan Kopi dan Polusi',
     journal_note: 'Sebagian besar tulisan di sini lahir dari hal-hal kecil: pekerjaan, rasa penasaran, dan kebiasaan mencatat sebelum ide itu hilang.',
-    j1_date: 'MAR 2024 — 5 MENIT BACA', j1_title: 'Kenapa Berakhir di Linux',
-    j1_excerpt: 'Sejujurnya, ini bukan soal ideologi. Tapi juga soal efisiensi, kontrol, dan fakta bahwa harga MacBook masih belum bisa dibilang murah.',
-    j2_date: 'NOV 2024 — 7 MENIT BACA', j2_title: 'Mulai belajar tentang bagaimana data bisa mengubah cara kerja',
-    j2_excerpt: 'Momen di mana saya sadar bahwa Spreadsheet manual bisa diganti 10 baris Python yang jalan otomatis tiap pagi.',
-    j3_date: 'JAN 2024 — 4 MENIT BACA', j3_title: 'OSINT untuk pemula: belajar dari data yang sudah ada di depan mata',
-    j3_excerpt: 'Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan siapa saja, dan kenapa ini relevan untuk seorang analyst.',
-    j4_date: 'OCT 2024 — 4 MENIT BACA', j4_title: 'Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?',
-    j4_excerpt: 'Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.',
-    j5_date: 'MAR 2026 — 5 MENIT BACA', j5_title: 'Surah Al-Kahfi',
-    j5_excerpt: "Mengenal wahyu yang sering dibaca setiap Jum'at sebagai Manual Book disaat krisis.",
-    read_more: 'Baca',
-    contact_label: 'Kontak', contact_title: 'Mari\nngobrol.',
-    contact_desc: 'Terbuka untuk diskusi, kolaborasi, atau sekadar kenalan. Pilih platform yang paling nyaman buat kamu.',
-    quran_label: 'Ayat Hari Ini', quran_loading: 'Memuat ayat...', quran_refresh: 'Ayat lain',
-    footer_text: 'Dibuat dari <span>Bekasi</span> dengan Kopi dan Polusi',
+    read_more: 'Baca selengkapnya'
   },
   en: {
     nav_about: 'About', nav_skills: 'Skills', nav_projects: 'Projects',
-    nav_journal: 'Journal', nav_contact: 'Contact', nav_cta: 'Contact',
-    hero_badge: 'Open to new opportunities',
-    hero_title: 'Data & Business Analyst in progress',
-    hero_desc: 'Interested in data, process, and systems that make daily work more efficient. Operational background, building analytical skills.',
-    hero_cta_primary: 'View Projects', hero_cta_secondary: 'Contact Me',
-    stat_years: 'Years in Ops', stat_projects: 'Projects Done', stat_coffee: 'Cups of Coffee',
-    about_label: 'About', about_title: 'Hi,\nI\'m Nang.',
-    about_p1: 'I\'m a <strong>Data & Business Analyst</strong> building skills from an operational background. I believe data isn\'t just numbers — it\'s a story waiting to be read.',
-    about_p2: 'Day-to-day I work with Python, SQL, and spreadsheets; looking for patterns that can transform workflows. I also write in my journal about things that catch my attention.',
-    about_p3: 'Based in <strong>Bekasi</strong>, open to remote work and direct collaboration.',
-    card_location_title: 'Location', card_location_desc: 'Bekasi, West Java — Remote-friendly',
-    card_focus_title: 'Current Focus', card_focus_desc: 'Data Analysis, Business Intelligence, Process Automation',
-    card_learn_title: 'Currently Learning', card_learn_desc: 'Machine Learning, Advanced SQL, Power BI',
-    card_hobby_title: 'Off-Screen', card_hobby_desc: 'Coffee, Linux, Reading, and occasional midnight journal writing',
-    skills_label: 'Skills', skills_title: 'What I\ncan do.',
-    skills_desc: 'A combination of technical and analytical skills, continuously growing.',
+    nav_journal: 'Journal', nav_cta: 'Contact',
+    hero_badge: 'Available for opportunities',
+    hero_name: "Hi, I'm Nang.",
+    hero_desc: "A junior analyst transitioning from operations to the world of data. Love tinkering with Python, messing around with Linux, and listening to what the data says before others realize there's something worth hearing.",
+    hero_cta1: 'View Projects', hero_cta2: 'Get in Touch',
+    about_label: 'About Me',
+    about_title: 'From warehouse<br/>to dashboard.',
+    about_terminal_whoami: '<strong>Anang</strong> — Sales Admin, soon Data Analyst',
+    about_terminal_goal: '<strong>Become a Data + Business Analyst</strong>',
+    stat_ops: 'Years in Operations', stat_projects: 'Python Projects',
+    stat_projects_note: '(work-related)', stat_tools: 'Tools Mastered',
+    stat_learn: 'New Lesson Every Day',
+    about_story1: 'Started out managing warehouse stock and sales admin, then realized everything could be more efficient with data. That\'s when I picked up <span class="pill">Python</span>, then <span class="pill">Pandas</span>, then <span class="pill">SQL</span> — and honestly, I just couldn\'t stop.',
+    about_story2: '<strong>I believe</strong> the best way to learn is to build something you can actually use.',
+    about_cta: 'Want to Chat Further?',
+    skills_label: 'Skills', skills_title: 'The stack<br/>I work with.',
+    skills_desc: 'Tools and technologies I rely on daily — from data analysis to operating systems.',
     skill_patience: 'Patience',
-    projects_label: 'Projects', projects_title: 'Things I\'ve\nbuilt.',
-    projects_desc: 'A collection of projects ranging from casual to serious. All started with the intention to learn.',
+    projects_label: 'Projects', projects_title: 'Things I\'ve<br/>built so far.',
+    projects_desc: 'A collection of projects from casual experiments to serious builds. All driven by the intent to learn.',
     proj1_desc: 'Sales data analysis from Excel exports — transformation, cleaning, and monthly trend visualization using Pandas and Matplotlib.',
-    proj2_desc: 'Python scraper for collecting public data and analyzing patterns. Uses BeautifulSoup, Requests, and basic OSINT techniques.',
-    proj3_desc: 'Ubuntu configuration from scratch — dotfiles, shell aliases, auto-setup script for a dev environment that can be bootstrapped on a new machine in minutes.',
-    proj4_desc: 'SQL queries for stock analysis and inventory turnover from a warehouse database. Generates automatic daily reports.',
-    proj5_desc: 'Automation for creating weekly reports from Google Sheets to PDF using Python and Google Apps Script.',
-    journal_label: 'Journal', journal_title: 'Notes from\nmidnight.',
-    journal_desc: 'Loose writing about technology, learning processes, opinions, and things that happen to come to mind while the coffee is still hot.',
+    proj2_desc: 'Python tool for collecting public data and analyzing patterns. Built with BeautifulSoup, Requests, and basic OSINT techniques.',
+    proj3_desc: 'Ubuntu configuration from scratch — dotfiles, shell aliases, auto-setup script for a dev environment that bootstraps on a new machine in minutes.',
+    journal_label: 'Journal', journal_title: 'Notes<br/>from midnight.',
+    journal_desc: "Loose writings about technology, the learning process, opinions, and things that cross my mind while the coffee's still hot.",
+    j1_date: 'MAR 2024 — 5 MIN READ', j1_title: 'Why I Ended Up on Linux', j1_excerpt: "Honestly, it's not about ideology. It's about efficiency, control, and the fact that MacBooks still aren't exactly cheap.",
+    j2_date: 'NOV 2024 — 7 MIN READ', j2_title: 'How data can change the way you work', j2_excerpt: 'The moment I realized a manual spreadsheet could be replaced by 10 lines of Python running automatically every morning.',
+    j3_date: 'JAN 2024 — 4 MIN READ', j3_title: 'OSINT for beginners: learning from data already in front of you', j3_excerpt: 'Basic public information gathering techniques that anyone can do, and why this is relevant for an analyst.',
+    j4_date: 'OCT 2024 — 4 MIN READ', j4_title: 'Structural Poverty: Why Individual Effort Alone Is Not Enough', j4_excerpt: 'What and Why?, Contributing Factors, Expert Views, Economic Inequality and a Conclusion from the Author.',
+    j5_date: 'MAR 2026 — 5 MIN READ', j5_title: 'Surah Al-Kahfi', j5_excerpt: 'Understanding the revelation often read every Friday as a Manual Book in times of crisis.',
+    contact_label: 'Contact', contact_title: 'Something on your mind?<br/><span>Let\'s talk.</span>',
+    contact_desc: 'Looking for opportunities as a Data Analyst or Business Analyst. Open to discussions, collaborations, or just chatting about data and technology.',
+    footer_text: 'Made from Bekasi with Coffee and Air Pollution',
     journal_note: 'Most of the writing here starts from small things: work, curiosity, and the habit of taking notes before an idea disappears.',
-    j1_date: 'MAR 2024 — 5 MIN READ', j1_title: 'Why I Ended Up on Linux',
-    j1_excerpt: "Honestly, it's not about ideology. It's about efficiency, control, and the fact that MacBooks still aren't exactly cheap.",
-    j2_date: 'NOV 2024 — 7 MIN READ', j2_title: 'Starting to learn how data can change the way we work',
-    j2_excerpt: 'The moment I realized that manual spreadsheets could be replaced by 10 lines of Python running automatically every morning.',
-    j3_date: 'JAN 2024 — 4 MIN READ', j3_title: 'OSINT for beginners: learning from data already in front of you',
-    j3_excerpt: 'Basic techniques for collecting public information that anyone can do, and why this is relevant for an analyst.',
-    j4_date: 'OCT 2024 — 4 MIN READ', j4_title: 'Structural Poverty: Why Individual Effort Alone Is Not Enough?',
-    j4_excerpt: 'What and Why?, Contributing Factors, Expert Views, Economic Inequality and A Conclusion from the Author.',
-    j5_date: 'MAR 2026 — 5 MIN READ', j5_title: 'Surah Al-Kahfi',
-    j5_excerpt: "Getting to know the revelation often read every Friday as a Manual Book in times of crisis.",
-    read_more: 'Read',
-    contact_label: 'Contact', contact_title: 'Let\'s\ntalk.',
-    contact_desc: 'Open for discussions, collaborations, or just getting acquainted. Choose the platform most comfortable for you.',
-    quran_label: 'Verse of the Day', quran_loading: 'Loading verse...', quran_refresh: 'Another verse',
-    footer_text: 'Made from <span>Bekasi</span> with Coffee and Pollution',
+    read_more: 'Read more'
   }
 };
 
-let currentLang = 'id';
-
-function applyLang(lang) {
-  currentLang = lang;
-  const t = TRANSLATIONS[lang];
+let lang = 'id';
+function applyLang(l) {
+  lang = l;
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (t[key] !== undefined) {
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-        el.placeholder = t[key];
-      } else {
-        el.innerHTML = t[key];
-      }
-    }
+    if (T[l][key] !== undefined) el.innerHTML = T[l][key];
   });
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
-    btn.setAttribute('aria-pressed', btn.dataset.lang === lang);
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === l);
   });
 }
-
-document.querySelectorAll('.lang-btn').forEach(btn => {
-  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+document.querySelectorAll('.lang-btn').forEach(b => {
+  b.addEventListener('click', () => applyLang(b.dataset.lang));
 });
 
-// ── Nav scroll ──
-const mainNav = document.getElementById('mainNav');
-window.addEventListener('scroll', () => {
-  mainNav.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
-
-// ── Active nav link ──
-const sections = document.querySelectorAll('section[id], div[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 100) current = s.id;
-  });
-  navLinks.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-  });
-}, { passive: true });
-
-// ── Hamburger ──
+// ── NAV ──────────────────────────────────────────
+const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
-const navMobile = document.getElementById('navMobile');
+const navLinks = document.getElementById('navLinks');
+
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+});
+
 hamburger.addEventListener('click', () => {
-  const open = hamburger.classList.toggle('open');
-  navMobile.classList.toggle('open', open);
-  hamburger.setAttribute('aria-expanded', open);
+  navLinks.classList.toggle('open');
 });
-navMobile.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    navMobile.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', false);
+
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id], div[id]');
+const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navAnchors.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
+      });
+    }
   });
-});
+}, { rootMargin: '-40% 0px -40% 0px' });
+sections.forEach(s => observer.observe(s));
 
-// ── Reveal on scroll ──
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+// ── REVEAL ──────────────────────────────────────────
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-// ── Skill bars ──
-const barObserver = new IntersectionObserver((entries) => {
+// ── COUNT UP ──────────────────────────────────────────
+function countUp(el) {
+  const target = +el.dataset.count;
+  const duration = 1200;
+  const step = target / (duration / 16);
+  let current = 0;
+  const interval = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = Math.floor(current);
+    if (current >= target) clearInterval(interval);
+  }, 16);
+}
+const countObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('[data-count]').forEach(countUp);
+      countObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.about-stats').forEach(el => countObs.observe(el));
+
+// ── SKILL BARS ──────────────────────────────────────────
+const barObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
         bar.style.width = bar.dataset.width + '%';
       });
-      barObserver.unobserve(e.target);
+      barObs.unobserve(e.target);
     }
   });
 }, { threshold: 0.2 });
-document.querySelectorAll('.skill-bars').forEach(el => barObserver.observe(el));
+document.querySelectorAll('.skill-bars-wrap').forEach(el => barObs.observe(el));
 
-// ── Project filter ──
+// ── PROJECT FILTER ──────────────────────────────────────────
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -1305,42 +1676,61 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     const filter = btn.dataset.filter;
     document.querySelectorAll('.project-card').forEach(card => {
       const cats = card.dataset.category || '';
-      card.classList.toggle('hidden', filter !== 'all' && !cats.includes(filter));
+      const show = filter === 'all' || cats.includes(filter);
+      card.style.display = show ? '' : 'none';
+      card.style.opacity = show ? '1' : '0';
     });
   });
 });
 
-// ── Quran Widget ──
+// ── DAILY VERSE ──────────────────────────────────────────
 (function() {
-  const AYAHS = [
-    { ar: 'فَإِنَّ مَعَ الْعُسْرِ يُسْرًا', id: 'Maka sesungguhnya bersama kesulitan ada kemudahan.', src: 'QS. Al-Insyirah: 5' },
-    { ar: 'وَعَسَىٰ أَن تَكْرَهُوا شَيْئًا وَهُوَ خَيْرٌ لَّكُمْ', id: 'Boleh jadi kamu membenci sesuatu, padahal ia amat baik bagimu.', src: 'QS. Al-Baqarah: 216' },
-    { ar: 'إِنَّ اللَّهَ مَعَ الصَّابِرِينَ', id: 'Sesungguhnya Allah beserta orang-orang yang sabar.', src: 'QS. Al-Baqarah: 153' },
-    { ar: 'وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ', id: 'Dan barangsiapa bertawakkal kepada Allah, maka Dia akan mencukupinya.', src: 'QS. At-Thalaq: 3' },
-    { ar: 'لَا تَحْزَنْ إِنَّ اللَّهَ مَعَنَا', id: 'Jangan bersedih, sesungguhnya Allah bersama kita.', src: 'QS. At-Taubah: 40' },
-    { ar: 'وَقُل رَّبِّ زِدْنِي عِلْمًا', id: 'Dan katakanlah: "Ya Tuhanku, tambahkanlah ilmu kepadaku."', src: 'QS. Thaha: 114' },
-    { ar: 'إِنَّ مَعَ الْعُسْرِ يُسْرًا', id: 'Sesungguhnya bersama kesulitan ada kemudahan.', src: 'QS. Al-Insyirah: 6' },
-  ];
-  let idx = Math.floor(Math.random() * AYAHS.length);
+  const widget = document.getElementById('dv-widget');
+  const pill   = document.getElementById('dv-pill');
+  const isMobile = window.innerWidth <= 480;
+  if (isMobile) { widget.style.display = 'none'; pill.style.display = 'flex'; }
 
-  function show(i) {
-    const a = AYAHS[i];
-    const arEl = document.getElementById('quranArabic');
-    const trEl = document.getElementById('quranTrans');
-    const srcEl = document.getElementById('quranSource');
-    arEl.classList.remove('quran-loading');
-    trEl.classList.remove('quran-loading');
-    arEl.textContent = a.ar;
-    trEl.textContent = currentLang === 'en' ? a.id : a.id;
-    srcEl.textContent = a.src;
+  function getDailyAyah() {
+    const start = new Date(new Date().getFullYear(), 0, 0);
+    const day = Math.floor((new Date() - start) / 86400000);
+    return (day % 6236) + 1;
   }
 
-  document.getElementById('quranRefresh').addEventListener('click', () => {
-    idx = (idx + 1) % AYAHS.length;
-    show(idx);
-  });
+  async function loadVerse(n) {
+    const content = document.getElementById('dv-content');
+    const loading = document.getElementById('dv-loading');
+    const btn = document.getElementById('dv-next-btn');
+    content.style.display = 'none';
+    loading.style.display = 'flex';
+    if (btn) btn.disabled = true;
+    try {
+      const res  = await fetch('https://api.alquran.cloud/v1/ayah/' + n + '/editions/quran-simple,id.indonesian');
+      const data = await res.json();
+      if (data.code !== 200) throw new Error();
+      document.getElementById('dv-arabic').textContent      = data.data[0].text;
+      document.getElementById('dv-translation').textContent = '\u201c' + data.data[1].text + '\u201d';
+      document.getElementById('dv-meta').textContent        = data.data[0].surah.name + ' (' + data.data[0].surah.englishName + ') : ' + data.data[0].numberInSurah;
+      loading.style.display = 'none';
+      content.style.display = 'block';
+      if (btn) btn.disabled = false;
+    } catch {
+      loading.innerHTML = '<span style="font-size:0.72rem;color:rgba(250,247,242,0.4)">Gagal memuat ayat.</span>';
+    }
+  }
 
-  show(idx);
+  loadVerse(getDailyAyah());
+  document.getElementById('dv-next-btn').addEventListener('click', () => {
+    loadVerse(Math.floor(Math.random() * 6236) + 1);
+  });
+  document.getElementById('dv-close').addEventListener('click', () => {
+    widget.style.display = 'none'; pill.style.display = 'flex';
+  });
+  document.getElementById('dv-minimize').addEventListener('click', () => {
+    widget.style.display = 'none'; pill.style.display = 'flex';
+  });
+  pill.addEventListener('click', () => {
+    pill.style.display = 'none'; widget.style.display = 'block';
+  });
 })();
 </script>
 </body>
