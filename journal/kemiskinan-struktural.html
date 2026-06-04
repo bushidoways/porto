@@ -1,1 +1,471 @@
-PLACEHOLDER_KEMISKINAN
+
+<!--
+   _-=Created Without Love=- _                   
+| \ | ___ ._ _  ___  ___
+|   |<_> || ' |/ . |<_-<
+|_\_|<___||_|_|\_. |/__/
+               <___'    
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mengurai Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg:             #F5F0E8;
+  --bg-soft:        #FAF7F2;
+  --surface:        #F0EBE1;
+  --surface-2:      #EAE3D8;
+  --border:         #D9D0C3;
+  --border-strong:  #C5BAA9;
+  --divider:        #E2D9CC;
+
+  --text:           #1A1613;
+  --text-muted:     #6B6055;
+  --text-faint:     #A09285;
+
+  --accent:         #C96442;
+  --accent-hover:   #A84F31;
+  --accent-soft:    #F0DDD6;
+  --accent-border:  #DFBCAD;
+
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.4rem);
+
+  --space-1:  0.25rem;  --space-2:  0.5rem;   --space-3:  0.75rem;
+  --space-4:  1rem;     --space-5:  1.25rem;  --space-6:  1.5rem;
+  --space-8:  2rem;     --space-10: 2.5rem;   --space-12: 3rem;
+  --space-16: 4rem;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.875rem;
+
+  --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --content-narrow: 720px;
+  --content-wide:   1160px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { text-wrap: balance; }
+p, li { text-wrap: pretty; }
+::selection { background: rgba(201,100,66,0.18); color: var(--text); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 64px;
+  padding: 0 var(--space-8);
+  background: rgba(245,240,232,0.76);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition), background var(--transition);
+}
+nav.scrolled {
+  border-color: var(--divider);
+  background: rgba(245,240,232,0.95);
+}
+.nav-inner {
+  max-width: var(--content-wide);
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.nav-logo span { color: var(--accent); }
+.nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.nav-back:hover { color: var(--text); }
+.nav-back svg { transition: transform var(--transition); }
+.nav-back:hover svg { transform: translateX(-3px); }
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  z-index: 200;
+  transition: width 0.08s linear;
+}
+
+article {
+  max-width: var(--content-narrow);
+  margin: 0 auto;
+  padding: 104px var(--space-6) 5rem;
+}
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-8);
+}
+.article-date {
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+}
+.article-tag {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+  border: 1px solid var(--accent-border);
+}
+.article-read-time {
+  font-size: 0.73rem;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+}
+.article-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  margin-bottom: var(--space-6);
+  color: var(--text);
+}
+.article-intro {
+  font-size: 1.08rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  border-left: 2px solid var(--accent);
+  padding-left: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+.article-body {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+.article-body h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin: 2.75rem 0 1rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--divider);
+}
+.article-body p { margin-bottom: 1.25rem; }
+.article-body strong { color: var(--text); font-weight: 600; }
+.article-body em { color: var(--text); }
+.article-body code {
+  font-family: var(--font-mono);
+  font-size: 0.83em;
+  background: var(--surface);
+  color: var(--accent-hover);
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+.article-body pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+.article-body pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+.article-body ul, .article-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.article-body li { margin-bottom: 0.55rem; }
+.article-body a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-border);
+  transition: border-color var(--transition), color var(--transition);
+}
+.article-body a:hover {
+  color: var(--accent-hover);
+  border-color: var(--accent);
+}
+.article-body blockquote {
+  border-left: 2px solid var(--accent);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 1.75rem 0;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+.article-body figure { margin: 1.5rem 0 2rem; }
+.article-body figure img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  display: block;
+  border: 1px solid var(--border);
+}
+.article-body figcaption {
+  font-size: 0.76rem;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  text-align: center;
+  margin-top: 0.6rem;
+}
+.article-body .medium-note {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+}
+.article-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--divider);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: border-color var(--transition), color var(--transition), background var(--transition);
+}
+.back-link:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+  background: var(--surface);
+}
+.back-link svg { transition: transform var(--transition); }
+.back-link:hover svg { transform: translateX(-3px); }
+.article-author {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--text-faint);
+}
+footer {
+  border-top: 1px solid var(--divider);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+}
+footer span { color: var(--accent); }
+
+@media (max-width: 640px) {
+  nav { padding: 0 1.25rem; }
+  article { padding: 88px 1.25rem 4rem; }
+}
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">nang<span>.</span></a>
+      <a href="../index.html#journal" class="nav-back" data-i18n="kemiskinan_nav_back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Kembali ke Jurnal
+      </a>
+    </div>
+  </nav>
+
+  <article>
+    <div class="article-meta">
+      <span class="article-date">OCT 2024</span>
+      <span class="article-tag" data-i18n="kemiskinan_tag_sosial">Sosial</span>
+      <span class="article-tag">Medium</span>
+      <span class="article-tag" data-i18n="kemiskinan_tag_opini">Opini</span>
+      <span class="article-read-time" data-i18n="kemiskinan_read_time">3 MENIT BACA</span>
+    </div>
+
+    <h1 class="article-title" data-i18n="kemiskinan_title">Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?</h1>
+
+    <p class="article-intro" data-i18n="kemiskinan_intro">Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.</p>
+
+    <div class="article-body">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1722061145687-40105f95798c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kemiskinan Struktural" loading="lazy" />
+        <figcaption>Foto: <a href="https://unsplash.com/id/@meditative" target="_blank" rel="noopener noreferrer">Suraj Tomer</a> / <a href="https://www.unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></figcaption>
+      </figure>
+
+      <h2 data-i18n="kemiskinan_h2_1">Kemiskinan Struktural: Apa dan Mengapa?</h2>
+      <p data-i18n="kemiskinan_p1"><strong>Kemiskinan Struktural</strong> bukanlah sekadar tentang kekurangan uang. Ini adalah kondisi di mana masyarakat terjebak dalam kemiskinan karena sistem sosial, ekonomi, dan politik yang dapat mempengaruhi kehidupan masyarakat.</p>
+      <p data-i18n="kemiskinan_p2">Meskipun seseorang berusaha keras, tanpa akses pendidikan, layanan kesehatan, atau pekerjaan yang layak, ia sulit keluar dari lingkaran kemiskinan.</p>
+
+      <h2 data-i18n="kemiskinan_h2_2">Apa Faktor Penyebab Kemiskinan Struktural?</h2>
+      <p data-i18n="kemiskinan_p3">Secara singkat, mari kita coba kulik dari faktor sosial dan ekonomi, serta perilaku masyarakat itu sendiri:</p>
+      <ul>
+        <li data-i18n="kemiskinan_li1"><strong>Pendidikan:</strong> Pendidikan berkualitas yang sulit dijangkau masyarakat miskin, terutama di daerah tertinggal, sehingga membatasi kesempatan kerja bagi mereka kelak di kemudian hari.</li>
+        <li data-i18n="kemiskinan_li2"><strong>Layanan Kesehatan:</strong> Biaya kesehatan yang tinggi dan akses yang sulit bisa memperburuk kondisi kemiskinan di masyarakat, karena orang sakit tidak dapat bekerja secara optimal.</li>
+        <li data-i18n="kemiskinan_li3"><strong>Kebijakan Ekonomi:</strong> Subsidi dan investasi seringkali lebih banyak menguntungkan kelompok masyarakat kaya, sementara masyarakat miskin tidak mendapatkan keuntungan yang cukup untuk bisa terus berkembang.</li>
+        <li data-i18n="kemiskinan_li4"><strong>Diskriminasi Sosial:</strong> Diskriminasi terhadap kelompok masyarakat tertentu, seperti perempuan atau para pekerja informal, mempersempit kesempatan perbaikan kondisi ekonomi bagi mereka.</li>
+        <li data-i18n="kemiskinan_li5"><strong>Ketimpangan Pembangunan &amp; Infrastruktur:</strong> Di beberapa daerah, pembangunan ekonomi dan infrastruktur tidaklah merata, sehingga masyarakat yang ada di daerah tertinggal sulit mengakses pekerjaan layak, teknologi, dan layanan dasar. Ini juga menjadi salah satu faktor yang mendorong masyarakat berbondong-bondong datang ke kota besar untuk beradu nasib.</li>
+        <li data-i18n="kemiskinan_li6"><strong>Rasa Tidak Berdaya dan Apatis:</strong> Masyarakat yang terjebak dalam kemiskinan struktural seringkali merasa bahwa usaha mereka tidak akan membuahkan hasil karena <em>"Sudah Takdir"</em>, ini menimbulkan sikap apatis dan rendahnya motivasi untuk berubah.</li>
+        <li data-i18n="kemiskinan_li7"><strong>Budaya Kemiskinan:</strong> Lingkungan masyarakat sangat andil dalam pembentukan pola pikir dan nilai yang membuat individu merasa nyaman dalam kondisi tersebut. Mereka menganggap bahwa kondisi ini tidak mungkin bisa diubah, sehingga tidak termotivasi mencari solusi ataupun peluang baru.</li>
+        <li data-i18n="kemiskinan_li8"><strong>Harapan Pada Bantuan:</strong> Beberapa kelompok masyarakat menjadi cukup bergantung pada bantuan sosial atau amal. Ketergantungan ini bisa menciptakan pola pikir pasif, di mana individu tidak berupaya untuk meningkatkan keterampilan demi mendapatkan pekerjaan yang lebih baik.</li>
+        <li data-i18n="kemiskinan_li9"><strong>Kurangnya Pendidikan dan Keterampilan:</strong> Keterbatasan pendidikan dan pelatihan dapat membatasi kemampuan individu untuk bersaing di pasar kerja. Tanpa keterampilan yang relevan, mereka terjebak dalam pekerjaan informal dengan upah rendah dan tanpa jaminan sosial.</li>
+        <li data-i18n="kemiskinan_li10"><strong>Mobilitas Sosial yang Terbatas:</strong> Individu dari latar belakang ekonomi rendah seringkali kekurangan jaminan sosial yang dapat membuka peluang baru. Mereka juga merasa terisolasi dari komunitas yang lebih maju, sehingga kesempatan untuk memperbaiki kehidupan terasa sangat terbatas.</li>
+      </ul>
+      <p data-i18n="kemiskinan_p4">Sederet faktor tersebut mencerminkan betapa kemiskinan bukan hanya masalah ekonomi, tapi juga terkait dengan perilaku dan pola pikir individu yang seringkali dipengaruhi oleh lingkungan sosial dan struktur masyarakat yang tidak mendukung adanya perubahan.</p>
+
+      <h2 data-i18n="kemiskinan_h2_3">Pandangan Para Ahli Tentang Kemiskinan Struktural</h2>
+      <p data-i18n="kemiskinan_p5"><a href="https://id.wikipedia.org/wiki/Soerjono_Soekanto" target="_blank" rel="noopener noreferrer">Soerjono Soekanto</a> menjelaskan bahwa kemiskinan bukan karena malas, tetapi karena masyarakat tidak diberi akses yang sama terhadap peluang ekonomi dan sosial.</p>
+      <p data-i18n="kemiskinan_p6">Sementara itu, <a href="https://scholar.google.co.id/citations?user=rlfPxkoAAAAJ&hl=id" target="_blank" rel="noopener noreferrer">Edi Suharto</a> menekankan bahwa kemiskinan ini melibatkan masalah ekonomi sekaligus psikologis. Rendahnya kualitas pendidikan dan pekerjaan menciptakan rasa putus asa, sehingga masyarakat sulit untuk maju.</p>
+
+      <h2 data-i18n="kemiskinan_h2_4">Urbanisasi dan Kesenjangan Ekonomi</h2>
+      <p data-i18n="kemiskinan_p7">Banyak penduduk desa pindah ke kota-kota besar untuk mencari kehidupan yang lebih baik. Namun, urbanisasi yang tidak terencana dengan baik justru menciptakan permukiman kumuh dan pekerjaan informal.</p>
+      <p data-i18n="kemiskinan_p8"><em>Tanpa akses pada lapangan kerja formal, penduduk kota berpenghasilan rendah ini terus terjebak dalam kemiskinan.</em></p>
+      <p data-i18n="kemiskinan_p9">Populasi yang terus bertumbuh tanpa diimbangi dengan keterampilan individu dan lapangan pekerjaan yang memadai, membuat persaingan menjadi semakin ketat untuk meningkatkan taraf hidup atau sekadar menyambung hidup mereka. Sebuah kondisi yang memperparah ketimpangan ekonomi antara mereka yang tinggal di pusat kota dengan mereka yang tinggal di kawasan kumuh.</p>
+      <p data-i18n="kemiskinan_p10">Kepadatan penduduk juga menambah tekanan pada sumber daya suatu daerah, seperti air, listrik, dan transportasi. Kota-kota besar umumnya kewalahan untuk memenuhi kebutuhan penduduk yang terus meningkat dan menyebabkan layanan dasar menjadi tidak merata.</p>
+
+      <h2 data-i18n="kemiskinan_h2_5">Kesimpulan</h2>
+      <blockquote data-i18n="kemiskinan_blockquote">Kemiskinan struktural bukanlah masalah individu, tetapi masalah sistemik. Dibutuhkan kolaborasi antara pemerintah, masyarakat, dan sektor swasta untuk menciptakan kebijakan yang inklusif dan adil, sehingga setiap orang memiliki kesempatan untuk hidup lebih baik.</blockquote>
+      <p class="medium-note"><span data-i18n="kemiskinan_medium">Artikel ini juga diposting di <a href="https://medium.com/komunitas-blogger-m/mengurai-kemiskinan-struktural-mengapa-usaha-individu-saja-tidak-cukup-695745d5de19" target="_blank" rel="noopener noreferrer">Medium</a></span></p>
+    </div>
+
+    <div class="article-footer">
+      <a href="../index.html#journal" class="back-link" data-i18n="kemiskinan_back_link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Semua Jurnal
+      </a>
+      <span class="article-author">Nang's</span>
+    </div>
+  </article>
+
+  <footer>
+    <span>ananglesmana.my.id</span> &nbsp;|&nbsp; <span data-i18n="kemiskinan_footer">Dibuat dari Bekasi dengan Kopi dan Polusi</span> &nbsp;|&nbsp; 2024
+  </footer>
+
+  <script>
+    window.PAGE_TRANSLATIONS = {
+      kemiskinan_nav_back:    { id: '\u2190 Kembali ke Jurnal', en: '\u2190 Back to Journal' },
+      kemiskinan_read_time:   { id: '3 MENIT BACA', en: '3 MIN READ' },
+      kemiskinan_tag_sosial:  { id: 'Sosial', en: 'Social' },
+      kemiskinan_tag_opini:   { id: 'Opini', en: 'Opinion' },
+      kemiskinan_title:       { id: 'Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?', en: "Structural Poverty: Why Individual Effort Alone Isn't Enough?" },
+      kemiskinan_intro:       { id: 'Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.', en: 'What and Why?, Contributing Factors, Expert Views, Economic Inequality, and a Conclusion from the Author.' },
+      kemiskinan_h2_1:        { id: 'Kemiskinan Struktural: Apa dan Mengapa?', en: 'Structural Poverty: What and Why?' },
+      kemiskinan_p1:          { id: '<strong>Kemiskinan Struktural</strong> bukanlah sekadar tentang kekurangan uang. Ini adalah kondisi di mana masyarakat terjebak dalam kemiskinan karena sistem sosial, ekonomi, dan politik yang dapat mempengaruhi kehidupan masyarakat.', en: '<strong>Structural Poverty</strong> is not merely about lacking money. It is a condition where people are trapped in poverty due to social, economic, and political systems that affect people\'s lives.' },
+      kemiskinan_p2:          { id: 'Meskipun seseorang berusaha keras, tanpa akses pendidikan, layanan kesehatan, atau pekerjaan yang layak, ia sulit keluar dari lingkaran kemiskinan.', en: 'Even if someone works hard, without access to education, healthcare, or decent employment, it is difficult to escape the cycle of poverty.' },
+      kemiskinan_h2_2:        { id: 'Apa Faktor Penyebab Kemiskinan Struktural?', en: 'What Causes Structural Poverty?' },
+      kemiskinan_p3:          { id: 'Secara Singkat, mari kita coba kulik dari faktor sosial dan ekonomi, serta perilaku masyarakat itu sendiri :', en: 'In short, let\'s examine the social and economic factors, as well as the behavior of the people themselves:' },
+      kemiskinan_li1:         { id: '<strong>Pendidikan :</strong> Pendidikan berkualitas yang sulit dijangkau masyarakat miskin, terutama di daerah tertinggal, sehingga membatasi kesempatan kerja bagi mereka kelak dikemudian hari.', en: '<strong>Education:</strong> Quality education that is hard to reach for the poor, especially in underdeveloped areas, limiting their future job opportunities.' },
+      kemiskinan_li2:         { id: '<strong>Layanan Kesehatan :</strong> Biaya kesehatan yang tinggi dan akses yang sulit bisa memperburuk kondisi kemiskinan di masyarakat, karena orang sakit tidak dapat bekerja secara optimal.', en: '<strong>Healthcare:</strong> High healthcare costs and difficult access can worsen poverty conditions, as sick people cannot work optimally.' },
+      kemiskinan_li3:         { id: '<strong>Kebijakan Ekonomi :</strong> Subsidi dan Investasi seringkali lebih banyak menguntungkan kelompok masyarakat kaya, sementara masyarakat miskin tidak mendapatkan keuntungan yang cukup untuk bisa terus berkembang.', en: '<strong>Economic Policy:</strong> Subsidies and investments often benefit the wealthy more, while the poor do not receive enough benefits to continue developing.' },
+      kemiskinan_li4:         { id: '<strong>Diskriminasi Sosial :</strong> Diskriminasi terhadap kelompok masyarakat tertentu, seperti perempuan atau para pekerja informal, mempersempit kesempatan perbaikan kondisi ekonomi bagi mereka.', en: '<strong>Social Discrimination:</strong> Discrimination against certain groups, such as women or informal workers, narrows their opportunities for economic improvement.' },
+      kemiskinan_li5:         { id: '<strong>Ketimpangan Pembangunan &amp; Infrastruktur :</strong> Di beberapa daerah, pembangunan ekonomi dan infrastruktur tidaklah merata, sehingga masyarakat yang ada di daerah tertinggal, sulit mengakses dan mendapatkan kesempatan kerja yang layak, teknologi dan layanan dasar, ini juga salah satu faktor yang melatarbelakangi masyarakat untuk berbondong-bondong datang ke kota besar untuk beradu nasib.', en: '<strong>Development &amp; Infrastructure Inequality:</strong> In some areas, economic development and infrastructure are uneven, making it difficult for people in underdeveloped regions to access decent jobs, technology, and basic services — this is also one of the factors driving people to flock to big cities to try their luck.' },
+      kemiskinan_li6:         { id: '<strong>Rasa Tidak Berdaya dan Apatis :</strong> Masyarakat yang terjebak dalam kemiskinan struktural seringkali merasa bahwa usaha mereka tidak akan membuahkan hasil karena <em>“Sudah Takdir”</em>, ini menimbulkan sikap apatis dan rendahnya motivasi untuk berubah.', en: '<strong>Helplessness and Apathy:</strong> People trapped in structural poverty often feel that their efforts will not bear fruit because <em>“it\'s already fate”</em>, fostering apathy and low motivation to change.' },
+      kemiskinan_li7:         { id: '<strong>Budaya Kemiskinan :</strong> Lingkungan masyarakat sangat andil dalam pembentukan pola pikir dan nilai yang membuat individu merasa nyaman dalam kondisi tersebut. Mereka menganggap bahwa kondisi ini tidak mungkin bisa diubah, sehingga tidak termotivasi mencari solusi ataupun peluang baru.', en: '<strong>Culture of Poverty:</strong> The community environment plays a major role in shaping mindsets and values that make individuals comfortable in their condition. They believe the situation cannot be changed, so they lack motivation to seek solutions or new opportunities.' },
+      kemiskinan_li8:         { id: '<strong>Harapan Pada Bantuan :</strong> Beberapa kelompok masyarakat menjadi cukup bergantung pada bantuan sosial atau amal, ketergantungan ini bisa menciptakan pola pikir pasif, dimana individu tidak berupaya untuk meningkatkan keterampilan demi mendapatkan pekerjaan yang lebih baik', en: '<strong>Reliance on Aid:</strong> Some groups become quite dependent on social assistance or charity. This dependency can create a passive mindset where individuals do not strive to improve their skills for better employment.' },
+      kemiskinan_li9:         { id: '<strong>Kurangnya Pendidikan dan Keterampilan :</strong> Keterbatasan pendidikan dan pelatihan dapat mengurangi atau membatasi kemampuan individu untuk bersaing di pasar kerja, tanpa adanya keterampilan yang relevan, mereka terjebak dalam pekerjaan informal dengan upah yang rendah dan tidak adanya jaminan sosial.', en: '<strong>Lack of Education and Skills:</strong> Limited education and training can reduce or limit an individual\'s ability to compete in the job market. Without relevant skills, they are trapped in informal jobs with low wages and no social security.' },
+      kemiskinan_li10:        { id: '<strong>Mobilitas Sosial yang Terbatas :</strong> Individu dari latar belakang ekonomi rendah seringkali kekurangan jaminan sosial yang dapat membuka peluang baru. Mereka juga merasa terisolasi dari komunitas yang lebih maju, sehingga kesempatan untuk memperbaiki kehidupan terasa sangat terbatas.', en: '<strong>Limited Social Mobility:</strong> Individuals from low economic backgrounds often lack the social safety nets that can open new opportunities. They also feel isolated from more advanced communities, making opportunities to improve their lives feel very limited.' },
+      kemiskinan_p4:          { id: 'Sederet faktor tersebut mencerminkan betapa kemiskinan bukan hanya masalah ekonomi, tapi juga terkait dengan perilaku dan pola pikir individu yang seringkali dipengaruhi oleh lingkungan sosial dan struktur masyarakat yang tidak mendukung adanya perubahan.', en: 'These factors reflect how poverty is not just an economic issue, but also related to individual behavior and mindsets that are often influenced by social environments and societal structures that do not support change.' },
+      kemiskinan_h2_3:        { id: 'Pandangan Para Ahli Tentang Kemiskinan Struktural', en: 'Expert Views on Structural Poverty' },
+      kemiskinan_p5:          { id: '<a href="https://id.wikipedia.org/wiki/Soerjono_Soekanto" target="_blank">Soerjono Soekanto</a> menjelaskan bahwa kemiskinan bukan karena malas, tetapi karena masyarakat tidak diberi akses yang sama terhadap peluang ekonomi dan sosial.', en: '<a href="https://id.wikipedia.org/wiki/Soerjono_Soekanto" target="_blank">Soerjono Soekanto</a> explains that poverty is not caused by laziness, but because people are not given equal access to economic and social opportunities.' },
+      kemiskinan_p6:          { id: 'Sementara itu, <a href="https://scholar.google.co.id/citations?user=rlfPxkoAAAAJ&hl=id" target="_blank">Edi Suharto</a> menekankan bahwa kemiskinan ini melibatkan masalah ekonomi sekaligus psikologis. Rendahnya kualitas pendidikan dan pekerjaan menciptakan rasa putus asa, sehingga masyarakat sulit untuk maju.', en: 'Meanwhile, <a href="https://scholar.google.co.id/citations?user=rlfPxkoAAAAJ&hl=id" target="_blank">Edi Suharto</a> emphasizes that this poverty involves both economic and psychological issues. Low quality of education and employment creates despair, making it difficult for people to advance.' },
+      kemiskinan_h2_4:        { id: 'Urbanisasi dan Kesenjangan Ekonomi', en: 'Urbanization and Economic Inequality' },
+      kemiskinan_p7:          { id: 'Banyak penduduk desa pindah ke kota-kota besar untuk mencari kehidupan yang lebih baik. Namun, urbanisasi yang tidak terencana dengan baik justru menciptakan permukiman kumuh dan pekerjaan informal.', en: 'Many rural residents move to big cities seeking a better life. However, poorly planned urbanization instead creates slums and informal employment.' },
+      kemiskinan_p8:          { id: '<em>Tanpa akses pada lapangan kerja formal, penduduk kota berpenghasilan rendah ini terus terjebak dalam kemiskinan.</em>', en: '<em>Without access to formal employment, these low-income urban residents remain trapped in poverty.</em>' },
+      kemiskinan_p9:          { id: 'Populasi yang terus bertumbuh tanpa diimbangi dengan keterampilan individu dan lapangan pekerjaan yang memadai, membuat persaingan menjadi semakin ketat untuk meningkatkan taraf hidup atau sekedar menyambung hidup mereka. Sebuah kondisi yang memperparah ketimpangan ekonomi antara mereka yang tinggal di pusat kota dengan mereka yang tinggal di kawasan kumuh.', en: 'A continuously growing population without adequate individual skills and job opportunities makes competition increasingly fierce just to improve or sustain their standard of living. A condition that worsens economic inequality between those living in city centers and those in slum areas.' },
+      kemiskinan_p10:         { id: 'Kepadatan penduduk juga menambah tekanan pada sumber daya suatu daerah, seperti air, listrik dan transportasi. Kota-Kota besar umumnya kewalahan untuk memenuhi kebutuhan penduduk yang terus meningkat dan menyebabkan layanan dasar menjadi tidak merata', en: 'Population density also adds pressure on regional resources such as water, electricity, and transportation. Big cities are generally overwhelmed meeting the needs of an ever-growing population, causing basic services to become unevenly distributed.' },
+      kemiskinan_h2_5:        { id: 'Kesimpulan', en: 'Conclusion' },
+      kemiskinan_blockquote:  { id: 'Kemiskinan struktural bukanlah masalah individu, tetapi masalah sistemik. Dibutuhkan kolaborasi antara pemerintah, masyarakat, dan sektor swasta untuk menciptakan kebijakan yang inklusif dan adil, sehingga setiap orang memiliki kesempatan untuk hidup lebih baik.', en: 'Structural poverty is not an individual problem, but a systemic one. Collaboration between government, society, and the private sector is needed to create inclusive and fair policies, so that everyone has the opportunity for a better life.' },
+      kemiskinan_medium:      { id: 'Artikel ini juga diposting di <a href="https://medium.com/komunitas-blogger-m/mengurai-kemiskinan-struktural-mengapa-usaha-individu-saja-tidak-cukup-695745d5de19" target="_blank">Medium</a>', en: 'This article was also posted on <a href="https://medium.com/komunitas-blogger-m/mengurai-kemiskinan-struktural-mengapa-usaha-individu-saja-tidak-cukup-695745d5de19" target="_blank">Medium</a>' },
+      kemiskinan_back_link:   { id: '\u2190 Semua Jurnal', en: '\u2190 All Journals' },
+      kemiskinan_footer:      { id: 'Dibuat dari Bekasi dengan Kopi dan Polusi', en: 'Made from Bekasi with Coffee and Pollution' },
+    };
+  </script>
+
+  <script>
+    (function () {
+      const nav = document.getElementById('main-nav');
+      const bar = document.getElementById('progress-bar');
+      const onScroll = () => {
+        const y = window.scrollY || document.documentElement.scrollTop;
+        nav.classList.toggle('scrolled', y > 16);
+        const doc = document.documentElement;
+        const total = doc.scrollHeight - doc.clientHeight;
+        const progress = total > 0 ? (doc.scrollTop / total) * 100 : 0;
+        bar.style.width = progress + '%';
+      };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+
+  <script src="../js/i18n.js"></script>
+</body>
+</html>
