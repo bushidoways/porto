@@ -1,4 +1,3 @@
-
 <!--
    _-=Created Without Love=- _                   
 | \ | ___ ._ _  ___  ___
@@ -15,77 +14,191 @@
   <title>Kenapa akhirnya sekarang pindah ke Linux?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-  --bg: #0a0a0f; --bg2: #0f0f1a; --surface: #1a1a2e;
-  --border: rgba(99,102,241,0.15); --border-hover: rgba(99,102,241,0.4);
-  --accent: #6366f1; --accent2: #8b5cf6; --accent3: #06b6d4;
-  --text: #f1f5f9; --text-muted: #94a3b8; --text-dim: #64748b;
-  --green: #10b981;
-  --font: 'Inter', sans-serif; --mono: 'JetBrains Mono', monospace;
-  --radius: 12px; --radius-lg: 20px;
+  --bg:           #F5F0E8;
+  --bg-soft:      #FBF8F2;
+  --surface:      #EDE8DF;
+  --border:       #D8CFC2;
+  --border-strong:#C9BFB0;
+  --accent:       #C96442;
+  --accent-hover: #A94F33;
+  --accent-soft:  #F2E0D8;
+  --accent-border:#E5C4B8;
+  --text:         #1A1613;
+  --text-muted:   #6B6258;
+  --text-faint:   #9C9389;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font:         'Inter', sans-serif;
+  --mono:         'JetBrains Mono', monospace;
+  --radius:       12px;
+  --radius-lg:    18px;
+  --transition:   180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 html { scroll-behavior: smooth; }
-body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.7; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   padding: 0 2rem; height: 64px;
   display: flex; align-items: center; justify-content: space-between;
-  background: rgba(10,10,15,0.92); backdrop-filter: blur(20px);
+  background: rgba(245,240,232,0.92); backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
-.nav-logo { font-family: var(--mono); font-size: 1rem; font-weight: 700; color: var(--accent); text-decoration: none; }
-.nav-logo span { color: var(--text-muted); }
+.nav-logo {
+  font-family: var(--font);
+  font-size: 0.95rem; font-weight: 700;
+  color: var(--text); text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.nav-logo span { color: var(--accent); }
 .nav-back {
   display: inline-flex; align-items: center; gap: 6px;
-  color: var(--text-muted); text-decoration: none; font-size: 0.875rem;
-  font-weight: 500; transition: color 0.3s;
+  color: var(--text-muted); text-decoration: none;
+  font-size: 0.875rem; font-weight: 500;
+  transition: color var(--transition);
 }
 .nav-back:hover { color: var(--text); }
-article { max-width: 720px; margin: 0 auto; padding: 100px 2rem 5rem; }
-.article-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 2rem; }
-.article-date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-dim); letter-spacing: 0.1em; }
-.article-tag { padding: 2px 10px; border-radius: 4px; font-size: 0.72rem; font-family: var(--mono); background: rgba(99,102,241,0.12); color: var(--accent); border: 1px solid rgba(99,102,241,0.2); }
-.article-read-time { font-size: 0.75rem; color: var(--text-dim); font-family: var(--mono); }
-h1.article-title {
-  font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800;
-  letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #f1f5f9 0%, #94a3b8 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+article {
+  max-width: 720px; margin: 0 auto;
+  padding: 104px 2rem 5rem;
 }
-.article-intro { font-size: 1.1rem; color: var(--text-muted); line-height: 1.85; border-left: 3px solid var(--accent); padding-left: 1.25rem; margin-bottom: 2.5rem; }
+.article-meta {
+  display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap; margin-bottom: 2rem;
+}
+.article-date {
+  font-family: var(--mono); font-size: 0.73rem;
+  color: var(--text-faint); letter-spacing: 0.1em;
+}
+.article-tag {
+  padding: 3px 10px; border-radius: 999px;
+  font-size: 0.70rem; font-family: var(--mono);
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+  border: 1px solid var(--accent-border);
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.article-read-time {
+  font-size: 0.73rem; color: var(--text-faint);
+  font-family: var(--mono); letter-spacing: 0.08em;
+}
+h1.article-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.03em; line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+.article-intro {
+  font-size: 1.08rem; color: var(--text-muted);
+  line-height: 1.85;
+  border-left: 2px solid var(--accent);
+  padding-left: 1.25rem; margin-bottom: 2.5rem;
+}
 .article-body { font-size: 1rem; color: var(--text-muted); line-height: 1.9; }
-.article-body h2 { font-size: 1.35rem; font-weight: 700; color: var(--text); margin: 2.5rem 0 1rem; letter-spacing: -0.02em; }
-.article-body h3 { font-size: 1.1rem; font-weight: 600; color: var(--text); margin: 2rem 0 0.75rem; }
+.article-body h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 400;
+  color: var(--text); margin: 2.5rem 0 1rem;
+  letter-spacing: -0.02em;
+}
+.article-body h3 {
+  font-size: 1.05rem; font-weight: 600;
+  color: var(--text); margin: 2rem 0 0.75rem;
+}
 .article-body p { margin-bottom: 1.25rem; }
 .article-body strong { color: var(--text); font-weight: 600; }
-.article-body code { font-family: var(--mono); font-size: 0.85em; background: rgba(99,102,241,0.12); color: var(--accent); padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(99,102,241,0.2); }
-.article-body pre { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0; overflow-x: auto; }
-.article-body pre code { background: none; border: none; padding: 0; font-size: 0.875rem; color: var(--text-muted); }
+.article-body code {
+  font-family: var(--mono); font-size: 0.83em;
+  background: var(--surface); color: var(--accent-hover);
+  padding: 2px 7px; border-radius: 5px;
+  border: 1px solid var(--border);
+}
+.article-body pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0; overflow-x: auto;
+}
+.article-body pre code {
+  background: none; border: none; padding: 0;
+  font-size: 0.875rem; color: var(--text-muted);
+}
 .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
 .article-body li { margin-bottom: 0.4rem; }
-.article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(99,102,241,0.3); transition: border-color 0.3s; }
-.article-body a:hover { border-color: var(--accent); }
-.article-body blockquote { border-left: 3px solid var(--accent2); padding-left: 1.25rem; color: var(--text-dim); font-style: italic; margin: 1.5rem 0; }
+.article-body a {
+  color: var(--accent); text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+  transition: border-color var(--transition), color var(--transition);
+}
+.article-body a:hover { border-color: var(--accent); color: var(--accent-hover); }
+.article-body blockquote {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.25rem; color: var(--text-muted);
+  font-style: italic; margin: 1.5rem 0;
+  font-family: var(--font-display); font-size: 1.08rem;
+}
 .article-body figure { margin: 1.5rem 0; }
-.article-body figure img { width: 100%; height: auto; border-radius: var(--radius); display: block; }
-.article-body figcaption { font-size: 0.78rem; color: var(--text-dim); font-family: var(--mono); text-align: center; margin-top: 0.5rem; }
-.article-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-.back-link { display: inline-flex; align-items: center; gap: 8px; padding: 0.6rem 1.25rem; border-radius: var(--radius); border: 1px solid var(--border); color: var(--text-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: all 0.3s; }
-.back-link:hover { border-color: var(--accent); color: var(--accent); background: rgba(99,102,241,0.08); }
-.article-author { font-family: var(--mono); font-size: 0.78rem; color: var(--text-dim); }
-footer { border-top: 1px solid var(--border); padding: 1.5rem 2rem; text-align: center; color: var(--text-dim); font-size: 0.8rem; font-family: var(--mono); }
+.article-body figure img {
+  width: 100%; height: auto;
+  border-radius: var(--radius);
+  display: block;
+  border: 1px solid var(--border);
+}
+.article-body figcaption {
+  font-size: 0.76rem; color: var(--text-faint);
+  font-family: var(--mono); text-align: center; margin-top: 0.5rem;
+}
+.article-footer {
+  margin-top: 4rem; padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0.55rem 1.2rem; border-radius: 999px;
+  border: 1px solid var(--border); color: var(--text-muted);
+  text-decoration: none; font-size: 0.875rem; font-weight: 500;
+  transition: border-color var(--transition), color var(--transition), background var(--transition);
+}
+.back-link:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+  background: var(--surface);
+}
+.article-author {
+  font-family: var(--mono); font-size: 0.76rem;
+  color: var(--text-faint);
+}
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 2rem; text-align: center;
+  color: var(--text-faint); font-size: 0.78rem;
+  font-family: var(--mono);
+}
 footer span { color: var(--accent); }
-  </style>
+@media (max-width: 640px) {
+  article { padding: 88px 1.25rem 4rem; }
+  nav { padding: 0 1.25rem; }
+}
+</style>
 </head>
 <body>
 <nav>
-  <a href="../index.html" class="nav-logo">nang<span>.dev</span></a>
+  <a href="../index.html" class="nav-logo">nang<span>.</span>dev</a>
   <a href="../index.html#journal" class="nav-back" data-i18n="linux_nav_back">← Kembali ke Jurnal</a>
 </nav>
 <article>
@@ -99,14 +212,14 @@ footer span { color: var(--accent); }
   <p class="article-intro" data-i18n="linux_intro">Sejujurnya, ini bukan soal ideologi. Tapi juga soal efisiensi, kontrol, dan fakta bahwa harga MacBook masih belum bisa dibilang murah.</p>
   <div class="article-body">
     <figure>
-      <img src="https://images.unsplash.com/photo-1640552435388-a54879e72b28?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-      <figcaption>Foto: <a href="https://unsplash.com/@lukash" target="_blank" rel="noopener noreferrer">Lukas / <a href= "https://www.unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></figcaption>
+      <img src="https://images.unsplash.com/photo-1640552435388-a54879e72b28?q=80&w=1170&auto=format&fit=crop" alt="Linux terminal" loading="lazy">
+      <figcaption>Foto: <a href="https://unsplash.com/@lukash" target="_blank" rel="noopener noreferrer">Lukas</a> / <a href="https://www.unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></figcaption>
     </figure>
     <h2 data-i18n="linux_h2_1">Awalnya sih Cuma Iseng</h2>
     <p data-i18n="linux_p1">Waktu pertama kali nyobain distro linux, ekspektasinya rendah, bermulai dari coba-coba doang. Kalau susah, ya balik Windows lagi. Tapi yang terjadi justru sebaliknya... setelah seminggu pakai Linux, buka Windows lagi rasanya asing :(.</p>
-    <p data-i18n="linux_p2">Bukan juga karena Linux lebih keren secara estetika atau karena komunitas open-source yang romantis demi menjaga usernya biar ga balik lagi ke windows mungkin. Tapi karena sebuah hal sederhana:  <strong>RIngan & Powerfull</strong></p>
-    <h2 data-i18n="linux_h2_2"> Dan juga karena Terminal benar-benar mengubah Cara Kerja</h2>
-    <p data-i18n="linux_p3">Di Windows, kalau mau rename 50 file sekaligus, kamu klik satu-satu atau install software tambahan. Di Linux, kita tinggal tulis satu baris aja, contohnya :</p>
+    <p data-i18n="linux_p2">Bukan juga karena Linux lebih keren secara estetika atau karena komunitas open-source yang romantis demi menjaga usernya biar ga balik lagi ke windows mungkin. Tapi karena sebuah hal sederhana: <strong>Ringan &amp; Powerful</strong></p>
+    <h2 data-i18n="linux_h2_2">Dan juga karena Terminal benar-benar mengubah Cara Kerja</h2>
+    <p data-i18n="linux_p3">Di Windows, kalau mau rename 50 file sekaligus, kamu klik satu-satu atau install software tambahan. Di Linux, kita tinggal tulis satu baris aja, contohnya:</p>
     <pre><code>for f in *.csv; do mv "$f" "data_$f"; done</code></pre>
     <p data-i18n="linux_p4">Selesai dalam 3 detik. Ini bukan flexing, tapi ini efisiensi nyata yang langsung terasa dalam kerjaan sehari-hari sebagai orang yang males ngelakuin hal repetitif begini.</p>
     <h2 data-i18n="linux_h2_3">Kita jadi tau apa yang kita punya</h2>
@@ -126,7 +239,7 @@ footer span { color: var(--accent); }
   </div>
 </article>
 <footer>
-  <span>ananglesmana.my.id</span> &nbsp;|&nbsp; <span data-i18n="linux_footer">Dibuat dari Bekasi dengan Macet & Penuh Polusi</span> &nbsp;|&nbsp; 2024
+  <span>ananglesmana.my.id</span> &nbsp;|&nbsp; <span data-i18n="linux_footer">Dibuat dari Bekasi dengan Macet &amp; Penuh Polusi</span> &nbsp;|&nbsp; 2024
 </footer>
 
 <script>
@@ -138,9 +251,9 @@ footer span { color: var(--accent); }
     linux_intro:       { id: 'Sejujurnya, ini bukan soal ideologi. Tapi juga soal efisiensi, kontrol, dan fakta bahwa harga MacBook masih belum bisa dibilang murah.', en: "Honestly, it\'s not about ideology. It\'s about efficiency, control, and the fact that MacBooks still aren\'t exactly cheap." },
     linux_h2_1:        { id: 'Awalnya sih Cuma Iseng', en: 'It Started as Just Messing Around' },
     linux_p1:          { id: 'Waktu pertama kali nyobain distro linux, ekspektasinya rendah, bermulai dari coba-coba doang. Kalau susah, ya balik Windows lagi. Tapi yang terjadi justru sebaliknya... setelah seminggu pakai Linux, buka Windows lagi rasanya asing :(.',  en: "The first time I tried a Linux distro, my expectations were low \u2014 just trying it out. If it was too hard, I\'d go back to Windows. But the opposite happened... after a week on Linux, going back to Windows felt strange :(." },
-    linux_p2:          { id: 'Bukan juga karena Linux lebih keren secara estetika atau karena komunitas open-source yang romantis demi menjaga usernya biar ga balik lagi ke windows mungkin. Tapi karena sebuah hal sederhana:  <strong>RIngan & Powerfull</strong>', en: "It wasn\'t because Linux looks cooler aesthetically or because the romantic open-source community tries to keep users from going back to Windows. It was something simple: <strong>Lightweight & Powerful</strong>" },
-    linux_h2_2:        { id: ' Dan juga karena Terminal benar-benar mengubah Cara Kerja', en: 'And Also Because the Terminal Truly Changed How I Work' },
-    linux_p3:          { id: 'Di Windows, kalau mau rename 50 file sekaligus, kamu klik satu-satu atau install software tambahan. Di Linux, kita tinggal tulis satu baris aja, contohnya :', en: "On Windows, if you want to rename 50 files at once, you click one by one or install additional software. On Linux, you just write one line, for example:" },
+    linux_p2:          { id: 'Bukan juga karena Linux lebih keren secara estetika atau karena komunitas open-source yang romantis demi menjaga usernya biar ga balik lagi ke windows mungkin. Tapi karena sebuah hal sederhana: <strong>Ringan & Powerful</strong>', en: "It wasn\'t because Linux looks cooler aesthetically or because the romantic open-source community tries to keep users from going back to Windows. It was something simple: <strong>Lightweight & Powerful</strong>" },
+    linux_h2_2:        { id: 'Dan juga karena Terminal benar-benar mengubah Cara Kerja', en: 'And Also Because the Terminal Truly Changed How I Work' },
+    linux_p3:          { id: 'Di Windows, kalau mau rename 50 file sekaligus, kamu klik satu-satu atau install software tambahan. Di Linux, kita tinggal tulis satu baris aja, contohnya:', en: "On Windows, if you want to rename 50 files at once, you click one by one or install additional software. On Linux, you just write one line, for example:" },
     linux_p4:          { id: 'Selesai dalam 3 detik. Ini bukan flexing, tapi ini efisiensi nyata yang langsung terasa dalam kerjaan sehari-hari sebagai orang yang males ngelakuin hal repetitif begini.', en: "Done in 3 seconds. This isn\'t flexing \u2014 it\'s real efficiency that you feel immediately in daily work, especially for someone who hates doing repetitive stuff like this." },
     linux_h2_3:        { id: 'Kita jadi tau apa yang kita punya', en: 'You Actually Know What You Have' },
     linux_p5:          { id: 'Di Linux, saya tau persis apa yang berjalan di background. Bisa <code>htop</code> lihat proses, bisa matiin service yang nggak perlu, bisa atur cron job buat otomasi. Semuanya transparan.', en: "On Linux, I know exactly what\'s running in the background. I can <code>htop</code> to see processes, kill unnecessary services, set up cron jobs for automation. Everything is transparent." },
