@@ -1,4 +1,3 @@
-
 <!--
    _-=Created Without Love=- _                   
 | \ | ___ ._ _  ___  ___
@@ -12,140 +11,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OSINT untuk Pemula — Nang</title>
+  <title>OSINT untuk Pemula</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-  --bg: #0a0a0f; --bg2: #0f0f1a; --surface: #1a1a2e;
-  --border: rgba(99,102,241,0.15); --border-hover: rgba(99,102,241,0.4);
-  --accent: #6366f1; --accent2: #8b5cf6; --accent3: #06b6d4;
-  --text: #f1f5f9; --text-muted: #94a3b8; --text-dim: #64748b;
-  --green: #10b981;
-  --font: 'Inter', sans-serif; --mono: 'JetBrains Mono', monospace;
-  --radius: 12px; --radius-lg: 20px;
+  --bg:           #F5F0E8;
+  --bg-soft:      #FBF8F2;
+  --surface:      #EDE8DF;
+  --border:       #D8CFC2;
+  --border-strong:#C9BFB0;
+  --accent:       #C96442;
+  --accent-hover: #A94F33;
+  --accent-soft:  #F2E0D8;
+  --accent-border:#E5C4B8;
+  --text:         #1A1613;
+  --text-muted:   #6B6258;
+  --text-faint:   #9C9389;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font:         'Inter', sans-serif;
+  --mono:         'JetBrains Mono', monospace;
+  --radius:       12px;
+  --radius-lg:    18px;
+  --transition:   180ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 html { scroll-behavior: smooth; }
-body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.7; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.75; -webkit-font-smoothing: antialiased; }
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  padding: 0 2rem; height: 64px;
-  display: flex; align-items: center; justify-content: space-between;
-  background: rgba(10,10,15,0.92); backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-logo { font-family: var(--mono); font-size: 1rem; font-weight: 700; color: var(--accent); text-decoration: none; }
-.nav-logo span { color: var(--text-muted); }
-.nav-back { display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.3s; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; background: rgba(245,240,232,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+.nav-logo { font-family: var(--font); font-size: 0.95rem; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: -0.01em; }
+.nav-logo span { color: var(--accent); }
+.nav-back { display: inline-flex; align-items: center; gap: 6px; color: var(--text-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color var(--transition); }
 .nav-back:hover { color: var(--text); }
-article { max-width: 720px; margin: 0 auto; padding: 100px 2rem 5rem; }
-.article-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 2rem; }
-.article-date { font-family: var(--mono); font-size: 0.75rem; color: var(--text-dim); letter-spacing: 0.1em; }
-.article-tag { padding: 2px 10px; border-radius: 4px; font-size: 0.72rem; font-family: var(--mono); background: rgba(99,102,241,0.12); color: var(--accent); border: 1px solid rgba(99,102,241,0.2); }
-.article-read-time { font-size: 0.75rem; color: var(--text-dim); font-family: var(--mono); }
-h1.article-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1.5rem; background: linear-gradient(135deg, #f1f5f9 0%, #94a3b8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.article-intro { font-size: 1.1rem; color: var(--text-muted); line-height: 1.85; border-left: 3px solid var(--accent); padding-left: 1.25rem; margin-bottom: 2.5rem; }
+article { max-width: 720px; margin: 0 auto; padding: 104px 2rem 5rem; }
+.article-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 2rem; }
+.article-date { font-family: var(--mono); font-size: 0.73rem; color: var(--text-faint); letter-spacing: 0.1em; }
+.article-tag { padding: 3px 10px; border-radius: 999px; font-size: 0.70rem; font-family: var(--mono); background: var(--accent-soft); color: var(--accent-hover); border: 1px solid var(--accent-border); letter-spacing: 0.06em; text-transform: uppercase; }
+.article-read-time { font-size: 0.73rem; color: var(--text-faint); font-family: var(--mono); letter-spacing: 0.08em; }
+h1.article-title { font-family: var(--font-display); font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 400; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.5rem; color: var(--text); }
+.article-intro { font-size: 1.08rem; color: var(--text-muted); line-height: 1.85; border-left: 2px solid var(--accent); padding-left: 1.25rem; margin-bottom: 2.5rem; }
 .article-body { font-size: 1rem; color: var(--text-muted); line-height: 1.9; }
-.article-body h2 { font-size: 1.35rem; font-weight: 700; color: var(--text); margin: 2.5rem 0 1rem; letter-spacing: -0.02em; }
+.article-body h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--text); margin: 2.5rem 0 1rem; letter-spacing: -0.02em; }
+.article-body h3 { font-size: 1.05rem; font-weight: 600; color: var(--text); margin: 2rem 0 0.75rem; }
 .article-body p { margin-bottom: 1.25rem; }
 .article-body strong { color: var(--text); font-weight: 600; }
-.article-body code { font-family: var(--mono); font-size: 0.85em; background: rgba(99,102,241,0.12); color: var(--accent); padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(99,102,241,0.2); }
+.article-body code { font-family: var(--mono); font-size: 0.83em; background: var(--surface); color: var(--accent-hover); padding: 2px 7px; border-radius: 5px; border: 1px solid var(--border); }
 .article-body pre { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin: 1.5rem 0; overflow-x: auto; }
 .article-body pre code { background: none; border: none; padding: 0; font-size: 0.875rem; color: var(--text-muted); }
 .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
 .article-body li { margin-bottom: 0.4rem; }
-.article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(99,102,241,0.3); transition: border-color 0.3s; }
-.article-body a:hover { border-color: var(--accent); }
-.article-body blockquote { border-left: 3px solid var(--accent2); padding-left: 1.25rem; color: var(--text-dim); font-style: italic; margin: 1.5rem 0; }
+.article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); transition: border-color var(--transition), color var(--transition); }
+.article-body a:hover { border-color: var(--accent); color: var(--accent-hover); }
+.article-body blockquote { border-left: 2px solid var(--accent); padding-left: 1.25rem; color: var(--text-muted); font-style: italic; margin: 1.5rem 0; font-family: var(--font-display); font-size: 1.08rem; }
+.article-body figure { margin: 1.5rem 0; }
+.article-body figure img { width: 100%; height: auto; border-radius: var(--radius); display: block; border: 1px solid var(--border); }
+.article-body figcaption { font-size: 0.76rem; color: var(--text-faint); font-family: var(--mono); text-align: center; margin-top: 0.5rem; }
 .article-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-.back-link { display: inline-flex; align-items: center; gap: 8px; padding: 0.6rem 1.25rem; border-radius: var(--radius); border: 1px solid var(--border); color: var(--text-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: all 0.3s; }
-.back-link:hover { border-color: var(--accent); color: var(--accent); background: rgba(99,102,241,0.08); }
-.article-author { font-family: var(--mono); font-size: 0.78rem; color: var(--text-dim); }
-footer { border-top: 1px solid var(--border); padding: 1.5rem 2rem; text-align: center; color: var(--text-dim); font-size: 0.8rem; font-family: var(--mono); }
+.back-link { display: inline-flex; align-items: center; gap: 8px; padding: 0.55rem 1.2rem; border-radius: 999px; border: 1px solid var(--border); color: var(--text-muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: border-color var(--transition), color var(--transition), background var(--transition); }
+.back-link:hover { border-color: var(--border-strong); color: var(--text); background: var(--surface); }
+.article-author { font-family: var(--mono); font-size: 0.76rem; color: var(--text-faint); }
+footer { border-top: 1px solid var(--border); padding: 1.5rem 2rem; text-align: center; color: var(--text-faint); font-size: 0.78rem; font-family: var(--mono); }
 footer span { color: var(--accent); }
-  </style>
+@media (max-width: 640px) { article { padding: 88px 1.25rem 4rem; } nav { padding: 0 1.25rem; } }
+</style>
 </head>
 <body>
 <nav>
-  <a href="../index.html" class="nav-logo">nang<span>.dev</span></a>
+  <a href="../index.html" class="nav-logo">nang<span>.</span>dev</a>
   <a href="../index.html#journal" class="nav-back" data-i18n="osint_nav_back">← Kembali ke Jurnal</a>
 </nav>
 <article>
   <div class="article-meta">
-    <span class="article-date">JAN 2026</span>
+    <span class="article-date">JAN 2024</span>
     <span class="article-tag">OSINT</span>
-    <span class="article-tag">Python</span>
-    <span class="article-tag" data-i18n="osint_tag_keamanan">Keamanan</span>
+    <span class="article-tag" data-i18n="osint_tag">Guide</span>
     <span class="article-read-time" data-i18n="osint_read_time">4 MENIT BACA</span>
   </div>
   <h1 class="article-title" data-i18n="osint_title">OSINT untuk pemula: belajar dari data yang sudah ada di depan mata</h1>
-  <p class="article-intro" data-i18n="osint_intro">Teknik-teknik dasar pengumpulan informasi publik yang bisa dipraktikkan siapa saja, dan kenapa ini relevan untuk seorang analyst.</p>
+  <p class="article-intro" data-i18n="osint_intro">Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan siapa saja, dan kenapa ini relevan untuk seorang analyst.</p>
   <div class="article-body">
-    <h2 data-i18n="osint_h2_1">Apa Itu OSINT?</h2>
-    <p data-i18n="osint_p1"><strong>OSINT</strong> (Open Source Intelligence) adalah seni mengumpulkan informasi dari sumber-sumber yang tersedia secara publik. Bukan hacking, bukan illegal — ini tentang tahu ke mana harus melihat dan bagaimana menginterpretasikan apa yang ditemukan.</p>
-    <p data-i18n="osint_p2">Relevan untuk siapa saja yang bekerja dengan data: analyst, researcher, jurnalis, bahkan HR yang mau memverifikasi kandidat.</p>
-    <h2 data-i18n="osint_h2_2">Sumber Data Publik yang Sering Diabaikan</h2>
-    <ul>
-      <li data-i18n="osint_li1"><strong>LinkedIn</strong> — struktur organisasi, jabatan, perpindahan karir</li>
-      <li data-i18n="osint_li2"><strong>GitHub</strong> — teknologi yang dipakai seseorang/perusahaan, pola kerja</li>
-      <li data-i18n="osint_li3"><strong>WHOIS &amp; DNS records</strong> — informasi domain, infrastruktur</li>
-      <li data-i18n="osint_li4"><strong>Wayback Machine</strong> — versi lama website yang sudah dihapus</li>
-      <li data-i18n="osint_li5"><strong>Google Dorks</strong> — pencarian advanced yang tidak diketahui kebanyakan orang</li>
-    </ul>
-    <h2 data-i18n="osint_h2_3">Google Dorks: Mulai dari Sini</h2>
-    <p data-i18n="osint_p3">Cara paling cepat belajar OSINT adalah lewat Google Dorks — operator pencarian Google yang powerful:</p>
-    <pre><code>site:github.com "nama perusahaan" config
-filetype:pdf "laporan keuangan" site:idx.co.id
-intitle:"index of" "database" "2024"</code></pre>
-    <p data-i18n="osint_p4">Masing-masing baris di atas bisa menemukan informasi yang tidak akan muncul di pencarian biasa.</p>
-    <h2 data-i18n="osint_h2_4">Otomasi dengan Python</h2>
-    <p data-i18n="osint_p5">Begitu paham pola manualnya, langkah berikutnya adalah otomasi. Dengan <code>requests</code> dan <code>BeautifulSoup</code>, kamu bisa mengumpulkan dan mengstrukturisasi data publik secara sistematis.</p>
-    <p data-i18n="osint_p6">Kunci etisnya: <strong>hanya akses data yang memang public</strong>, hormati <code>robots.txt</code>, dan jangan membebani server target dengan request berlebihan.</p>
-    <h2 data-i18n="osint_h2_5">Relevansi untuk Data Analyst</h2>
-    <p data-i18n="osint_p7">Skill OSINT membuat seorang analyst lebih baik dalam satu hal krusial: <strong>tahu di mana harus mencari data</strong>. Sebelum beli data mahal atau minta akses database internal, sering kali jawabannya sudah ada di luar — tinggal tahu cara menemukannya.</p>
-    <blockquote data-i18n="osint_blockquote">Data terbaik bukan yang paling banyak — tapi yang paling relevan untuk pertanyaan yang sedang dijawab.</blockquote>
+    <h2 data-i18n="osint_h2_1">Apa itu OSINT?</h2>
+    <p data-i18n="osint_p1">OSINT (Open Source Intelligence) adalah proses mengumpulkan dan menganalisis informasi dari sumber-sumber yang tersedia secara publik. Bukan hacking, bukan ilegal — ini tentang memanfaatkan data yang memang sudah ada di depan mata.</p>
+    <p data-i18n="osint_p2">Sebagai analyst, kemampuan ini berguna banget. Mulai dari riset kompetitor, verifikasi informasi, sampai memahami konteks di balik sebuah data.</p>
+    <h2 data-i18n="osint_h2_2">Teknik Dasar yang Bisa Langsung Dicoba</h2>
+    <p data-i18n="osint_p3">Google Dorking adalah salah satu yang paling powerful. Dengan operator pencarian khusus, kita bisa menemukan informasi yang tersembunyi di permukaan tapi sebenarnya publik:</p>
+    <pre><code>site:linkedin.com "data analyst" "Bekasi"
+filetype:pdf "laporan tahunan" 2023
+intitle:"index of" "backup"
+</code></pre>
+    <h2 data-i18n="osint_h2_3">Tools yang Sering Saya Pakai</h2>
+    <p data-i18n="osint_p4">Beberapa tools yang berguna untuk pemula: <strong>Shodan</strong> untuk mencari device yang terhubung ke internet, <strong>theHarvester</strong> untuk email dan subdomain, dan <strong>Maltego</strong> untuk visualisasi relasi antar entitas.</p>
+    <blockquote data-i18n="osint_blockquote">Data yang baik bukan data yang banyak, tapi data yang relevan dan bisa diverifikasi.</blockquote>
+    <h2 data-i18n="osint_h2_4">Etika yang Perlu Diingat</h2>
+    <p data-i18n="osint_p5">OSINT itu powerful, tapi harus digunakan dengan tanggung jawab. Selalu pastikan aktivitas kamu legal dan tidak melanggar privasi orang lain. Gunakan untuk tujuan yang legit: riset, keamanan, atau edukasi.</p>
+    <p data-i18n="osint_p6">Kemampuan mengumpulkan informasi yang baik adalah salah satu skill yang makin dicari di dunia kerja — terutama di bidang data, security, dan business intelligence.</p>
   </div>
   <div class="article-footer">
     <a href="../index.html#journal" class="back-link" data-i18n="osint_back_link">← Semua Jurnal</a>
-    <span class="article-author">— Nang · ananglesmana.my.id</span>
+    <span class="article-author">Nang's'</span>
   </div>
 </article>
 <footer>
-  <span>ananglesmana.my.id</span> &nbsp;|&nbsp; <span data-i18n="osint_footer">Dibuat dari Jakarta dengan Python dan kopi</span> &nbsp;|&nbsp; 2026
+  <span>ananglesmana.my.id</span> &nbsp;|&nbsp; <span data-i18n="osint_footer">Dibuat dari Bekasi dengan Kopi &amp; Polusi</span> &nbsp;|&nbsp; 2024
 </footer>
-
 <script>
   window.PAGE_TRANSLATIONS = {
-    osint_nav_back:      { id: '\u2190 Kembali ke Jurnal', en: '\u2190 Back to Journal' },
-    osint_read_time:     { id: '4 MENIT BACA', en: '4 MIN READ' },
-    osint_tag_keamanan:  { id: 'Keamanan', en: 'Security' },
-    osint_title:         { id: 'OSINT untuk pemula: belajar dari data yang sudah ada di depan mata', en: "OSINT for Beginners: Learning from Data That\'s Already in Plain Sight" },
-    osint_intro:         { id: 'Teknik-teknik dasar pengumpulan informasi publik yang bisa dipraktikkan siapa saja, dan kenapa ini relevan untuk seorang analyst.', en: "Basic techniques for gathering public information that anyone can practice, and why it\'s relevant for an analyst." },
-    osint_h2_1:          { id: 'Apa Itu OSINT?', en: 'What Is OSINT?' },
-    osint_p1:            { id: '<strong>OSINT</strong> (Open Source Intelligence) adalah seni mengumpulkan informasi dari sumber-sumber yang tersedia secara publik. Bukan hacking, bukan illegal \u2014 ini tentang tahu ke mana harus melihat dan bagaimana menginterpretasikan apa yang ditemukan.', en: "<strong>OSINT</strong> (Open Source Intelligence) is the art of gathering information from publicly available sources. It\'s not hacking, it\'s not illegal \u2014 it\'s about knowing where to look and how to interpret what you find." },
-    osint_p2:            { id: 'Relevan untuk siapa saja yang bekerja dengan data: analyst, researcher, jurnalis, bahkan HR yang mau memverifikasi kandidat.', en: 'Relevant for anyone who works with data: analysts, researchers, journalists, even HR folks who want to verify candidates.' },
-    osint_h2_2:          { id: 'Sumber Data Publik yang Sering Diabaikan', en: 'Public Data Sources Often Overlooked' },
-    osint_li1:           { id: '<strong>LinkedIn</strong> \u2014 struktur organisasi, jabatan, perpindahan karir', en: '<strong>LinkedIn</strong> \u2014 organizational structure, job titles, career transitions' },
-    osint_li2:           { id: '<strong>GitHub</strong> \u2014 teknologi yang dipakai seseorang/perusahaan, pola kerja', en: '<strong>GitHub</strong> \u2014 technologies used by a person/company, work patterns' },
-    osint_li3:           { id: '<strong>WHOIS &amp; DNS records</strong> \u2014 informasi domain, infrastruktur', en: '<strong>WHOIS &amp; DNS records</strong> \u2014 domain information, infrastructure' },
-    osint_li4:           { id: '<strong>Wayback Machine</strong> \u2014 versi lama website yang sudah dihapus', en: '<strong>Wayback Machine</strong> \u2014 old versions of websites that have been removed' },
-    osint_li5:           { id: '<strong>Google Dorks</strong> \u2014 pencarian advanced yang tidak diketahui kebanyakan orang', en: '<strong>Google Dorks</strong> \u2014 advanced searches that most people don\'t know about' },
-    osint_h2_3:          { id: 'Google Dorks: Mulai dari Sini', en: 'Google Dorks: Start Here' },
-    osint_p3:            { id: 'Cara paling cepat belajar OSINT adalah lewat Google Dorks \u2014 operator pencarian Google yang powerful:', en: 'The fastest way to learn OSINT is through Google Dorks \u2014 powerful Google search operators:' },
-    osint_p4:            { id: 'Masing-masing baris di atas bisa menemukan informasi yang tidak akan muncul di pencarian biasa.', en: "Each line above can find information that won\'t show up in a regular search." },
-    osint_h2_4:          { id: 'Otomasi dengan Python', en: 'Automation with Python' },
-    osint_p5:            { id: 'Begitu paham pola manualnya, langkah berikutnya adalah otomasi. Dengan <code>requests</code> dan <code>BeautifulSoup</code>, kamu bisa mengumpulkan dan mengstrukturisasi data publik secara sistematis.', en: 'Once you understand the manual patterns, the next step is automation. With <code>requests</code> and <code>BeautifulSoup</code>, you can systematically collect and structure public data.' },
-    osint_p6:            { id: 'Kunci etisnya: <strong>hanya akses data yang memang public</strong>, hormati <code>robots.txt</code>, dan jangan membebani server target dengan request berlebihan.', en: 'The ethical key: <strong>only access data that is truly public</strong>, respect <code>robots.txt</code>, and don\'t overload the target server with excessive requests.' },
-    osint_h2_5:          { id: 'Relevansi untuk Data Analyst', en: 'Relevance for Data Analysts' },
-    osint_p7:            { id: 'Skill OSINT membuat seorang analyst lebih baik dalam satu hal krusial: <strong>tahu di mana harus mencari data</strong>. Sebelum beli data mahal atau minta akses database internal, sering kali jawabannya sudah ada di luar \u2014 tinggal tahu cara menemukannya.', en: 'OSINT skills make an analyst better at one crucial thing: <strong>knowing where to look for data</strong>. Before buying expensive data or requesting internal database access, the answer is often already out there \u2014 you just need to know how to find it.' },
-    osint_blockquote:    { id: 'Data terbaik bukan yang paling banyak \u2014 tapi yang paling relevan untuk pertanyaan yang sedang dijawab.', en: "The best data isn\'t the most abundant \u2014 it\'s the most relevant to the question being answered." },
-    osint_back_link:     { id: '\u2190 Semua Jurnal', en: '\u2190 All Journals' },
-    osint_footer:        { id: 'Dibuat dari Jakarta dengan Python dan kopi', en: 'Made from Jakarta with Python and Coffee' },
+    osint_nav_back:   { id: '\u2190 Kembali ke Jurnal', en: '\u2190 Back to Journal' },
+    osint_read_time:  { id: '4 MENIT BACA', en: '4 MIN READ' },
+    osint_tag:        { id: 'Panduan', en: 'Guide' },
+    osint_title:      { id: 'OSINT untuk pemula: belajar dari data yang sudah ada di depan mata', en: 'OSINT for Beginners: Learning from Data That\'s Already in Front of You' },
+    osint_intro:      { id: 'Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan siapa saja, dan kenapa ini relevan untuk seorang analyst.', en: 'Basic techniques for gathering public information that anyone can do, and why this is relevant for an analyst.' },
+    osint_h2_1:       { id: 'Apa itu OSINT?', en: 'What is OSINT?' },
+    osint_p1:         { id: 'OSINT (Open Source Intelligence) adalah proses mengumpulkan dan menganalisis informasi dari sumber-sumber yang tersedia secara publik. Bukan hacking, bukan ilegal — ini tentang memanfaatkan data yang memang sudah ada di depan mata.', en: 'OSINT (Open Source Intelligence) is the process of collecting and analyzing information from publicly available sources. Not hacking, not illegal — it\'s about leveraging data that\'s already out there in plain sight.' },
+    osint_p2:         { id: 'Sebagai analyst, kemampuan ini berguna banget. Mulai dari riset kompetitor, verifikasi informasi, sampai memahami konteks di balik sebuah data.', en: 'As an analyst, this skill is incredibly useful. From competitor research to information verification to understanding the context behind a dataset.' },
+    osint_h2_2:       { id: 'Teknik Dasar yang Bisa Langsung Dicoba', en: 'Basic Techniques You Can Try Right Now' },
+    osint_p3:         { id: 'Google Dorking adalah salah satu yang paling powerful. Dengan operator pencarian khusus, kita bisa menemukan informasi yang tersembunyi di permukaan tapi sebenarnya publik:', en: 'Google Dorking is one of the most powerful. With special search operators, we can find information that seems hidden on the surface but is actually public:' },
+    osint_h2_3:       { id: 'Tools yang Sering Saya Pakai', en: 'Tools I Use Often' },
+    osint_p4:         { id: 'Beberapa tools yang berguna untuk pemula: <strong>Shodan</strong> untuk mencari device yang terhubung ke internet, <strong>theHarvester</strong> untuk email dan subdomain, dan <strong>Maltego</strong> untuk visualisasi relasi antar entitas.', en: 'Some useful tools for beginners: <strong>Shodan</strong> for finding internet-connected devices, <strong>theHarvester</strong> for emails and subdomains, and <strong>Maltego</strong> for visualizing relationships between entities.' },
+    osint_blockquote: { id: 'Data yang baik bukan data yang banyak, tapi data yang relevan dan bisa diverifikasi.', en: 'Good data is not abundant data, but relevant and verifiable data.' },
+    osint_h2_4:       { id: 'Etika yang Perlu Diingat', en: 'Ethics to Keep in Mind' },
+    osint_p5:         { id: 'OSINT itu powerful, tapi harus digunakan dengan tanggung jawab. Selalu pastikan aktivitas kamu legal dan tidak melanggar privasi orang lain. Gunakan untuk tujuan yang legit: riset, keamanan, atau edukasi.', en: 'OSINT is powerful, but must be used responsibly. Always make sure your activities are legal and don\'t violate others\' privacy. Use it for legitimate purposes: research, security, or education.' },
+    osint_p6:         { id: 'Kemampuan mengumpulkan informasi yang baik adalah salah satu skill yang makin dicari di dunia kerja — terutama di bidang data, security, dan business intelligence.', en: 'The ability to gather information well is one of the most in-demand skills in the job market — especially in data, security, and business intelligence.' },
+    osint_back_link:  { id: '\u2190 Semua Jurnal', en: '\u2190 All Journals' },
+    osint_footer:     { id: 'Dibuat dari Bekasi dengan Kopi & Polusi', en: 'Made from Bekasi with Coffee & Pollution' },
   };
 </script>
 <script src="../js/i18n.js"></script>
