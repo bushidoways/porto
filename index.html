@@ -1,1 +1,1184 @@
-PLACEHOLDER_INDEX
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anang Lesmana — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:             #F5F0E8;
+      --bg-soft:        #FBF8F2;
+      --surface:        #EDE8DF;
+      --surface-2:      #E5DDD3;
+      --border:         #D8CFC2;
+      --border-strong:  #C9BFB0;
+
+      --text:           #1A1613;
+      --text-muted:     #6B6258;
+      --text-faint:     #9C9389;
+      --text-inverse:   #FBF8F2;
+
+      --accent:         #C96442;
+      --accent-hover:   #A94F33;
+      --accent-soft:    #F2E0D8;
+      --accent-border:  #E5C4B8;
+
+      --font-display:   'Instrument Serif', Georgia, serif;
+      --font-body:      'Inter', sans-serif;
+      --font-mono:      'JetBrains Mono', monospace;
+
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl:  clamp(2.5rem, 1rem + 4vw, 5rem);
+      --text-hero: clamp(3rem, 0.5rem + 7vw, 8rem);
+
+      --space-1:  0.25rem;
+      --space-2:  0.5rem;
+      --space-3:  0.75rem;
+      --space-4:  1rem;
+      --space-5:  1.25rem;
+      --space-6:  1.5rem;
+      --space-8:  2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+
+      --radius-sm:   0.375rem;
+      --radius-md:   0.5rem;
+      --radius-lg:   0.75rem;
+      --radius-xl:   1rem;
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 1px 2px rgba(26,22,19,0.04);
+      --shadow-md: 0 8px 24px rgba(26,22,19,0.06);
+      --shadow-lg: 0 16px 48px rgba(26,22,19,0.09);
+
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --content-default: 1040px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img, picture, video, canvas, svg { display: block; max-width: 100%; }
+    button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+    a { color: inherit; text-decoration: none; }
+
+    ::selection { background: var(--accent-soft); color: var(--text); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ========== NAV ========== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 64px; padding: 0 var(--space-8);
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(245,240,232,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition), background var(--transition);
+    }
+    nav.scrolled { border-color: var(--border); background: rgba(245,240,232,0.96); }
+
+    .nav-logo {
+      font-family: var(--font-body);
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--text); letter-spacing: -0.01em;
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-center { display: flex; align-items: center; gap: var(--space-6); }
+    .nav-links { display: flex; align-items: center; gap: var(--space-5); list-style: none; }
+    .nav-links a {
+      font-size: var(--text-sm); color: var(--text-muted); font-weight: 500;
+      position: relative; transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 1px; background: var(--accent);
+      transform: scaleX(0); transition: transform var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+
+    .nav-right { display: flex; align-items: center; gap: var(--space-3); }
+
+    .lang-toggle {
+      font-size: var(--text-xs); font-weight: 600;
+      font-family: var(--font-mono);
+      color: var(--text-muted); padding: 4px 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .lang-toggle:hover { border-color: var(--border-strong); color: var(--text); }
+    .lang-toggle.active { background: var(--text); color: var(--text-inverse); border-color: var(--text); }
+
+    .nav-cta {
+      font-size: var(--text-sm); font-weight: 600;
+      color: var(--text-inverse);
+      background: var(--text);
+      padding: var(--space-2) var(--space-5);
+      border-radius: var(--radius-full);
+      transition: background var(--transition), transform var(--transition);
+    }
+    .nav-cta:hover { background: var(--accent); transform: translateY(-1px); }
+
+    .nav-mobile-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      padding: var(--space-2); color: var(--text);
+    }
+    .nav-mobile-toggle span {
+      display: block; width: 22px; height: 1.5px;
+      background: currentColor; border-radius: 2px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+    .nav-mobile-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-mobile-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-mobile-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .nav-mobile-menu {
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: rgba(245,240,232,0.98); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: var(--space-6) var(--space-8);
+      flex-direction: column; gap: var(--space-4);
+      z-index: 99;
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu a { font-size: var(--text-base); font-weight: 500; color: var(--text-muted); }
+    .nav-mobile-menu a:hover { color: var(--text); }
+
+    @media (max-width: 768px) {
+      .nav-center, .nav-cta { display: none; }
+      .nav-mobile-toggle { display: flex; }
+    }
+    @media (max-width: 480px) {
+      nav { padding: 0 var(--space-5); }
+    }
+
+    /* ========== LAYOUT ========== */
+    .section-wrap { padding: clamp(var(--space-16), 8vw, var(--space-24)) var(--space-8); }
+    .section-inner { max-width: var(--content-default); margin: 0 auto; }
+    .section-divider { max-width: var(--content-default); margin: 0 auto; padding: 0 var(--space-8); }
+    .section-divider hr { border: none; border-top: 1px solid var(--border); }
+
+    .section-label {
+      font-family: var(--font-mono); font-size: var(--text-xs);
+      color: var(--text-faint); letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: var(--space-3);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: var(--text-3xl); font-weight: 400;
+      color: var(--text); line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: var(--space-5);
+    }
+    .section-desc {
+      font-size: var(--text-base); color: var(--text-muted);
+      max-width: 44ch; line-height: 1.8;
+      margin-bottom: var(--space-10);
+    }
+
+    @media (max-width: 640px) {
+      .section-wrap { padding: var(--space-16) var(--space-5); }
+    }
+
+    /* ========== REVEAL ANIMATIONS ========== */
+    .reveal {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100dvh;
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 var(--space-8) var(--space-16);
+      position: relative;
+    }
+    .hero-inner { max-width: var(--content-default); margin: 0 auto; width: 100%; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      background: var(--accent-soft); border: 1px solid var(--accent-border);
+      color: var(--accent-hover); font-family: var(--font-mono);
+      font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: var(--radius-full);
+      margin-bottom: var(--space-6);
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: var(--text-hero); font-weight: 400;
+      line-height: 0.96; letter-spacing: -0.04em;
+      color: var(--text);
+      margin-bottom: var(--space-5);
+    }
+
+    .hero-title {
+      display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2);
+      font-size: var(--text-lg); color: var(--text-muted);
+      margin-bottom: var(--space-6);
+    }
+    .hero-title .tag {
+      background: transparent; color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      padding: 3px 12px; font-size: var(--text-sm);
+    }
+    .hero-title .sep { color: var(--text-faint); }
+
+    .hero-desc {
+      font-size: var(--text-base); color: var(--text-muted);
+      max-width: 42rem; line-height: 1.8; margin-bottom: var(--space-8);
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      font-size: var(--text-sm); font-weight: 600;
+      color: var(--text-inverse); background: var(--text);
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-full);
+      transition: background var(--transition), transform var(--transition);
+    }
+    .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      font-size: var(--text-sm); font-weight: 600;
+      color: var(--text); background: transparent;
+      padding: var(--space-3) var(--space-6);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-full);
+      transition: border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+    .btn-ghost:hover { border-color: var(--text); background: var(--surface); transform: translateY(-1px); }
+
+    .hero-stats {
+      display: flex; flex-wrap: wrap; gap: var(--space-6);
+      margin-top: var(--space-12);
+      padding-top: var(--space-8);
+      border-top: 1px solid var(--border);
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: var(--font-display); font-size: var(--text-2xl);
+      font-weight: 400; color: var(--text);
+      letter-spacing: -0.04em; line-height: 1;
+    }
+    .stat-label {
+      font-size: var(--text-xs); color: var(--text-faint);
+      font-family: var(--font-mono); letter-spacing: 0.08em;
+      text-transform: uppercase; margin-top: var(--space-1);
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding: 0 var(--space-5) var(--space-12); }
+      .hero-stats { gap: var(--space-5); }
+    }
+
+    /* ========== ABOUT ========== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+    }
+    .about-card {
+      background: var(--bg-soft); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: var(--space-8);
+    }
+    .about-card-label {
+      font-family: var(--font-mono); font-size: var(--text-xs);
+      color: var(--text-faint); letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: var(--space-4);
+    }
+    .about-card p {
+      font-size: var(--text-sm); color: var(--text-muted); line-height: 1.85;
+    }
+    .about-card p + p { margin-top: var(--space-3); }
+    .about-card strong { color: var(--text); font-weight: 600; }
+    .about-card.wide { grid-column: 1 / -1; }
+
+    .about-values {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--space-3); margin-top: var(--space-6);
+    }
+    .about-value {
+      display: flex; align-items: flex-start; gap: var(--space-3);
+      padding: var(--space-4);
+      background: var(--surface); border-radius: var(--radius-lg);
+    }
+    .about-value-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-top: 6px; flex-shrink: 0; }
+    .about-value-text { font-size: var(--text-xs); color: var(--text-muted); line-height: 1.6; }
+
+    @media (max-width: 720px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-card.wide { grid-column: 1; }
+    }
+
+    /* ========== SKILLS ========== */
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+    }
+    .skill-group {
+      background: var(--bg-soft); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: var(--space-6);
+    }
+    .skill-group-title {
+      font-size: var(--text-sm); font-weight: 700; color: var(--text);
+      margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);
+    }
+    .skill-group-title .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+    .skill-list { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+    .skill-chip {
+      font-size: var(--text-xs); font-family: var(--font-mono);
+      color: var(--text-muted);
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 4px 12px; border-radius: var(--radius-full);
+      transition: border-color var(--transition), color var(--transition);
+    }
+    .skill-chip:hover { border-color: var(--border-strong); color: var(--text); }
+
+    .skill-bars { display: flex; flex-direction: column; gap: var(--space-4); }
+    .skill-bar-item {}
+    .skill-bar-top {
+      display: flex; justify-content: space-between;
+      font-size: var(--text-xs); margin-bottom: var(--space-2);
+    }
+    .skill-bar-name { font-weight: 600; color: var(--text); }
+    .skill-bar-pct { font-family: var(--font-mono); color: var(--text-faint); }
+    .skill-bar-track {
+      height: 4px; background: var(--surface-2);
+      border-radius: var(--radius-full); overflow: hidden;
+    }
+    .skill-bar-fill {
+      height: 100%; background: var(--accent);
+      border-radius: var(--radius-full);
+      width: 0; transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    @media (max-width: 720px) {
+      .skills-layout { grid-template-columns: 1fr; }
+    }
+
+    /* ========== PROJECTS ========== */
+    .projects-filter {
+      display: flex; flex-wrap: wrap; gap: var(--space-2);
+      margin-bottom: var(--space-8);
+    }
+    .filter-btn {
+      font-size: var(--text-xs); font-family: var(--font-mono);
+      font-weight: 600; letter-spacing: 0.06em;
+      color: var(--text-muted); padding: 5px 14px;
+      border: 1px solid var(--border); border-radius: var(--radius-full);
+      transition: all var(--transition);
+    }
+    .filter-btn:hover { border-color: var(--border-strong); color: var(--text); }
+    .filter-btn.active { background: var(--text); color: var(--text-inverse); border-color: var(--text); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--space-5);
+    }
+    .project-card {
+      background: var(--bg-soft); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: var(--space-6);
+      display: flex; flex-direction: column; gap: var(--space-4);
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .project-card:hover { border-color: var(--border-strong); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+    .project-card.hidden { display: none; }
+
+    .project-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    .project-icon {
+      font-family: var(--font-mono); font-size: 0.68rem; font-weight: 700;
+      color: var(--accent-hover); background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      padding: 4px 10px; border-radius: var(--radius-sm);
+      letter-spacing: 0.06em;
+    }
+    .project-links { display: flex; gap: var(--space-2); }
+    .project-link {
+      font-size: var(--text-xs); font-family: var(--font-mono); font-weight: 600;
+      color: var(--text-faint); border: 1px solid var(--border);
+      padding: 3px 10px; border-radius: var(--radius-full);
+      transition: color var(--transition), border-color var(--transition);
+    }
+    .project-link:hover { color: var(--text); border-color: var(--border-strong); }
+
+    .project-name { font-size: var(--text-sm); font-weight: 700; color: var(--text); }
+    .project-desc { font-size: var(--text-xs); color: var(--text-muted); line-height: 1.75; flex: 1; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: var(--space-1); margin-top: auto; }
+    .project-tag {
+      font-size: 0.68rem; font-family: var(--font-mono);
+      color: var(--text-faint); background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2px 9px; border-radius: var(--radius-full);
+    }
+
+    /* ========== JOURNAL ========== */
+    .journal-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+      gap: clamp(var(--space-8), 5vw, var(--space-16));
+      align-items: start;
+    }
+    .journal-intro { position: sticky; top: 92px; }
+    .journal-note {
+      max-width: 34ch; font-size: var(--text-sm);
+      color: var(--text-muted); line-height: 1.8;
+      margin-top: var(--space-4);
+    }
+    .journal-note strong { color: var(--text); font-weight: 600; }
+
+    .journal-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
+
+    .journal-card {
+      background: var(--bg-soft); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: var(--space-6);
+      display: grid; grid-template-columns: 132px minmax(0, 1fr) auto;
+      gap: var(--space-5); align-items: start;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition), background var(--transition);
+      color: inherit;
+    }
+    .journal-card:hover {
+      border-color: var(--border-strong); transform: translateY(-2px);
+      box-shadow: var(--shadow-sm); background: #fcfaf6;
+    }
+    .journal-meta { display: flex; flex-direction: column; gap: var(--space-2); }
+    .journal-chip {
+      display: inline-flex; align-items: center; width: fit-content;
+      padding: 3px 10px; border-radius: var(--radius-full);
+      background: var(--accent-soft); border: 1px solid var(--accent-border);
+      font-size: 0.68rem; font-family: var(--font-mono);
+      color: var(--accent-hover); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .journal-date {
+      font-size: var(--text-xs); font-family: var(--font-mono);
+      color: var(--text-faint); letter-spacing: 0.08em; line-height: 1.6;
+    }
+    .journal-body { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; }
+    .journal-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.9rem);
+      font-weight: 400; color: var(--text);
+      line-height: 1.08; letter-spacing: -0.02em;
+    }
+    .journal-excerpt {
+      font-size: var(--text-sm); color: var(--text-muted);
+      line-height: 1.75; max-width: 56ch;
+    }
+    .journal-read {
+      font-size: var(--text-xs); font-weight: 600; color: var(--accent);
+      display: inline-flex; align-items: center; gap: var(--space-1);
+      margin-top: var(--space-1); white-space: nowrap; align-self: center;
+      transition: gap var(--transition), color var(--transition);
+    }
+    .journal-card:hover .journal-read { gap: var(--space-2); color: var(--accent-hover); }
+
+    @media (max-width: 980px) {
+      .journal-shell { grid-template-columns: 1fr; }
+      .journal-intro { position: static; }
+    }
+    @media (max-width: 720px) {
+      .journal-card { grid-template-columns: 1fr; gap: var(--space-4); }
+      .journal-read { align-self: start; }
+    }
+
+    /* ========== CONTACT ========== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-5);
+    }
+    .contact-link {
+      background: var(--bg-soft); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: var(--space-6);
+      display: flex; align-items: center; gap: var(--space-4);
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      color: inherit;
+    }
+    .contact-link:hover { border-color: var(--border-strong); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+
+    .contact-icon {
+      width: 44px; height: 44px; border-radius: var(--radius-lg);
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-mono); font-size: 0.65rem;
+      font-weight: 700; color: var(--text-muted); letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+    .contact-info {}
+    .contact-platform { font-size: var(--text-sm); font-weight: 700; color: var(--text); }
+    .contact-handle { font-size: var(--text-xs); color: var(--text-faint); font-family: var(--font-mono); }
+
+    @media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
+
+    /* ========== QURAN WIDGET ========== */
+    .quran-widget {
+      background: var(--bg-soft); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: var(--space-8);
+      text-align: center; max-width: 680px; margin: 0 auto;
+    }
+    .quran-label {
+      font-family: var(--font-mono); font-size: var(--text-xs);
+      color: var(--text-faint); letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: var(--space-5);
+    }
+    .quran-arabic {
+      font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--text);
+      line-height: 1.8; direction: rtl; margin-bottom: var(--space-5);
+      font-family: 'Scheherazade New', serif;
+    }
+    .quran-translation {
+      font-family: var(--font-display); font-style: italic;
+      font-size: var(--text-base); color: var(--text-muted);
+      line-height: 1.75; margin-bottom: var(--space-4);
+    }
+    .quran-source {
+      font-family: var(--font-mono); font-size: var(--text-xs);
+      color: var(--text-faint); letter-spacing: 0.08em;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: var(--space-8);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: var(--space-4);
+      max-width: var(--content-default); margin: 0 auto;
+    }
+    .footer-left { font-size: var(--text-xs); font-family: var(--font-mono); color: var(--text-faint); }
+    .footer-left span { color: var(--accent); }
+    .footer-right { display: flex; gap: var(--space-5); }
+    .footer-right a { font-size: var(--text-xs); color: var(--text-faint); transition: color var(--transition); }
+    .footer-right a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#home" class="nav-logo">nang<span>.</span></a>
+  <div class="nav-center">
+    <ul class="nav-links">
+      <li><a href="#about" data-i18n="nav_about">Tentang</a></li>
+      <li><a href="#skills" data-i18n="nav_skills">Skill</a></li>
+      <li><a href="#projects" data-i18n="nav_projects">Proyek</a></li>
+      <li><a href="#journal" data-i18n="nav_journal">Jurnal</a></li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <button class="lang-toggle active" id="langID" onclick="setLang('id')">ID</button>
+    <button class="lang-toggle" id="langEN" onclick="setLang('en')">EN</button>
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Hubungi</a>
+  </div>
+  <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="#about" data-i18n="nav_about">Tentang</a>
+  <a href="#skills" data-i18n="nav_skills">Skill</a>
+  <a href="#projects" data-i18n="nav_projects">Proyek</a>
+  <a href="#journal" data-i18n="nav_journal">Jurnal</a>
+  <a href="#contact" data-i18n="nav_cta">Hubungi</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-badge reveal">
+      <span class="hero-badge-dot"></span>
+      <span data-i18n="hero_badge">Tersedia untuk peluang baru</span>
+    </div>
+    <h1 class="hero-name reveal">Anang<br/>Lesmana</h1>
+    <div class="hero-title reveal">
+      <span class="tag" data-i18n="hero_tag1">Data Analyst</span>
+      <span class="sep">—</span>
+      <span class="tag" data-i18n="hero_tag2">Business Analyst</span>
+      <span class="sep">—</span>
+      <span class="tag" data-i18n="hero_tag3">Operations</span>
+    </div>
+    <p class="hero-desc reveal" data-i18n="hero_desc">
+      Saya tertarik pada data, proses, dan sistem yang membuat pekerjaan jadi lebih efisien.
+      Seorang generalist yang sedang fokus mendalami analisis dan otomasi.
+    </p>
+    <div class="hero-actions reveal">
+      <a href="#projects" class="btn-primary" data-i18n="hero_cta1">Lihat Proyek</a>
+      <a href="#contact" class="btn-ghost" data-i18n="hero_cta2">Hubungi Saya</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="stat-item">
+        <div class="stat-num">3+</div>
+        <div class="stat-label" data-i18n="stat1">Tahun Pengalaman</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label" data-i18n="stat2">Proyek Selesai</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5+</div>
+        <div class="stat-label" data-i18n="stat3">Tools Dikuasai</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><hr/></div>
+
+<!-- ABOUT -->
+<div class="section-wrap" id="about">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label" data-i18n="about_label">Tentang</div>
+      <h2 class="section-title" data-i18n="about_title">Sedikit<br/>tentang saya.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-card reveal">
+        <div class="about-card-label" data-i18n="about_card1_label">Latar Belakang</div>
+        <p data-i18n="about_p1">Lahir dan besar di Bekasi, saat ini sedang dalam transisi karier dari operasional ke dunia data. Mulai serius belajar Python, SQL, dan analisis data sejak 2023.</p>
+        <p data-i18n="about_p2">Senang dengan hal-hal yang <strong>terstruktur</strong>: proses yang jelas, data yang bersih, dan sistem yang bisa diprediksi.</p>
+      </div>
+      <div class="about-card reveal reveal-delay-1">
+        <div class="about-card-label" data-i18n="about_card2_label">Sekarang</div>
+        <p data-i18n="about_p3">Sedang fokus membangun portofolio data yang solid, sambil terus belajar dan mengerjakan proyek-proyek kecil yang relevan.</p>
+        <p data-i18n="about_p4">Di luar kerjaan, saya suka nulis di jurnal, main Linux, dan sesekali ngulik hal-hal yang tidak ada kaitannya sama sekali dengan pekerjaan.</p>
+      </div>
+      <div class="about-card wide reveal reveal-delay-2">
+        <div class="about-card-label" data-i18n="about_card3_label">Nilai yang Saya Pegang</div>
+        <div class="about-values">
+          <div class="about-value"><div class="about-value-dot"></div><div class="about-value-text" data-i18n="val1">Kerja keras yang konsisten lebih baik dari bakat yang tidak diasah</div></div>
+          <div class="about-value"><div class="about-value-dot"></div><div class="about-value-text" data-i18n="val2">Proses yang baik menghasilkan hasil yang baik</div></div>
+          <div class="about-value"><div class="about-value-dot"></div><div class="about-value-text" data-i18n="val3">Belajar dari orang lain adalah jalan pintas yang sah</div></div>
+          <div class="about-value"><div class="about-value-dot"></div><div class="about-value-text" data-i18n="val4">Transparansi lebih penting dari kesan sempurna</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"><hr/></div>
+
+<!-- SKILLS -->
+<div class="section-wrap" id="skills">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label" data-i18n="skills_label">Skill</div>
+      <h2 class="section-title" data-i18n="skills_title">Yang bisa<br/>saya kerjakan.</h2>
+      <p class="section-desc" data-i18n="skills_desc">Tools dan kemampuan yang sedang aktif saya gunakan dan kembangkan.</p>
+    </div>
+    <div class="skills-layout">
+      <div class="skill-group reveal">
+        <div class="skill-group-title"><div class="dot"></div> <span data-i18n="sg1">Data & Analytics</span></div>
+        <div class="skill-list">
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">Pandas</span>
+          <span class="skill-chip">NumPy</span>
+          <span class="skill-chip">Matplotlib</span>
+          <span class="skill-chip">Seaborn</span>
+          <span class="skill-chip">SQL</span>
+          <span class="skill-chip">Google Sheets</span>
+          <span class="skill-chip">Jupyter</span>
+          <span class="skill-chip">Google Colab</span>
+        </div>
+      </div>
+      <div class="skill-group reveal reveal-delay-1">
+        <div class="skill-group-title"><div class="dot"></div> <span data-i18n="sg2">Tools & Automation</span></div>
+        <div class="skill-list">
+          <span class="skill-chip">Linux</span>
+          <span class="skill-chip">Bash</span>
+          <span class="skill-chip">Git</span>
+          <span class="skill-chip">VS Code</span>
+          <span class="skill-chip">Cron Jobs</span>
+          <span class="skill-chip">Regex</span>
+          <span class="skill-chip">Netlify</span>
+          <span class="skill-chip">Cloudflare</span>
+        </div>
+      </div>
+      <div class="skill-group reveal reveal-delay-2" style="grid-column: 1 / -1">
+        <div class="skill-group-title"><div class="dot"></div> <span data-i18n="sg3">Level Kemampuan</span></div>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span class="skill-bar-name">Python</span><span class="skill-bar-pct">75%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span class="skill-bar-name">SQL</span><span class="skill-bar-pct">70%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span class="skill-bar-name">Data Analysis</span><span class="skill-bar-pct">65%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span class="skill-bar-name">Business Analysis</span><span class="skill-bar-pct">55%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="55"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-top"><span class="skill-bar-name" data-i18n="skill_patience">Kesabaran</span><span class="skill-bar-pct">99%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="99"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"><hr/></div>
+
+<!-- PROJECTS -->
+<div class="section-wrap" id="projects">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label" data-i18n="projects_label">Proyek</div>
+      <h2 class="section-title" data-i18n="projects_title">Yang sudah<br/>pernah dibikin.</h2>
+      <p class="section-desc" data-i18n="projects_desc">Kumpulan proyek dari iseng sampai yang serius. Semuanya berangkat dari niat buat belajar.</p>
+    </div>
+    <div class="projects-filter reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="python">Python</button>
+      <button class="filter-btn" data-filter="data">Data</button>
+      <button class="filter-btn" data-filter="automation">Automation</button>
+      <button class="filter-btn" data-filter="linux">Linux</button>
+    </div>
+    <div class="projects-grid" id="projectsGrid">
+      <div class="project-card reveal" data-category="python data">
+        <div class="project-top">
+          <div class="project-icon">PY</div>
+          <div class="project-links"><a href="#" class="project-link" target="_blank" rel="noopener noreferrer">GH</a></div>
+        </div>
+        <div class="project-name">Sales Analytics Dashboard</div>
+        <p class="project-desc" data-i18n="proj1_desc">Analisis data penjualan dari export Excel — transformasi, cleaning, dan visualisasi tren per bulan menggunakan Pandas dan Matplotlib.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span><span class="project-tag">Pandas</span><span class="project-tag">Matplotlib</span><span class="project-tag">Excel</span>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-1" data-category="automation python">
+        <div class="project-top">
+          <div class="project-icon">WEB</div>
+          <div class="project-links"><a href="#" class="project-link" target="_blank" rel="noopener noreferrer">GH</a></div>
+        </div>
+        <div class="project-name">Web Scraper &amp; OSINT Tool</div>
+        <p class="project-desc" data-i18n="proj2_desc">Python scraper untuk mengumpulkan data publik dan menganalisis pola. Menggunakan BeautifulSoup, Requests, dan teknik dasar OSINT.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span><span class="project-tag">BeautifulSoup</span><span class="project-tag">Requests</span><span class="project-tag">OSINT</span>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-2" data-category="linux automation">
+        <div class="project-top">
+          <div class="project-icon">LNX</div>
+          <div class="project-links"><a href="https://github.com/bushidoways" class="project-link" target="_blank" rel="noopener noreferrer">GH</a></div>
+        </div>
+        <div class="project-name">Ubuntu Dev Setup &amp; Dotfiles</div>
+        <p class="project-desc" data-i18n="proj3_desc">Konfigurasi Ubuntu dari nol — dotfiles, shell aliases, auto-setup script untuk dev environment yang bisa di-bootstrap di mesin baru dalam menit.</p>
+        <div class="project-tags">
+          <span class="project-tag">Linux</span><span class="project-tag">Bash</span><span class="project-tag">Dotfiles</span><span class="project-tag">Automation</span>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-3" data-category="python data">
+        <div class="project-top">
+          <div class="project-icon">SQL</div>
+          <div class="project-links"><a href="#" class="project-link" target="_blank" rel="noopener noreferrer">GH</a></div>
+        </div>
+        <div class="project-name">Inventory Query Engine</div>
+        <p class="project-desc" data-i18n="proj4_desc">Query engine sederhana dengan SQLite untuk analisis stok, pergerakan barang, dan alert otomatis ketika stok di bawah threshold tertentu.</p>
+        <div class="project-tags">
+          <span class="project-tag">SQL</span><span class="project-tag">SQLite</span><span class="project-tag">Python</span><span class="project-tag">Data</span>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-4" data-category="automation">
+        <div class="project-top">
+          <div class="project-icon">BOT</div>
+          <div class="project-links"><a href="#" class="project-link" target="_blank" rel="noopener noreferrer">GH</a></div>
+        </div>
+        <div class="project-name">Daily Report Automator</div>
+        <p class="project-desc" data-i18n="proj5_desc">Script Python + cron job untuk generate laporan harian otomatis, export ke PDF, dan kirim via email tanpa intervensi manual.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span><span class="project-tag">Cron</span><span class="project-tag">Automation</span><span class="project-tag">PDF</span>
+        </div>
+      </div>
+      <div class="project-card reveal" data-category="data python">
+        <div class="project-top">
+          <div class="project-icon">ML</div>
+          <div class="project-links"><a href="#" class="project-link" target="_blank" rel="noopener noreferrer">GH</a></div>
+        </div>
+        <div class="project-name">Churn Prediction Model</div>
+        <p class="project-desc" data-i18n="proj6_desc">Model prediksi churn pelanggan menggunakan Scikit-learn — preprocessing, feature engineering, dan evaluasi model dengan confusion matrix.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span><span class="project-tag">Sklearn</span><span class="project-tag">ML</span><span class="project-tag">Data</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"><hr/></div>
+
+<!-- JOURNAL -->
+<div class="section-wrap" id="journal">
+  <div class="section-inner">
+    <div class="journal-shell">
+      <div class="journal-intro reveal">
+        <div class="section-label" data-i18n="journal_label">Jurnal</div>
+        <h2 class="section-title" data-i18n="journal_title">Catatan<br/>dari tengah malam.</h2>
+        <p class="section-desc" data-i18n="journal_desc">Tulisan lepas tentang teknologi, proses belajar, opini, dan hal-hal yang kebetulan kepikiran waktu kopi masih panas.</p>
+        <p class="journal-note" data-i18n="journal_note">Sebagian besar tulisan di sini lahir dari hal-hal kecil: pekerjaan, rasa penasaran, dan kebiasaan mencatat sebelum ide itu hilang.</p>
+      </div>
+      <div class="journal-grid">
+        <a href="journal/kenapa-linux.html" class="journal-card reveal" target="_blank" rel="noopener noreferrer">
+          <div class="journal-meta">
+            <span class="journal-chip">Essay</span>
+            <div class="journal-date" data-i18n="j1_date">MAR 2024 — 5 MENIT BACA</div>
+          </div>
+          <div class="journal-body">
+            <div class="journal-title" data-i18n="j1_title">Kenapa Berakhir di Linux</div>
+            <div class="journal-excerpt" data-i18n="j1_excerpt">Sejujurnya, ini bukan soal ideologi. Tapi juga soal efisiensi, kontrol, dan fakta bahwa harga MacBook masih belum bisa dibilang murah.</div>
+          </div>
+          <div class="journal-read">Baca <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </a>
+        <a href="journal/dari-gudang-ke-pandas.html" class="journal-card reveal reveal-delay-1" target="_blank" rel="noopener noreferrer">
+          <div class="journal-meta">
+            <span class="journal-chip">Notes</span>
+            <div class="journal-date" data-i18n="j2_date">NOV 2024 — 7 MENIT BACA</div>
+          </div>
+          <div class="journal-body">
+            <div class="journal-title" data-i18n="j2_title">Mulai belajar tentang bagaimana data bisa mengubah cara kerja</div>
+            <div class="journal-excerpt" data-i18n="j2_excerpt">Momen di mana saya sadar bahwa Spreadsheet manual bisa diganti 10 baris Python yang jalan otomatis tiap pagi.</div>
+          </div>
+          <div class="journal-read">Baca <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </a>
+        <a href="journal/osint-untuk-pemula.html" class="journal-card reveal reveal-delay-2" target="_blank" rel="noopener noreferrer">
+          <div class="journal-meta">
+            <span class="journal-chip">Guide</span>
+            <div class="journal-date" data-i18n="j3_date">JAN 2024 — 4 MENIT BACA</div>
+          </div>
+          <div class="journal-body">
+            <div class="journal-title" data-i18n="j3_title">OSINT untuk pemula: belajar dari data yang sudah ada di depan mata</div>
+            <div class="journal-excerpt" data-i18n="j3_excerpt">Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan siapa saja, dan kenapa ini relevan untuk seorang analyst.</div>
+          </div>
+          <div class="journal-read">Baca <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </a>
+        <a href="journal/kemiskinan-struktural.html" class="journal-card reveal reveal-delay-3" target="_blank" rel="noopener noreferrer">
+          <div class="journal-meta">
+            <span class="journal-chip">Essay</span>
+            <div class="journal-date" data-i18n="j4_date">OCT 2024 — 4 MENIT BACA</div>
+          </div>
+          <div class="journal-body">
+            <div class="journal-title" data-i18n="j4_title">Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?</div>
+            <div class="journal-excerpt" data-i18n="j4_excerpt">Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.</div>
+          </div>
+          <div class="journal-read">Baca <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </a>
+        <a href="journal/al-kahfi.html" class="journal-card reveal reveal-delay-4" target="_blank" rel="noopener noreferrer">
+          <div class="journal-meta">
+            <span class="journal-chip">Reflection</span>
+            <div class="journal-date" data-i18n="j5_date">MAR 2026 — 5 MENIT BACA</div>
+          </div>
+          <div class="journal-body">
+            <div class="journal-title" data-i18n="j5_title">Surah Al-Kahfi</div>
+            <div class="journal-excerpt" data-i18n="j5_excerpt">Mengenal wahyu yang sering dibaca setiap Jum'at sebagai Manual Book disaat krisis.</div>
+          </div>
+          <div class="journal-read">Baca <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"><hr/></div>
+
+<!-- QURAN WIDGET -->
+<div class="section-wrap">
+  <div class="section-inner">
+    <div class="quran-widget reveal">
+      <div class="quran-label" data-i18n="quran_label">Ayat Hari Ini</div>
+      <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+      <div class="quran-arabic" id="quranArabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+      <div class="quran-translation" id="quranTranslation" data-i18n="quran_loading">Memuat ayat...</div>
+      <div class="quran-source" id="quranSource"></div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"><hr/></div>
+
+<!-- CONTACT -->
+<div class="section-wrap" id="contact">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label" data-i18n="contact_label">Kontak</div>
+      <h2 class="section-title" data-i18n="contact_title">Mari<br/>ngobrol.</h2>
+      <p class="section-desc" data-i18n="contact_desc">Terbuka untuk diskusi, kolaborasi, atau sekadar tanya-tanya soal data dan teknologi.</p>
+    </div>
+    <div class="contact-grid">
+      <a href="mailto:ananglesmana@proton.me" class="contact-link reveal">
+        <div class="contact-icon">EMAIL</div>
+        <div class="contact-info">
+          <div class="contact-platform">Email</div>
+          <div class="contact-handle">ananglesmana@proton.me</div>
+        </div>
+      </a>
+      <a href="https://github.com/bushidoways" class="contact-link reveal reveal-delay-1" target="_blank" rel="noopener noreferrer">
+        <div class="contact-icon">GH</div>
+        <div class="contact-info">
+          <div class="contact-platform">GitHub</div>
+          <div class="contact-handle">@bushidoways</div>
+        </div>
+      </a>
+      <a href="https://linkedin.com/in/ananglesmana" class="contact-link reveal reveal-delay-2" target="_blank" rel="noopener noreferrer">
+        <div class="contact-icon">LI</div>
+        <div class="contact-info">
+          <div class="contact-platform">LinkedIn</div>
+          <div class="contact-handle">Anang Lesmana</div>
+        </div>
+      </a>
+      <a href="https://t.me/bushidoways" class="contact-link reveal reveal-delay-3" target="_blank" rel="noopener noreferrer">
+        <div class="contact-icon">TG</div>
+        <div class="contact-info">
+          <div class="contact-platform">Telegram</div>
+          <div class="contact-handle">@bushidoways</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <span data-i18n="footer_text">Dibuat dari Bekasi dengan Kopi dan Polusi</span> — <span>2026</span>
+  </div>
+  <div class="footer-right">
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#journal">Journal</a>
+    <a href="mailto:ananglesmana@proton.me">Email</a>
+  </div>
+</footer>
+
+<script>
+// ===== i18n =====
+const T = {
+  id: {
+    nav_about:'Tentang', nav_skills:'Skill', nav_projects:'Proyek', nav_journal:'Jurnal', nav_cta:'Hubungi',
+    hero_badge:'Tersedia untuk peluang baru',
+    hero_tag1:'Data Analyst', hero_tag2:'Business Analyst', hero_tag3:'Operations',
+    hero_desc:'Saya tertarik pada data, proses, dan sistem yang membuat pekerjaan jadi lebih efisien. Seorang generalist yang sedang fokus mendalami analisis dan otomasi.',
+    hero_cta1:'Lihat Proyek', hero_cta2:'Hubungi Saya',
+    stat1:'Tahun Pengalaman', stat2:'Proyek Selesai', stat3:'Tools Dikuasai',
+    about_label:'Tentang', about_title:'Sedikit\ntentang saya.',
+    about_card1_label:'Latar Belakang', about_card2_label:'Sekarang', about_card3_label:'Nilai yang Saya Pegang',
+    about_p1:'Lahir dan besar di Bekasi, saat ini sedang dalam transisi karier dari operasional ke dunia data. Mulai serius belajar Python, SQL, dan analisis data sejak 2023.',
+    about_p2:'Senang dengan hal-hal yang <strong>terstruktur</strong>: proses yang jelas, data yang bersih, dan sistem yang bisa diprediksi.',
+    about_p3:'Sedang fokus membangun portofolio data yang solid, sambil terus belajar dan mengerjakan proyek-proyek kecil yang relevan.',
+    about_p4:'Di luar kerjaan, saya suka nulis di jurnal, main Linux, dan sesekali ngulik hal-hal yang tidak ada kaitannya sama sekali dengan pekerjaan.',
+    val1:'Kerja keras yang konsisten lebih baik dari bakat yang tidak diasah',
+    val2:'Proses yang baik menghasilkan hasil yang baik',
+    val3:'Belajar dari orang lain adalah jalan pintas yang sah',
+    val4:'Transparansi lebih penting dari kesan sempurna',
+    skills_label:'Skill', skills_title:'Yang bisa\nsaya kerjakan.', skills_desc:'Tools dan kemampuan yang sedang aktif saya gunakan dan kembangkan.',
+    sg1:'Data & Analytics', sg2:'Tools & Automation', sg3:'Level Kemampuan',
+    skill_patience:'Kesabaran',
+    projects_label:'Proyek', projects_title:'Yang sudah\npernah dibikin.', projects_desc:'Kumpulan proyek dari iseng sampai yang serius. Semuanya berangkat dari niat buat belajar.',
+    proj1_desc:'Analisis data penjualan dari export Excel — transformasi, cleaning, dan visualisasi tren per bulan menggunakan Pandas dan Matplotlib.',
+    proj2_desc:'Python scraper untuk mengumpulkan data publik dan menganalisis pola. Menggunakan BeautifulSoup, Requests, dan teknik dasar OSINT.',
+    proj3_desc:'Konfigurasi Ubuntu dari nol — dotfiles, shell aliases, auto-setup script untuk dev environment yang bisa di-bootstrap di mesin baru dalam menit.',
+    proj4_desc:'Query engine sederhana dengan SQLite untuk analisis stok, pergerakan barang, dan alert otomatis ketika stok di bawah threshold tertentu.',
+    proj5_desc:'Script Python + cron job untuk generate laporan harian otomatis, export ke PDF, dan kirim via email tanpa intervensi manual.',
+    proj6_desc:'Model prediksi churn pelanggan menggunakan Scikit-learn — preprocessing, feature engineering, dan evaluasi model dengan confusion matrix.',
+    journal_label:'Jurnal', journal_title:'Catatan\ndari tengah malam.',
+    journal_desc:'Tulisan lepas tentang teknologi, proses belajar, opini, dan hal-hal yang kebetulan kepikiran waktu kopi masih panas.',
+    journal_note:'Sebagian besar tulisan di sini lahir dari hal-hal kecil: pekerjaan, rasa penasaran, dan kebiasaan mencatat sebelum ide itu hilang.',
+    j1_date:'MAR 2024 — 5 MENIT BACA', j1_title:'Kenapa Berakhir di Linux', j1_excerpt:'Sejujurnya, ini bukan soal ideologi. Tapi juga soal efisiensi, kontrol, dan fakta bahwa harga MacBook masih belum bisa dibilang murah.',
+    j2_date:'NOV 2024 — 7 MENIT BACA', j2_title:'Mulai belajar tentang bagaimana data bisa mengubah cara kerja', j2_excerpt:'Momen di mana saya sadar bahwa Spreadsheet manual bisa diganti 10 baris Python yang jalan otomatis tiap pagi.',
+    j3_date:'JAN 2024 — 4 MENIT BACA', j3_title:'OSINT untuk pemula: belajar dari data yang sudah ada di depan mata', j3_excerpt:'Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan siapa saja, dan kenapa ini relevan untuk seorang analyst.',
+    j4_date:'OCT 2024 — 4 MENIT BACA', j4_title:'Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?', j4_excerpt:'Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.',
+    j5_date:'MAR 2026 — 5 MENIT BACA', j5_title:'Surah Al-Kahfi', j5_excerpt:"Mengenal wahyu yang sering dibaca setiap Jum'at sebagai Manual Book disaat krisis.",
+    quran_label:'Ayat Hari Ini', quran_loading:'Memuat ayat...',
+    contact_label:'Kontak', contact_title:'Mari\nngobrol.', contact_desc:'Terbuka untuk diskusi, kolaborasi, atau sekadar tanya-tanya soal data dan teknologi.',
+    footer_text:'Dibuat dari Bekasi dengan Kopi dan Polusi',
+  },
+  en: {
+    nav_about:'About', nav_skills:'Skills', nav_projects:'Projects', nav_journal:'Journal', nav_cta:'Contact',
+    hero_badge:'Open to new opportunities',
+    hero_tag1:'Data Analyst', hero_tag2:'Business Analyst', hero_tag3:'Operations',
+    hero_desc:'I am drawn to data, process, and systems that make work more efficient. A generalist currently focusing on analytics and automation.',
+    hero_cta1:'View Projects', hero_cta2:'Get in Touch',
+    stat1:'Years Experience', stat2:'Projects Done', stat3:'Tools Mastered',
+    about_label:'About', about_title:'A little\nabout me.',
+    about_card1_label:'Background', about_card2_label:'Now', about_card3_label:'Values I Hold',
+    about_p1:'Born and raised in Bekasi, currently in a career transition from operations to data. Started learning Python, SQL, and data analysis seriously since 2023.',
+    about_p2:'I enjoy things that are <strong>structured</strong>: clear processes, clean data, and predictable systems.',
+    about_p3:'Currently focused on building a solid data portfolio, while continuously learning and working on relevant small projects.',
+    about_p4:'Outside work, I enjoy writing in my journal, playing around with Linux, and occasionally diving into things totally unrelated to my job.',
+    val1:'Consistent hard work beats unpolished talent',
+    val2:'Good process leads to good results',
+    val3:'Learning from others is a legitimate shortcut',
+    val4:'Transparency matters more than appearing perfect',
+    skills_label:'Skills', skills_title:'What I\ncan do.', skills_desc:'Tools and capabilities I am actively using and developing.',
+    sg1:'Data & Analytics', sg2:'Tools & Automation', sg3:'Proficiency Levels',
+    skill_patience:'Patience',
+    projects_label:'Projects', projects_title:'Things I\nhave built.', projects_desc:'A collection of projects ranging from casual experiments to serious work. All started with the intent to learn.',
+    proj1_desc:'Sales data analysis from Excel exports — transformation, cleaning, and monthly trend visualization using Pandas and Matplotlib.',
+    proj2_desc:'Python scraper to collect public data and analyze patterns. Uses BeautifulSoup, Requests, and basic OSINT techniques.',
+    proj3_desc:'Ubuntu setup from scratch — dotfiles, shell aliases, auto-setup scripts for a dev environment that can be bootstrapped on a new machine in minutes.',
+    proj4_desc:'Simple query engine using SQLite for stock analysis, item movement tracking, and automated alerts when stock drops below a threshold.',
+    proj5_desc:'Python script + cron job to auto-generate daily reports, export to PDF, and send via email without manual intervention.',
+    proj6_desc:'Customer churn prediction model using Scikit-learn — preprocessing, feature engineering, and model evaluation with confusion matrix.',
+    journal_label:'Journal', journal_title:'Notes\nfrom midnight.',
+    journal_desc:'Loose writing about technology, learning, opinions, and things that happen to come to mind while coffee is still hot.',
+    journal_note:'Most of the writing here starts from small things: work, curiosity, and the habit of taking notes before an idea disappears.',
+    j1_date:'MAR 2024 — 5 MIN READ', j1_title:'Why I Ended Up on Linux', j1_excerpt:"Honestly, it's not about ideology. It's also about efficiency, control, and the fact that MacBook prices still can't exactly be called cheap.",
+    j2_date:'NOV 2024 — 7 MIN READ', j2_title:'Starting to learn how data can change the way we work', j2_excerpt:'The moment I realized a manual spreadsheet could be replaced by 10 lines of Python that runs automatically every morning.',
+    j3_date:'JAN 2024 — 4 MIN READ', j3_title:'OSINT for beginners: learning from data already in plain sight', j3_excerpt:'Basic public information gathering techniques anyone can do, and why this is relevant for an analyst.',
+    j4_date:'OCT 2024 — 4 MIN READ', j4_title:'Structural Poverty: Why Individual Effort Alone Is Not Enough?', j4_excerpt:"What and Why?, Contributing Factors, Expert Views, Economic Inequality and A Conclusion from the Author.",
+    j5_date:'MAR 2026 — 5 MIN READ', j5_title:'Surah Al-Kahfi', j5_excerpt:"Getting to know the revelation often read every Friday as a Manual Book during a crisis.",
+    quran_label:'Verse of the Day', quran_loading:'Loading verse...',
+    contact_label:'Contact', contact_title:"Let's\ntalk.", contact_desc:'Open for discussions, collaborations, or just chatting about data and technology.',
+    footer_text:'Made from Bekasi with Coffee and Pollution',
+  }
+};
+
+let lang = 'id';
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (T[l][key] !== undefined) el.innerHTML = T[l][key];
+  });
+  document.getElementById('langID').classList.toggle('active', l==='id');
+  document.getElementById('langEN').classList.toggle('active', l==='en');
+}
+
+// ===== NAV SCROLL =====
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+  document.querySelectorAll('section[id], div[id]').forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < 100 && top > -sec.offsetHeight + 100) {
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + sec.id);
+      });
+    }
+  });
+}, { passive: true });
+
+// ===== MOBILE MENU =====
+document.getElementById('mobileToggle').addEventListener('click', function() {
+  this.classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+document.querySelectorAll('.nav-mobile-menu a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('mobileToggle').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+});
+
+// ===== REVEAL =====
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ===== SKILL BARS =====
+const barObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width + '%';
+      });
+      barObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.skill-bars').forEach(el => barObserver.observe(el));
+
+// ===== PROJECT FILTER =====
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.project-card').forEach(card => {
+      const cats = card.dataset.category || '';
+      card.classList.toggle('hidden', filter !== 'all' && !cats.includes(filter));
+    });
+  });
+});
+
+// ===== QURAN WIDGET =====
+(async function loadQuran() {
+  const verses = [
+    { ar: 'إِنَّ مَعَ الْعُسْرِ يُسْرًا', id: 'Sesungguhnya bersama kesulitan ada kemudahan.', en: 'Indeed, with hardship will be ease.', src: 'QS. Al-Insyirah: 6' },
+    { ar: 'وَعَسَىٰ أَن تَكْرَهُوا شَيْئًا وَهُوَ خَيْرٌ لَّكُمْ', id: 'Boleh jadi kamu membenci sesuatu, padahal itu baik bagimu.', en: 'But perhaps you hate a thing and it is good for you.', src: 'QS. Al-Baqarah: 216' },
+    { ar: 'فَاذْكُرُونِي أَذْكُرْكُمْ', id: 'Maka ingatlah Aku, niscaya Aku pun akan mengingat kalian.', en: 'So remember Me; I will remember you.', src: 'QS. Al-Baqarah: 152' },
+    { ar: 'وَتَوَكَّلْ عَلَى اللَّهِ وَكَفَىٰ بِاللَّهِ وَكِيلًا', id: 'Bertawakallah kepada Allah, dan cukuplah Allah sebagai pelindung.', en: 'And rely upon Allah; sufficient is Allah as Disposer of affairs.', src: 'QS. Al-Ahzab: 3' },
+    { ar: 'إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ حَتَّىٰ يُغَيِّرُوا مَا بِأَنفُسِهِمْ', id: 'Sesungguhnya Allah tidak mengubah keadaan suatu kaum sebelum mereka mengubah keadaan diri mereka sendiri.', en: 'Indeed, Allah will not change the condition of a people until they change what is in themselves.', src: 'QS. Ar-Ra\'d: 11' },
+  ];
+  const v = verses[new Date().getDay() % verses.length];
+  document.getElementById('quranArabic').textContent = v.ar;
+  document.getElementById('quranTranslation').textContent = lang === 'en' ? v.en : v.id;
+  document.getElementById('quranSource').textContent = v.src;
+})();
+
+// init lang
+setLang('id');
+</script>
+</body>
+</html>
