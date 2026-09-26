@@ -1,0 +1,39 @@
+name: Apply science facts upgrade
+
+on:
+  push:
+    branches: [feat/science-facts-widget]
+    paths:
+      - scripts/upgrade_science.py
+      - .github/workflows/apply-science-upgrade.yml
+
+permissions:
+  contents: write
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/science-facts-widget
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Upgrade portfolio
+        run: python scripts/upgrade_science.py
+      - name: Validate output
+        run: |
+          python -m json.tool science-facts.json >/dev/null
+          test "$(python -c 'import json; print(len(json.load(open("science-facts.json"))))')" = "300"
+          grep -q 'SCIENCE FLASHCARD WIDGET' index.html
+          grep -q 'science-facts.json' index.html
+      - name: Commit generated website
+        run: |
+          rm -f scripts/upgrade_science.py .github/workflows/apply-science-upgrade.yml
+          rmdir scripts .github/workflows 2>/dev/null || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: add 300 sourced science facts widget"
+          git push origin HEAD:feat/science-facts-widget
