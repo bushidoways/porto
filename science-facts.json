@@ -1,0 +1,2402 @@
+[
+  {
+    "id": 1,
+    "category": "Kimia",
+    "title": "Unsur ke-1: Hydrogen.",
+    "fact": "Hydrogen memiliki simbol kimia H dan nomor atom 1; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 2,
+    "category": "Kimia",
+    "title": "Unsur ke-2: Helium.",
+    "fact": "Helium memiliki simbol kimia He dan nomor atom 2; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 3,
+    "category": "Kimia",
+    "title": "Unsur ke-3: Lithium.",
+    "fact": "Lithium memiliki simbol kimia Li dan nomor atom 3; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 4,
+    "category": "Kimia",
+    "title": "Unsur ke-4: Beryllium.",
+    "fact": "Beryllium memiliki simbol kimia Be dan nomor atom 4; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 5,
+    "category": "Kimia",
+    "title": "Unsur ke-5: Boron.",
+    "fact": "Boron memiliki simbol kimia B dan nomor atom 5; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 6,
+    "category": "Kimia",
+    "title": "Unsur ke-6: Carbon.",
+    "fact": "Carbon memiliki simbol kimia C dan nomor atom 6; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 7,
+    "category": "Kimia",
+    "title": "Unsur ke-7: Nitrogen.",
+    "fact": "Nitrogen memiliki simbol kimia N dan nomor atom 7; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 8,
+    "category": "Kimia",
+    "title": "Unsur ke-8: Oxygen.",
+    "fact": "Oxygen memiliki simbol kimia O dan nomor atom 8; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 9,
+    "category": "Kimia",
+    "title": "Unsur ke-9: Fluorine.",
+    "fact": "Fluorine memiliki simbol kimia F dan nomor atom 9; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 10,
+    "category": "Kimia",
+    "title": "Unsur ke-10: Neon.",
+    "fact": "Neon memiliki simbol kimia Ne dan nomor atom 10; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 11,
+    "category": "Kimia",
+    "title": "Unsur ke-11: Sodium.",
+    "fact": "Sodium memiliki simbol kimia Na dan nomor atom 11; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 12,
+    "category": "Kimia",
+    "title": "Unsur ke-12: Magnesium.",
+    "fact": "Magnesium memiliki simbol kimia Mg dan nomor atom 12; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 13,
+    "category": "Kimia",
+    "title": "Unsur ke-13: Aluminium.",
+    "fact": "Aluminium memiliki simbol kimia Al dan nomor atom 13; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 14,
+    "category": "Kimia",
+    "title": "Unsur ke-14: Silicon.",
+    "fact": "Silicon memiliki simbol kimia Si dan nomor atom 14; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 15,
+    "category": "Kimia",
+    "title": "Unsur ke-15: Phosphorus.",
+    "fact": "Phosphorus memiliki simbol kimia P dan nomor atom 15; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 16,
+    "category": "Kimia",
+    "title": "Unsur ke-16: Sulfur.",
+    "fact": "Sulfur memiliki simbol kimia S dan nomor atom 16; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 17,
+    "category": "Kimia",
+    "title": "Unsur ke-17: Chlorine.",
+    "fact": "Chlorine memiliki simbol kimia Cl dan nomor atom 17; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 18,
+    "category": "Kimia",
+    "title": "Unsur ke-18: Argon.",
+    "fact": "Argon memiliki simbol kimia Ar dan nomor atom 18; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 19,
+    "category": "Kimia",
+    "title": "Unsur ke-19: Potassium.",
+    "fact": "Potassium memiliki simbol kimia K dan nomor atom 19; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 20,
+    "category": "Kimia",
+    "title": "Unsur ke-20: Calcium.",
+    "fact": "Calcium memiliki simbol kimia Ca dan nomor atom 20; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 21,
+    "category": "Kimia",
+    "title": "Unsur ke-21: Scandium.",
+    "fact": "Scandium memiliki simbol kimia Sc dan nomor atom 21; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 22,
+    "category": "Kimia",
+    "title": "Unsur ke-22: Titanium.",
+    "fact": "Titanium memiliki simbol kimia Ti dan nomor atom 22; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 23,
+    "category": "Kimia",
+    "title": "Unsur ke-23: Vanadium.",
+    "fact": "Vanadium memiliki simbol kimia V dan nomor atom 23; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 24,
+    "category": "Kimia",
+    "title": "Unsur ke-24: Chromium.",
+    "fact": "Chromium memiliki simbol kimia Cr dan nomor atom 24; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 25,
+    "category": "Kimia",
+    "title": "Unsur ke-25: Manganese.",
+    "fact": "Manganese memiliki simbol kimia Mn dan nomor atom 25; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 26,
+    "category": "Kimia",
+    "title": "Unsur ke-26: Iron.",
+    "fact": "Iron memiliki simbol kimia Fe dan nomor atom 26; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 27,
+    "category": "Kimia",
+    "title": "Unsur ke-27: Cobalt.",
+    "fact": "Cobalt memiliki simbol kimia Co dan nomor atom 27; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 28,
+    "category": "Kimia",
+    "title": "Unsur ke-28: Nickel.",
+    "fact": "Nickel memiliki simbol kimia Ni dan nomor atom 28; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 29,
+    "category": "Kimia",
+    "title": "Unsur ke-29: Copper.",
+    "fact": "Copper memiliki simbol kimia Cu dan nomor atom 29; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 30,
+    "category": "Kimia",
+    "title": "Unsur ke-30: Zinc.",
+    "fact": "Zinc memiliki simbol kimia Zn dan nomor atom 30; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 31,
+    "category": "Kimia",
+    "title": "Unsur ke-31: Gallium.",
+    "fact": "Gallium memiliki simbol kimia Ga dan nomor atom 31; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 32,
+    "category": "Kimia",
+    "title": "Unsur ke-32: Germanium.",
+    "fact": "Germanium memiliki simbol kimia Ge dan nomor atom 32; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 33,
+    "category": "Kimia",
+    "title": "Unsur ke-33: Arsenic.",
+    "fact": "Arsenic memiliki simbol kimia As dan nomor atom 33; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 34,
+    "category": "Kimia",
+    "title": "Unsur ke-34: Selenium.",
+    "fact": "Selenium memiliki simbol kimia Se dan nomor atom 34; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 35,
+    "category": "Kimia",
+    "title": "Unsur ke-35: Bromine.",
+    "fact": "Bromine memiliki simbol kimia Br dan nomor atom 35; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 36,
+    "category": "Kimia",
+    "title": "Unsur ke-36: Krypton.",
+    "fact": "Krypton memiliki simbol kimia Kr dan nomor atom 36; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 37,
+    "category": "Kimia",
+    "title": "Unsur ke-37: Rubidium.",
+    "fact": "Rubidium memiliki simbol kimia Rb dan nomor atom 37; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 38,
+    "category": "Kimia",
+    "title": "Unsur ke-38: Strontium.",
+    "fact": "Strontium memiliki simbol kimia Sr dan nomor atom 38; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 39,
+    "category": "Kimia",
+    "title": "Unsur ke-39: Yttrium.",
+    "fact": "Yttrium memiliki simbol kimia Y dan nomor atom 39; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 40,
+    "category": "Kimia",
+    "title": "Unsur ke-40: Zirconium.",
+    "fact": "Zirconium memiliki simbol kimia Zr dan nomor atom 40; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 41,
+    "category": "Kimia",
+    "title": "Unsur ke-41: Niobium.",
+    "fact": "Niobium memiliki simbol kimia Nb dan nomor atom 41; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 42,
+    "category": "Kimia",
+    "title": "Unsur ke-42: Molybdenum.",
+    "fact": "Molybdenum memiliki simbol kimia Mo dan nomor atom 42; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 43,
+    "category": "Kimia",
+    "title": "Unsur ke-43: Technetium.",
+    "fact": "Technetium memiliki simbol kimia Tc dan nomor atom 43; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 44,
+    "category": "Kimia",
+    "title": "Unsur ke-44: Ruthenium.",
+    "fact": "Ruthenium memiliki simbol kimia Ru dan nomor atom 44; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 45,
+    "category": "Kimia",
+    "title": "Unsur ke-45: Rhodium.",
+    "fact": "Rhodium memiliki simbol kimia Rh dan nomor atom 45; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 46,
+    "category": "Kimia",
+    "title": "Unsur ke-46: Palladium.",
+    "fact": "Palladium memiliki simbol kimia Pd dan nomor atom 46; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 47,
+    "category": "Kimia",
+    "title": "Unsur ke-47: Silver.",
+    "fact": "Silver memiliki simbol kimia Ag dan nomor atom 47; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 48,
+    "category": "Kimia",
+    "title": "Unsur ke-48: Cadmium.",
+    "fact": "Cadmium memiliki simbol kimia Cd dan nomor atom 48; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 49,
+    "category": "Kimia",
+    "title": "Unsur ke-49: Indium.",
+    "fact": "Indium memiliki simbol kimia In dan nomor atom 49; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 50,
+    "category": "Kimia",
+    "title": "Unsur ke-50: Tin.",
+    "fact": "Tin memiliki simbol kimia Sn dan nomor atom 50; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 51,
+    "category": "Kimia",
+    "title": "Unsur ke-51: Antimony.",
+    "fact": "Antimony memiliki simbol kimia Sb dan nomor atom 51; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 52,
+    "category": "Kimia",
+    "title": "Unsur ke-52: Tellurium.",
+    "fact": "Tellurium memiliki simbol kimia Te dan nomor atom 52; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 53,
+    "category": "Kimia",
+    "title": "Unsur ke-53: Iodine.",
+    "fact": "Iodine memiliki simbol kimia I dan nomor atom 53; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 54,
+    "category": "Kimia",
+    "title": "Unsur ke-54: Xenon.",
+    "fact": "Xenon memiliki simbol kimia Xe dan nomor atom 54; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 55,
+    "category": "Kimia",
+    "title": "Unsur ke-55: Caesium.",
+    "fact": "Caesium memiliki simbol kimia Cs dan nomor atom 55; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 56,
+    "category": "Kimia",
+    "title": "Unsur ke-56: Barium.",
+    "fact": "Barium memiliki simbol kimia Ba dan nomor atom 56; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 57,
+    "category": "Kimia",
+    "title": "Unsur ke-57: Lanthanum.",
+    "fact": "Lanthanum memiliki simbol kimia La dan nomor atom 57; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 58,
+    "category": "Kimia",
+    "title": "Unsur ke-58: Cerium.",
+    "fact": "Cerium memiliki simbol kimia Ce dan nomor atom 58; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 59,
+    "category": "Kimia",
+    "title": "Unsur ke-59: Praseodymium.",
+    "fact": "Praseodymium memiliki simbol kimia Pr dan nomor atom 59; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 60,
+    "category": "Kimia",
+    "title": "Unsur ke-60: Neodymium.",
+    "fact": "Neodymium memiliki simbol kimia Nd dan nomor atom 60; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 61,
+    "category": "Kimia",
+    "title": "Unsur ke-61: Promethium.",
+    "fact": "Promethium memiliki simbol kimia Pm dan nomor atom 61; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 62,
+    "category": "Kimia",
+    "title": "Unsur ke-62: Samarium.",
+    "fact": "Samarium memiliki simbol kimia Sm dan nomor atom 62; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 63,
+    "category": "Kimia",
+    "title": "Unsur ke-63: Europium.",
+    "fact": "Europium memiliki simbol kimia Eu dan nomor atom 63; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 64,
+    "category": "Kimia",
+    "title": "Unsur ke-64: Gadolinium.",
+    "fact": "Gadolinium memiliki simbol kimia Gd dan nomor atom 64; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 65,
+    "category": "Kimia",
+    "title": "Unsur ke-65: Terbium.",
+    "fact": "Terbium memiliki simbol kimia Tb dan nomor atom 65; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 66,
+    "category": "Kimia",
+    "title": "Unsur ke-66: Dysprosium.",
+    "fact": "Dysprosium memiliki simbol kimia Dy dan nomor atom 66; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 67,
+    "category": "Kimia",
+    "title": "Unsur ke-67: Holmium.",
+    "fact": "Holmium memiliki simbol kimia Ho dan nomor atom 67; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 68,
+    "category": "Kimia",
+    "title": "Unsur ke-68: Erbium.",
+    "fact": "Erbium memiliki simbol kimia Er dan nomor atom 68; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 69,
+    "category": "Kimia",
+    "title": "Unsur ke-69: Thulium.",
+    "fact": "Thulium memiliki simbol kimia Tm dan nomor atom 69; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 70,
+    "category": "Kimia",
+    "title": "Unsur ke-70: Ytterbium.",
+    "fact": "Ytterbium memiliki simbol kimia Yb dan nomor atom 70; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 71,
+    "category": "Kimia",
+    "title": "Unsur ke-71: Lutetium.",
+    "fact": "Lutetium memiliki simbol kimia Lu dan nomor atom 71; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 72,
+    "category": "Kimia",
+    "title": "Unsur ke-72: Hafnium.",
+    "fact": "Hafnium memiliki simbol kimia Hf dan nomor atom 72; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 73,
+    "category": "Kimia",
+    "title": "Unsur ke-73: Tantalum.",
+    "fact": "Tantalum memiliki simbol kimia Ta dan nomor atom 73; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 74,
+    "category": "Kimia",
+    "title": "Unsur ke-74: Tungsten.",
+    "fact": "Tungsten memiliki simbol kimia W dan nomor atom 74; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 75,
+    "category": "Kimia",
+    "title": "Unsur ke-75: Rhenium.",
+    "fact": "Rhenium memiliki simbol kimia Re dan nomor atom 75; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 76,
+    "category": "Kimia",
+    "title": "Unsur ke-76: Osmium.",
+    "fact": "Osmium memiliki simbol kimia Os dan nomor atom 76; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 77,
+    "category": "Kimia",
+    "title": "Unsur ke-77: Iridium.",
+    "fact": "Iridium memiliki simbol kimia Ir dan nomor atom 77; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 78,
+    "category": "Kimia",
+    "title": "Unsur ke-78: Platinum.",
+    "fact": "Platinum memiliki simbol kimia Pt dan nomor atom 78; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 79,
+    "category": "Kimia",
+    "title": "Unsur ke-79: Gold.",
+    "fact": "Gold memiliki simbol kimia Au dan nomor atom 79; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 80,
+    "category": "Kimia",
+    "title": "Unsur ke-80: Mercury.",
+    "fact": "Mercury memiliki simbol kimia Hg dan nomor atom 80; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 81,
+    "category": "Kimia",
+    "title": "Unsur ke-81: Thallium.",
+    "fact": "Thallium memiliki simbol kimia Tl dan nomor atom 81; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 82,
+    "category": "Kimia",
+    "title": "Unsur ke-82: Lead.",
+    "fact": "Lead memiliki simbol kimia Pb dan nomor atom 82; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 83,
+    "category": "Kimia",
+    "title": "Unsur ke-83: Bismuth.",
+    "fact": "Bismuth memiliki simbol kimia Bi dan nomor atom 83; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 84,
+    "category": "Kimia",
+    "title": "Unsur ke-84: Polonium.",
+    "fact": "Polonium memiliki simbol kimia Po dan nomor atom 84; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 85,
+    "category": "Kimia",
+    "title": "Unsur ke-85: Astatine.",
+    "fact": "Astatine memiliki simbol kimia At dan nomor atom 85; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 86,
+    "category": "Kimia",
+    "title": "Unsur ke-86: Radon.",
+    "fact": "Radon memiliki simbol kimia Rn dan nomor atom 86; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 87,
+    "category": "Kimia",
+    "title": "Unsur ke-87: Francium.",
+    "fact": "Francium memiliki simbol kimia Fr dan nomor atom 87; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 88,
+    "category": "Kimia",
+    "title": "Unsur ke-88: Radium.",
+    "fact": "Radium memiliki simbol kimia Ra dan nomor atom 88; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 89,
+    "category": "Kimia",
+    "title": "Unsur ke-89: Actinium.",
+    "fact": "Actinium memiliki simbol kimia Ac dan nomor atom 89; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 90,
+    "category": "Kimia",
+    "title": "Unsur ke-90: Thorium.",
+    "fact": "Thorium memiliki simbol kimia Th dan nomor atom 90; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 91,
+    "category": "Kimia",
+    "title": "Unsur ke-91: Protactinium.",
+    "fact": "Protactinium memiliki simbol kimia Pa dan nomor atom 91; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 92,
+    "category": "Kimia",
+    "title": "Unsur ke-92: Uranium.",
+    "fact": "Uranium memiliki simbol kimia U dan nomor atom 92; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 93,
+    "category": "Kimia",
+    "title": "Unsur ke-93: Neptunium.",
+    "fact": "Neptunium memiliki simbol kimia Np dan nomor atom 93; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 94,
+    "category": "Kimia",
+    "title": "Unsur ke-94: Plutonium.",
+    "fact": "Plutonium memiliki simbol kimia Pu dan nomor atom 94; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 95,
+    "category": "Kimia",
+    "title": "Unsur ke-95: Americium.",
+    "fact": "Americium memiliki simbol kimia Am dan nomor atom 95; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 96,
+    "category": "Kimia",
+    "title": "Unsur ke-96: Curium.",
+    "fact": "Curium memiliki simbol kimia Cm dan nomor atom 96; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 97,
+    "category": "Kimia",
+    "title": "Unsur ke-97: Berkelium.",
+    "fact": "Berkelium memiliki simbol kimia Bk dan nomor atom 97; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 98,
+    "category": "Kimia",
+    "title": "Unsur ke-98: Californium.",
+    "fact": "Californium memiliki simbol kimia Cf dan nomor atom 98; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 99,
+    "category": "Kimia",
+    "title": "Unsur ke-99: Einsteinium.",
+    "fact": "Einsteinium memiliki simbol kimia Es dan nomor atom 99; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 100,
+    "category": "Kimia",
+    "title": "Unsur ke-100: Fermium.",
+    "fact": "Fermium memiliki simbol kimia Fm dan nomor atom 100; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 101,
+    "category": "Kimia",
+    "title": "Unsur ke-101: Mendelevium.",
+    "fact": "Mendelevium memiliki simbol kimia Md dan nomor atom 101; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 102,
+    "category": "Kimia",
+    "title": "Unsur ke-102: Nobelium.",
+    "fact": "Nobelium memiliki simbol kimia No dan nomor atom 102; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 103,
+    "category": "Kimia",
+    "title": "Unsur ke-103: Lawrencium.",
+    "fact": "Lawrencium memiliki simbol kimia Lr dan nomor atom 103; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 104,
+    "category": "Kimia",
+    "title": "Unsur ke-104: Rutherfordium.",
+    "fact": "Rutherfordium memiliki simbol kimia Rf dan nomor atom 104; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 105,
+    "category": "Kimia",
+    "title": "Unsur ke-105: Dubnium.",
+    "fact": "Dubnium memiliki simbol kimia Db dan nomor atom 105; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 106,
+    "category": "Kimia",
+    "title": "Unsur ke-106: Seaborgium.",
+    "fact": "Seaborgium memiliki simbol kimia Sg dan nomor atom 106; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 107,
+    "category": "Kimia",
+    "title": "Unsur ke-107: Bohrium.",
+    "fact": "Bohrium memiliki simbol kimia Bh dan nomor atom 107; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 108,
+    "category": "Kimia",
+    "title": "Unsur ke-108: Hassium.",
+    "fact": "Hassium memiliki simbol kimia Hs dan nomor atom 108; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 109,
+    "category": "Kimia",
+    "title": "Unsur ke-109: Meitnerium.",
+    "fact": "Meitnerium memiliki simbol kimia Mt dan nomor atom 109; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 110,
+    "category": "Kimia",
+    "title": "Unsur ke-110: Darmstadtium.",
+    "fact": "Darmstadtium memiliki simbol kimia Ds dan nomor atom 110; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 111,
+    "category": "Kimia",
+    "title": "Unsur ke-111: Roentgenium.",
+    "fact": "Roentgenium memiliki simbol kimia Rg dan nomor atom 111; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 112,
+    "category": "Kimia",
+    "title": "Unsur ke-112: Copernicium.",
+    "fact": "Copernicium memiliki simbol kimia Cn dan nomor atom 112; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 113,
+    "category": "Kimia",
+    "title": "Unsur ke-113: Nihonium.",
+    "fact": "Nihonium memiliki simbol kimia Nh dan nomor atom 113; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 114,
+    "category": "Kimia",
+    "title": "Unsur ke-114: Flerovium.",
+    "fact": "Flerovium memiliki simbol kimia Fl dan nomor atom 114; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 115,
+    "category": "Kimia",
+    "title": "Unsur ke-115: Moscovium.",
+    "fact": "Moscovium memiliki simbol kimia Mc dan nomor atom 115; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 116,
+    "category": "Kimia",
+    "title": "Unsur ke-116: Livermorium.",
+    "fact": "Livermorium memiliki simbol kimia Lv dan nomor atom 116; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 117,
+    "category": "Kimia",
+    "title": "Unsur ke-117: Tennessine.",
+    "fact": "Tennessine memiliki simbol kimia Ts dan nomor atom 117; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 118,
+    "category": "Kimia",
+    "title": "Unsur ke-118: Oganesson.",
+    "fact": "Oganesson memiliki simbol kimia Og dan nomor atom 118; nomor atom menyatakan jumlah proton di intinya.",
+    "sourceLabel": "NIST — Periodic Table",
+    "sourceUrl": "https://www.nist.gov/blogs/taking-measure/periodic-table-its-more-just-chemistry-and-physics"
+  },
+  {
+    "id": 119,
+    "category": "Astronomi",
+    "title": "Merkurius adalah planet pertama dari Matahari.",
+    "fact": "Urutan orbit Merkurius menempatkannya sebagai planet pertama jika dihitung keluar dari Matahari.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 120,
+    "category": "Astronomi",
+    "title": "Merkurius termasuk planet kebumian.",
+    "fact": "Berdasarkan komposisi dan strukturnya, Merkurius diklasifikasikan sebagai planet kebumian.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 121,
+    "category": "Astronomi",
+    "title": "Lama rotasi Merkurius: sekitar 59 hari Bumi.",
+    "fact": "Merkurius menyelesaikan satu putaran pada sumbunya dalam sekitar 59 hari Bumi.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 122,
+    "category": "Astronomi",
+    "title": "Ciri khas Merkurius.",
+    "fact": "Merkurius planet terkecil dan paling dekat dengan Matahari.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 123,
+    "category": "Astronomi",
+    "title": "Venus adalah planet kedua dari Matahari.",
+    "fact": "Urutan orbit Venus menempatkannya sebagai planet kedua jika dihitung keluar dari Matahari.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 124,
+    "category": "Astronomi",
+    "title": "Venus termasuk planet kebumian.",
+    "fact": "Berdasarkan komposisi dan strukturnya, Venus diklasifikasikan sebagai planet kebumian.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 125,
+    "category": "Astronomi",
+    "title": "Lama rotasi Venus: sekitar 243 hari Bumi.",
+    "fact": "Venus menyelesaikan satu putaran pada sumbunya dalam sekitar 243 hari Bumi.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 126,
+    "category": "Astronomi",
+    "title": "Ciri khas Venus.",
+    "fact": "Venus planet terpanas karena efek rumah kaca yang kuat.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 127,
+    "category": "Astronomi",
+    "title": "Bumi adalah planet ketiga dari Matahari.",
+    "fact": "Urutan orbit Bumi menempatkannya sebagai planet ketiga jika dihitung keluar dari Matahari.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 128,
+    "category": "Astronomi",
+    "title": "Bumi termasuk planet kebumian.",
+    "fact": "Berdasarkan komposisi dan strukturnya, Bumi diklasifikasikan sebagai planet kebumian.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 129,
+    "category": "Astronomi",
+    "title": "Lama rotasi Bumi: sekitar 23,9 jam.",
+    "fact": "Bumi menyelesaikan satu putaran pada sumbunya dalam sekitar 23,9 jam.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 130,
+    "category": "Astronomi",
+    "title": "Ciri khas Bumi.",
+    "fact": "Bumi satu-satunya dunia yang diketahui memiliki kehidupan.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 131,
+    "category": "Astronomi",
+    "title": "Mars adalah planet keempat dari Matahari.",
+    "fact": "Urutan orbit Mars menempatkannya sebagai planet keempat jika dihitung keluar dari Matahari.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 132,
+    "category": "Astronomi",
+    "title": "Mars termasuk planet kebumian.",
+    "fact": "Berdasarkan komposisi dan strukturnya, Mars diklasifikasikan sebagai planet kebumian.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 133,
+    "category": "Astronomi",
+    "title": "Lama rotasi Mars: sekitar 24,6 jam.",
+    "fact": "Mars menyelesaikan satu putaran pada sumbunya dalam sekitar 24,6 jam.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 134,
+    "category": "Astronomi",
+    "title": "Ciri khas Mars.",
+    "fact": "Mars memiliki Olympus Mons, gunung berapi terbesar yang diketahui di Tata Surya.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 135,
+    "category": "Astronomi",
+    "title": "Jupiter adalah planet kelima dari Matahari.",
+    "fact": "Urutan orbit Jupiter menempatkannya sebagai planet kelima jika dihitung keluar dari Matahari.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 136,
+    "category": "Astronomi",
+    "title": "Jupiter termasuk raksasa gas.",
+    "fact": "Berdasarkan komposisi dan strukturnya, Jupiter diklasifikasikan sebagai raksasa gas.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 137,
+    "category": "Astronomi",
+    "title": "Lama rotasi Jupiter: sekitar 9,9 jam.",
+    "fact": "Jupiter menyelesaikan satu putaran pada sumbunya dalam sekitar 9,9 jam.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 138,
+    "category": "Astronomi",
+    "title": "Ciri khas Jupiter.",
+    "fact": "Jupiter planet terbesar dan memiliki Bintik Merah Besar.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 139,
+    "category": "Astronomi",
+    "title": "Saturnus adalah planet keenam dari Matahari.",
+    "fact": "Urutan orbit Saturnus menempatkannya sebagai planet keenam jika dihitung keluar dari Matahari.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 140,
+    "category": "Astronomi",
+    "title": "Saturnus termasuk raksasa gas.",
+    "fact": "Berdasarkan komposisi dan strukturnya, Saturnus diklasifikasikan sebagai raksasa gas.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 141,
+    "category": "Astronomi",
+    "title": "Lama rotasi Saturnus: sekitar 10,7 jam.",
+    "fact": "Saturnus menyelesaikan satu putaran pada sumbunya dalam sekitar 10,7 jam.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 142,
+    "category": "Astronomi",
+    "title": "Ciri khas Saturnus.",
+    "fact": "Saturnus memiliki sistem cincin paling mencolok.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 143,
+    "category": "Astronomi",
+    "title": "Uranus adalah planet ketujuh dari Matahari.",
+    "fact": "Urutan orbit Uranus menempatkannya sebagai planet ketujuh jika dihitung keluar dari Matahari.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 144,
+    "category": "Astronomi",
+    "title": "Uranus termasuk raksasa es.",
+    "fact": "Berdasarkan komposisi dan strukturnya, Uranus diklasifikasikan sebagai raksasa es.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 145,
+    "category": "Astronomi",
+    "title": "Lama rotasi Uranus: sekitar 17 jam.",
+    "fact": "Uranus menyelesaikan satu putaran pada sumbunya dalam sekitar 17 jam.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 146,
+    "category": "Astronomi",
+    "title": "Ciri khas Uranus.",
+    "fact": "Uranus berotasi hampir menyamping dengan kemiringan sumbu sekitar 98 derajat.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 147,
+    "category": "Astronomi",
+    "title": "Neptunus adalah planet kedelapan dari Matahari.",
+    "fact": "Urutan orbit Neptunus menempatkannya sebagai planet kedelapan jika dihitung keluar dari Matahari.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 148,
+    "category": "Astronomi",
+    "title": "Neptunus termasuk raksasa es.",
+    "fact": "Berdasarkan komposisi dan strukturnya, Neptunus diklasifikasikan sebagai raksasa es.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 149,
+    "category": "Astronomi",
+    "title": "Lama rotasi Neptunus: sekitar 16 jam.",
+    "fact": "Neptunus menyelesaikan satu putaran pada sumbunya dalam sekitar 16 jam.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 150,
+    "category": "Astronomi",
+    "title": "Ciri khas Neptunus.",
+    "fact": "Neptunus memiliki angin atmosfer yang luar biasa cepat.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 151,
+    "category": "Astronomi",
+    "title": "Ceres adalah planet katai.",
+    "fact": "Ceres termasuk salah satu dari lima planet katai yang diakui resmi di Tata Surya.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 152,
+    "category": "Astronomi",
+    "title": "Lokasi dan ciri Ceres.",
+    "fact": "Ceres berada di sabuk asteroid antara Mars dan Jupiter.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 153,
+    "category": "Astronomi",
+    "title": "Pluto adalah planet katai.",
+    "fact": "Pluto termasuk salah satu dari lima planet katai yang diakui resmi di Tata Surya.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 154,
+    "category": "Astronomi",
+    "title": "Lokasi dan ciri Pluto.",
+    "fact": "Pluto direklasifikasi sebagai planet katai pada 2006.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 155,
+    "category": "Astronomi",
+    "title": "Haumea adalah planet katai.",
+    "fact": "Haumea termasuk salah satu dari lima planet katai yang diakui resmi di Tata Surya.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 156,
+    "category": "Astronomi",
+    "title": "Lokasi dan ciri Haumea.",
+    "fact": "Haumea berbentuk lonjong dan berotasi sangat cepat.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 157,
+    "category": "Astronomi",
+    "title": "Makemake adalah planet katai.",
+    "fact": "Makemake termasuk salah satu dari lima planet katai yang diakui resmi di Tata Surya.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 158,
+    "category": "Astronomi",
+    "title": "Lokasi dan ciri Makemake.",
+    "fact": "Makemake merupakan salah satu objek terang di Sabuk Kuiper.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 159,
+    "category": "Astronomi",
+    "title": "Eris adalah planet katai.",
+    "fact": "Eris termasuk salah satu dari lima planet katai yang diakui resmi di Tata Surya.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 160,
+    "category": "Astronomi",
+    "title": "Lokasi dan ciri Eris.",
+    "fact": "Eris berada jauh di kawasan luar Tata Surya.",
+    "sourceLabel": "NASA Science",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": 161,
+    "category": "Tubuh Manusia",
+    "title": "Jantung merupakan bagian sistem kardiovaskular.",
+    "fact": "Dalam anatomi manusia, Jantung berhubungan terutama dengan sistem kardiovaskular.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 162,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Jantung.",
+    "fact": "Jantung memompa darah ke paru-paru dan seluruh tubuh.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 163,
+    "category": "Tubuh Manusia",
+    "title": "Paru-paru merupakan bagian sistem pernapasan.",
+    "fact": "Dalam anatomi manusia, Paru-paru berhubungan terutama dengan sistem pernapasan.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 164,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Paru-paru.",
+    "fact": "Paru-paru menukar oksigen dan karbon dioksida.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 165,
+    "category": "Tubuh Manusia",
+    "title": "Otak merupakan bagian sistem saraf.",
+    "fact": "Dalam anatomi manusia, Otak berhubungan terutama dengan sistem saraf.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 166,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Otak.",
+    "fact": "Otak memproses informasi dan mengoordinasikan banyak fungsi tubuh.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 167,
+    "category": "Tubuh Manusia",
+    "title": "Sumsum tulang belakang merupakan bagian sistem saraf.",
+    "fact": "Dalam anatomi manusia, Sumsum tulang belakang berhubungan terutama dengan sistem saraf.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 168,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Sumsum tulang belakang.",
+    "fact": "Sumsum tulang belakang membawa sinyal antara otak dan tubuh serta menangani beberapa refleks.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 169,
+    "category": "Tubuh Manusia",
+    "title": "Hati merupakan bagian sistem pencernaan.",
+    "fact": "Dalam anatomi manusia, Hati berhubungan terutama dengan sistem pencernaan.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 170,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Hati.",
+    "fact": "Hati memproses nutrien, menghasilkan empedu, dan membantu detoksifikasi.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 171,
+    "category": "Tubuh Manusia",
+    "title": "Ginjal merupakan bagian sistem urinaria.",
+    "fact": "Dalam anatomi manusia, Ginjal berhubungan terutama dengan sistem urinaria.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 172,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Ginjal.",
+    "fact": "Ginjal menyaring darah dan mengatur air, elektrolit, serta limbah.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 173,
+    "category": "Tubuh Manusia",
+    "title": "Lambung merupakan bagian sistem pencernaan.",
+    "fact": "Dalam anatomi manusia, Lambung berhubungan terutama dengan sistem pencernaan.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 174,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Lambung.",
+    "fact": "Lambung mencampur makanan dengan asam dan enzim.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 175,
+    "category": "Tubuh Manusia",
+    "title": "Usus halus merupakan bagian sistem pencernaan.",
+    "fact": "Dalam anatomi manusia, Usus halus berhubungan terutama dengan sistem pencernaan.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 176,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Usus halus.",
+    "fact": "Usus halus menjadi lokasi utama pencernaan lanjutan dan penyerapan nutrien.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 177,
+    "category": "Tubuh Manusia",
+    "title": "Usus besar merupakan bagian sistem pencernaan.",
+    "fact": "Dalam anatomi manusia, Usus besar berhubungan terutama dengan sistem pencernaan.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 178,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Usus besar.",
+    "fact": "Usus besar menyerap air dan membentuk feses.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 179,
+    "category": "Tubuh Manusia",
+    "title": "Pankreas merupakan bagian sistem pencernaan dan endokrin.",
+    "fact": "Dalam anatomi manusia, Pankreas berhubungan terutama dengan sistem pencernaan dan endokrin.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 180,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Pankreas.",
+    "fact": "Pankreas menghasilkan enzim pencernaan serta hormon seperti insulin.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 181,
+    "category": "Tubuh Manusia",
+    "title": "Limpa merupakan bagian sistem limfatik.",
+    "fact": "Dalam anatomi manusia, Limpa berhubungan terutama dengan sistem limfatik.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 182,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Limpa.",
+    "fact": "Limpa menyaring darah dan mendukung respons imun.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 183,
+    "category": "Tubuh Manusia",
+    "title": "Kulit merupakan bagian sistem integumen.",
+    "fact": "Dalam anatomi manusia, Kulit berhubungan terutama dengan sistem integumen.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 184,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Kulit.",
+    "fact": "Kulit melindungi tubuh dan membantu pengaturan suhu.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 185,
+    "category": "Tubuh Manusia",
+    "title": "Tulang merupakan bagian sistem rangka.",
+    "fact": "Dalam anatomi manusia, Tulang berhubungan terutama dengan sistem rangka.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 186,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Tulang.",
+    "fact": "Tulang menopang tubuh, melindungi organ, dan menyimpan mineral.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 187,
+    "category": "Tubuh Manusia",
+    "title": "Otot rangka merupakan bagian sistem muskuloskeletal.",
+    "fact": "Dalam anatomi manusia, Otot rangka berhubungan terutama dengan sistem muskuloskeletal.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 188,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Otot rangka.",
+    "fact": "Otot rangka menghasilkan gerakan sadar dengan menarik tulang.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 189,
+    "category": "Tubuh Manusia",
+    "title": "Diafragma merupakan bagian sistem pernapasan.",
+    "fact": "Dalam anatomi manusia, Diafragma berhubungan terutama dengan sistem pernapasan.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 190,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Diafragma.",
+    "fact": "Diafragma menjadi otot utama yang membantu menarik udara ke paru-paru.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 191,
+    "category": "Tubuh Manusia",
+    "title": "Tiroid merupakan bagian sistem endokrin.",
+    "fact": "Dalam anatomi manusia, Tiroid berhubungan terutama dengan sistem endokrin.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 192,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Tiroid.",
+    "fact": "Tiroid menghasilkan hormon yang mengatur metabolisme.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 193,
+    "category": "Tubuh Manusia",
+    "title": "Kandung kemih merupakan bagian sistem urinaria.",
+    "fact": "Dalam anatomi manusia, Kandung kemih berhubungan terutama dengan sistem urinaria.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 194,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Kandung kemih.",
+    "fact": "Kandung kemih menyimpan urine sebelum dikeluarkan.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 195,
+    "category": "Tubuh Manusia",
+    "title": "Mata merupakan bagian sistem sensorik.",
+    "fact": "Dalam anatomi manusia, Mata berhubungan terutama dengan sistem sensorik.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 196,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Mata.",
+    "fact": "Mata mengubah cahaya menjadi sinyal saraf untuk penglihatan.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 197,
+    "category": "Tubuh Manusia",
+    "title": "Telinga dalam merupakan bagian sistem sensorik.",
+    "fact": "Dalam anatomi manusia, Telinga dalam berhubungan terutama dengan sistem sensorik.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 198,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Telinga dalam.",
+    "fact": "Telinga dalam berperan dalam pendengaran dan keseimbangan.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 199,
+    "category": "Tubuh Manusia",
+    "title": "Sumsum tulang merupakan bagian sistem hematopoietik.",
+    "fact": "Dalam anatomi manusia, Sumsum tulang berhubungan terutama dengan sistem hematopoietik.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 200,
+    "category": "Tubuh Manusia",
+    "title": "Fungsi utama Sumsum tulang.",
+    "fact": "Sumsum tulang menghasilkan sebagian besar sel darah.",
+    "sourceLabel": "NIH MedlinePlus",
+    "sourceUrl": "https://medlineplus.gov/anatomy.html"
+  },
+  {
+    "id": 201,
+    "category": "Zoologi",
+    "title": "Gurita termasuk moluska.",
+    "fact": "Secara taksonomi, Gurita ditempatkan dalam kelompok moluska.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 202,
+    "category": "Zoologi",
+    "title": "Keunikan Gurita.",
+    "fact": "Gurita memiliki tiga jantung dan darah berbasis hemosianin.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 203,
+    "category": "Zoologi",
+    "title": "Lumba-lumba termasuk mamalia laut.",
+    "fact": "Secara taksonomi, Lumba-lumba ditempatkan dalam kelompok mamalia laut.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 204,
+    "category": "Zoologi",
+    "title": "Keunikan Lumba-lumba.",
+    "fact": "Lumba-lumba bernapas dengan paru-paru melalui lubang sembur.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 205,
+    "category": "Zoologi",
+    "title": "Paus biru termasuk mamalia laut.",
+    "fact": "Secara taksonomi, Paus biru ditempatkan dalam kelompok mamalia laut.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 206,
+    "category": "Zoologi",
+    "title": "Keunikan Paus biru.",
+    "fact": "Paus biru merupakan hewan terbesar yang diketahui.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 207,
+    "category": "Zoologi",
+    "title": "Kelelawar termasuk mamalia.",
+    "fact": "Secara taksonomi, Kelelawar ditempatkan dalam kelompok mamalia.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 208,
+    "category": "Zoologi",
+    "title": "Keunikan Kelelawar.",
+    "fact": "Kelelawar mampu melakukan penerbangan aktif berkelanjutan.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 209,
+    "category": "Zoologi",
+    "title": "Platipus termasuk mamalia monotremata.",
+    "fact": "Secara taksonomi, Platipus ditempatkan dalam kelompok mamalia monotremata.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 210,
+    "category": "Zoologi",
+    "title": "Keunikan Platipus.",
+    "fact": "Platipus bertelur meskipun termasuk mamalia.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 211,
+    "category": "Zoologi",
+    "title": "Echidna termasuk mamalia monotremata.",
+    "fact": "Secara taksonomi, Echidna ditempatkan dalam kelompok mamalia monotremata.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 212,
+    "category": "Zoologi",
+    "title": "Keunikan Echidna.",
+    "fact": "Echidna juga berkembang biak dengan bertelur.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 213,
+    "category": "Zoologi",
+    "title": "Burung termasuk vertebrata.",
+    "fact": "Secara taksonomi, Burung ditempatkan dalam kelompok vertebrata.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 214,
+    "category": "Zoologi",
+    "title": "Keunikan Burung.",
+    "fact": "Burung merupakan keturunan dinosaurus theropoda.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 215,
+    "category": "Zoologi",
+    "title": "Hiu termasuk ikan bertulang rawan.",
+    "fact": "Secara taksonomi, Hiu ditempatkan dalam kelompok ikan bertulang rawan.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 216,
+    "category": "Zoologi",
+    "title": "Keunikan Hiu.",
+    "fact": "Hiu memiliki kerangka terutama dari tulang rawan.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 217,
+    "category": "Zoologi",
+    "title": "Pari termasuk ikan bertulang rawan.",
+    "fact": "Secara taksonomi, Pari ditempatkan dalam kelompok ikan bertulang rawan.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 218,
+    "category": "Zoologi",
+    "title": "Keunikan Pari.",
+    "fact": "Pari berkerabat dekat dengan hiu.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 219,
+    "category": "Zoologi",
+    "title": "Kuda laut termasuk ikan.",
+    "fact": "Secara taksonomi, Kuda laut ditempatkan dalam kelompok ikan.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 220,
+    "category": "Zoologi",
+    "title": "Keunikan Kuda laut.",
+    "fact": "Kuda laut mengerami embrio di kantong tubuh pejantan.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 221,
+    "category": "Zoologi",
+    "title": "Axolotl termasuk amfibi.",
+    "fact": "Secara taksonomi, Axolotl ditempatkan dalam kelompok amfibi.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 222,
+    "category": "Zoologi",
+    "title": "Keunikan Axolotl.",
+    "fact": "Axolotl mampu meregenerasi anggota tubuh dan beberapa jaringan.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 223,
+    "category": "Zoologi",
+    "title": "Bintang laut termasuk echinodermata.",
+    "fact": "Secara taksonomi, Bintang laut ditempatkan dalam kelompok echinodermata.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 224,
+    "category": "Zoologi",
+    "title": "Keunikan Bintang laut.",
+    "fact": "Bintang laut bukan ikan dan tidak memiliki tulang belakang.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 225,
+    "category": "Zoologi",
+    "title": "Ubur-ubur termasuk cnidaria.",
+    "fact": "Secara taksonomi, Ubur-ubur ditempatkan dalam kelompok cnidaria.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 226,
+    "category": "Zoologi",
+    "title": "Keunikan Ubur-ubur.",
+    "fact": "Ubur-ubur menggunakan jaringan saraf tanpa otak terpusat.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 227,
+    "category": "Zoologi",
+    "title": "Lebah termasuk serangga.",
+    "fact": "Secara taksonomi, Lebah ditempatkan dalam kelompok serangga.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 228,
+    "category": "Zoologi",
+    "title": "Keunikan Lebah.",
+    "fact": "Lebah dapat melihat pola ultraviolet pada bunga.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 229,
+    "category": "Zoologi",
+    "title": "Semut termasuk serangga.",
+    "fact": "Secara taksonomi, Semut ditempatkan dalam kelompok serangga.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 230,
+    "category": "Zoologi",
+    "title": "Keunikan Semut.",
+    "fact": "Semut banyak berkomunikasi menggunakan feromon.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 231,
+    "category": "Zoologi",
+    "title": "Rayap termasuk serangga.",
+    "fact": "Secara taksonomi, Rayap ditempatkan dalam kelompok serangga.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 232,
+    "category": "Zoologi",
+    "title": "Keunikan Rayap.",
+    "fact": "Rayap secara evolusioner berada dalam garis keturunan kecoak.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 233,
+    "category": "Zoologi",
+    "title": "Laba-laba termasuk arachnida.",
+    "fact": "Secara taksonomi, Laba-laba ditempatkan dalam kelompok arachnida.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 234,
+    "category": "Zoologi",
+    "title": "Keunikan Laba-laba.",
+    "fact": "Laba-laba memiliki delapan kaki sehingga bukan serangga.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 235,
+    "category": "Zoologi",
+    "title": "Kupu-kupu termasuk serangga.",
+    "fact": "Secara taksonomi, Kupu-kupu ditempatkan dalam kelompok serangga.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 236,
+    "category": "Zoologi",
+    "title": "Keunikan Kupu-kupu.",
+    "fact": "Kupu-kupu memiliki reseptor pengecap pada kaki.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 237,
+    "category": "Zoologi",
+    "title": "Bunglon termasuk reptil.",
+    "fact": "Secara taksonomi, Bunglon ditempatkan dalam kelompok reptil.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 238,
+    "category": "Zoologi",
+    "title": "Keunikan Bunglon.",
+    "fact": "Bunglon mengubah warna untuk komunikasi, suhu, stres, dan kamuflase.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 239,
+    "category": "Zoologi",
+    "title": "Penguin termasuk burung.",
+    "fact": "Secara taksonomi, Penguin ditempatkan dalam kelompok burung.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 240,
+    "category": "Zoologi",
+    "title": "Keunikan Penguin.",
+    "fact": "Penguin menggunakan sayap yang termodifikasi sebagai sirip.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 241,
+    "category": "Zoologi",
+    "title": "Beruang kutub termasuk mamalia.",
+    "fact": "Secara taksonomi, Beruang kutub ditempatkan dalam kelompok mamalia.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 242,
+    "category": "Zoologi",
+    "title": "Keunikan Beruang kutub.",
+    "fact": "Beruang kutub memiliki kulit gelap di bawah bulunya.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 243,
+    "category": "Zoologi",
+    "title": "Gajah termasuk mamalia.",
+    "fact": "Secara taksonomi, Gajah ditempatkan dalam kelompok mamalia.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 244,
+    "category": "Zoologi",
+    "title": "Keunikan Gajah.",
+    "fact": "Gajah dapat berkomunikasi dengan panggilan infrasonik.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 245,
+    "category": "Zoologi",
+    "title": "Koala termasuk mamalia marsupial.",
+    "fact": "Secara taksonomi, Koala ditempatkan dalam kelompok mamalia marsupial.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 246,
+    "category": "Zoologi",
+    "title": "Keunikan Koala.",
+    "fact": "Koala memiliki pola sidik jari yang mirip primata.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 247,
+    "category": "Zoologi",
+    "title": "Karang termasuk hewan cnidaria.",
+    "fact": "Secara taksonomi, Karang ditempatkan dalam kelompok hewan cnidaria.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 248,
+    "category": "Zoologi",
+    "title": "Keunikan Karang.",
+    "fact": "Karang membentuk koloni polip yang menghasilkan rangka kapur.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 249,
+    "category": "Zoologi",
+    "title": "Spons laut termasuk hewan porifera.",
+    "fact": "Secara taksonomi, Spons laut ditempatkan dalam kelompok hewan porifera.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 250,
+    "category": "Zoologi",
+    "title": "Keunikan Spons laut.",
+    "fact": "Spons laut termasuk garis keturunan hewan yang sangat awal.",
+    "sourceLabel": "Smithsonian Ocean & Natural History",
+    "sourceUrl": "https://ocean.si.edu/ocean-life"
+  },
+  {
+    "id": 251,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Usia Bumi.",
+    "fact": "Bumi berusia sekitar 4,54 miliar tahun.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 252,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan usia bumi.",
+    "fact": "Penanggalan radiometrik meteorit dan batuan tertua menjadi dasar estimasi ini.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 253,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Lempeng tektonik.",
+    "fact": "Litosfer bumi terbagi menjadi lempeng yang bergerak perlahan.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 254,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan lempeng tektonik.",
+    "fact": "Banyak gempa dan gunung api terkonsentrasi di batas lempeng.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 255,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Hiposenter.",
+    "fact": "Hiposenter adalah titik awal gempa di bawah permukaan.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 256,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan hiposenter.",
+    "fact": "Episenter adalah titik di permukaan tepat di atasnya.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 257,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Gempa susulan.",
+    "fact": "Gempa utama biasanya diikuti gempa susulan.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 258,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan gempa susulan.",
+    "fact": "Susulan dapat berlangsung berminggu-minggu hingga bertahun-tahun.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 259,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Prediksi gempa.",
+    "fact": "Gempa tertentu belum dapat diprediksi tepat waktu, lokasi, dan magnitudonya.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 260,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan prediksi gempa.",
+    "fact": "Ilmuwan dapat membuat peta bahaya dan estimasi probabilitas.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 261,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Gelombang P.",
+    "fact": "Gelombang primer adalah gelombang seismik tercepat.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 262,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan gelombang p.",
+    "fact": "Karena itu gelombang p biasanya tercatat lebih dahulu.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 263,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Magnitudo gempa.",
+    "fact": "Magnitudo menyatakan ukuran sumber gempa.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 264,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan magnitudo gempa.",
+    "fact": "Intensitas menggambarkan kekuatan guncangan di lokasi tertentu.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 265,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Magma dan lava.",
+    "fact": "Batuan cair di bawah permukaan disebut magma.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 266,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan magma dan lava.",
+    "fact": "Setelah keluar ke permukaan material cair itu disebut lava.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 267,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Inti Bumi.",
+    "fact": "Inti luar bumi bersifat cair.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 268,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan inti bumi.",
+    "fact": "Inti dalam tetap padat akibat tekanan yang sangat tinggi.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 269,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Medan magnet.",
+    "fact": "Gerakan logam cair di inti luar membantu membangkitkan medan magnet.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 270,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan medan magnet.",
+    "fact": "Kutub magnet bumi bergerak dan pernah berbalik.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 271,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Atmosfer.",
+    "fact": "Atmosfer kering bumi terutama terdiri dari nitrogen.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 272,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan atmosfer.",
+    "fact": "Oksigen mencakup sekitar seperlima atmosfer kering.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 273,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Troposfer.",
+    "fact": "Troposfer adalah lapisan atmosfer terbawah.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 274,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan troposfer.",
+    "fact": "Sebagian besar cuaca berlangsung di lapisan ini.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 275,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Ozon stratosfer.",
+    "fact": "Ozon stratosfer menyerap banyak radiasi ultraviolet.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 276,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan ozon stratosfer.",
+    "fact": "Lapisan ini membantu melindungi kehidupan di permukaan.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 277,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Gurun.",
+    "fact": "Gurun ditentukan terutama oleh curah hujan rendah.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 278,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan gurun.",
+    "fact": "Karena itu gurun dapat bersuhu panas maupun dingin.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 279,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Antarktika.",
+    "fact": "Pedalaman antarktika menerima sangat sedikit presipitasi.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 280,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan antarktika.",
+    "fact": "Wilayah ini diklasifikasikan sebagai gurun kutub.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://www.usgs.gov/programs/earthquake-hazards/science-earthquakes"
+  },
+  {
+    "id": 281,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Luas samudra.",
+    "fact": "Samudra menutupi sekitar 71 persen permukaan bumi.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 282,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan luas samudra.",
+    "fact": "Samudra membentuk satu badan air global yang saling terhubung.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 283,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Air laut.",
+    "fact": "Sekitar 97 persen air bumi berada di samudra.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 284,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan air laut.",
+    "fact": "Air tersebut mengandung garam terlarut sehingga tidak langsung dapat diminum.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 285,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Iklim laut.",
+    "fact": "Laut menyimpan radiasi matahari dalam jumlah besar.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 286,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan iklim laut.",
+    "fact": "Arus laut lalu membantu memindahkan panas di seluruh planet.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 287,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Hujan daratan.",
+    "fact": "Hampir seluruh hujan daratan bermula dari penguapan laut.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 288,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan hujan daratan.",
+    "fact": "Uap air dipindahkan atmosfer sebelum mengembun dan jatuh.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 289,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Arus laut.",
+    "fact": "Arus digerakkan angin, perbedaan kerapatan, rotasi bumi, dan pasang.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 290,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan arus laut.",
+    "fact": "Arus membantu menyeimbangkan distribusi panas global.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 291,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Pasang laut.",
+    "fact": "Gravitasi bulan memberi pengaruh utama pada pasang.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 292,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan pasang laut.",
+    "fact": "Gravitasi matahari juga memberikan kontribusi.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 293,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Tekanan laut.",
+    "fact": "Tekanan air bertambah seiring kedalaman.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 294,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan tekanan laut.",
+    "fact": "Peningkatan berasal dari berat kolom air di atasnya.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 295,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Zona fotik.",
+    "fact": "Zona fotik menerima cukup cahaya untuk fotosintesis.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 296,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan zona fotik.",
+    "fact": "Fitoplankton hidup dan menjadi produsen penting di lapisan ini.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 297,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Ventilasi hidrotermal.",
+    "fact": "Ekosistem ventilasi laut dalam tidak bergantung langsung pada cahaya.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 298,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan ventilasi hidrotermal.",
+    "fact": "Mikroba kemosintetik menjadi dasar rantai makanannya.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 299,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Pengasaman laut.",
+    "fact": "Karbon dioksida terlarut membentuk asam karbonat.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  },
+  {
+    "id": 300,
+    "category": "Ilmu Bumi & Laut",
+    "title": "Penjelasan pengasaman laut.",
+    "fact": "Proses ini menurunkan ph laut dan memengaruhi organisme pembentuk cangkang.",
+    "sourceLabel": "USGS & NOAA",
+    "sourceUrl": "https://oceanexplorer.noaa.gov/ocean-fact/climate/"
+  }
+]

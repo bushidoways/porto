@@ -910,6 +910,22 @@ footer {
   .dv-pill   { bottom: var(--space-4); right: var(--space-4); }
 }
 
+
+/* ── SCIENCE FLASHCARD WIDGET — LEFT BOTTOM ─────────── */
+.sf-widget{position:fixed;left:var(--space-6);bottom:var(--space-6);z-index:201;width:min(340px,calc(100vw - 2rem));background:var(--bg-soft);color:var(--text);border:1px solid var(--border);border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);overflow:hidden;animation:sf-pop-in 180ms cubic-bezier(.16,1,.3,1)}
+.sf-widget[hidden]{display:none}@keyframes sf-pop-in{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+.sf-header{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);padding:var(--space-3) var(--space-4);background:var(--text);color:var(--text-inverse)}
+.sf-header-left,.sf-header-actions{display:flex;align-items:center;gap:var(--space-2)}.sf-header-icon{width:24px;height:24px;display:grid;place-items:center;flex:0 0 auto;border-radius:50%;background:rgba(255,255,255,.1);color:var(--accent)}
+.sf-header-title{font-family:var(--font-mono);font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(250,247,242,.75)}
+.sf-icon-btn{width:44px;height:44px;display:grid;place-items:center;border-radius:var(--radius-sm);color:rgba(250,247,242,.55);font-size:1rem;line-height:1}.sf-icon-btn:hover{background:rgba(255,255,255,.1);color:var(--text-inverse)}
+.sf-body{padding:var(--space-5)}.sf-category{display:inline-flex;align-items:center;margin-bottom:var(--space-3);padding:3px 9px;border:1px solid var(--accent-border);border-radius:var(--radius-full);background:var(--accent-soft);color:var(--accent-hover);font-family:var(--font-mono);font-size:.75rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase}
+.sf-title{margin-bottom:var(--space-3);font-family:var(--font-display);font-size:clamp(1.45rem,4vw,1.8rem);font-weight:400;line-height:1.1;letter-spacing:-.025em;color:var(--text)}.sf-fact{margin-bottom:var(--space-4);color:var(--text-muted);font-size:.82rem;line-height:1.75}
+.sf-source{display:inline-flex;align-items:center;gap:5px;margin-bottom:var(--space-4);color:var(--text-faint);font-family:var(--font-mono);font-size:.75rem;line-height:1.5}.sf-source:hover{color:var(--accent-hover)}
+.sf-footer{display:flex;gap:var(--space-2);padding-top:var(--space-4);border-top:1px solid var(--divider)}.sf-next-btn,.sf-source-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);border-radius:var(--radius-md);font-size:.75rem;font-weight:600}
+.sf-next-btn{flex:1;background:var(--text);color:var(--text-inverse)}.sf-next-btn:hover{background:var(--accent);transform:translateY(-1px)}.sf-next-btn:disabled{opacity:.55;cursor:wait;transform:none}.sf-source-btn{width:44px;border:1px solid var(--border-strong);color:var(--text-muted)}.sf-source-btn:hover{border-color:var(--accent-border);background:var(--accent-soft);color:var(--accent-hover)}
+.sf-pill{position:fixed;left:var(--space-6);bottom:var(--space-6);z-index:200;width:50px;height:50px;display:grid;place-items:center;border-radius:50%;background:var(--text);color:var(--text-inverse);box-shadow:var(--shadow-md)}.sf-pill[hidden]{display:none}.sf-pill:hover{background:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-lg)}.sf-pill svg{width:22px;height:22px}
+@media(max-width:480px){.sf-widget{left:var(--space-4);bottom:var(--space-4);width:calc(100vw - var(--space-8))}.sf-pill{left:var(--space-4);bottom:var(--space-4)}}@media(prefers-reduced-motion:reduce){.sf-widget{animation:none}}
+
 /* ── REVEAL ANIMATIONS ─────────────────────────────────────────── */
 .reveal {
   opacity: 0;
@@ -1465,6 +1481,14 @@ footer {
   </div>
 </footer>
 
+
+<!-- SCIENCE FLASHCARD WIDGET -->
+<aside id="science-widget" class="sf-widget" hidden aria-labelledby="science-title" aria-live="polite">
+  <div class="sf-header"><div class="sf-header-left"><span class="sf-header-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="1.8" fill="currentColor"></circle><ellipse cx="12" cy="12" rx="9" ry="3.8"></ellipse><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(60 12 12)"></ellipse><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(120 12 12)"></ellipse></svg></span><span class="sf-header-title">Fakta Sains</span></div><div class="sf-header-actions"><button id="science-minimize" class="sf-icon-btn" type="button" aria-label="Sembunyikan fakta sains" title="Sembunyikan">−</button><button id="science-close" class="sf-icon-btn" type="button" aria-label="Tutup fakta sains" title="Tutup">×</button></div></div>
+  <div class="sf-body"><div id="science-category" class="sf-category">Memuat fakta</div><h2 id="science-title" class="sf-title">Fakta sains sedang disiapkan.</h2><p id="science-fact" class="sf-fact">Tunggu sebentar.</p><a id="science-source" class="sf-source" href="#" target="_blank" rel="noopener noreferrer" aria-label="Buka sumber fakta sains"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7"></path><path d="M10 14 21 3"></path><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path></svg><span id="science-source-label">Sumber tervalidasi</span></a><div class="sf-footer"><button id="science-next" class="sf-next-btn" type="button">Fakta lain <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><a id="science-source-btn" class="sf-source-btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Lihat sumber" title="Lihat sumber">↗</a></div></div>
+</aside>
+<button id="science-pill" class="sf-pill" type="button" aria-label="Buka fakta sains" title="Fakta sains yang mungkin belum kamu tahu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="1.8" fill="currentColor"></circle><ellipse cx="12" cy="12" rx="9" ry="3.8"></ellipse><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(60 12 12)"></ellipse><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(120 12 12)"></ellipse></svg></button>
+
 <!-- DAILY VERSE WIDGET -->
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
 <div id="dv-widget" class="dv-widget">
@@ -1682,6 +1706,19 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     });
   });
 });
+
+
+// ── SCIENCE FLASHCARD WIDGET ───────────────────────
+(() => {
+  const fallback=[{"category":"Astronomi","title":"Venus berotasi sangat lambat.","fact":"Satu rotasi Venus membutuhkan sekitar 243 hari Bumi, lebih lama daripada satu orbitnya.","sourceLabel":"NASA Science","sourceUrl":"https://science.nasa.gov/venus/facts/"},{"category":"Fisika","title":"Es mengapung karena kurang rapat.","fact":"Struktur kristal es membuat air padat kurang rapat daripada air cair.","sourceLabel":"USGS","sourceUrl":"https://www.usgs.gov/special-topics/water-science-school"}];
+  const el=id=>document.getElementById(id),widget=el('science-widget'),pill=el('science-pill'),category=el('science-category'),title=el('science-title'),fact=el('science-fact'),source=el('science-source'),sourceLabel=el('science-source-label'),sourceBtn=el('science-source-btn'),nextBtn=el('science-next'),minimize=el('science-minimize'),close=el('science-close'); if(!widget||!pill)return;
+  let facts=[],current=-1,deck=[],cursor=0; const day=()=>Math.floor((Date.now()-new Date(new Date().getFullYear(),0,0))/86400000);
+  function shuffle(){deck=Array.from({length:facts.length},(_,i)=>i);for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]]}if(deck[0]===current&&deck.length>1)[deck[0],deck[1]]=[deck[1],deck[0]];cursor=0}
+  function render(i){const x=facts[i];if(!x)return;category.textContent=x.category;title.textContent=x.title;fact.textContent=x.fact;source.href=x.sourceUrl;sourceLabel.textContent=`Sumber: ${x.sourceLabel}`;sourceBtn.href=x.sourceUrl;current=i}
+  function next(){if(cursor>=deck.length)shuffle();render(deck[cursor++])} function open(){widget.hidden=false;pill.hidden=true;minimize.focus()} function hide(){widget.hidden=true;pill.hidden=false;pill.focus()}
+  async function init(){nextBtn.disabled=true;try{const r=await fetch('./science-facts.json',{cache:'no-cache'});if(!r.ok)throw Error(r.status);facts=await r.json();if(!Array.isArray(facts)||!facts.length)throw Error('empty')}catch(e){console.warn('Memakai fakta cadangan',e);facts=fallback}render(day()%facts.length);shuffle();nextBtn.disabled=false}
+  pill.addEventListener('click',open);minimize.addEventListener('click',hide);close.addEventListener('click',hide);nextBtn.addEventListener('click',next);document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!widget.hidden)hide()});init();
+})();
 
 // ── DAILY VERSE ──────────────────────────────────────────
 (function() {
