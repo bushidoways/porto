@@ -5,16 +5,16 @@
 |_\_|<___||_|_|\_. |/__/
                <___'    
 -->
-
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Anang - Landing Page</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nang - Junior Data Analyst | Sales Reporting &amp; Automation</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <style>
 
 /* ── RESET ─────────────────────────────────────────── */
@@ -29,7 +29,7 @@ html {
 
 /* ── TOKENS ─────────────────────────────────────────── */
 :root {
-  /* Surfaces — Anthropic warm cream */
+  /* Surfaces - Anthropic warm cream */
   --bg:             #F5F0E8;
   --bg-soft:        #FAF7F2;
   --surface:        #F0EBE1;
@@ -44,7 +44,7 @@ html {
   --text-faint:     #A09285;
   --text-inverse:   #FAF7F2;
 
-  /* Accent — Anthropic rust/terracotta */
+  /* Accent - Anthropic rust/terracotta */
   --accent:         #C96442;
   --accent-hover:   #A84F31;
   --accent-active:  #8A3D23;
@@ -911,7 +911,7 @@ footer {
 }
 
 
-/* ── SCIENCE FLASHCARD WIDGET — LEFT BOTTOM ─────────── */
+/* ── SCIENCE FLASHCARD WIDGET - LEFT BOTTOM ─────────── */
 .sf-widget{position:fixed;left:var(--space-6);bottom:var(--space-6);z-index:201;width:min(340px,calc(100vw - 2rem));background:var(--bg-soft);color:var(--text);border:1px solid var(--border);border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);overflow:hidden;animation:sf-pop-in 180ms cubic-bezier(.16,1,.3,1)}
 .sf-widget[hidden]{display:none}@keyframes sf-pop-in{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
 .sf-header{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);padding:var(--space-3) var(--space-4);background:var(--text);color:var(--text-inverse)}
@@ -966,565 +966,503 @@ footer {
   box-shadow: var(--shadow-sm);
 }
 
-</style>
-</head>
-<body>
 
+/* Portfolio refinements */
+[hidden] { display:none !important; }
+.skip-link { position:fixed;top:8px;left:8px;z-index:999;padding:12px;background:var(--text);color:var(--text-inverse);transform:translateY(-160%); }
+.skip-link:focus { transform:none; }
+.featured-case { display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:var(--space-8);padding:clamp(1.5rem,4vw,2.5rem);border:1px solid var(--border);border-radius:var(--radius-xl);background:var(--bg-soft);margin-bottom:var(--space-6); }
+.featured-badge { display:inline-block;padding:4px 12px;border:1px solid var(--accent-border);border-radius:999px;background:var(--accent-soft);color:var(--accent-hover);font-size:.72rem;margin-bottom:1rem; }
+.featured-title { font-family:var(--font-display);font-size:var(--text-2xl);font-weight:400;margin-bottom:.75rem; }
+.featured-sub { font-size:var(--text-lg);margin-bottom:1rem; }
+.featured-desc { color:var(--text-muted);font-size:var(--text-sm);margin-bottom:1.5rem; }
+.featured-actions { display:flex;flex-wrap:wrap;gap:12px;margin-top:1.5rem; }
+.featured-kpis { display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start; }
+.kpi { padding:16px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--bg);min-width:0; }
+.kpi-num { display:block;font-size:clamp(1rem,1.6vw,1.35rem);font-weight:700;font-variant-numeric:tabular-nums; }
+.kpi-label { font-size:.78rem;color:var(--text-muted); }
+.kpi-note { grid-column:1/-1;font-size:.75rem;color:var(--text-muted); }
+.case-details { border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--bg-soft);margin-bottom:3rem;scroll-margin-top:88px; }
+.case-details summary { cursor:pointer;padding:20px;font-weight:600; }
+.case-details[open] summary { border-bottom:1px solid var(--border); }
+.case-body { padding:clamp(1rem,3vw,2rem);color:var(--text-muted); }
+.case-body h3 { color:var(--text);font-size:1.1rem;margin:0 0 1rem; }
+.case-body > h3 { margin-top:2rem; }
+.case-grid { display:grid;grid-template-columns:1fr 1fr;gap:2rem; }
+.case-list { list-style:disc;padding-left:1.4rem; }
+ol.case-list { list-style:decimal; }
+.case-list li { margin-bottom:.6rem; }
+.case-caution { padding:1rem;background:var(--accent-soft);border-radius:8px;margin-top:1rem;font-size:.85rem; }
+.table-scroll { overflow-x:auto; }
+.case-table { border-collapse:collapse;width:100%;font-size:.85rem; }
+.case-table caption { text-align:left;padding-bottom:.75rem; }
+.case-table td,.case-table th { text-align:left;padding:12px;border-bottom:1px solid var(--border); }
+.case-table th { color:var(--text); }
+.others-title { font-family:var(--font-display);font-size:var(--text-xl);font-weight:400;margin-bottom:1.5rem; }
+.project-status { font-size:.72rem;color:var(--text-muted);border-top:1px solid var(--border);padding-top:.75rem; }
+.skill-evidence { font-size:.85rem;color:var(--text-muted);margin-top:.5rem; }
+.stat-num { font-size:clamp(1rem,2vw,1.4rem);overflow-wrap:anywhere; }
+.projects-grid { grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); }
+.skills-grid { grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); }
+.nav-links.open li { width:100%; }
+.nav-hamburger { min-width:44px;min-height:44px;justify-content:center;align-items:center; }
+.dv-header-btns button { width:36px;height:36px; }
+.dv-pill { border:0; }
+@media(max-width:860px) { .featured-case,.case-grid { grid-template-columns:1fr; } }
+@media(max-width:480px) { #hero,.section-wrap { padding-left:1rem;padding-right:1rem; }.featured-actions .btn { width:100%;justify-content:center; }.nav-links .lang-toggle { margin:12px 24px;width:fit-content; } }
+@media(prefers-reduced-motion:reduce) { html{scroll-behavior:auto;}*,*::before,*::after{animation:none !important;transition:none !important;} }
+</style>
+<meta content="Portofolio Nang: pengalaman operasional penjualan dan inventory, analisis KPI, sales reporting, dan otomasi dengan Python." name="description"/><meta content="Nang - Junior Data Analyst" property="og:title"/><meta content="Dari operasional ke analisis data. Jelajahi studi kasus sales reporting, metode, dan keterbatasannya." property="og:description"/><meta content="website" property="og:type"/><meta content="https://ananglesmana.my.id/" property="og:url"/><noscript><style>.reveal{opacity:1;transform:none}.nav-hamburger,.lang-toggle,.projects-filter,#science-pill,#dv-pill,#dv-widget{display:none!important}@media(max-width:720px){.nav-links{display:flex;position:static;flex-direction:row;flex-wrap:wrap}.nav-links a{padding:4px}}</style></noscript></head>
+<body><a class="skip-link" data-i18n="skip" href="#projects">Langsung ke studi kasus</a>
 <!-- NAV -->
 <nav id="navbar">
-  <div class="nav-inner">
-    <a href="#hero" class="nav-logo">Anang<span>.</span></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about" data-i18n="nav_about">Tentang</a></li>
-      <li><a href="#skills" data-i18n="nav_skills">Kemampuan</a></li>
-      <li><a href="#projects" data-i18n="nav_projects">Proyek</a></li>
-      <li><a href="#journal" data-i18n="nav_journal">Jurnal</a></li>
-      <li>
-        <div class="lang-toggle" id="langToggle">
-          <button class="lang-btn active" data-lang="id">ID</button>
-          <button class="lang-btn" data-lang="en">EN</button>
-        </div>
-      </li>
-      <li><a href="#contact" class="nav-cta" data-i18n="nav_cta">Hubungi</a></li>
-    </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+<div class="nav-inner">
+<a aria-label="Nang - kembali ke beranda" class="nav-logo" href="#hero">Anang<span>.</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a data-i18n="nav_about" href="#about">Tentang</a></li>
+<li><a data-i18n="nav_skills" href="#skills">Kemampuan</a></li>
+<li><a data-i18n="nav_projects" href="#projects">Studi Kasus</a></li>
+<li><a data-i18n="nav_journal" href="#journal">Jurnal</a></li>
+<li>
+<div class="lang-toggle" id="langToggle">
+<button class="lang-btn active" data-lang="id" type="button">ID</button>
+<button class="lang-btn" data-lang="en" type="button">EN</button>
+</div>
+</li>
+<li><a class="nav-cta" data-i18n="nav_cta" href="#contact">Hubungi</a></li>
+</ul>
+<button aria-controls="navLinks" aria-expanded="false" aria-label="Menu" class="nav-hamburger" id="hamburger" type="button">
+<span></span><span></span><span></span>
+</button>
 </nav>
-
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-inner">
-    <div class="hero-badge reveal">
-      <span class="hero-badge-dot"></span>
-      <span data-i18n="hero_badge">Available for opportunities</span>
-    </div>
-    <h1 class="hero-name reveal reveal-delay-1" data-i18n="hero_name">Halo, Gue Nang.</h1>
-    <p class="hero-sub reveal reveal-delay-2">
-      <span>Junior Data Analyst</span>
-      <span class="hero-sub-divider">/</span>
-      <span>Sales & Inventory</span>
-      <span class="hero-sub-divider">/</span>
-      <span>Tech Enthusiast</span>
-       
-    </p>
-    <p class="hero-desc reveal reveal-delay-2" data-i18n="hero_desc">
-      Berbekal pengalaman administrasi penjualan dan pengelolaan stok, gue mulai transisi dari dunia operasional ke dunia data
-      <br>
-       Suka ngulik Python, ngoprek Linux, dan dengerin apa yang data bilang
-      sebelum orang lain sadar ada yang perlu didengar.
-    </p>
-    <div class="hero-ctas reveal reveal-delay-3">
-      <a href="#projects" class="btn btn-primary" data-i18n="hero_cta1">Lihat Proyek</a>
-      <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta2">Hubungi Aku</a>
-    </div>
-  </div>
+<div class="hero-inner">
+<div class="hero-badge reveal">
+<span class="hero-badge-dot"></span>
+<span data-i18n="hero_badge">Available for opportunities</span>
+</div>
+<h1 class="hero-name reveal reveal-delay-1" data-i18n="hero_name">Halo, Gue Nang.</h1>
+<p class="hero-sub reveal reveal-delay-2"><span>Junior Data Analyst</span><span aria-hidden="true" class="hero-sub-divider">/</span><span>Sales &amp; Inventory</span><span aria-hidden="true" class="hero-sub-divider">/</span><span>Reporting &amp; Automation</span></p>
+<p class="hero-desc reveal reveal-delay-2" data-i18n="hero_desc">Berbekal pengalaman administrasi penjualan dan pengelolaan stok, gue mulai transisi dari dunia operasional ke dunia data.<br/>Suka ngulik Python, ngoprek Linux, dan dengerin apa yang data bilang sebelum orang lain sadar ada yang perlu didengar.</p>
+<div class="hero-ctas reveal reveal-delay-3">
+<a class="btn btn-primary" data-i18n="hero_cta1" href="#projects">Lihat Studi Kasus</a>
+<a class="btn btn-ghost" data-i18n="hero_cta2" href="#contact">Hubungi Aku</a>
+</div>
+</div>
 </section>
-
-<div class="section-divider"><hr /></div>
-
+<div class="section-divider"><hr/></div>
 <!-- ABOUT -->
 <div class="section-wrap" id="about">
-  <div class="section-inner">
-    <div class="about-grid">
-      <!-- LEFT: terminal + stats -->
-      <div class="reveal">
-        <div class="terminal-card">
-          <div class="terminal-bar">
-            <span class="t-dot red"></span>
-            <span class="t-dot yellow"></span>
-            <span class="t-dot green"></span>
-            <span class="terminal-title">nang@bekasi — bash</span>
-          </div>
-          <div class="terminal-body">
-            <div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ whoami</span></div>
-            <div class="t-out" data-i18n="about_terminal_whoami"><strong>Anang</strong> — Sales Admin, soon Data Analyst</div>
-            <br/>
-            <div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ cat skills.txt</span></div>
-            <div class="t-out">Problem Solving, Inventory &amp; Marketing Support</div>
-            <div class="t-out">Reporting, Trend Analysis &amp; Forecasting</div>
-            <div class="t-out">Ms. Office &amp; Google Workspace</div>
-            <div class="t-out">Python, Pandas, PostgreSQL, VSCode</div>
-            <br/>
-            <div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ uname -r</span></div>
-            <div class="t-out">Linux 7.0.0-15-generic</div>
-            <br/>
-            <div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ echo $GOAL</span></div>
-            <div class="t-out" data-i18n="about_terminal_goal"><strong>Become a Data + Business Analyst</strong></div>
-            <br/>
-            <div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ <span class="t-cursor"></span></span></div>
-          </div>
-        </div>
-        <div class="about-stats">
-          <div class="stat-card reveal reveal-delay-1">
-            <span class="stat-num" data-count="3">0</span>
-            <span class="stat-label" data-i18n="stat_ops">Tahun di Operasional</span>
-          </div>
-          <div class="stat-card reveal reveal-delay-2">
-            <span class="stat-num" data-count="10">0</span>
-            <span class="stat-label" data-i18n="stat_projects">Proyek Python</span>
-            <span class="stat-note" data-i18n="stat_projects_note">(menyesuaikan pekerjaan)</span>
-          </div>
-          <div class="stat-card reveal reveal-delay-3">
-            <span class="stat-num" data-count="5">0</span>
-            <span class="stat-label" data-i18n="stat_tools">Tools Dikuasai</span>
-          </div>
-          <div class="stat-card reveal reveal-delay-4">
-            <span class="stat-num" data-count="1">0</span>
-            <span class="stat-label" data-i18n="stat_learn">Pelajaran Baru Setiap Hari</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT: text -->
-      <div class="about-text reveal reveal-delay-2">
-        <div class="section-label" data-i18n="about_label">Tentang Saya</div>
-        <h2 class="section-title" data-i18n="about_title">Dari gudang<br/>ke dashboard.</h2>
-        <p class="about-story" data-i18n="about_story1">
+<div class="section-inner">
+<div class="about-grid">
+<!-- LEFT: terminal + stats -->
+<div class="reveal">
+<div class="terminal-card">
+<div class="terminal-bar">
+<span class="t-dot red"></span>
+<span class="t-dot yellow"></span>
+<span class="t-dot green"></span>
+<span class="terminal-title">nang@bekasi - bash</span>
+</div>
+<div class="terminal-body">
+<div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ whoami</span></div>
+<div class="t-out" data-i18n="about_terminal_whoami"><strong>Anang</strong> - pengalaman operasional, fokus analisis data</div>
+<br>
+<div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ cat skills.txt</span></div>
+<div class="t-out">Problem Solving, Inventory &amp; Marketing Support</div>
+<div class="t-out">Reporting, Trend Analysis &amp; Forecasting</div>
+<div class="t-out">Ms. Office &amp; Google Workspace</div>
+<div class="t-out">Python, Pandas, PostgreSQL, VSCode</div>
+<br/>
+<div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ uname -r</span></div>
+<div class="t-out">Linux 7.0.0-15-generic</div>
+<br/>
+<div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ echo $GOAL</span></div>
+<div class="t-out" data-i18n="about_terminal_goal"><strong>Become a Data + Business Analyst</strong></div>
+<br/>
+<div><span class="t-prompt">nang@bekasi</span><span class="t-cmd"> ~$ <span class="t-cursor"></span></span></div>
+</br></div>
+</div>
+<div class="about-stats"><div class="stat-card"><span class="stat-num">Sales</span><span class="stat-label" data-i18n="ops_sales">Administrasi penjualan</span></div><div class="stat-card"><span class="stat-num">Inventory</span><span class="stat-label" data-i18n="ops_inventory">Pengelolaan stok</span></div><div class="stat-card"><span class="stat-num">Reporting</span><span class="stat-label" data-i18n="ops_reporting">Analisis &amp; laporan</span></div><div class="stat-card"><span class="stat-num">Python</span><span class="stat-label" data-i18n="ops_python">Alat bantu pengolahan data</span></div></div>
+</div>
+<!-- RIGHT: text -->
+<div class="about-text reveal reveal-delay-2">
+<div class="section-label" data-i18n="about_label">Tentang Saya</div>
+<h2 class="section-title" data-i18n="about_title">Dari gudang<br/>ke dashboard.</h2>
+<p class="about-story" data-i18n="about_story1">
           Mulai dari ngurusin stok gudang dan admin sales, terus nyadar kalau
           semuanya bisa lebih efisien kalau paham data. Dari situ mulai belajar
           <span class="pill">Python</span>, kemudian
           <span class="pill">Pandas</span>, kemudian
           <span class="pill">SQL</span> dan malah keterusan lalu nggak bisa berhenti.
         </p>
-        <p class="about-story" data-i18n="about_story2">
-          <strong>Percaya</strong> bahwa cara terbaik belajar adalah langsung bikin sesuatu yang bisa dipakai.
+<p class="about-story" data-i18n="about_story2">
+<strong>Percaya</strong> bahwa cara terbaik belajar adalah langsung bikin sesuatu yang bisa dipakai.
         </p>
-        <a href="#contact" class="btn btn-primary" style="margin-top:var(--space-4);" data-i18n="about_cta">Butuh Ngobrol Lebih Lanjut?</a>
-      </div>
-    </div>
-  </div>
+<a class="btn btn-primary" data-i18n="about_cta" href="#contact" style="margin-top:var(--space-4);">Butuh Ngobrol Lebih Lanjut?</a>
 </div>
-
-<div class="section-divider"><hr /></div>
-
+</div>
+</div>
+</div>
+<div class="section-divider"><hr/></div>
 <!-- SKILLS -->
 <div class="section-wrap" id="skills">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label" data-i18n="skills_label">Kemampuan</div>
-      <h2 class="section-title" data-i18n="skills_title">Stack yang<br/>dipakai.</h2>
-      <p class="section-desc" data-i18n="skills_desc">
-        Tools dan teknologi yang jadi andalan sehari-hari,
-        dari analisis data sampai sistem operasi.
-      </p>
-    </div>
-    <div class="skills-layout">
-      <div class="skills-grid">
-        <div class="skill-group reveal reveal-delay-1">
-          <div class="skill-group-label">01</div>
-          <div class="skill-group-name">Python Ecosystem</div>
-          <div class="skill-items">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Pandas</span>
-            <span class="skill-tag">NumPy</span>
-            <span class="skill-tag">Matplotlib</span>
-            <span class="skill-tag">Seaborn</span>
-            <span class="skill-tag">Jupyter</span>
-            <span class="skill-tag">Requests</span>
-            <span class="skill-tag">BeautifulSoup</span>
-            <span class="skill-tag">Selenium</span>
-          </div>
-        </div>
-        <div class="skill-group reveal reveal-delay-2">
-          <div class="skill-group-label">02</div>
-          <div class="skill-group-name">Data &amp; Database</div>
-          <div class="skill-items">
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">SQLite</span>
-            <span class="skill-tag">Excel</span>
-            <span class="skill-tag">Google Sheets</span>
-            <span class="skill-tag">CSV / Markdown</span>
-          </div>
-        </div>
-        <div class="skill-group reveal reveal-delay-3">
-          <div class="skill-group-label">03</div>
-          <div class="skill-group-name">Linux &amp; Tools</div>
-          <div class="skill-items">
-            <span class="skill-tag">Linux</span>
-            <span class="skill-tag">Bash / Shell</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">VSCode</span>
-            <span class="skill-tag">Neovim</span>
-            <span class="skill-tag">Docker</span>
-          </div>
-        </div>
-        <div class="skill-group reveal reveal-delay-4">
-          <div class="skill-group-label">04</div>
-          <div class="skill-group-name">Business &amp; Ops</div>
-          <div class="skill-items">
-            <span class="skill-tag">Inventory Mgmt</span>
-            <span class="skill-tag">Sales Admin</span>
-            <span class="skill-tag">Marketing Support</span>
-            <span class="skill-tag">Reporting</span>
-            <span class="skill-tag">Trend Analysis</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Skill bars -->
-      <div class="skill-bars-wrap reveal reveal-delay-2">
-        <div class="skill-bars-title">Proficiency</div>
-        <div class="skill-bars">
-          <div class="skill-bar-item">
-            <div class="skill-bar-top">
-              <span class="skill-bar-name">Google Workspace &amp; MS Office</span>
-              <span class="skill-bar-pct">90%</span>
-            </div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-top">
-              <span class="skill-bar-name">Python</span>
-              <span class="skill-bar-pct">85%</span>
-            </div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-top">
-              <span class="skill-bar-name">SQL</span>
-              <span class="skill-bar-pct">70%</span>
-            </div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-top">
-              <span class="skill-bar-name">Data Analysis</span>
-              <span class="skill-bar-pct">65%</span>
-            </div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-top">
-              <span class="skill-bar-name">Business Analysis</span>
-              <span class="skill-bar-pct">55%</span>
-            </div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="55"></div></div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-top">
-              <span class="skill-bar-name" data-i18n="skill_patience">Kesabaran</span>
-              <span class="skill-bar-pct">99%</span>
-            </div>
-            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="99"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="section-inner">
+<div class="reveal">
+<div class="section-label" data-i18n="skills_label">Kemampuan</div>
+<h2 class="section-title" data-i18n="skills_title">Stack yang<br/>dipakai.</h2>
+<p class="section-desc" data-i18n="skills_desc">Tools yang dipakai dan dipelajari untuk mengolah data, membuat laporan, dan mendukung pekerjaan operasional.</p>
 </div>
-
-<div class="section-divider"><hr /></div>
-
+<div class="skills-layout">
+<div class="skills-grid">
+<div class="skill-group reveal reveal-delay-1">
+<div class="skill-group-label">01</div>
+<div class="skill-group-name">Python Ecosystem</div>
+<div class="skill-items">
+<span class="skill-tag">Python</span>
+<span class="skill-tag">Pandas</span>
+<span class="skill-tag">NumPy</span>
+<span class="skill-tag">Matplotlib</span>
+<span class="skill-tag">Seaborn</span>
+<span class="skill-tag">Jupyter</span>
+<span class="skill-tag">Requests</span>
+<span class="skill-tag">BeautifulSoup</span>
+<span class="skill-tag">Selenium</span>
+</div>
+</div>
+<div class="skill-group reveal reveal-delay-2">
+<div class="skill-group-label">02</div>
+<div class="skill-group-name">Data &amp; Database</div>
+<div class="skill-items">
+<span class="skill-tag">SQL</span>
+<span class="skill-tag">PostgreSQL</span>
+<span class="skill-tag">SQLite</span>
+<span class="skill-tag">Excel</span>
+<span class="skill-tag">Google Sheets</span>
+<span class="skill-tag">CSV / Markdown</span>
+</div>
+</div>
+<div class="skill-group reveal reveal-delay-3">
+<div class="skill-group-label">03</div>
+<div class="skill-group-name">Linux &amp; Tools</div>
+<div class="skill-items">
+<span class="skill-tag">Linux</span>
+<span class="skill-tag">Bash / Shell</span>
+<span class="skill-tag">Git</span>
+<span class="skill-tag">VSCode</span>
+<span class="skill-tag">Neovim</span>
+<span class="skill-tag">Docker</span>
+</div>
+</div>
+<div class="skill-group reveal reveal-delay-4">
+<div class="skill-group-label">04</div>
+<div class="skill-group-name">Business &amp; Ops</div>
+<div class="skill-items">
+<span class="skill-tag">Inventory Mgmt</span>
+<span class="skill-tag">Sales Admin</span>
+<span class="skill-tag">Marketing Support</span>
+<span class="skill-tag">Reporting</span>
+<span class="skill-tag">Trend Analysis</span>
+</div>
+</div>
+</div>
+<!-- Skill bars -->
+<div class="skill-bars-wrap reveal reveal-delay-2"><div class="skill-bars-title" data-i18n="levels_title">Kemampuan dalam praktik</div><div class="skill-bars"><div><h3 class="skill-bar-name">Excel / Google Sheets</h3><p class="skill-evidence" data-i18n="ev_office">Pelaporan dan pengolahan data operasional.</p></div><div><h3 class="skill-bar-name">Python / Pandas</h3><p class="skill-evidence" data-i18n="ev_python">Agregasi KPI pada Sales Reporting 2024.</p></div><div><h3 class="skill-bar-name">SQL</h3><p class="skill-evidence" data-i18n="ev_sql">Bagian dari stack belajar; studi kasus SQL belum ditautkan.</p></div><div><h3 class="skill-bar-name">Data Analysis</h3><p class="skill-evidence" data-i18n="ev_da">Mendefinisikan metrik, membaca tren, dan menjelaskan keterbatasan.</p></div><a class="btn-link" data-i18n="evidence_cta" href="#sales-case">Lihat bukti penerapan →</a></div></div>
+</div>
+</div>
+</div>
+<div class="section-divider"><hr/></div>
 <!-- PROJECTS -->
 <div class="section-wrap" id="projects">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label" data-i18n="projects_label">Proyek</div>
-      <h2 class="section-title" data-i18n="projects_title">Yang sudah<br/>pernah dibikin.</h2>
-      <p class="section-desc" data-i18n="projects_desc">
-        Kumpulan proyek dari iseng sampai yang serius.
-        Semuanya berangkat dari niat buat belajar.
-      </p>
-    </div>
-    <div class="projects-filter reveal">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="python">Python</button>
-      <button class="filter-btn" data-filter="data">Data</button>
-      <button class="filter-btn" data-filter="automation">Automation</button>
-      <button class="filter-btn" data-filter="linux">Linux</button>
-    </div>
-    <div class="projects-grid" id="projectsGrid">
-      <div class="project-card reveal" data-category="python data">
-        <div class="project-top">
-          <div class="project-icon">PY</div>
-          <div class="project-links">
-            <a href="#" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
-          </div>
-        </div>
-        <div class="project-name">Sales Analytics Dashboard</div>
-        <p class="project-desc" data-i18n="proj1_desc">
-          Analisis data penjualan dari export Excel — transformasi, cleaning,
-          dan visualisasi tren per bulan menggunakan Pandas dan Matplotlib.
-        </p>
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">Pandas</span>
-          <span class="project-tag">Matplotlib</span>
-          <span class="project-tag">Excel</span>
-        </div>
-      </div>
+<div class="section-inner">
+<div class="reveal">
+<div class="section-label" data-i18n="projects_label">Studi Kasus</div>
+<h2 class="section-title" data-i18n="projects_title">Bukti kerja,<br/>bukan sekadar daftar tools.</h2>
+<p class="section-desc" data-i18n="projects_desc">Analisis yang bisa ditelusuri sampai ke metrik, kode, dan keterbatasannya. Mulai dari satu studi kasus utama, lalu proyek pendukung.</p>
+</div>
+<article aria-labelledby="featured-title" class="featured-case reveal">
+<div class="featured-main">
+<span class="featured-badge" data-i18n="feat_badge">Studi kasus utama · Dataset contoh</span>
+<h3 class="featured-title" id="featured-title">Sales Reporting 2024</h3>
+<p class="featured-sub" data-i18n="feat_sub">Membaca performa penjualan lewat KPI, tren bulanan, dan pola transaksi.</p>
+<p class="featured-desc" data-i18n="feat_desc">Mengolah data transaksi menjadi laporan pendapatan, pesanan, AOV, kontribusi channel, diskon efektif, dan distribusi penjualan produk.</p>
+<div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">Pandas</span><span class="project-tag">Matplotlib</span><span class="project-tag">KPI Reporting</span></div>
+<div class="featured-actions"><a class="btn btn-primary" data-i18n="feat_read" href="#sales-case">Baca Studi Kasus ↓</a><a class="btn btn-ghost" data-i18n="feat_cta" href="https://github.com/bushidoways/sales-reporting-2024-nang" rel="noopener noreferrer" target="_blank">Lihat GitHub ↗</a></div>
+</div>
+<div aria-label="Ringkasan dataset contoh" class="featured-kpis">
+<div class="kpi"><span class="kpi-num">Rp1,48 miliar</span><span class="kpi-label">Net revenue</span></div>
+<div class="kpi"><span class="kpi-num">4.097</span><span class="kpi-label" data-i18n="k_orders">Pesanan unik</span></div>
+<div class="kpi"><span class="kpi-num">6.272</span><span class="kpi-label" data-i18n="k_units">Unit terjual</span></div>
+<div class="kpi"><span class="kpi-num">±Rp361 ribu</span><span class="kpi-label">AOV</span></div>
+<p class="kpi-note" data-i18n="kpi_note">Angka dari ringkasan repository untuk dataset contoh; belum dihitung ulang di halaman ini. Bukan pencapaian bisnis pribadi.</p>
+</div></article>
+<details class="case-details" id="sales-case"><summary data-i18n="case_summary">Sales Reporting 2024 metode, temuan, dan keterbatasan</summary>
+<div class="case-body">
+<div class="case-grid">
+<section><h3 data-i18n="case_q_title">Pertanyaan analisis</h3><ol class="case-list" data-i18n="case_q"><li>Bagaimana pendapatan, pesanan, dan unit terjual berubah tiap bulan?</li><li>Apakah puncak pesanan sama dengan puncak pendapatan?</li><li>Bagaimana kontribusi channel penjualan?</li><li>Seberapa besar diskon dan voucher dibandingkan nilai retail?</li><li>Bagaimana pola penjualan berdasarkan tanggal dalam bulan?</li><li>Seberapa terkonsentrasi pendapatan antarproduk?</li></ol></section>
+<section><h3 data-i18n="case_method_title">Data &amp; metode</h3><p data-i18n="case_method">Input CSV/Excel diperiksa kolom wajibnya, dikonversi tanggal dan angka, lalu diagregasi menjadi KPI dan grafik statis. Output berupa CSV dan gambar, bukan dashboard interaktif.</p><p class="case-caution" data-i18n="case_data">Status: dataset contoh. README menyebut dummy dan sampel anonim; asal data perlu diperjelas sebelum diklaim sebagai studi kasus pekerjaan nyata.</p></section>
+</div>
+<h3 data-i18n="case_metrics_title">Definisi metrik</h3>
+<div class="table-scroll"><table class="case-table"><caption data-i18n="case_caption">Rumus berdasarkan src/metrics.py</caption><thead><tr><th data-i18n="metric" scope="col">Metrik</th><th data-i18n="definition" scope="col">Definisi</th></tr></thead><tbody>
+<tr><th scope="row">Net revenue</th><td>SUM(Grand Total)</td></tr><tr><th scope="row">Orders</th><td data-i18n="formula_orders">Jumlah Order# unik</td></tr><tr><th scope="row">Units</th><td>SUM(QTY)</td></tr><tr><th scope="row">AOV</th><td>Net revenue / Orders</td></tr><tr><th scope="row">Effective discount rate</th><td>(SUM(Discount) + SUM(Voucher)) / SUM(Retail)</td></tr><tr><th scope="row">Channel share</th><td data-i18n="formula_share">Pendapatan channel / total pendapatan</td></tr></tbody></table></div>
+<h3 data-i18n="case_findings_title">Temuan yang dilaporkan</h3><ul class="case-list" data-i18n="case_findings"><li>Februari: pesanan tertinggi, 510. Juli: pendapatan tertinggi, sekitar Rp159,3 juta. Volume dan nilai transaksi perlu dibaca bersama.</li><li>Oktober: AOV tertinggi, sekitar Rp536 ribu. Komposisi produk dan jumlah barang per pesanan menjadi pertanyaan lanjutan, bukan penyebab yang sudah terbukti.</li><li>Desember: diskon efektif tertinggi, sekitar 50,4%. Tanpa data biaya, hasil ini belum menjelaskan profitabilitas.</li><li>Sepuluh produk teratas menyumbang sekitar 7,8% pendapatan. Temuan ini belum cukup untuk menetapkan strategi stok.</li></ul>
+<h3 data-i18n="case_limits_title">Keterbatasan &amp; pengembangan</h3><ul class="case-list" data-i18n="case_limits"><li>Ringkasan berasal dari README dan reports/summary_2024.csv, belum diverifikasi ulang terhadap dataset contoh.</li><li>Pola tanggal bukan bukti sebab-akibat gajian. YoY membutuhkan data pembanding; kode yang ditinjau belum menghitung MoM/YoY.</li><li>Konversi angka yang gagal menjadi nol perlu dilengkapi pencatatan error; arti Grand Total serta perlakuan retur dan pembatalan perlu dikonfirmasi.</li><li>Output skrip dan summary tersimpan perlu diselaraskan untuk reproduksibilitas. Belum ada pengukuran dampak bisnis atau penghematan waktu.</li></ul>
+<a class="btn btn-ghost" data-i18n="case_source" href="https://github.com/bushidoways/sales-reporting-2024-nang" rel="noopener noreferrer" target="_blank">Telusuri kode dan laporan di GitHub ↗</a>
+</div></details>
+<h3 class="others-title reveal" data-i18n="others_title">Proyek pendukung</h3><div class="projects-filter reveal">
+<button aria-pressed="true" class="filter-btn active" data-filter="all" type="button">All</button>
+<button aria-pressed="false" class="filter-btn" data-filter="python" type="button">Python</button>
+<button aria-pressed="false" class="filter-btn" data-filter="data" type="button">Data</button>
+<button aria-pressed="false" class="filter-btn" data-filter="automation" type="button">Automation</button>
+<button aria-pressed="false" class="filter-btn" data-filter="linux" type="button">Linux</button>
+</div>
+<div class="projects-grid" id="projectsGrid">
 
-      <div class="project-card reveal reveal-delay-1" data-category="automation python">
-        <div class="project-top">
-          <div class="project-icon">WEB</div>
-          <div class="project-links">
-            <a href="#" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
-          </div>
-        </div>
-        <div class="project-name">Web Scraper &amp; OSINT Tool</div>
-        <p class="project-desc" data-i18n="proj2_desc">
+<div class="project-card reveal reveal-delay-1" data-category="automation python">
+<div class="project-top">
+<div class="project-icon">WEB</div>
+<div class="project-links">
+
+</div>
+</div>
+<div class="project-name">Web Scraper &amp; OSINT Tool</div>
+<p class="project-desc" data-i18n="proj2_desc">
           Python scraper untuk mengumpulkan data publik dan menganalisis pola.
           Menggunakan BeautifulSoup, Requests, dan teknik dasar OSINT.
         </p>
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">BeautifulSoup</span>
-          <span class="project-tag">Requests</span>
-          <span class="project-tag">OSINT</span>
-        </div>
-      </div>
+<div class="project-tags">
+<span class="project-tag">Python</span>
+<span class="project-tag">BeautifulSoup</span>
+<span class="project-tag">Requests</span>
+<span class="project-tag">OSINT</span>
+</div>
+<p class="project-status" data-i18n="project_pending">Dokumentasi proyek belum ditautkan.</p></div>
+<div class="project-card reveal reveal-delay-2" data-category="linux automation">
+<div class="project-top">
+<div class="project-icon">LNX</div>
+<div class="project-links">
 
-      <div class="project-card reveal reveal-delay-2" data-category="linux automation">
-        <div class="project-top">
-          <div class="project-icon">LNX</div>
-          <div class="project-links">
-            <a href="https://github.com/bushidoways" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
-          </div>
-        </div>
-        <div class="project-name">Ubuntu Dev Setup &amp; Dotfiles</div>
-        <p class="project-desc" data-i18n="proj3_desc">
-          Konfigurasi Ubuntu dari nol — dotfiles, shell aliases, auto-setup script
+</div>
+</div>
+<div class="project-name">Ubuntu Dev Setup &amp; Dotfiles</div>
+<p class="project-desc" data-i18n="proj3_desc">
+          Konfigurasi Ubuntu dari nol dotfiles, shell aliases, auto-setup script
           untuk dev environment yang bisa di-bootstrap di mesin baru dalam menit.
         </p>
-        <div class="project-tags">
-          <span class="project-tag">Linux</span>
-          <span class="project-tag">Bash</span>
-          <span class="project-tag">Dotfiles</span>
-          <span class="project-tag">Automation</span>
-        </div>
-      </div>
+<div class="project-tags">
+<span class="project-tag">Linux</span>
+<span class="project-tag">Bash</span>
+<span class="project-tag">Dotfiles</span>
+<span class="project-tag">Automation</span>
+</div>
+<p class="project-status" data-i18n="project_pending">Dokumentasi proyek belum ditautkan.</p></div>
+<div class="project-card reveal reveal-delay-3" data-category="python data">
+<div class="project-top">
+<div class="project-icon">SQL</div>
+<div class="project-links">
 
-      <div class="project-card reveal reveal-delay-3" data-category="python data">
-        <div class="project-top">
-          <div class="project-icon">SQL</div>
-          <div class="project-links">
-            <a href="#" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
-          </div>
-        </div>
-        <div class="project-name">Inventory Tracker CLI</div>
-        <p class="project-desc">
+</div>
+</div>
+<div class="project-name">Inventory Tracker CLI</div>
+<p class="project-desc">
           Aplikasi CLI untuk tracking stok barang sederhana menggunakan Python
           dan SQLite. Bisa input, update, dan export laporan ke CSV.
         </p>
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">SQLite</span>
-          <span class="project-tag">CLI</span>
-          <span class="project-tag">Data</span>
-        </div>
-      </div>
+<div class="project-tags">
+<span class="project-tag">Python</span>
+<span class="project-tag">SQLite</span>
+<span class="project-tag">CLI</span>
+<span class="project-tag">Data</span>
+</div>
+<p class="project-status" data-i18n="project_pending">Dokumentasi proyek belum ditautkan.</p></div>
+<div class="project-card reveal reveal-delay-4" data-category="automation">
+<div class="project-top">
+<div class="project-icon">BOT</div>
+<div class="project-links">
 
-      <div class="project-card reveal reveal-delay-4" data-category="automation">
-        <div class="project-top">
-          <div class="project-icon">BOT</div>
-          <div class="project-links">
-            <a href="#" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
-          </div>
-        </div>
-        <div class="project-name">Auto Report Generator</div>
-        <p class="project-desc">
+</div>
+</div>
+<div class="project-name">Auto Report Generator</div>
+<p class="project-desc">
           Script Python yang membaca data penjualan dari Google Sheets,
           membuat summary harian, dan mengirimkan laporan otomatis via email.
         </p>
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">Google API</span>
-          <span class="project-tag">Automation</span>
-          <span class="project-tag">SMTP</span>
-        </div>
-      </div>
+<div class="project-tags">
+<span class="project-tag">Python</span>
+<span class="project-tag">Google API</span>
+<span class="project-tag">Automation</span>
+<span class="project-tag">SMTP</span>
+</div>
+<p class="project-status" data-i18n="project_pending">Dokumentasi proyek belum ditautkan.</p></div>
+<div class="project-card reveal reveal-delay-1" data-category="data">
+<div class="project-top">
+<div class="project-icon">VIZ</div>
+<div class="project-links">
 
-      <div class="project-card reveal reveal-delay-1" data-category="data">
-        <div class="project-top">
-          <div class="project-icon">VIZ</div>
-          <div class="project-links">
-            <a href="#" class="project-link" title="GitHub" target="_blank" rel="noopener noreferrer">GH</a>
-          </div>
-        </div>
-        <div class="project-name">EDA: Tren Harga Komoditas</div>
-        <p class="project-desc">
+</div>
+</div>
+<div class="project-name">EDA: Tren Harga Komoditas</div>
+<p class="project-desc">
           Exploratory Data Analysis tren harga komoditas pasar Indonesia
           menggunakan data BPS. Visualisasi dengan Matplotlib dan Seaborn.
         </p>
-        <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">Seaborn</span>
-          <span class="project-tag">EDA</span>
-          <span class="project-tag">Data</span>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="project-tags">
+<span class="project-tag">Python</span>
+<span class="project-tag">Seaborn</span>
+<span class="project-tag">EDA</span>
+<span class="project-tag">Data</span>
 </div>
-
-<div class="section-divider"><hr /></div>
-
+<p class="project-status" data-i18n="project_pending">Dokumentasi proyek belum ditautkan.</p></div>
+</div>
+</div>
+</div>
+<div class="section-divider"><hr/></div>
 <!-- JOURNAL -->
 <div class="section-wrap" id="journal">
-  <div class="section-inner">
-    <div class="journal-shell">
-      <div class="journal-intro reveal">
-        <div class="section-label" data-i18n="journal_label">Jurnal</div>
-        <h2 class="section-title" data-i18n="journal_title">Catatan<br/>dari tengah malam.</h2>
-        <p class="section-desc" data-i18n="journal_desc">
+<div class="section-inner">
+<div class="journal-shell">
+<div class="journal-intro reveal">
+<div class="section-label" data-i18n="journal_label">Jurnal</div>
+<h2 class="section-title" data-i18n="journal_title">Catatan<br/>dari tengah malam.</h2>
+<p class="section-desc" data-i18n="journal_desc">
           Tulisan lepas tentang teknologi, proses belajar, opini,
           dan hal-hal yang kebetulan kepikiran waktu kopi masih panas.
         </p>
-        <p class="journal-note" data-i18n="journal_note">
+<p class="journal-note" data-i18n="journal_note">
           Sebagian besar tulisan di sini lahir dari hal-hal kecil: pekerjaan, rasa penasaran, dan kebiasaan mencatat sebelum ide itu hilang.
         </p>
-      </div>
-      <div class="journal-grid">
-        <a href="https://ananglesmana.my.id/journal/kenapa-linux" class="journal-card reveal" target="_blank" rel="noopener noreferrer">
-          <div class="journal-meta">
-            <span class="journal-chip">Essay</span>
-            <div class="journal-date" data-i18n="j1_date">MAR 2024 — 5 MENIT BACA</div>
-          </div>
-          <div class="journal-body">
-            <div class="journal-title" data-i18n="j1_title">Kenapa Berakhir di Linux</div>
-            <div class="journal-excerpt" data-i18n="j1_excerpt">Sejujurnya, ini bukan soal ideologi. Tapi juga soal efisiensi, kontrol, dan fakta bahwa harga MacBook masih belum bisa dibilang murah.</div>
-          </div>
-          <div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        </a>
-        <a href="https://ananglesmana.my.id/journal/dari-gudang-ke-pandas" class="journal-card reveal reveal-delay-1" target="_blank" rel="noopener noreferrer">
-          <div class="journal-meta">
-            <span class="journal-chip">Notes</span>
-            <div class="journal-date" data-i18n="j2_date">NOV 2024 — 7 MENIT BACA</div>
-          </div>
-          <div class="journal-body">
-            <div class="journal-title" data-i18n="j2_title">Mulai belajar tentang bagaimana data bisa mengubah cara kerja</div>
-            <div class="journal-excerpt" data-i18n="j2_excerpt">Momen di mana saya sadar bahwa Spreadsheet manual bisa diganti 10 baris Python yang jalan otomatis tiap pagi.</div>
-          </div>
-          <div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        </a>
-        <a href="https://ananglesmana.my.id/journal/osint-untuk-pemula" class="journal-card reveal reveal-delay-2" target="_blank" rel="noopener noreferrer">
-          <div class="journal-meta">
-            <span class="journal-chip">Guide</span>
-            <div class="journal-date" data-i18n="j3_date">JAN 2024 — 4 MENIT BACA</div>
-          </div>
-          <div class="journal-body">
-            <div class="journal-title" data-i18n="j3_title">OSINT untuk pemula: belajar dari data yang sudah ada di depan mata</div>
-            <div class="journal-excerpt" data-i18n="j3_excerpt">Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan siapa saja, dan kenapa ini relevan untuk seorang analyst.</div>
-          </div>
-          <div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        </a>
-        <a href="https://ananglesmana.my.id/journal/kemiskinan-struktural" class="journal-card reveal reveal-delay-3" target="_blank" rel="noopener noreferrer">
-          <div class="journal-meta">
-            <span class="journal-chip">Essay</span>
-            <div class="journal-date" data-i18n="j4_date">OCT 2024 — 4 MENIT BACA</div>
-          </div>
-          <div class="journal-body">
-            <div class="journal-title" data-i18n="j4_title">Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?</div>
-            <div class="journal-excerpt" data-i18n="j4_excerpt">Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.</div>
-          </div>
-          <div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        </a>
-        <a href="https://ananglesmana.my.id/journal/al-kahfi" class="journal-card reveal reveal-delay-4" target="_blank" rel="noopener noreferrer">
-          <div class="journal-meta">
-            <span class="journal-chip">Reflection</span>
-            <div class="journal-date" data-i18n="j5_date">MAR 2026 — 5 MENIT BACA</div>
-          </div>
-          <div class="journal-body">
-            <div class="journal-title" data-i18n="j5_title">Surah Al-Kahfi</div>
-            <div class="journal-excerpt" data-i18n="j5_excerpt">Mengenal wahyu yang sering dibaca setiap Jum'at sebagai Manual Book disaat krisis.</div>
-          </div>
-          <div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        </a>
-      </div>
-    </div>
-  </div>
 </div>
-<div class="section-divider"><hr /></div>
-
+<div class="journal-grid">
+<a class="journal-card reveal" href="https://ananglesmana.my.id/journal/kenapa-linux" rel="noopener noreferrer" target="_blank">
+<div class="journal-meta">
+<span class="journal-chip">Essay</span>
+<div class="journal-date" data-i18n="j1_date">MAR 2024 - 5 MENIT BACA</div>
+</div>
+<div class="journal-body">
+<div class="journal-title" data-i18n="j1_title">Kenapa Berakhir di Linux</div>
+<div class="journal-excerpt" data-i18n="j1_excerpt">Sejujurnya, ini bukan soal ideologi. Tapi juga soal efisiensi, kontrol, dan fakta bahwa harga MacBook masih belum bisa dibilang murah.</div>
+</div>
+<div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg fill="none" height="12" viewbox="0 0 12 12" width="12"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div>
+</a>
+<a class="journal-card reveal reveal-delay-1" href="https://ananglesmana.my.id/journal/dari-gudang-ke-pandas" rel="noopener noreferrer" target="_blank">
+<div class="journal-meta">
+<span class="journal-chip">Notes</span>
+<div class="journal-date" data-i18n="j2_date">NOV 2024 - 7 MENIT BACA</div>
+</div>
+<div class="journal-body">
+<div class="journal-title" data-i18n="j2_title">Mulai belajar tentang bagaimana data bisa mengubah cara kerja</div>
+<div class="journal-excerpt" data-i18n="j2_excerpt">Momen di mana saya sadar bahwa Spreadsheet manual bisa diganti 10 baris Python yang jalan otomatis tiap pagi.</div>
+</div>
+<div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg fill="none" height="12" viewbox="0 0 12 12" width="12"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div>
+</a>
+<a class="journal-card reveal reveal-delay-2" href="https://ananglesmana.my.id/journal/osint-untuk-pemula" rel="noopener noreferrer" target="_blank">
+<div class="journal-meta">
+<span class="journal-chip">Guide</span>
+<div class="journal-date" data-i18n="j3_date">JAN 2024 - 4 MENIT BACA</div>
+</div>
+<div class="journal-body">
+<div class="journal-title" data-i18n="j3_title">OSINT untuk pemula: belajar dari data yang sudah ada di depan mata</div>
+<div class="journal-excerpt" data-i18n="j3_excerpt">Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan siapa saja, dan kenapa ini relevan untuk seorang analyst.</div>
+</div>
+<div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg fill="none" height="12" viewbox="0 0 12 12" width="12"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div>
+</a>
+<a class="journal-card reveal reveal-delay-3" href="https://ananglesmana.my.id/journal/kemiskinan-struktural" rel="noopener noreferrer" target="_blank">
+<div class="journal-meta">
+<span class="journal-chip">Essay</span>
+<div class="journal-date" data-i18n="j4_date">OCT 2024 - 4 MENIT BACA</div>
+</div>
+<div class="journal-body">
+<div class="journal-title" data-i18n="j4_title">Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?</div>
+<div class="journal-excerpt" data-i18n="j4_excerpt">Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.</div>
+</div>
+<div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg fill="none" height="12" viewbox="0 0 12 12" width="12"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div>
+</a>
+<a class="journal-card reveal reveal-delay-4" href="https://ananglesmana.my.id/journal/al-kahfi" rel="noopener noreferrer" target="_blank">
+<div class="journal-meta">
+<span class="journal-chip">Reflection</span>
+<div class="journal-date" data-i18n="j5_date">MAR 2026 - 5 MENIT BACA</div>
+</div>
+<div class="journal-body">
+<div class="journal-title" data-i18n="j5_title">Surah Al-Kahfi</div>
+<div class="journal-excerpt" data-i18n="j5_excerpt">Mengenal wahyu yang sering dibaca setiap Jum'at sebagai Manual Book disaat krisis.</div>
+</div>
+<div class="journal-read" data-i18n="read_more">Baca selengkapnya <svg fill="none" height="12" viewbox="0 0 12 12" width="12"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="section-divider"><hr/></div>
 <!-- CONTACT -->
 <div class="section-wrap" id="contact">
-  <div class="section-inner">
-    <div class="contact-wrap">
-      <div class="section-label reveal" data-i18n="contact_label">Kontak</div>
-      <h2 class="contact-title reveal reveal-delay-1" data-i18n="contact_title">
+<div class="section-inner">
+<div class="contact-wrap">
+<div class="section-label reveal" data-i18n="contact_label">Kontak</div>
+<h2 class="contact-title reveal reveal-delay-1" data-i18n="contact_title">
         Ada yang mau disampaikan?<br/><span>Ngobrol yuk.</span>
-      </h2>
-      <p class="contact-desc reveal reveal-delay-2" data-i18n="contact_desc">
+</h2>
+<p class="contact-desc reveal reveal-delay-2" data-i18n="contact_desc">
         Lagi cari peluang sebagai Data Analyst atau Business Analyst.
         Open untuk diskusi, kolaborasi, atau sekadar ngobrol soal data dan teknologi.
       </p>
-      <div class="contact-links reveal reveal-delay-3">
-        <a href="mailto:hello@ananglesmana.my.id" class="contact-link">
-          <span class="contact-link-icon">@</span>
+<div class="contact-links reveal reveal-delay-3">
+<a class="contact-link" href="mailto:hello@ananglesmana.my.id">
+<span class="contact-link-icon">@</span>
           Email
         </a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-link">
-          <span class="contact-link-icon">IN</span>
-          LinkedIn
-        </a>
-        <a href="https://www.instagram.com/lesmanasaurus/" target="_blank" rel="noopener noreferrer" class="contact-link">
-          <span class="contact-link-icon">IG</span>
+<a class="contact-link" href="https://github.com/bushidoways" rel="noopener noreferrer" target="_blank"><span class="contact-link-icon">GH</span> GitHub</a>
+<a class="contact-link" href="https://www.instagram.com/lesmanasaurus/" rel="noopener noreferrer" target="_blank">
+<span class="contact-link-icon">IG</span>
           Instagram
         </a>
-      </div>
-    </div>
-  </div>
 </div>
-
+</div>
+</div>
+</div>
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <p class="footer-copy">
-      <strong>nang.dev</strong> &nbsp;·&nbsp;
-      <span data-i18n="footer_text">Dibuat dari Bekasi dengan Kopi dan Polusi</span>
-      &nbsp;·&nbsp; 2024–2026
-    </p>
-    <p class="footer-copy" style="opacity:0.5;">
-      nang<span style="color:var(--accent);">.</span>dev
-    </p>
-  </div>
+<div class="footer-inner"><p class="footer-copy"><strong>nang.</strong> · <span data-i18n="footer_text">Dibuat dari Bekasi dengan Kopi dan Polusi</span> · 2024–2026</p></div>
 </footer>
-
-
 <!-- SCIENCE FLASHCARD WIDGET -->
-<aside id="science-widget" class="sf-widget" hidden aria-labelledby="science-title" aria-live="polite">
-  <div class="sf-header"><div class="sf-header-left"><span class="sf-header-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="1.8" fill="currentColor"></circle><ellipse cx="12" cy="12" rx="9" ry="3.8"></ellipse><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(60 12 12)"></ellipse><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(120 12 12)"></ellipse></svg></span><span class="sf-header-title">Fakta Sains</span></div><div class="sf-header-actions"><button id="science-minimize" class="sf-icon-btn" type="button" aria-label="Sembunyikan fakta sains" title="Sembunyikan">−</button><button id="science-close" class="sf-icon-btn" type="button" aria-label="Tutup fakta sains" title="Tutup">×</button></div></div>
-  <div class="sf-body"><div id="science-category" class="sf-category">Memuat fakta</div><h2 id="science-title" class="sf-title">Fakta sains sedang disiapkan.</h2><p id="science-fact" class="sf-fact">Tunggu sebentar.</p><a id="science-source" class="sf-source" href="#" target="_blank" rel="noopener noreferrer" aria-label="Buka sumber fakta sains"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7"></path><path d="M10 14 21 3"></path><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path></svg><span id="science-source-label">Sumber tervalidasi</span></a><div class="sf-footer"><button id="science-next" class="sf-next-btn" type="button">Fakta lain <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><a id="science-source-btn" class="sf-source-btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Lihat sumber" title="Lihat sumber">↗</a></div></div>
+<aside aria-labelledby="science-title" aria-live="polite" class="sf-widget" hidden="" id="science-widget">
+<div class="sf-header"><div class="sf-header-left"><span aria-hidden="true" class="sf-header-icon"><svg fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="currentColor" r="1.8"></circle><ellipse cx="12" cy="12" rx="9" ry="3.8"></ellipse><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(60 12 12)"></ellipse><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(120 12 12)"></ellipse></svg></span><span class="sf-header-title">Fakta Sains</span></div><div class="sf-header-actions"><button aria-label="Sembunyikan fakta sains" class="sf-icon-btn" id="science-minimize" title="Sembunyikan" type="button">−</button><button aria-label="Tutup fakta sains" class="sf-icon-btn" id="science-close" title="Tutup" type="button">×</button></div></div>
+<div class="sf-body"><div class="sf-category" id="science-category">Memuat fakta</div><h2 class="sf-title" id="science-title">Fakta sains sedang disiapkan.</h2><p class="sf-fact" id="science-fact">Tunggu sebentar.</p><a aria-label="Buka sumber fakta sains" class="sf-source" href="#" id="science-source" rel="noopener noreferrer" target="_blank"><svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M14 3h7v7"></path><path d="M10 14 21 3"></path><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path></svg><span id="science-source-label">Sumber tervalidasi</span></a><div class="sf-footer"><button class="sf-next-btn" id="science-next" type="button">Fakta lain <svg fill="none" height="13" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="13"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><a aria-label="Lihat sumber" class="sf-source-btn" href="#" id="science-source-btn" rel="noopener noreferrer" target="_blank" title="Lihat sumber">↗</a></div></div>
 </aside>
-<button id="science-pill" class="sf-pill" type="button" aria-label="Buka fakta sains" title="Fakta sains yang mungkin belum kamu tahu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="1.8" fill="currentColor"></circle><ellipse cx="12" cy="12" rx="9" ry="3.8"></ellipse><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(60 12 12)"></ellipse><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(120 12 12)"></ellipse></svg></button>
-
+<button aria-label="Buka fakta sains" class="sf-pill" id="science-pill" title="Fakta sains yang mungkin belum kamu tahu" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="currentColor" r="1.8"></circle><ellipse cx="12" cy="12" rx="9" ry="3.8"></ellipse><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(60 12 12)"></ellipse><ellipse cx="12" cy="12" rx="9" ry="3.8" transform="rotate(120 12 12)"></ellipse></svg></button>
 <!-- DAILY VERSE WIDGET -->
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
-<div id="dv-widget" class="dv-widget">
-  <div class="dv-header">
-    <span class="dv-header-title">Ayat Hari Ini</span>
-    <div class="dv-header-btns">
-      <button id="dv-minimize" title="Sembunyikan">&#8722;</button>
-      <button id="dv-close" title="Tutup">&#215;</button>
-    </div>
-  </div>
-  <div class="dv-body">
-    <div class="dv-loading" id="dv-loading">
-      <div class="dv-loading-dots">
-        <div class="dv-loading-dot"></div>
-        <div class="dv-loading-dot"></div>
-        <div class="dv-loading-dot"></div>
-      </div>
-    </div>
-    <div id="dv-content" style="display:none">
-      <p class="dv-arabic" id="dv-arabic"></p>
-      <p class="dv-translation" id="dv-translation"></p>
-      <p class="dv-meta" id="dv-meta"></p>
-      <button class="dv-cta" id="dv-next-btn">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<div class="dv-widget" id="dv-widget">
+<div class="dv-header">
+<span class="dv-header-title">Ayat Hari Ini</span>
+<div class="dv-header-btns">
+<button aria-label="Sembunyikan Ayat Hari Ini" id="dv-minimize" title="Sembunyikan">−</button>
+<button aria-label="Tutup Ayat Hari Ini" id="dv-close" title="Tutup">×</button>
+</div>
+</div>
+<div class="dv-body">
+<div class="dv-loading" id="dv-loading">
+<div class="dv-loading-dots">
+<div class="dv-loading-dot"></div>
+<div class="dv-loading-dot"></div>
+<div class="dv-loading-dot"></div>
+</div>
+</div>
+<div id="dv-content" style="display:none">
+<p class="dv-arabic" id="dv-arabic"></p>
+<p class="dv-translation" id="dv-translation"></p>
+<p class="dv-meta" id="dv-meta"></p>
+<button class="dv-cta" id="dv-next-btn">
+<svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="12"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
         Ayat lain
       </button>
-    </div>
-  </div>
 </div>
-<div id="dv-pill" class="dv-pill" style="display:none">
-  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+</div>
+</div>
+<button aria-label="Buka Ayat Hari Ini" class="dv-pill" id="dv-pill" style="display:none" type="button">
+<svg fill="none" height="12" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="12"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
   Ayat Hari Ini
-</div>
-
+</button>
 <script>
 // ── TRANSLATIONS ──────────────────────────────────
 const T = {
@@ -1537,7 +1475,7 @@ const T = {
     hero_cta1: 'Lihat Proyek', hero_cta2: 'Hubungi Saya',
     about_label: 'Tentang Saya',
     about_title: 'Dari gudang<br/>ke dashboard.',
-    about_terminal_whoami: '<strong>Anang</strong> — Sales Admin, soon Data Analyst',
+    about_terminal_whoami: '<strong>Anang</strong> - Sales Admin, soon Data Analyst',
     about_terminal_goal: '<strong>Become a Data + Business Analyst</strong>',
     stat_ops: 'Tahun di Operasional', stat_projects: 'Proyek Python',
     stat_projects_note: '(menyesuaikan pekerjaan)', stat_tools: 'Tools Dikuasai',
@@ -1550,16 +1488,16 @@ const T = {
     skill_patience: 'Kesabaran',
     projects_label: 'Proyek', projects_title: 'Yang sudah<br/>pernah dibikin.',
     projects_desc: 'Kumpulan proyek dari iseng sampai yang serius. Semuanya berangkat dari niat buat belajar.',
-    proj1_desc: 'Analisis data penjualan dari export Excel — transformasi, cleaning, dan visualisasi tren per bulan menggunakan Pandas dan Matplotlib.',
+    proj1_desc: 'Analisis data penjualan dari export Excel - transformasi, cleaning, dan visualisasi tren per bulan menggunakan Pandas dan Matplotlib.',
     proj2_desc: 'Python scraper untuk mengumpulkan data publik dan menganalisis pola. Menggunakan BeautifulSoup, Requests, dan teknik dasar OSINT.',
-    proj3_desc: 'Konfigurasi Ubuntu dari nol — dotfiles, shell aliases, auto-setup script untuk dev environment yang bisa di-bootstrap di mesin baru dalam menit.',
+    proj3_desc: 'Konfigurasi Ubuntu dari nol - dotfiles, shell aliases, auto-setup script untuk dev environment yang bisa di-bootstrap di mesin baru dalam menit.',
     journal_label: 'Jurnal', journal_title: 'Catatan<br/>dari tengah malam.',
     journal_desc: 'Tulisan lepas tentang teknologi, proses belajar, opini, dan hal-hal yang kebetulan kepikiran waktu kopi masih panas.',
-    j1_date: 'MAR 2024 — 5 MENIT BACA', j1_title: 'Kenapa Berakhir di Linux', j1_excerpt: 'Sejujurnya, ini bukan soal ideologi. Tapi juga soal efisiensi, kontrol, dan fakta bahwa harga MacBook masih belum bisa dibilang murah.',
-    j2_date: 'NOV 2024 — 7 MENIT BACA', j2_title: 'Mulai belajar tentang bagaimana data bisa mengubah cara kerja', j2_excerpt: 'Momen di mana saya sadar bahwa Spreadsheet manual bisa diganti 10 baris Python yang jalan otomatis tiap pagi.',
-    j3_date: 'JAN 2024 — 4 MENIT BACA', j3_title: 'OSINT untuk pemula: belajar dari data yang sudah ada di depan mata', j3_excerpt: 'Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan siapa saja, dan kenapa ini relevan untuk seorang analyst.',
-    j4_date: 'OCT 2024 — 4 MENIT BACA', j4_title: 'Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?', j4_excerpt: 'Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.',
-    j5_date: 'MAR 2026 — 5 MENIT BACA', j5_title: 'Surah Al-Kahfi', j5_excerpt: 'Mengenal wahyu yang sering dibaca setiap Jum\'at sebagai Manual Book disaat krisis.',
+    j1_date: 'MAR 2024 - 5 MENIT BACA', j1_title: 'Kenapa Berakhir di Linux', j1_excerpt: 'Sejujurnya, ini bukan soal ideologi. Tapi juga soal efisiensi, kontrol, dan fakta bahwa harga MacBook masih belum bisa dibilang murah.',
+    j2_date: 'NOV 2024 - 7 MENIT BACA', j2_title: 'Mulai belajar tentang bagaimana data bisa mengubah cara kerja', j2_excerpt: 'Momen di mana saya sadar bahwa Spreadsheet manual bisa diganti 10 baris Python yang jalan otomatis tiap pagi.',
+    j3_date: 'JAN 2024 - 4 MENIT BACA', j3_title: 'OSINT untuk pemula: belajar dari data yang sudah ada di depan mata', j3_excerpt: 'Teknik-teknik dasar pengumpulan informasi publik yang bisa dilakukan siapa saja, dan kenapa ini relevan untuk seorang analyst.',
+    j4_date: 'OCT 2024 - 4 MENIT BACA', j4_title: 'Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?', j4_excerpt: 'Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.',
+    j5_date: 'MAR 2026 - 5 MENIT BACA', j5_title: 'Surah Al-Kahfi', j5_excerpt: 'Mengenal wahyu yang sering dibaca setiap Jum\'at sebagai Manual Book disaat krisis.',
     contact_label: 'Kontak', contact_title: 'Ada yang mau disampaikan?<br/><span>Ngobrol yuk.</span>',
     contact_desc: 'Lagi cari peluang sebagai Data Analyst atau Business Analyst. Open untuk diskusi, kolaborasi, atau sekadar ngobrol soal data dan teknologi.',
     footer_text: 'Dibuat dari Bekasi dengan Kopi dan Polusi',
@@ -1575,29 +1513,29 @@ const T = {
     hero_cta1: 'View Projects', hero_cta2: 'Get in Touch',
     about_label: 'About Me',
     about_title: 'From warehouse<br/>to dashboard.',
-    about_terminal_whoami: '<strong>Anang</strong> — Sales Admin, soon Data Analyst',
+    about_terminal_whoami: '<strong>Anang</strong> - Sales Admin, soon Data Analyst',
     about_terminal_goal: '<strong>Become a Data + Business Analyst</strong>',
     stat_ops: 'Years in Operations', stat_projects: 'Python Projects',
     stat_projects_note: '(work-related)', stat_tools: 'Tools Mastered',
     stat_learn: 'New Lesson Every Day',
-    about_story1: 'Started out managing warehouse stock and sales admin, then realized everything could be more efficient with data. That\'s when I picked up <span class="pill">Python</span>, then <span class="pill">Pandas</span>, then <span class="pill">SQL</span> — and honestly, I just couldn\'t stop.',
+    about_story1: 'Started out managing warehouse stock and sales admin, then realized everything could be more efficient with data. That\'s when I picked up <span class="pill">Python</span>, then <span class="pill">Pandas</span>, then <span class="pill">SQL</span> - and honestly, I just couldn\'t stop.',
     about_story2: '<strong>I believe</strong> the best way to learn is to build something you can actually use.',
     about_cta: 'Want to Chat Further?',
     skills_label: 'Skills', skills_title: 'The stack<br/>I work with.',
-    skills_desc: 'Tools and technologies I rely on daily — from data analysis to operating systems.',
+    skills_desc: 'Tools and technologies I rely on daily - from data analysis to operating systems.',
     skill_patience: 'Patience',
     projects_label: 'Projects', projects_title: 'Things I\'ve<br/>built so far.',
     projects_desc: 'A collection of projects from casual experiments to serious builds. All driven by the intent to learn.',
-    proj1_desc: 'Sales data analysis from Excel exports — transformation, cleaning, and monthly trend visualization using Pandas and Matplotlib.',
+    proj1_desc: 'Sales data analysis from Excel exports - transformation, cleaning, and monthly trend visualization using Pandas and Matplotlib.',
     proj2_desc: 'Python tool for collecting public data and analyzing patterns. Built with BeautifulSoup, Requests, and basic OSINT techniques.',
-    proj3_desc: 'Ubuntu configuration from scratch — dotfiles, shell aliases, auto-setup script for a dev environment that bootstraps on a new machine in minutes.',
+    proj3_desc: 'Ubuntu configuration from scratch - dotfiles, shell aliases, auto-setup script for a dev environment that bootstraps on a new machine in minutes.',
     journal_label: 'Journal', journal_title: 'Notes<br/>from midnight.',
     journal_desc: "Loose writings about technology, the learning process, opinions, and things that cross my mind while the coffee's still hot.",
-    j1_date: 'MAR 2024 — 5 MIN READ', j1_title: 'Why I Ended Up on Linux', j1_excerpt: "Honestly, it's not about ideology. It's about efficiency, control, and the fact that MacBooks still aren't exactly cheap.",
-    j2_date: 'NOV 2024 — 7 MIN READ', j2_title: 'How data can change the way you work', j2_excerpt: 'The moment I realized a manual spreadsheet could be replaced by 10 lines of Python running automatically every morning.',
-    j3_date: 'JAN 2024 — 4 MIN READ', j3_title: 'OSINT for beginners: learning from data already in front of you', j3_excerpt: 'Basic public information gathering techniques that anyone can do, and why this is relevant for an analyst.',
-    j4_date: 'OCT 2024 — 4 MIN READ', j4_title: 'Structural Poverty: Why Individual Effort Alone Is Not Enough', j4_excerpt: 'What and Why?, Contributing Factors, Expert Views, Economic Inequality and a Conclusion from the Author.',
-    j5_date: 'MAR 2026 — 5 MIN READ', j5_title: 'Surah Al-Kahfi', j5_excerpt: 'Understanding the revelation often read every Friday as a Manual Book in times of crisis.',
+    j1_date: 'MAR 2024 - 5 MIN READ', j1_title: 'Why I Ended Up on Linux', j1_excerpt: "Honestly, it's not about ideology. It's about efficiency, control, and the fact that MacBooks still aren't exactly cheap.",
+    j2_date: 'NOV 2024 - 7 MIN READ', j2_title: 'How data can change the way you work', j2_excerpt: 'The moment I realized a manual spreadsheet could be replaced by 10 lines of Python running automatically every morning.',
+    j3_date: 'JAN 2024 - 4 MIN READ', j3_title: 'OSINT for beginners: learning from data already in front of you', j3_excerpt: 'Basic public information gathering techniques that anyone can do, and why this is relevant for an analyst.',
+    j4_date: 'OCT 2024 - 4 MIN READ', j4_title: 'Structural Poverty: Why Individual Effort Alone Is Not Enough', j4_excerpt: 'What and Why?, Contributing Factors, Expert Views, Economic Inequality and a Conclusion from the Author.',
+    j5_date: 'MAR 2026 - 5 MIN READ', j5_title: 'Surah Al-Kahfi', j5_excerpt: 'Understanding the revelation often read every Friday as a Manual Book in times of crisis.',
     contact_label: 'Contact', contact_title: 'Something on your mind?<br/><span>Let\'s talk.</span>',
     contact_desc: 'Looking for opportunities as a Data Analyst or Business Analyst. Open to discussions, collaborations, or just chatting about data and technology.',
     footer_text: 'Made from Bekasi with Coffee and Air Pollution',
@@ -1606,15 +1544,22 @@ const T = {
   }
 };
 
+
+Object.assign(T.id, {"nav_projects": "Studi Kasus", "hero_desc": "Berbekal pengalaman administrasi penjualan dan pengelolaan stok, gue mulai transisi dari dunia operasional ke dunia data.<br>Suka ngulik Python, ngoprek Linux, dan dengerin apa yang data bilang sebelum orang lain sadar ada yang perlu didengar.", "hero_cta1": "Lihat Studi Kasus", "hero_cta2": "Hubungi Aku", "projects_label": "Studi Kasus", "projects_title": "Bukti kerja,<br>bukan sekadar daftar tools.", "projects_desc": "Analisis yang bisa ditelusuri sampai ke metrik, kode, dan keterbatasannya. Mulai dari satu studi kasus utama, lalu proyek pendukung.", "about_terminal_whoami": "<strong>Anang</strong> - pengalaman operasional, fokus analisis data", "skills_desc": "Tools yang dipakai dan dipelajari untuk mengolah data, membuat laporan, dan mendukung pekerjaan operasional.", "skip": "Langsung ke studi kasus", "ops_sales": "Administrasi penjualan", "ops_inventory": "Pengelolaan stok", "ops_reporting": "Analisis &amp; laporan", "ops_python": "Alat bantu pengolahan data", "levels_title": "Kemampuan dalam praktik", "ev_office": "Pelaporan dan pengolahan data operasional.", "ev_python": "Agregasi KPI pada Sales Reporting 2024.", "ev_sql": "Bagian dari stack belajar; studi kasus SQL belum ditautkan.", "ev_da": "Mendefinisikan metrik, membaca tren, dan menjelaskan keterbatasan.", "evidence_cta": "Lihat bukti penerapan →", "feat_badge": "Studi kasus utama · Dataset contoh", "feat_sub": "Membaca performa penjualan lewat KPI, tren bulanan, dan pola transaksi.", "feat_desc": "Mengolah data transaksi menjadi laporan pendapatan, pesanan, AOV, kontribusi channel, diskon efektif, dan distribusi penjualan produk.", "feat_read": "Baca Studi Kasus ↓", "feat_cta": "Lihat GitHub ↗", "k_orders": "Pesanan unik", "k_units": "Unit terjual", "kpi_note": "Angka dari ringkasan repository untuk dataset contoh; belum dihitung ulang di halaman ini. Bukan pencapaian bisnis pribadi.", "case_summary": "Sales Reporting 2024 - metode, temuan, dan keterbatasan", "case_q_title": "Pertanyaan analisis", "case_q": "<li>Bagaimana pendapatan, pesanan, dan unit terjual berubah tiap bulan?</li><li>Apakah puncak pesanan sama dengan puncak pendapatan?</li><li>Bagaimana kontribusi channel penjualan?</li><li>Seberapa besar diskon dan voucher dibandingkan nilai retail?</li><li>Bagaimana pola penjualan berdasarkan tanggal dalam bulan?</li><li>Seberapa terkonsentrasi pendapatan antarproduk?</li>", "case_method_title": "Data &amp; metode", "case_method": "Input CSV/Excel diperiksa kolom wajibnya, dikonversi tanggal dan angka, lalu diagregasi menjadi KPI dan grafik statis. Output berupa CSV dan gambar, bukan dashboard interaktif.", "case_data": "Status: dataset contoh. README menyebut dummy dan sampel anonim; asal data perlu diperjelas sebelum diklaim sebagai studi kasus pekerjaan nyata.", "case_metrics_title": "Definisi metrik", "case_caption": "Rumus berdasarkan src/metrics.py", "metric": "Metrik", "definition": "Definisi", "formula_orders": "Jumlah Order# unik", "formula_share": "Pendapatan channel / total pendapatan", "case_findings_title": "Temuan yang dilaporkan", "case_findings": "<li>Februari: pesanan tertinggi, 510. Juli: pendapatan tertinggi, sekitar Rp159,3 juta. Volume dan nilai transaksi perlu dibaca bersama.</li><li>Oktober: AOV tertinggi, sekitar Rp536 ribu. Komposisi produk dan jumlah barang per pesanan menjadi pertanyaan lanjutan, bukan penyebab yang sudah terbukti.</li><li>Desember: diskon efektif tertinggi, sekitar 50,4%. Tanpa data biaya, hasil ini belum menjelaskan profitabilitas.</li><li>Sepuluh produk teratas menyumbang sekitar 7,8% pendapatan. Temuan ini belum cukup untuk menetapkan strategi stok.</li>", "case_limits_title": "Keterbatasan &amp; pengembangan", "case_limits": "<li>Ringkasan berasal dari README dan reports/summary_2024.csv, belum diverifikasi ulang terhadap dataset contoh.</li><li>Pola tanggal bukan bukti sebab-akibat gajian. YoY membutuhkan data pembanding; kode yang ditinjau belum menghitung MoM/YoY.</li><li>Konversi angka yang gagal menjadi nol perlu dilengkapi pencatatan error; arti Grand Total serta perlakuan retur dan pembatalan perlu dikonfirmasi.</li><li>Output skrip dan summary tersimpan perlu diselaraskan untuk reproduksibilitas. Belum ada pengukuran dampak bisnis atau penghematan waktu.</li>", "case_source": "Telusuri kode dan laporan di GitHub ↗", "others_title": "Proyek pendukung", "project_pending": "Dokumentasi proyek belum ditautkan."});
+Object.assign(T.en, {"nav_projects": "Case Studies", "hero_desc": "Backed by experience in sales administration and stock management, I'm transitioning from operations into data.<br>I enjoy tinkering with Python, exploring Linux, and listening to what the data says before others notice something worth hearing.", "hero_cta1": "View Case Studies", "hero_cta2": "Get in Touch", "projects_label": "Case Studies", "projects_title": "Proof of work,<br>not just a tool list.", "projects_desc": "Analysis you can trace down to metrics, code, and limitations. One featured case study, followed by supporting projects.", "about_terminal_whoami": "<strong>Anang</strong> - operations background, data analysis focus", "skills_desc": "Tools I use and learn to process data, build reports, and support operational work.", "skip": "Skip to case studies", "ops_sales": "Sales administration", "ops_inventory": "Stock management", "ops_reporting": "Analysis & reporting", "ops_python": "Data processing tools", "levels_title": "Capabilities in practice", "ev_office": "Operational reporting and data processing.", "ev_python": "KPI aggregation in Sales Reporting 2024.", "ev_sql": "Part of my learning stack; a SQL case study is not linked yet.", "ev_da": "Defining metrics, reading trends, and explaining limitations.", "evidence_cta": "See practical evidence →", "feat_badge": "Featured case study · Sample dataset", "feat_sub": "Reading sales performance through KPIs, monthly trends, and transaction patterns.", "feat_desc": "Transforms transaction data into reports on revenue, orders, AOV, channel contribution, effective discounts, and product revenue distribution.", "feat_read": "Read Case Study ↓", "feat_cta": "View GitHub ↗", "k_orders": "Unique orders", "k_units": "Units sold", "kpi_note": "Figures from the repository summary for a sample dataset; not recalculated on this page. Not personal business achievements.", "case_summary": "Sales Reporting 2024 - methods, findings, and limitations", "case_q_title": "Analysis questions", "case_q": "<li>How do revenue, orders, and units change monthly?</li><li>Do order and revenue peaks occur together?</li><li>What does each sales channel contribute?</li><li>How large are discounts and vouchers relative to retail value?</li><li>How do sales vary by day of month?</li><li>How concentrated is revenue across products?</li>", "case_method_title": "Data & methods", "case_method": "CSV/Excel inputs are checked for required columns, converted to dates and numbers, and aggregated into KPIs and static charts. Outputs are CSV files and images, not an interactive dashboard.", "case_data": "Status: sample dataset. The README refers to both dummy and anonymized sample data; provenance needs clarification before presenting this as an actual work case study.", "case_metrics_title": "Metric definitions", "case_caption": "Formulas based on src/metrics.py", "metric": "Metric", "definition": "Definition", "formula_orders": "Count of unique Order# values", "formula_share": "Channel revenue / total revenue", "case_findings_title": "Reported findings", "case_findings": "<li>February had the most orders, 510. July had the highest revenue, about Rp159.3 million. Read volume and transaction value together.</li><li>October had the highest AOV, about Rp536K. Product mix and items per order are follow-up questions, not proven causes.</li><li>December had the highest effective discount, about 50.4%. Without cost data, this does not explain profitability.</li><li>The top ten products accounted for about 7.8% of revenue. This alone is insufficient to set inventory strategy.</li>", "case_limits_title": "Limitations & next improvements", "case_limits": "<li>Figures come from README and reports/summary_2024.csv and have not been revalidated against the sample dataset.</li><li>Day-of-month patterns do not establish a payday cause. YoY requires comparison data; the reviewed code does not calculate MoM/YoY.</li><li>Failed numeric conversions become zero and need error logging; Grand Total, returns, and cancellations need clarification.</li><li>Script outputs and stored summaries need alignment for reproducibility. Business impact and time savings have not been measured.</li>", "case_source": "Explore code and reports on GitHub ↗", "others_title": "Supporting projects", "project_pending": "Project documentation not linked yet."});
+
 let lang = 'id';
 function applyLang(l) {
+  if (!T[l]) return;
   lang = l;
+  document.documentElement.lang = l;
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (T[l][key] !== undefined) el.innerHTML = T[l][key];
   });
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === l);
+    b.setAttribute('aria-pressed', String(b.dataset.lang === l));
   });
 }
 document.querySelectorAll('.lang-btn').forEach(b => {
@@ -1632,10 +1577,19 @@ window.addEventListener('scroll', () => {
 
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', String(navLinks.classList.contains('open')));
 });
 
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false');
+}));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+    navLinks.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); hamburger.focus();
+  }
+});
 // Active nav link on scroll
-const sections = document.querySelectorAll('section[id], div[id]');
+const sections = document.querySelectorAll('#hero, #about, #skills, #projects, #journal, #contact');
 const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
@@ -1697,12 +1651,12 @@ document.querySelectorAll('.skill-bars-wrap').forEach(el => barObs.observe(el));
 // ── PROJECT FILTER ──────────────────────────────────────────
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+    btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
     const filter = btn.dataset.filter;
     document.querySelectorAll('.project-card').forEach(card => {
       const cats = card.dataset.category || '';
-      const show = filter === 'all' || cats.includes(filter);
+      const show = filter === 'all' || cats.split(/\s+/).includes(filter);
       card.style.display = show ? '' : 'none';
       card.style.opacity = show ? '1' : '0';
     });
@@ -1726,8 +1680,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 (function() {
   const widget = document.getElementById('dv-widget');
   const pill   = document.getElementById('dv-pill');
-  const isMobile = window.innerWidth <= 480;
-  if (isMobile) { widget.style.display = 'none'; pill.style.display = 'flex'; }
+  widget.style.display = 'none'; pill.style.display = 'flex';
 
   function getDailyAyah() {
     const start = new Date(new Date().getFullYear(), 0, 0);
@@ -1751,13 +1704,15 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
       document.getElementById('dv-meta').textContent        = data.data[0].surah.name + ' (' + data.data[0].surah.englishName + ') : ' + data.data[0].numberInSurah;
       loading.style.display = 'none';
       content.style.display = 'block';
-      if (btn) btn.disabled = false;
     } catch {
-      loading.innerHTML = '<span style="font-size:0.72rem;color:rgba(250,247,242,0.4)">Gagal memuat ayat.</span>';
+      loading.innerHTML = '<span style="font-size:0.72rem;color:rgba(250,247,242,0.4)">Gagal memuat ayat. Coba tombol Ayat lain.</span>';
+      content.style.display = 'block';
+    } finally {
+      if (btn) btn.disabled = false;
     }
   }
 
-  loadVerse(getDailyAyah());
+  let verseLoaded = false;
   document.getElementById('dv-next-btn').addEventListener('click', () => {
     loadVerse(Math.floor(Math.random() * 6236) + 1);
   });
@@ -1769,8 +1724,13 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
   pill.addEventListener('click', () => {
     pill.style.display = 'none'; widget.style.display = 'block';
+    if (!verseLoaded) { verseLoaded = true; loadVerse(getDailyAyah()); }
   });
 })();
+
+applyLang("id");
 </script>
 </body>
 </html>
+
+```
