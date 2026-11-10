@@ -18,6 +18,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - run: python tools/prepare_theme.py
       - run: pip install playwright==1.51.0
       - run: python -m playwright install --with-deps chromium firefox webkit
       - run: python tools/test_journal_themes.py
