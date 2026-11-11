@@ -1,4 +1,4 @@
-name: Journal quality and optional Pages deployment
+name: Journal verification and Pages deployment
 on:
   push:
     branches: [main]
@@ -27,28 +27,28 @@ jobs:
         with:
           name: journal-test-evidence
           path: test-results/
-      - name: Assemble static website only
+      - name: Assemble verified static website
         run: |
           mkdir -p _site
           python - <<'PY'
           import pathlib, shutil
           root = pathlib.Path('.')
           for source in root.iterdir():
-              if source.name in {'_site', '.git', '.github', 'tools', 'test-results', 'README.md'} or source.name.startswith('.'):
+              if source.name in {'_site', '.git', '.github', 'test-results', 'README.md'} or source.name.startswith('.'):
                   continue
               target = pathlib.Path('_site') / source.name
               if source.is_dir():
-                  shutil.copytree(source, target)
-              elif source.suffix.lower() in {'.html', '.css', '.js', '.json', '.svg', '.png', '.jpg', '.webp', '.ico', '.txt', '.xml'} or source.name == 'CNAME':
+                  shutil.copytree(source, target, ignore=shutil.ignore_patterns('*.py', '__pycache__'))
+              elif source.suffix.lower() in {'.html', '.css', '.js', '.json', '.svg', '.png', '.jpg', '.jpeg', '.webp', '.ico', '.txt', '.xml'} or source.name == 'CNAME':
                   shutil.copy2(source, target)
           PY
       - uses: actions/upload-pages-artifact@v3
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.ENABLE_GITHUB_PAGES == 'true'
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         with:
           path: _site
   deploy:
     needs: test
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.ENABLE_GITHUB_PAGES == 'true'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       pages: write
