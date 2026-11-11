@@ -1,6 +1,5 @@
-
 <!--
-   _-=Created Without Love=- _                   
+   _-=Created WithOut Love=- _                   
 | \ | ___ ._ _  ___  ___
 |   |<_> || ' |/ . |<_-<
 |_\_|<___||_|_|\_. |/__/
@@ -8,464 +7,1095 @@
 -->
 
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="sore">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mengurai Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup? — Nang</title>
+<script>
+/* tema dibaca duluan, biar nggak ada kedipan putih yang keterlaluan */
+try{
+  var t = localStorage.getItem('nang-theme');
+  if(t === 'malem' || t === 'sore'){ document.documentElement.dataset.theme = t; }
+}catch(e){}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet"/>
+<meta name="description" content="Apa dan mengapa kemiskinan struktural terjadi, faktor penyebab, pandangan ahli, kesenjangan ekonomi, dan sebuah kesimpulan."/>
+<style>
+/* ================================================
+   kemiskinan struktural — esai berat, dibawa santai.
+   layoutnya nggak boleh bikin capek, isinya udah
+   cukup bikin mikir.
+   ================================================ */
 
-:root {
-  --bg:             #F5F0E8;
-  --bg-soft:        #FAF7F2;
-  --surface:        #F0EBE1;
-  --surface-2:      #EAE3D8;
-  --border:         #D9D0C3;
-  --border-strong:  #C5BAA9;
-  --divider:        #E2D9CC;
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
 
-  --text:           #1A1613;
-  --text-muted:     #6B6055;
-  --text-faint:     #A09285;
+:root{
+  --font-serif:'Instrument Serif',Georgia,serif;
+  --font-sans:'Space Grotesk',system-ui,-apple-system,sans-serif;
+  --font-mono:'JetBrains Mono','Fira Code',monospace;
+  --font-hand:'Caveat',cursive;
 
-  --accent:         #C96442;
-  --accent-hover:   #A84F31;
-  --accent-soft:    #F0DDD6;
-  --accent-border:  #DFBCAD;
+  --fs-xs:clamp(.72rem,.68rem+.2vw,.82rem);
+  --fs-sm:clamp(.85rem,.8rem+.3vw,.95rem);
+  --fs-base:clamp(1rem,.95rem+.25vw,1.12rem);
+  --fs-lg:clamp(1.15rem,1rem+.7vw,1.45rem);
+  --fs-xl:clamp(1.5rem,1.15rem+1.5vw,2.3rem);
+  --fs-2xl:clamp(1.9rem,1.15rem+2.4vw,3.2rem);
 
-  --font-display: 'Instrument Serif', Georgia, serif;
-  --font-body:    'Inter', system-ui, sans-serif;
-  --font-mono:    'JetBrains Mono', monospace;
+  --s1:.25rem; --s2:.5rem; --s3:.75rem; --s4:1rem; --s5:1.25rem;
+  --s6:1.5rem; --s8:2rem; --s10:2.5rem; --s12:3rem; --s16:4rem; --s24:6rem;
 
-  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
-  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
-  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
-  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
-  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
-  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.4rem);
+  --r-sm:.4rem; --r-md:.65rem; --r-lg:1rem; --r-xl:1.4rem; --r-full:999px;
 
-  --space-1:  0.25rem;  --space-2:  0.5rem;   --space-3:  0.75rem;
-  --space-4:  1rem;     --space-5:  1.25rem;  --space-6:  1.5rem;
-  --space-8:  2rem;     --space-10: 2.5rem;   --space-12: 3rem;
-  --space-16: 4rem;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
 
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.875rem;
-
-  --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
-  --content-narrow: 720px;
-  --content-wide:   1160px;
+  --read-w:680px;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 76px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ── dua dunia: sore & malem ─────────────────────── */
+html[data-theme="sore"]{
+  --bg:#f2ecdf; --bg-soft:#faf6ec; --surface:#efe8d8; --surface-2:#e6dcc8;
+  --border:#d9cdb6; --border-strong:#bfae90; --divider:#e0d5c1;
+  --text:#221a10; --text-muted:#6d5f4b; --text-faint:#97876d;
+  --accent:#c75f3a; --accent-hover:#a94826; --accent-active:#8a3d23;
+  --accent-soft:#f2ddd0; --accent-border:#dfbaa5;
+  --nav-bg:rgba(242,236,223,.78);
+  --shadow-sm:0 1px 2px rgba(34,26,16,.06);
+  --shadow-md:0 6px 24px rgba(34,26,16,.09);
+  --shadow-lg:0 16px 48px rgba(34,26,16,.14);
+  --blob-a:rgba(199,95,58,.16); --blob-b:rgba(212,165,80,.14); --blob-c:rgba(120,140,100,.12);
+  --particle:rgba(120,100,70,.35); --line:rgba(120,100,70,.12);
+  color-scheme:light;
 }
-body {
-  font-family: var(--font-body);
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.75;
-  overflow-x: hidden;
-}
-img, svg { display: block; max-width: 100%; height: auto; }
-a { color: inherit; text-decoration: none; }
-h1, h2, h3 { text-wrap: balance; }
-p, li { text-wrap: pretty; }
-::selection { background: rgba(201,100,66,0.18); color: var(--text); }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); }
-
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
-
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  height: 64px;
-  padding: 0 var(--space-8);
-  background: rgba(245,240,232,0.76);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--transition), background var(--transition);
-}
-nav.scrolled {
-  border-color: var(--divider);
-  background: rgba(245,240,232,0.95);
-}
-.nav-inner {
-  max-width: var(--content-wide);
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.nav-logo {
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -0.01em;
-}
-.nav-logo span { color: var(--accent); }
-.nav-back {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--text-muted);
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: color var(--transition);
-}
-.nav-back:hover { color: var(--text); }
-.nav-back svg { transition: transform var(--transition); }
-.nav-back:hover svg { transform: translateX(-3px); }
-
-#progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--accent);
-  z-index: 200;
-  transition: width 0.08s linear;
+html[data-theme="malem"]{
+  --bg:#131009; --bg-soft:#1a1610; --surface:#211b12; --surface-2:#2a2316;
+  --border:#3a3122; --border-strong:#50432d; --divider:#272116;
+  --text:#ede4cf; --text-muted:#a89a7f; --text-faint:#7c6f57;
+  --accent:#e2885a; --accent-hover:#eda277; --accent-active:#c96f3e;
+  --accent-soft:#3a2517; --accent-border:#6c4128;
+  --nav-bg:rgba(19,16,9,.75);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:0 6px 24px rgba(0,0,0,.45);
+  --shadow-lg:0 16px 52px rgba(0,0,0,.55);
+  --blob-a:rgba(226,136,90,.13); --blob-b:rgba(90,110,160,.10); --blob-c:rgba(150,90,140,.09);
+  --particle:rgba(230,200,150,.3); --line:rgba(230,200,150,.08);
+  color-scheme:dark;
 }
 
-article {
-  max-width: var(--content-narrow);
-  margin: 0 auto;
-  padding: 104px var(--space-6) 5rem;
+body,nav,footer,.meta-tag,.toc a,.back-pill,.share-btn,.factor-item,.expert-card,
+.sect-h,.topfab,.art-fig,.md-note,hr{
+  transition:background-color .55s var(--ease),color .55s var(--ease),
+             border-color .55s var(--ease);
 }
-.article-meta {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: var(--space-8);
-}
-.article-date {
-  font-family: var(--font-mono);
-  font-size: 0.73rem;
-  color: var(--text-faint);
-  letter-spacing: 0.1em;
-}
-.article-tag {
-  padding: 3px 10px;
-  border-radius: 999px;
-  font-size: 0.7rem;
-  font-family: var(--font-mono);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  background: var(--accent-soft);
-  color: var(--accent-hover);
-  border: 1px solid var(--accent-border);
-}
-.article-read-time {
-  font-size: 0.73rem;
-  color: var(--text-faint);
-  font-family: var(--font-mono);
-  letter-spacing: 0.08em;
-}
-.article-title {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 1.08;
-  margin-bottom: var(--space-6);
-  color: var(--text);
-}
-.article-intro {
-  font-size: 1.08rem;
-  color: var(--text-muted);
-  line-height: 1.85;
-  border-left: 2px solid var(--accent);
-  padding-left: 1.25rem;
-  margin-bottom: 2.5rem;
-}
-.article-body {
-  font-size: 1rem;
-  color: var(--text-muted);
-  line-height: 1.9;
-}
-.article-body h2 {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--text);
-  letter-spacing: -0.02em;
-  margin: 2.75rem 0 1rem;
-  padding-bottom: 0.45rem;
-  border-bottom: 1px solid var(--divider);
-}
-.article-body p { margin-bottom: 1.25rem; }
-.article-body strong { color: var(--text); font-weight: 600; }
-.article-body em { color: var(--text); }
-.article-body code {
-  font-family: var(--font-mono);
-  font-size: 0.83em;
-  background: var(--surface);
-  color: var(--accent-hover);
-  padding: 2px 7px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-}
-.article-body pre {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 1.25rem 1.5rem;
-  margin: 1.5rem 0;
-  overflow-x: auto;
-}
-.article-body pre code {
-  background: none;
-  border: none;
-  padding: 0;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-}
-.article-body ul, .article-body ol {
-  padding-left: 1.5rem;
-  margin-bottom: 1.25rem;
-}
-.article-body li { margin-bottom: 0.55rem; }
-.article-body a {
-  color: var(--accent);
-  border-bottom: 1px solid var(--accent-border);
-  transition: border-color var(--transition), color var(--transition);
-}
-.article-body a:hover {
-  color: var(--accent-hover);
-  border-color: var(--accent);
-}
-.article-body blockquote {
-  border-left: 2px solid var(--accent);
-  padding: 0.25rem 0 0.25rem 1.25rem;
-  color: var(--text-muted);
-  font-style: italic;
-  margin: 1.75rem 0;
-  font-family: var(--font-display);
-  font-size: 1.08rem;
-  line-height: 1.8;
-}
-.article-body figure { margin: 1.5rem 0 2rem; }
-.article-body figure img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-lg);
-  display: block;
-  border: 1px solid var(--border);
-}
-.article-body figcaption {
-  font-size: 0.76rem;
-  color: var(--text-faint);
-  font-family: var(--font-mono);
-  text-align: center;
-  margin-top: 0.6rem;
-}
-.article-body .medium-note {
-  font-size: 0.85rem;
-  color: var(--text-faint);
-  margin-top: 0.75rem;
-  font-family: var(--font-mono);
-}
-.article-footer {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--divider);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0.55rem 1.15rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: border-color var(--transition), color var(--transition), background var(--transition);
-}
-.back-link:hover {
-  border-color: var(--border-strong);
-  color: var(--text);
-  background: var(--surface);
-}
-.back-link svg { transition: transform var(--transition); }
-.back-link:hover svg { transform: translateX(-3px); }
-.article-author {
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  color: var(--text-faint);
-}
-footer {
-  border-top: 1px solid var(--divider);
-  padding: 1.5rem 2rem;
-  text-align: center;
-  color: var(--text-faint);
-  font-size: 0.78rem;
-  font-family: var(--font-mono);
-}
-footer span { color: var(--accent); }
 
-@media (max-width: 640px) {
-  nav { padding: 0 1.25rem; }
-  article { padding: 88px 1.25rem 4rem; }
+body{
+  font-family:var(--font-sans);
+  font-size:var(--fs-base);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.75;
+  overflow-x:hidden;
+  min-height:100vh;
 }
-  </style>
+::selection{background:var(--accent);color:var(--bg)}
+img,svg{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+h1,h2,h3{line-height:1.12;text-wrap:balance}
+p{text-wrap:pretty}
+
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:3px}
+:focus-visible{outline:2px dashed var(--accent);outline-offset:4px;border-radius:var(--r-sm)}
+
+.skip-link{position:fixed;top:10px;left:10px;z-index:999;padding:.9rem 1.4rem;
+  background:var(--accent);color:var(--bg);border-radius:var(--r-md);font-weight:600;
+  transform:translateY(-180%);transition:transform .22s var(--ease)}
+.skip-link:focus{transform:none}
+
+/* ── latar: blob, debu, grain ────────────────────── */
+.bg-art{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);will-change:transform}
+.b1{width:44vmax;height:44vmax;top:-14%;left:-10%;
+    background:radial-gradient(circle at 35% 35%,var(--blob-a),transparent 65%);
+    animation:drift1 26s ease-in-out infinite alternate}
+.b2{width:38vmax;height:38vmax;bottom:-12%;right:-8%;
+    background:radial-gradient(circle at 60% 40%,var(--blob-b),transparent 65%);
+    animation:drift2 32s ease-in-out infinite alternate}
+.b3{width:30vmax;height:30vmax;top:42%;left:55%;
+    background:radial-gradient(circle,var(--blob-c),transparent 60%);
+    animation:drift3 38s ease-in-out infinite alternate}
+@keyframes drift1{0%{transform:translate(0,0) scale(1)}100%{transform:translate(9vw,6vh) scale(1.15)}}
+@keyframes drift2{0%{transform:translate(0,0) rotate(0)}100%{transform:translate(-8vw,-7vh) rotate(40deg)}}
+@keyframes drift3{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-6vw,4vh) scale(.85)}100%{transform:translate(3vw,-5vh) scale(1.1)}}
+#dust{position:absolute;inset:0;width:100%;height:100%}
+
+.grain{position:fixed;inset:-50%;z-index:250;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain-shift .9s steps(3) infinite}
+@keyframes grain-shift{0%{transform:translate(0,0)}33%{transform:translate(-2%,1%)}66%{transform:translate(1%,-2%)}100%{transform:translate(0,0)}}
+
+main,nav,footer{position:relative;z-index:1}
+
+.scroll-progress{position:fixed;top:0;left:0;z-index:400;height:3px;width:0;
+  background:linear-gradient(90deg,var(--accent),var(--accent-hover));
+  border-radius:0 3px 3px 0;transition:width .12s linear}
+
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;z-index:900;pointer-events:none;
+  border-radius:50%;transform:translate(-50%,-50%);display:none}
+@media (hover:hover) and (pointer:fine){
+  .cursor-dot,.cursor-ring{display:block}
+  .cursor-dot{width:7px;height:7px;background:var(--accent)}
+  .cursor-ring{width:34px;height:34px;border:1.5px solid var(--accent);opacity:.55;
+    transition:width .25s var(--ease),height .25s var(--ease),opacity .25s var(--ease)}
+  body.cursor-hot .cursor-ring{width:56px;height:56px;opacity:.9}
+  body.cursor-down .cursor-dot{transform:translate(-50%,-50%) scale(1.6)}
+}
+
+/* ── navigasi ────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:66px;
+  display:flex;align-items:center;padding:0 clamp(1rem,4vw,2.5rem);
+  background:var(--nav-bg);backdrop-filter:blur(18px) saturate(1.3);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);
+  border-bottom:1px solid transparent;transition:box-shadow .22s,background .22s}
+nav.stuck{border-bottom-color:var(--divider);box-shadow:var(--shadow-sm)}
+.nav-inner{width:100%;max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:var(--s4)}
+.nav-logo{font-weight:700;font-size:1rem;letter-spacing:-.02em;flex-shrink:0}
+.nav-logo span{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:var(--s3)}
+.nav-back{display:inline-flex;align-items:center;gap:var(--s2);
+  font-size:var(--fs-sm);font-weight:500;color:var(--text-muted);white-space:nowrap}
+.nav-back:hover{color:var(--text)}
+.nav-back svg{transition:transform .22s var(--ease)}
+.nav-back:hover svg{transform:translateX(-3px)}
+@media(max-width:560px){.nav-back .nb-text{display:none}}
+
+.seg-toggle{position:relative;display:flex;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--r-full);padding:2px;
+  transition:background-color .55s var(--ease),border-color .55s var(--ease)}
+.seg-thumb{position:absolute;top:2px;bottom:2px;width:calc(50% - 2px);left:0;
+  background:var(--bg-soft);border-radius:var(--r-full);box-shadow:var(--shadow-sm);
+  transition:transform .35s var(--ease-spring),background-color .55s var(--ease)}
+.seg-toggle[data-active="1"] .seg-thumb{transform:translateX(100%)}
+.seg-toggle button{position:relative;padding:3px 12px;border-radius:var(--r-full);font-size:.7rem;
+  font-weight:600;letter-spacing:.05em;color:var(--text-muted);white-space:nowrap;
+  display:flex;align-items:center;gap:5px;transition:color .25s}
+.seg-toggle button.on,.seg-toggle button:hover{color:var(--text)}
+.seg-toggle button svg{width:11px;height:11px}
+
+/* ── header artikel ──────────────────────────────── */
+.art-head{max-width:var(--read-w);margin:0 auto;
+  padding:clamp(110px,15vw,150px) var(--s5) var(--s10)}
+.meta-row{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;margin-bottom:var(--s6)}
+.meta-date{font-family:var(--font-mono);font-size:var(--fs-xs);color:var(--text-faint);letter-spacing:.1em}
+.meta-tag{padding:2px 10px;border-radius:var(--r-sm);font-size:.72rem;
+  font-family:var(--font-mono);letter-spacing:.03em;
+  background:var(--accent-soft);color:var(--accent-hover);border:1px solid var(--accent-border);
+  transition:transform .25s var(--ease-spring),background-color .55s var(--ease),color .55s var(--ease),border-color .55s var(--ease)}
+.meta-tag:hover{transform:rotate(-2deg) scale(1.05)}
+.meta-tag.neutral{background:var(--surface);color:var(--text-muted);border-color:var(--border)}
+.meta-sep{color:var(--border-strong);font-size:var(--fs-xs)}
+.meta-read{font-size:var(--fs-xs);color:var(--text-faint);font-family:var(--font-mono)}
+
+.art-title{font-family:var(--font-serif);font-weight:400;font-size:var(--fs-2xl);
+  letter-spacing:-.03em;line-height:1.1;margin-bottom:var(--s6)}
+.art-title .word{display:inline-block;overflow:hidden;vertical-align:bottom}
+.art-title .word>i{display:inline-block;font-style:normal;
+  transform:translateY(110%);animation:word-up .85s var(--ease) forwards;animation-delay:var(--wd,0s)}
+@keyframes word-up{to{transform:translateY(0)}}
+
+.art-lead{font-size:var(--fs-lg);color:var(--text-muted);line-height:1.8;
+  border-left:2px solid var(--accent);padding-left:var(--s5);font-style:italic;
+  max-width:56ch;position:relative}
+.art-lead::before{content:"";position:absolute;left:-2px;top:0;width:2px;height:100%;
+  background:var(--accent);transform:scaleY(0);transform-origin:top;
+  animation:lead-grow 1s var(--ease) .4s forwards}
+@keyframes lead-grow{to{transform:scaleY(1)}}
+
+.hand-note{font-family:var(--font-hand);font-size:1.3rem;color:var(--text-faint);
+  display:inline-block;line-height:1.2;transform:rotate(-2deg);margin-top:var(--s8)}
+
+/* ── layout baca ─────────────────────────────────── */
+.read-layout{display:grid;grid-template-columns:minmax(0,var(--read-w));
+  justify-content:center;gap:clamp(var(--s8),4vw,var(--s16));
+  padding:0 var(--s5) var(--s24)}
+@media(min-width:1180px){
+  .read-layout{grid-template-columns:180px minmax(0,var(--read-w))}
+}
+.toc{display:none}
+@media(min-width:1180px){
+  .toc{display:block;position:sticky;top:110px;align-self:start;padding-top:var(--s2)}
+}
+.toc-label{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--text-faint);margin-bottom:var(--s4)}
+.toc ol{list-style:none;display:flex;flex-direction:column;gap:2px;counter-reset:toc}
+.toc a{display:flex;gap:10px;align-items:baseline;padding:7px 10px 7px 12px;
+  border-radius:var(--r-md);font-size:.82rem;color:var(--text-muted);line-height:1.5;
+  border-left:2px solid transparent;
+  transition:color .25s,background .25s,padding-left .3s var(--ease),border-color .25s}
+.toc a::before{counter-increment:toc;content:counter(toc,decimal-leading-zero);
+  font-family:var(--font-serif);font-style:italic;font-size:.8rem;color:var(--border-strong);
+  transition:color .25s}
+.toc a:hover{color:var(--text);background:var(--bg-soft)}
+.toc a.act{color:var(--accent-hover);background:var(--accent-soft);
+  border-left-color:var(--accent);padding-left:16px}
+.toc a.act::before{color:var(--accent)}
+.toc-pct{margin-top:var(--s5);font-family:var(--font-mono);font-size:.66rem;
+  color:var(--text-faint);letter-spacing:.08em}
+.toc-pct b{color:var(--accent);font-weight:500}
+
+/* ── isi ─────────────────────────────────────────── */
+.article-body{font-size:var(--fs-base);color:var(--text-muted);line-height:1.95}
+.article-body>*+*{margin-top:var(--s5)}
+.article-body p{max-width:66ch}
+.article-body strong{color:var(--text);font-weight:600}
+.article-body em{color:var(--text);font-style:italic}
+.article-body a:not(.h-link):not(.back-pill):not(.expert-link){color:var(--accent);
+  border-bottom:1px solid var(--accent-border);transition:color .22s,border-color .22s}
+.article-body a:not(.h-link):not(.back-pill):not(.expert-link):hover{color:var(--accent-hover);border-color:var(--accent)}
+
+/* foto pembuka */
+.art-fig{margin:var(--s8) 0 var(--s6);border-radius:var(--r-lg);overflow:hidden;
+  background:var(--surface-2);border:1px solid var(--border);
+  box-shadow:var(--shadow-md);will-change:transform;
+  transition:box-shadow .35s,border-color .3s,transform .4s var(--ease)}
+.art-fig:hover{box-shadow:var(--shadow-lg);border-color:var(--border-strong)}
+.art-fig .fig-frame{overflow:hidden;border-radius:var(--r-lg) var(--r-lg) 0 0}
+.art-fig img{width:100%;height:auto;transform:scale(1.05);will-change:transform;
+  transition:transform 1.2s var(--ease);filter:saturate(.92)}
+.art-fig:hover img{transform:scale(1.09)}
+.art-fig figcaption{font-size:var(--fs-xs);color:var(--text-faint);
+  font-family:var(--font-mono);text-align:center;padding:var(--s2) var(--s3) var(--s3)}
+.art-fig figcaption a{color:var(--text-muted);border-bottom:1px solid var(--border)}
+.art-fig figcaption a:hover{color:var(--accent);border-color:var(--accent-border)}
+
+/* sub-judul */
+.sect-h{font-family:var(--font-serif);font-weight:400;font-size:var(--fs-xl);
+  color:var(--text);letter-spacing:-.02em;
+  margin-top:var(--s12);margin-bottom:var(--s3);padding-bottom:var(--s3);
+  border-bottom:1px solid var(--divider);scroll-margin-top:100px;
+  display:flex;align-items:baseline;gap:var(--s3);transition:border-color .55s var(--ease)}
+.sect-h .h-num{font-style:italic;font-size:.62em;color:var(--border-strong);flex-shrink:0;
+  transition:color .3s,transform .35s var(--ease-spring)}
+.sect-h:hover .h-num{color:var(--accent);transform:rotate(-8deg) translateY(-2px)}
+.h-link{display:inline-flex;opacity:0;margin-left:auto;align-self:center;
+  color:var(--border-strong);transition:opacity .25s,color .25s,transform .25s var(--ease-spring)}
+.sect-h:hover .h-link{opacity:1}
+.h-link:hover{color:var(--accent);transform:rotate(-10deg) scale(1.15)}
+.h-link svg{width:15px;height:15px}
+
+/* sepuluh faktor: grid kartu bernomor, bukan list tanpa dosa */
+.factor-list{display:flex;flex-direction:column;gap:var(--s3);margin:var(--s6) 0}
+.factor-item{display:grid;grid-template-columns:46px 1fr;gap:var(--s4);align-items:start;
+  background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:var(--s4) var(--s5) var(--s4) var(--s4);position:relative;
+  transition:transform .35s var(--ease-spring),box-shadow .35s,border-color .3s,
+             background-color .55s var(--ease)}
+.factor-item:nth-child(odd){margin-right:clamp(0px,3vw,26px)}
+.factor-item:nth-child(even){margin-left:clamp(0px,3vw,26px)}
+.factor-item:hover{transform:translateX(5px) rotate(-.3deg);
+  box-shadow:var(--shadow-md);border-color:var(--accent-border)}
+.factor-num{font-family:var(--font-serif);font-style:italic;font-size:1.7rem;
+  color:var(--border-strong);line-height:1.15;
+  transition:color .3s,transform .4s var(--ease-spring)}
+.factor-item:hover .factor-num{color:var(--accent);transform:rotate(-8deg) scale(1.08)}
+.factor-item p{font-size:.92rem;line-height:1.8}
+.factor-item p strong{display:block;margin-bottom:2px;font-size:.95rem}
+
+/* kartu ahli: dua pandangan, dua kartu */
+.expert-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);margin:var(--s6) 0}
+@media(max-width:640px){.expert-grid{grid-template-columns:1fr}}
+.expert-card{background:var(--bg-soft);border:1px solid var(--border);
+  border-radius:var(--r-xl);padding:var(--s6);position:relative;overflow:hidden;
+  transition:transform .35s var(--ease-spring),box-shadow .35s,border-color .3s,
+             background-color .55s var(--ease)}
+.expert-card::before{content:"\201D";position:absolute;top:-6px;right:12px;
+  font-family:var(--font-serif);font-size:4.5rem;color:var(--border);opacity:.7;
+  transition:color .3s,transform .4s var(--ease-spring);pointer-events:none}
+.expert-card:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:var(--shadow-md);border-color:var(--accent-border)}
+.expert-card:hover::before{color:var(--accent);transform:rotate(-8deg) scale(1.05)}
+.expert-card:nth-child(2){transform:rotate(.6deg)}
+.expert-card:nth-child(2):hover{transform:translateY(-4px) rotate(0)}
+.expert-name{display:inline-flex;align-items:center;gap:8px;
+  font-weight:700;font-size:var(--fs-sm);color:var(--text);margin-bottom:var(--s3)}
+.expert-name svg{width:12px;height:12px;color:var(--accent);
+  transition:transform .25s var(--ease-spring)}
+.expert-link:hover .expert-name svg{transform:translate(2px,-2px)}
+.expert-card p{font-size:.9rem;line-height:1.8}
+
+/* pull quote */
+.pull{margin:var(--s10) 0;padding:var(--s2) 0 var(--s2) var(--s6);
+  border-left:3px solid var(--accent);position:relative;
+  font-family:var(--font-serif);font-size:clamp(1.3rem,1.05rem+1vw,1.65rem);
+  line-height:1.55;color:var(--text);font-style:italic;max-width:56ch}
+.pull::before{content:"\201C";position:absolute;left:-6px;top:-.35em;font-size:3rem;
+  color:var(--accent);font-family:var(--font-serif);opacity:.85}
+
+/* marquee */
+.marquee{overflow:hidden;border-top:1px solid var(--divider);border-bottom:1px solid var(--divider);
+  padding:13px 0;margin:var(--s12) 0 0;transform:rotate(-.8deg) scale(1.01);
+  background:var(--bg-soft);transition:background-color .55s var(--ease),border-color .55s var(--ease);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:2.4rem;width:max-content;animation:marquee 26s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{font-family:var(--font-serif);font-style:italic;font-size:1.1rem;
+  color:var(--text-muted);white-space:nowrap}
+.marquee-track b{color:var(--accent);font-weight:400}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* medium note */
+.md-note{display:inline-flex;align-items:center;gap:var(--s2);margin-top:var(--s6);
+  font-size:.82rem;color:var(--text-faint);font-family:var(--font-mono)}
+.md-note a{color:var(--text-muted);border-bottom:1px solid var(--border);transition:color .2s,border-color .2s}
+.md-note a:hover{color:var(--text);border-color:var(--border-strong)}
+.md-note svg{width:14px;height:14px;flex-shrink:0}
+
+/* share */
+.share-row{display:flex;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s10)}
+.share-btn{display:inline-flex;align-items:center;gap:var(--s2);
+  padding:.6rem 1.15rem;border-radius:var(--r-md);border:1px solid var(--border);
+  background:var(--bg-soft);font-size:var(--fs-sm);font-weight:600;color:var(--text-muted);
+  transition:transform .28s var(--ease-spring),border-color .25s,color .25s,box-shadow .28s,
+             background-color .55s var(--ease)}
+.share-btn svg{width:14px;height:14px;transition:transform .3s var(--ease-spring)}
+.share-btn:hover{transform:translateY(-3px) rotate(-.8deg);border-color:var(--accent-border);
+  color:var(--text);box-shadow:var(--shadow-sm)}
+.share-btn:hover svg{transform:rotate(-10deg) scale(1.12)}
+.share-btn.ok{border-color:var(--accent-border);color:var(--accent-hover);background:var(--accent-soft)}
+
+/* footer artikel */
+.article-footer{margin-top:var(--s12);padding-top:var(--s8);
+  border-top:1px dashed var(--border);display:flex;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;gap:var(--s4)}
+.back-pill{display:inline-flex;align-items:center;gap:var(--s2);
+  padding:.6rem 1.2rem;border-radius:var(--r-md);border:1px solid var(--border);
+  background:var(--bg-soft);font-size:var(--fs-sm);font-weight:600;color:var(--text-muted);
+  transition:transform .28s var(--ease-spring),border-color .25s,color .25s,box-shadow .28s,
+             background-color .55s var(--ease)}
+.back-pill svg{transition:transform .3s var(--ease)}
+.back-pill:hover{border-color:var(--accent-border);color:var(--text);
+  transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.back-pill:hover svg{transform:translateX(-4px)}
+.art-author{font-family:var(--font-serif);font-style:italic;font-size:1.15rem;color:var(--text-faint)}
+
+/* situs footer */
+footer{border-top:1px dashed var(--border);padding:var(--s8) var(--s5) var(--s16)}
+.f-inner{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:var(--s3);
+  align-items:center;justify-content:space-between}
+.f-copy{font-family:var(--font-mono);font-size:var(--fs-xs);color:var(--text-faint)}
+.f-copy strong{color:var(--accent);font-weight:400}
+.f-clock{font-family:var(--font-mono);font-size:var(--fs-xs);color:var(--text-faint)}
+.f-clock b{color:var(--accent);font-weight:500}
+.f-hand{max-width:1180px;margin:1rem auto 0;text-align:right}
+
+.topfab{position:fixed;right:var(--s5);bottom:var(--s5);z-index:150;
+  width:46px;height:46px;border-radius:50%;background:var(--text);color:var(--bg);
+  display:grid;place-items:center;box-shadow:var(--shadow-md);
+  opacity:0;pointer-events:none;transform:translateY(12px) scale(.9);
+  transition:opacity .3s,transform .35s var(--ease-spring),background .25s,color .55s var(--ease)}
+.topfab.show{opacity:1;pointer-events:auto;transform:none}
+.topfab:hover{background:var(--accent);color:#fff;transform:translateY(-3px)}
+.topfab svg{width:18px;height:18px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px) rotate(.4deg);
+  transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--d,0s)}
+.rv.on{opacity:1;transform:none}
+.rv-pop{opacity:0;transform:scale(.92) translateY(10px);
+  transition:opacity .5s var(--ease),transform .6s var(--ease-spring);transition-delay:var(--d,0s)}
+.rv-pop.on{opacity:1;transform:scale(1) translateY(0)}
+
+/* konami */
+html.konami{animation:hue-spin 1.6s linear infinite}
+@keyframes hue-spin{to{filter:hue-rotate(360deg)}}
+.konami-note{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-3deg);
+  z-index:800;font-family:var(--font-hand);font-size:clamp(1.5rem,4vw,2.4rem);
+  color:var(--accent);background:var(--bg-soft);border:2px dashed var(--accent);
+  padding:var(--s4) var(--s8);border-radius:var(--r-lg);box-shadow:var(--shadow-lg);
+  pointer-events:none;text-align:center;line-height:1.3;max-width:86vw;
+  animation:w-pop .4s var(--ease-spring)}
+@keyframes w-pop{from{opacity:0;transform:translate(-50%,-44%) rotate(-3deg) scale(.94)}
+  to{opacity:1;transform:translate(-50%,-50%) rotate(-3deg) scale(1)}}
+
+@media(max-width:720px){
+  .art-head{padding-left:var(--s4);padding-right:var(--s4)}
+  .read-layout{padding-left:var(--s4);padding-right:var(--s4)}
+  .art-fig{margin-left:calc(-1*var(--s4));margin-right:calc(-1*var(--s4));
+    border-radius:0;border-left:none;border-right:none}
+  .art-fig .fig-frame,.art-fig img{border-radius:0}
+  .factor-item:nth-child(odd),.factor-item:nth-child(even){margin-left:0;margin-right:0}
+  .pull{padding-left:var(--s4)}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .rv,.rv-pop{opacity:1;transform:none}
+  .art-title .word>i{transform:none;animation:none}
+  .grain{display:none}
+}
+</style>
 </head>
 <body>
-  <div id="progress-bar"></div>
+<a class="skip-link" href="#article-body" data-i18n="kemiskinan_skip">Langsung ke isi tulisan ↓</a>
 
-  <nav id="main-nav">
-    <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">nang<span>.</span></a>
-      <a href="../index.html#journal" class="nav-back" data-i18n="kemiskinan_nav_back">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        Kembali ke Jurnal
+<div class="bg-art" aria-hidden="true">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <canvas id="dust"></canvas>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-progress" id="sprog"></div>
+<div class="cursor-dot" id="cdot"></div>
+<div class="cursor-ring" id="cring"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo" data-hot>nang<span>.</span></a>
+    <div class="nav-right">
+      <a href="../index.html#journal" class="nav-back" data-hot>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        <span class="nb-text" data-i18n="kemiskinan_nav_back">Kembali ke Jurnal</span>
       </a>
+      <div class="seg-toggle" id="langTg" data-active="0" role="group" aria-label="Bahasa">
+        <span class="seg-thumb"></span>
+        <button class="on" data-lang="id" type="button">ID</button>
+        <button data-lang="en" type="button">EN</button>
+      </div>
+      <div class="seg-toggle" id="themeTg" data-active="0" role="group" aria-label="Tema tampilan">
+        <span class="seg-thumb"></span>
+        <button class="on" data-tset="sore" type="button" aria-label="Mode sore (terang)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg>
+          sore
+        </button>
+        <button data-tset="malem" type="button" aria-label="Mode malem (gelap)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+          malem
+        </button>
+      </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <article>
-    <div class="article-meta">
-      <span class="article-date">OCT 2024</span>
-      <span class="article-tag" data-i18n="kemiskinan_tag_sosial">Sosial</span>
-      <span class="article-tag">Medium</span>
-      <span class="article-tag" data-i18n="kemiskinan_tag_opini">Opini</span>
-      <span class="article-read-time" data-i18n="kemiskinan_read_time">3 MENIT BACA</span>
+<main>
+  <header class="art-head">
+    <div class="meta-row">
+      <span class="meta-date">OCT 2024</span>
+      <span class="meta-sep">·</span>
+      <span class="meta-tag" data-i18n="kemiskinan_tag_sosial">Sosial</span>
+      <span class="meta-tag neutral">Medium</span>
+      <span class="meta-tag" data-i18n="kemiskinan_tag_opini">Opini</span>
+      <span class="meta-sep">·</span>
+      <span class="meta-read" id="readTime">±4 MENIT BACA</span>
     </div>
+    <h1 class="art-title" id="artTitle"
+        data-title-id="Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?"
+        data-title-en="Structural Poverty: Why Individual Effort Alone Isn't Enough?"></h1>
+    <p class="art-lead" data-i18n="kemiskinan_intro">Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.</p>
+    <span class="hand-note" data-i18n="kemiskinan_hero_note">yang berat-berat bacanya sambil duduk aja</span>
+  </header>
 
-    <h1 class="article-title" data-i18n="kemiskinan_title">Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?</h1>
+  <div class="read-layout">
 
-    <p class="article-intro" data-i18n="kemiskinan_intro">Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.</p>
+    <aside class="toc" aria-label="Daftar isi">
+      <div class="toc-label" data-i18n="kemiskinan_toc">Daftar Isi</div>
+      <ol id="tocList"></ol>
+      <div class="toc-pct"><b id="tocPct">0%</b> <span data-i18n="kemiskinan_read_pct">terbaca</span></div>
+    </aside>
 
-    <div class="article-body">
-      <figure>
-        <img src="https://images.unsplash.com/photo-1722061145687-40105f95798c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kemiskinan Struktural" loading="lazy" />
+    <div class="article-body" id="article-body">
+
+      <figure class="art-fig rv" id="heroFig">
+        <div class="fig-frame">
+          <img src="https://images.unsplash.com/photo-1722061145687-40105f95798c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kemiskinan Struktural" loading="lazy" />
+        </div>
         <figcaption>Foto: <a href="https://unsplash.com/id/@meditative" target="_blank" rel="noopener noreferrer">Suraj Tomer</a> / <a href="https://www.unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></figcaption>
       </figure>
 
-      <h2 data-i18n="kemiskinan_h2_1">Kemiskinan Struktural: Apa dan Mengapa?</h2>
-      <p data-i18n="kemiskinan_p1"><strong>Kemiskinan Struktural</strong> bukanlah sekadar tentang kekurangan uang. Ini adalah kondisi di mana masyarakat terjebak dalam kemiskinan karena sistem sosial, ekonomi, dan politik yang dapat mempengaruhi kehidupan masyarakat.</p>
-      <p data-i18n="kemiskinan_p2">Meskipun seseorang berusaha keras, tanpa akses pendidikan, layanan kesehatan, atau pekerjaan yang layak, ia sulit keluar dari lingkaran kemiskinan.</p>
+      <section id="s-apa">
+        <h2 class="sect-h rv">
+          <span class="h-num">01</span>
+          <span data-i18n="kemiskinan_h2_1">Kemiskinan Struktural: Apa dan Mengapa?</span>
+          <a class="h-link" href="#s-apa" aria-label="Salin tautan bagian ini" data-hot>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+          </a>
+        </h2>
+        <p class="rv" data-i18n="kemiskinan_p1"><strong>Kemiskinan Struktural</strong> bukanlah sekadar tentang kekurangan uang. Ini adalah kondisi di mana masyarakat terjebak dalam kemiskinan karena sistem sosial, ekonomi, dan politik yang dapat mempengaruhi kehidupan masyarakat.</p>
+        <p class="rv" data-i18n="kemiskinan_p2">Meskipun seseorang berusaha keras, tanpa akses pendidikan, layanan kesehatan, atau pekerjaan yang layak, ia sulit keluar dari lingkaran kemiskinan.</p>
+      </section>
 
-      <h2 data-i18n="kemiskinan_h2_2">Apa Faktor Penyebab Kemiskinan Struktural?</h2>
-      <p data-i18n="kemiskinan_p3">Secara singkat, mari kita coba kulik dari faktor sosial dan ekonomi, serta perilaku masyarakat itu sendiri:</p>
-      <ul>
-        <li data-i18n="kemiskinan_li1"><strong>Pendidikan:</strong> Pendidikan berkualitas yang sulit dijangkau masyarakat miskin, terutama di daerah tertinggal, sehingga membatasi kesempatan kerja bagi mereka kelak di kemudian hari.</li>
-        <li data-i18n="kemiskinan_li2"><strong>Layanan Kesehatan:</strong> Biaya kesehatan yang tinggi dan akses yang sulit bisa memperburuk kondisi kemiskinan di masyarakat, karena orang sakit tidak dapat bekerja secara optimal.</li>
-        <li data-i18n="kemiskinan_li3"><strong>Kebijakan Ekonomi:</strong> Subsidi dan investasi seringkali lebih banyak menguntungkan kelompok masyarakat kaya, sementara masyarakat miskin tidak mendapatkan keuntungan yang cukup untuk bisa terus berkembang.</li>
-        <li data-i18n="kemiskinan_li4"><strong>Diskriminasi Sosial:</strong> Diskriminasi terhadap kelompok masyarakat tertentu, seperti perempuan atau para pekerja informal, mempersempit kesempatan perbaikan kondisi ekonomi bagi mereka.</li>
-        <li data-i18n="kemiskinan_li5"><strong>Ketimpangan Pembangunan &amp; Infrastruktur:</strong> Di beberapa daerah, pembangunan ekonomi dan infrastruktur tidaklah merata, sehingga masyarakat yang ada di daerah tertinggal sulit mengakses pekerjaan layak, teknologi, dan layanan dasar. Ini juga menjadi salah satu faktor yang mendorong masyarakat berbondong-bondong datang ke kota besar untuk beradu nasib.</li>
-        <li data-i18n="kemiskinan_li6"><strong>Rasa Tidak Berdaya dan Apatis:</strong> Masyarakat yang terjebak dalam kemiskinan struktural seringkali merasa bahwa usaha mereka tidak akan membuahkan hasil karena <em>"Sudah Takdir"</em>, ini menimbulkan sikap apatis dan rendahnya motivasi untuk berubah.</li>
-        <li data-i18n="kemiskinan_li7"><strong>Budaya Kemiskinan:</strong> Lingkungan masyarakat sangat andil dalam pembentukan pola pikir dan nilai yang membuat individu merasa nyaman dalam kondisi tersebut. Mereka menganggap bahwa kondisi ini tidak mungkin bisa diubah, sehingga tidak termotivasi mencari solusi ataupun peluang baru.</li>
-        <li data-i18n="kemiskinan_li8"><strong>Harapan Pada Bantuan:</strong> Beberapa kelompok masyarakat menjadi cukup bergantung pada bantuan sosial atau amal. Ketergantungan ini bisa menciptakan pola pikir pasif, di mana individu tidak berupaya untuk meningkatkan keterampilan demi mendapatkan pekerjaan yang lebih baik.</li>
-        <li data-i18n="kemiskinan_li9"><strong>Kurangnya Pendidikan dan Keterampilan:</strong> Keterbatasan pendidikan dan pelatihan dapat membatasi kemampuan individu untuk bersaing di pasar kerja. Tanpa keterampilan yang relevan, mereka terjebak dalam pekerjaan informal dengan upah rendah dan tanpa jaminan sosial.</li>
-        <li data-i18n="kemiskinan_li10"><strong>Mobilitas Sosial yang Terbatas:</strong> Individu dari latar belakang ekonomi rendah seringkali kekurangan jaminan sosial yang dapat membuka peluang baru. Mereka juga merasa terisolasi dari komunitas yang lebih maju, sehingga kesempatan untuk memperbaiki kehidupan terasa sangat terbatas.</li>
-      </ul>
-      <p data-i18n="kemiskinan_p4">Sederet faktor tersebut mencerminkan betapa kemiskinan bukan hanya masalah ekonomi, tapi juga terkait dengan perilaku dan pola pikir individu yang seringkali dipengaruhi oleh lingkungan sosial dan struktur masyarakat yang tidak mendukung adanya perubahan.</p>
+      <section id="s-faktor">
+        <h2 class="sect-h rv">
+          <span class="h-num">02</span>
+          <span data-i18n="kemiskinan_h2_2">Apa Faktor Penyebab Kemiskinan Struktural?</span>
+          <a class="h-link" href="#s-faktor" aria-label="Salin tautan bagian ini" data-hot>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+          </a>
+        </h2>
+        <p class="rv" data-i18n="kemiskinan_p3">Secara singkat, mari kita coba kulik dari faktor sosial dan ekonomi, serta perilaku masyarakat itu sendiri:</p>
 
-      <h2 data-i18n="kemiskinan_h2_3">Pandangan Para Ahli Tentang Kemiskinan Struktural</h2>
-      <p data-i18n="kemiskinan_p5"><a href="https://id.wikipedia.org/wiki/Soerjono_Soekanto" target="_blank" rel="noopener noreferrer">Soerjono Soekanto</a> menjelaskan bahwa kemiskinan bukan karena malas, tetapi karena masyarakat tidak diberi akses yang sama terhadap peluang ekonomi dan sosial.</p>
-      <p data-i18n="kemiskinan_p6">Sementara itu, <a href="https://scholar.google.co.id/citations?user=rlfPxkoAAAAJ&hl=id" target="_blank" rel="noopener noreferrer">Edi Suharto</a> menekankan bahwa kemiskinan ini melibatkan masalah ekonomi sekaligus psikologis. Rendahnya kualitas pendidikan dan pekerjaan menciptakan rasa putus asa, sehingga masyarakat sulit untuk maju.</p>
+        <!-- 10 faktor: kartu gantian kiri-kanan, biar mata nggak bosen -->
+        <div class="factor-list" id="factorList"><!-- diisi JS dari kamus, biar i18n-nya rapi --></div>
 
-      <h2 data-i18n="kemiskinan_h2_4">Urbanisasi dan Kesenjangan Ekonomi</h2>
-      <p data-i18n="kemiskinan_p7">Banyak penduduk desa pindah ke kota-kota besar untuk mencari kehidupan yang lebih baik. Namun, urbanisasi yang tidak terencana dengan baik justru menciptakan permukiman kumuh dan pekerjaan informal.</p>
-      <p data-i18n="kemiskinan_p8"><em>Tanpa akses pada lapangan kerja formal, penduduk kota berpenghasilan rendah ini terus terjebak dalam kemiskinan.</em></p>
-      <p data-i18n="kemiskinan_p9">Populasi yang terus bertumbuh tanpa diimbangi dengan keterampilan individu dan lapangan pekerjaan yang memadai, membuat persaingan menjadi semakin ketat untuk meningkatkan taraf hidup atau sekadar menyambung hidup mereka. Sebuah kondisi yang memperparah ketimpangan ekonomi antara mereka yang tinggal di pusat kota dengan mereka yang tinggal di kawasan kumuh.</p>
-      <p data-i18n="kemiskinan_p10">Kepadatan penduduk juga menambah tekanan pada sumber daya suatu daerah, seperti air, listrik, dan transportasi. Kota-kota besar umumnya kewalahan untuk memenuhi kebutuhan penduduk yang terus meningkat dan menyebabkan layanan dasar menjadi tidak merata.</p>
+        <p class="rv" data-i18n="kemiskinan_p4">Sederet faktor tersebut mencerminkan betapa kemiskinan bukan hanya masalah ekonomi, tapi juga terkait dengan perilaku dan pola pikir individu yang seringkali dipengaruhi oleh lingkungan sosial dan struktur masyarakat yang tidak mendukung adanya perubahan.</p>
+      </section>
 
-      <h2 data-i18n="kemiskinan_h2_5">Kesimpulan</h2>
-      <blockquote data-i18n="kemiskinan_blockquote">Kemiskinan struktural bukanlah masalah individu, tetapi masalah sistemik. Dibutuhkan kolaborasi antara pemerintah, masyarakat, dan sektor swasta untuk menciptakan kebijakan yang inklusif dan adil, sehingga setiap orang memiliki kesempatan untuk hidup lebih baik.</blockquote>
-      <p class="medium-note"><span data-i18n="kemiskinan_medium">Artikel ini juga diposting di <a href="https://medium.com/komunitas-blogger-m/mengurai-kemiskinan-struktural-mengapa-usaha-individu-saja-tidak-cukup-695745d5de19" target="_blank" rel="noopener noreferrer">Medium</a></span></p>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track" id="marqueeTrack"></div>
+      </div>
+
+      <section id="s-ahli">
+        <h2 class="sect-h rv">
+          <span class="h-num">03</span>
+          <span data-i18n="kemiskinan_h2_3">Pandangan Para Ahli Tentang Kemiskinan Struktural</span>
+          <a class="h-link" href="#s-ahli" aria-label="Salin tautan bagian ini" data-hot>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+          </a>
+        </h2>
+
+        <div class="expert-grid">
+          <a class="expert-card expert-link rv-pop" style="--d:.05s" data-hot
+             href="https://id.wikipedia.org/wiki/Soerjono_Soekanto" target="_blank" rel="noopener noreferrer">
+            <span class="expert-name">
+              Soerjono Soekanto
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </span>
+            <p data-i18n="kemiskinan_ex1">Menjelaskan bahwa kemiskinan bukan karena malas, tetapi karena masyarakat tidak diberi akses yang sama terhadap peluang ekonomi dan sosial.</p>
+          </a>
+          <a class="expert-card expert-link rv-pop" style="--d:.15s" data-hot
+             href="https://scholar.google.co.id/citations?user=rlfPxkoAAAAJ&hl=id" target="_blank" rel="noopener noreferrer">
+            <span class="expert-name">
+              Edi Suharto
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </span>
+            <p data-i18n="kemiskinan_ex2">Menekankan bahwa kemiskinan ini melibatkan masalah ekonomi sekaligus psikologis. Rendahnya kualitas pendidikan dan pekerjaan menciptakan rasa putus asa, sehingga masyarakat sulit untuk maju.</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="s-urban">
+        <h2 class="sect-h rv">
+          <span class="h-num">04</span>
+          <span data-i18n="kemiskinan_h2_4">Urbanisasi dan Kesenjangan Ekonomi</span>
+          <a class="h-link" href="#s-urban" aria-label="Salin tautan bagian ini" data-hot>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+          </a>
+        </h2>
+        <p class="rv" data-i18n="kemiskinan_p7">Banyak penduduk desa pindah ke kota-kota besar untuk mencari kehidupan yang lebih baik. Namun, urbanisasi yang tidak terencana dengan baik justru menciptakan permukiman kumuh dan pekerjaan informal.</p>
+        <p class="rv" data-i18n="kemiskinan_p8"><em>Tanpa akses pada lapangan kerja formal, penduduk kota berpenghasilan rendah ini terus terjebak dalam kemiskinan.</em></p>
+        <p class="rv" data-i18n="kemiskinan_p9">Populasi yang terus bertumbuh tanpa diimbangi dengan keterampilan individu dan lapangan pekerjaan yang memadai, membuat persaingan menjadi semakin ketat untuk meningkatkan taraf hidup atau sekadar menyambung hidup mereka. Sebuah kondisi yang memperparah ketimpangan ekonomi antara mereka yang tinggal di pusat kota dengan mereka yang tinggal di kawasan kumuh.</p>
+        <p class="rv" data-i18n="kemiskinan_p10">Kepadatan penduduk juga menambah tekanan pada sumber daya suatu daerah, seperti air, listrik, dan transportasi. Kota-kota besar umumnya kewalahan untuk memenuhi kebutuhan penduduk yang terus meningkat dan menyebabkan layanan dasar menjadi tidak merata.</p>
+      </section>
+
+      <section id="s-simpul">
+        <h2 class="sect-h rv">
+          <span class="h-num">05</span>
+          <span data-i18n="kemiskinan_h2_5">Kesimpulan</span>
+          <a class="h-link" href="#s-simpul" aria-label="Salin tautan bagian ini" data-hot>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+          </a>
+        </h2>
+        <blockquote class="pull rv" data-i18n="kemiskinan_blockquote">Kemiskinan struktural bukanlah masalah individu, tetapi masalah sistemik. Dibutuhkan kolaborasi antara pemerintah, masyarakat, dan sektor swasta untuk menciptakan kebijakan yang inklusif dan adil, sehingga setiap orang memiliki kesempatan untuk hidup lebih baik.</blockquote>
+        <span class="hand-note" data-i18n="kemiskinan_outro_note">baca boleh sendirian, beresinnya harus bareng-bareng.</span>
+        <p class="md-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+          <span data-i18n="kemiskinan_medium">Artikel ini juga diposting di <a href="https://medium.com/komunitas-blogger-m/mengurai-kemiskinan-struktural-mengapa-usaha-individu-saja-tidak-cukup-695745d5de19" target="_blank" rel="noopener noreferrer">Medium</a></span>
+        </p>
+      </section>
+
+      <div class="share-row">
+        <button class="share-btn" id="copyBtn" type="button" data-hot>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+          <span id="copyLbl" data-i18n="kemiskinan_copy">Salin tautan</span>
+        </button>
+        <button class="share-btn" id="shareBtn" type="button" data-hot>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8 15.6 6.2M8.2 13.2l7.4 4.6"/></svg>
+          <span data-i18n="kemiskinan_share">Bagikan</span>
+        </button>
+      </div>
+
+      <div class="article-footer">
+        <a href="../index.html#journal" class="back-pill" data-hot>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          <span data-i18n="kemiskinan_back_link">Semua Jurnal</span>
+        </a>
+        <span class="art-author">— Nang’s</span>
+      </div>
+
     </div>
+  </div>
+</main>
 
-    <div class="article-footer">
-      <a href="../index.html#journal" class="back-link" data-i18n="kemiskinan_back_link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        Semua Jurnal
-      </a>
-      <span class="article-author">Nang's</span>
-    </div>
-  </article>
+<footer>
+  <div class="f-inner">
+    <p class="f-copy"><strong>ananglesmana.my.id</strong> &nbsp;·&nbsp; <span data-i18n="kemiskinan_footer">Dibuat dari Bekasi dengan Kopi dan Polusi</span> &nbsp;·&nbsp; 2024</p>
+    <p class="f-clock">Bekasi — <b id="clock">--:--</b> WIB</p>
+  </div>
+  <p class="hand-note f-hand" data-i18n="kemiskinan_footer_note">kalau ada yang error, refresh. kalau tetap error, emang sistemnya gitu ¯\_(ツ)_/¯</p>
+</footer>
 
-  <footer>
-    <span>ananglesmana.my.id</span> &nbsp;|&nbsp; <span data-i18n="kemiskinan_footer">Dibuat dari Bekasi dengan Kopi dan Polusi</span> &nbsp;|&nbsp; 2024
-  </footer>
+<button class="topfab" id="topFab" type="button" aria-label="Kembali ke atas">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5m-7 7 7-7 7 7"/></svg>
+</button>
+<script>
+(function(){
+'use strict';
+const $ =(s,c)=>(c||document).querySelector(s);
+const $$=(s,c)=>Array.from((c||document).querySelectorAll(s));
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINE = matchMedia('(hover:hover) and (pointer:fine)').matches;
+const root = document.documentElement;
 
-  <script>
-    window.PAGE_TRANSLATIONS = {
-      kemiskinan_nav_back:    { id: '\u2190 Kembali ke Jurnal', en: '\u2190 Back to Journal' },
-      kemiskinan_read_time:   { id: '3 MENIT BACA', en: '3 MIN READ' },
-      kemiskinan_tag_sosial:  { id: 'Sosial', en: 'Social' },
-      kemiskinan_tag_opini:   { id: 'Opini', en: 'Opinion' },
-      kemiskinan_title:       { id: 'Kemiskinan Struktural: Mengapa Usaha Individu Saja Tidak Cukup?', en: "Structural Poverty: Why Individual Effort Alone Isn't Enough?" },
-      kemiskinan_intro:       { id: 'Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.', en: 'What and Why?, Contributing Factors, Expert Views, Economic Inequality, and a Conclusion from the Author.' },
-      kemiskinan_h2_1:        { id: 'Kemiskinan Struktural: Apa dan Mengapa?', en: 'Structural Poverty: What and Why?' },
-      kemiskinan_p1:          { id: '<strong>Kemiskinan Struktural</strong> bukanlah sekadar tentang kekurangan uang. Ini adalah kondisi di mana masyarakat terjebak dalam kemiskinan karena sistem sosial, ekonomi, dan politik yang dapat mempengaruhi kehidupan masyarakat.', en: '<strong>Structural Poverty</strong> is not merely about lacking money. It is a condition where people are trapped in poverty due to social, economic, and political systems that affect people\'s lives.' },
-      kemiskinan_p2:          { id: 'Meskipun seseorang berusaha keras, tanpa akses pendidikan, layanan kesehatan, atau pekerjaan yang layak, ia sulit keluar dari lingkaran kemiskinan.', en: 'Even if someone works hard, without access to education, healthcare, or decent employment, it is difficult to escape the cycle of poverty.' },
-      kemiskinan_h2_2:        { id: 'Apa Faktor Penyebab Kemiskinan Struktural?', en: 'What Causes Structural Poverty?' },
-      kemiskinan_p3:          { id: 'Secara Singkat, mari kita coba kulik dari faktor sosial dan ekonomi, serta perilaku masyarakat itu sendiri :', en: 'In short, let\'s examine the social and economic factors, as well as the behavior of the people themselves:' },
-      kemiskinan_li1:         { id: '<strong>Pendidikan :</strong> Pendidikan berkualitas yang sulit dijangkau masyarakat miskin, terutama di daerah tertinggal, sehingga membatasi kesempatan kerja bagi mereka kelak dikemudian hari.', en: '<strong>Education:</strong> Quality education that is hard to reach for the poor, especially in underdeveloped areas, limiting their future job opportunities.' },
-      kemiskinan_li2:         { id: '<strong>Layanan Kesehatan :</strong> Biaya kesehatan yang tinggi dan akses yang sulit bisa memperburuk kondisi kemiskinan di masyarakat, karena orang sakit tidak dapat bekerja secara optimal.', en: '<strong>Healthcare:</strong> High healthcare costs and difficult access can worsen poverty conditions, as sick people cannot work optimally.' },
-      kemiskinan_li3:         { id: '<strong>Kebijakan Ekonomi :</strong> Subsidi dan Investasi seringkali lebih banyak menguntungkan kelompok masyarakat kaya, sementara masyarakat miskin tidak mendapatkan keuntungan yang cukup untuk bisa terus berkembang.', en: '<strong>Economic Policy:</strong> Subsidies and investments often benefit the wealthy more, while the poor do not receive enough benefits to continue developing.' },
-      kemiskinan_li4:         { id: '<strong>Diskriminasi Sosial :</strong> Diskriminasi terhadap kelompok masyarakat tertentu, seperti perempuan atau para pekerja informal, mempersempit kesempatan perbaikan kondisi ekonomi bagi mereka.', en: '<strong>Social Discrimination:</strong> Discrimination against certain groups, such as women or informal workers, narrows their opportunities for economic improvement.' },
-      kemiskinan_li5:         { id: '<strong>Ketimpangan Pembangunan &amp; Infrastruktur :</strong> Di beberapa daerah, pembangunan ekonomi dan infrastruktur tidaklah merata, sehingga masyarakat yang ada di daerah tertinggal, sulit mengakses dan mendapatkan kesempatan kerja yang layak, teknologi dan layanan dasar, ini juga salah satu faktor yang melatarbelakangi masyarakat untuk berbondong-bondong datang ke kota besar untuk beradu nasib.', en: '<strong>Development &amp; Infrastructure Inequality:</strong> In some areas, economic development and infrastructure are uneven, making it difficult for people in underdeveloped regions to access decent jobs, technology, and basic services — this is also one of the factors driving people to flock to big cities to try their luck.' },
-      kemiskinan_li6:         { id: '<strong>Rasa Tidak Berdaya dan Apatis :</strong> Masyarakat yang terjebak dalam kemiskinan struktural seringkali merasa bahwa usaha mereka tidak akan membuahkan hasil karena <em>“Sudah Takdir”</em>, ini menimbulkan sikap apatis dan rendahnya motivasi untuk berubah.', en: '<strong>Helplessness and Apathy:</strong> People trapped in structural poverty often feel that their efforts will not bear fruit because <em>“it\'s already fate”</em>, fostering apathy and low motivation to change.' },
-      kemiskinan_li7:         { id: '<strong>Budaya Kemiskinan :</strong> Lingkungan masyarakat sangat andil dalam pembentukan pola pikir dan nilai yang membuat individu merasa nyaman dalam kondisi tersebut. Mereka menganggap bahwa kondisi ini tidak mungkin bisa diubah, sehingga tidak termotivasi mencari solusi ataupun peluang baru.', en: '<strong>Culture of Poverty:</strong> The community environment plays a major role in shaping mindsets and values that make individuals comfortable in their condition. They believe the situation cannot be changed, so they lack motivation to seek solutions or new opportunities.' },
-      kemiskinan_li8:         { id: '<strong>Harapan Pada Bantuan :</strong> Beberapa kelompok masyarakat menjadi cukup bergantung pada bantuan sosial atau amal, ketergantungan ini bisa menciptakan pola pikir pasif, dimana individu tidak berupaya untuk meningkatkan keterampilan demi mendapatkan pekerjaan yang lebih baik', en: '<strong>Reliance on Aid:</strong> Some groups become quite dependent on social assistance or charity. This dependency can create a passive mindset where individuals do not strive to improve their skills for better employment.' },
-      kemiskinan_li9:         { id: '<strong>Kurangnya Pendidikan dan Keterampilan :</strong> Keterbatasan pendidikan dan pelatihan dapat mengurangi atau membatasi kemampuan individu untuk bersaing di pasar kerja, tanpa adanya keterampilan yang relevan, mereka terjebak dalam pekerjaan informal dengan upah yang rendah dan tidak adanya jaminan sosial.', en: '<strong>Lack of Education and Skills:</strong> Limited education and training can reduce or limit an individual\'s ability to compete in the job market. Without relevant skills, they are trapped in informal jobs with low wages and no social security.' },
-      kemiskinan_li10:        { id: '<strong>Mobilitas Sosial yang Terbatas :</strong> Individu dari latar belakang ekonomi rendah seringkali kekurangan jaminan sosial yang dapat membuka peluang baru. Mereka juga merasa terisolasi dari komunitas yang lebih maju, sehingga kesempatan untuk memperbaiki kehidupan terasa sangat terbatas.', en: '<strong>Limited Social Mobility:</strong> Individuals from low economic backgrounds often lack the social safety nets that can open new opportunities. They also feel isolated from more advanced communities, making opportunities to improve their lives feel very limited.' },
-      kemiskinan_p4:          { id: 'Sederet faktor tersebut mencerminkan betapa kemiskinan bukan hanya masalah ekonomi, tapi juga terkait dengan perilaku dan pola pikir individu yang seringkali dipengaruhi oleh lingkungan sosial dan struktur masyarakat yang tidak mendukung adanya perubahan.', en: 'These factors reflect how poverty is not just an economic issue, but also related to individual behavior and mindsets that are often influenced by social environments and societal structures that do not support change.' },
-      kemiskinan_h2_3:        { id: 'Pandangan Para Ahli Tentang Kemiskinan Struktural', en: 'Expert Views on Structural Poverty' },
-      kemiskinan_p5:          { id: '<a href="https://id.wikipedia.org/wiki/Soerjono_Soekanto" target="_blank">Soerjono Soekanto</a> menjelaskan bahwa kemiskinan bukan karena malas, tetapi karena masyarakat tidak diberi akses yang sama terhadap peluang ekonomi dan sosial.', en: '<a href="https://id.wikipedia.org/wiki/Soerjono_Soekanto" target="_blank">Soerjono Soekanto</a> explains that poverty is not caused by laziness, but because people are not given equal access to economic and social opportunities.' },
-      kemiskinan_p6:          { id: 'Sementara itu, <a href="https://scholar.google.co.id/citations?user=rlfPxkoAAAAJ&hl=id" target="_blank">Edi Suharto</a> menekankan bahwa kemiskinan ini melibatkan masalah ekonomi sekaligus psikologis. Rendahnya kualitas pendidikan dan pekerjaan menciptakan rasa putus asa, sehingga masyarakat sulit untuk maju.', en: 'Meanwhile, <a href="https://scholar.google.co.id/citations?user=rlfPxkoAAAAJ&hl=id" target="_blank">Edi Suharto</a> emphasizes that this poverty involves both economic and psychological issues. Low quality of education and employment creates despair, making it difficult for people to advance.' },
-      kemiskinan_h2_4:        { id: 'Urbanisasi dan Kesenjangan Ekonomi', en: 'Urbanization and Economic Inequality' },
-      kemiskinan_p7:          { id: 'Banyak penduduk desa pindah ke kota-kota besar untuk mencari kehidupan yang lebih baik. Namun, urbanisasi yang tidak terencana dengan baik justru menciptakan permukiman kumuh dan pekerjaan informal.', en: 'Many rural residents move to big cities seeking a better life. However, poorly planned urbanization instead creates slums and informal employment.' },
-      kemiskinan_p8:          { id: '<em>Tanpa akses pada lapangan kerja formal, penduduk kota berpenghasilan rendah ini terus terjebak dalam kemiskinan.</em>', en: '<em>Without access to formal employment, these low-income urban residents remain trapped in poverty.</em>' },
-      kemiskinan_p9:          { id: 'Populasi yang terus bertumbuh tanpa diimbangi dengan keterampilan individu dan lapangan pekerjaan yang memadai, membuat persaingan menjadi semakin ketat untuk meningkatkan taraf hidup atau sekedar menyambung hidup mereka. Sebuah kondisi yang memperparah ketimpangan ekonomi antara mereka yang tinggal di pusat kota dengan mereka yang tinggal di kawasan kumuh.', en: 'A continuously growing population without adequate individual skills and job opportunities makes competition increasingly fierce just to improve or sustain their standard of living. A condition that worsens economic inequality between those living in city centers and those in slum areas.' },
-      kemiskinan_p10:         { id: 'Kepadatan penduduk juga menambah tekanan pada sumber daya suatu daerah, seperti air, listrik dan transportasi. Kota-Kota besar umumnya kewalahan untuk memenuhi kebutuhan penduduk yang terus meningkat dan menyebabkan layanan dasar menjadi tidak merata', en: 'Population density also adds pressure on regional resources such as water, electricity, and transportation. Big cities are generally overwhelmed meeting the needs of an ever-growing population, causing basic services to become unevenly distributed.' },
-      kemiskinan_h2_5:        { id: 'Kesimpulan', en: 'Conclusion' },
-      kemiskinan_blockquote:  { id: 'Kemiskinan struktural bukanlah masalah individu, tetapi masalah sistemik. Dibutuhkan kolaborasi antara pemerintah, masyarakat, dan sektor swasta untuk menciptakan kebijakan yang inklusif dan adil, sehingga setiap orang memiliki kesempatan untuk hidup lebih baik.', en: 'Structural poverty is not an individual problem, but a systemic one. Collaboration between government, society, and the private sector is needed to create inclusive and fair policies, so that everyone has the opportunity for a better life.' },
-      kemiskinan_medium:      { id: 'Artikel ini juga diposting di <a href="https://medium.com/komunitas-blogger-m/mengurai-kemiskinan-struktural-mengapa-usaha-individu-saja-tidak-cukup-695745d5de19" target="_blank">Medium</a>', en: 'This article was also posted on <a href="https://medium.com/komunitas-blogger-m/mengurai-kemiskinan-struktural-mengapa-usaha-individu-saja-tidak-cukup-695745d5de19" target="_blank">Medium</a>' },
-      kemiskinan_back_link:   { id: '\u2190 Semua Jurnal', en: '\u2190 All Journals' },
-      kemiskinan_footer:      { id: 'Dibuat dari Bekasi dengan Kopi dan Polusi', en: 'Made from Bekasi with Coffee and Pollution' },
-    };
-  </script>
+/* ═══ 0. KAMUS — semua string pindahan, 10 faktor tinggal di sini ═══ */
+const T = {
+  id: {
+    kemiskinan_skip:'Langsung ke isi tulisan ↓',
+    kemiskinan_nav_back:'Kembali ke Jurnal',
+    kemiskinan_tag_sosial:'Sosial',
+    kemiskinan_tag_opini:'Opini',
+    kemiskinan_intro:'Apa dan Mengapa?, Faktor Penyebab, Pandangan Ahli, Kesenjangan Ekonomi dan Sebuah Kesimpulan dari Penulis.',
+    kemiskinan_hero_note:'yang berat-berat bacanya sambil duduk aja',
+    kemiskinan_toc:'Daftar Isi',
+    kemiskinan_read_pct:'terbaca',
+    kemiskinan_h2_1:'Kemiskinan Struktural: Apa dan Mengapa?',
+    kemiskinan_p1:'<strong>Kemiskinan Struktural</strong> bukanlah sekadar tentang kekurangan uang. Ini adalah kondisi di mana masyarakat terjebak dalam kemiskinan karena sistem sosial, ekonomi, dan politik yang dapat mempengaruhi kehidupan masyarakat.',
+    kemiskinan_p2:'Meskipun seseorang berusaha keras, tanpa akses pendidikan, layanan kesehatan, atau pekerjaan yang layak, ia sulit keluar dari lingkaran kemiskinan.',
+    kemiskinan_h2_2:'Apa Faktor Penyebab Kemiskinan Struktural?',
+    kemiskinan_p3:'Secara singkat, mari kita coba kulik dari faktor sosial dan ekonomi, serta perilaku masyarakat itu sendiri:',
+    kemiskinan_p4:'Sederet faktor tersebut mencerminkan betapa kemiskinan bukan hanya masalah ekonomi, tapi juga terkait dengan perilaku dan pola pikir individu yang seringkali dipengaruhi oleh lingkungan sosial dan struktur masyarakat yang tidak mendukung adanya perubahan.',
+    kemiskinan_h2_3:'Pandangan Para Ahli Tentang Kemiskinan Struktural',
+    kemiskinan_ex1:'Menjelaskan bahwa kemiskinan bukan karena malas, tetapi karena masyarakat tidak diberi akses yang sama terhadap peluang ekonomi dan sosial.',
+    kemiskinan_ex2:'Menekankan bahwa kemiskinan ini melibatkan masalah ekonomi sekaligus psikologis. Rendahnya kualitas pendidikan dan pekerjaan menciptakan rasa putus asa, sehingga masyarakat sulit untuk maju.',
+    kemiskinan_h2_4:'Urbanisasi dan Kesenjangan Ekonomi',
+    kemiskinan_p7:'Banyak penduduk desa pindah ke kota-kota besar untuk mencari kehidupan yang lebih baik. Namun, urbanisasi yang tidak terencana dengan baik justru menciptakan permukiman kumuh dan pekerjaan informal.',
+    kemiskinan_p8:'<em>Tanpa akses pada lapangan kerja formal, penduduk kota berpenghasilan rendah ini terus terjebak dalam kemiskinan.</em>',
+    kemiskinan_p9:'Populasi yang terus bertumbuh tanpa diimbangi dengan keterampilan individu dan lapangan pekerjaan yang memadai, membuat persaingan menjadi semakin ketat untuk meningkatkan taraf hidup atau sekadar menyambung hidup mereka. Sebuah kondisi yang memperparah ketimpangan ekonomi antara mereka yang tinggal di pusat kota dengan mereka yang tinggal di kawasan kumuh.',
+    kemiskinan_p10:'Kepadatan penduduk juga menambah tekanan pada sumber daya suatu daerah, seperti air, listrik, dan transportasi. Kota-kota besar umumnya kewalahan untuk memenuhi kebutuhan penduduk yang terus meningkat dan menyebabkan layanan dasar menjadi tidak merata.',
+    kemiskinan_h2_5:'Kesimpulan',
+    kemiskinan_blockquote:'Kemiskinan struktural bukanlah masalah individu, tetapi masalah sistemik. Dibutuhkan kolaborasi antara pemerintah, masyarakat, dan sektor swasta untuk menciptakan kebijakan yang inklusif dan adil, sehingga setiap orang memiliki kesempatan untuk hidup lebih baik.',
+    kemiskinan_outro_note:'baca boleh sendirian, beresinnya harus bareng-bareng.',
+    kemiskinan_medium:'Artikel ini juga diposting di <a href="https://medium.com/komunitas-blogger-m/mengurai-kemiskinan-struktural-mengapa-usaha-individu-saja-tidak-cukup-695745d5de19" target="_blank" rel="noopener noreferrer">Medium</a>',
+    kemiskinan_copy:'Salin tautan',
+    kemiskinan_copied:'tersalin, tinggal tempel ✓',
+    kemiskinan_share:'Bagikan',
+    kemiskinan_back_link:'Semua Jurnal',
+    kemiskinan_footer:'Dibuat dari Bekasi dengan Kopi dan Polusi',
+    kemiskinan_footer_note:'kalau ada yang error, refresh. kalau tetap error, emang sistemnya gitu ¯\\_(ツ)_/¯',
+    kemiskinan_marquee:['bukan soal malas','akses itu menentukan','sistemik, bukan individu','kesempatan harus dibuka'],
+    kemiskinan_factors:[
+      ['Pendidikan','Pendidikan berkualitas yang sulit dijangkau masyarakat miskin, terutama di daerah tertinggal, sehingga membatasi kesempatan kerja bagi mereka kelak di kemudian hari.'],
+      ['Layanan Kesehatan','Biaya kesehatan yang tinggi dan akses yang sulit bisa memperburuk kondisi kemiskinan di masyarakat, karena orang sakit tidak dapat bekerja secara optimal.'],
+      ['Kebijakan Ekonomi','Subsidi dan investasi seringkali lebih banyak menguntungkan kelompok masyarakat kaya, sementara masyarakat miskin tidak mendapatkan keuntungan yang cukup untuk bisa terus berkembang.'],
+      ['Diskriminasi Sosial','Diskriminasi terhadap kelompok masyarakat tertentu, seperti perempuan atau para pekerja informal, mempersempit kesempatan perbaikan kondisi ekonomi bagi mereka.'],
+      ['Ketimpangan Pembangunan & Infrastruktur','Di beberapa daerah, pembangunan ekonomi dan infrastruktur tidaklah merata, sehingga masyarakat yang ada di daerah tertinggal sulit mengakses pekerjaan layak, teknologi, dan layanan dasar. Ini juga menjadi salah satu faktor yang mendorong masyarakat berbondong-bondong datang ke kota besar untuk beradu nasib.'],
+      ['Rasa Tidak Berdaya dan Apatis','Masyarakat yang terjebak dalam kemiskinan struktural seringkali merasa bahwa usaha mereka tidak akan membuahkan hasil karena <em>\u201cSudah Takdir\u201d</em>, ini menimbulkan sikap apatis dan rendahnya motivasi untuk berubah.'],
+      ['Budaya Kemiskinan','Lingkungan masyarakat sangat andil dalam pembentukan pola pikir dan nilai yang membuat individu merasa nyaman dalam kondisi tersebut. Mereka menganggap bahwa kondisi ini tidak mungkin bisa diubah, sehingga tidak termotivasi mencari solusi ataupun peluang baru.'],
+      ['Harapan Pada Bantuan','Beberapa kelompok masyarakat menjadi cukup bergantung pada bantuan sosial atau amal. Ketergantungan ini bisa menciptakan pola pikir pasif, di mana individu tidak berupaya untuk meningkatkan keterampilan demi mendapatkan pekerjaan yang lebih baik.'],
+      ['Kurangnya Pendidikan dan Keterampilan','Keterbatasan pendidikan dan pelatihan dapat membatasi kemampuan individu untuk bersaing di pasar kerja. Tanpa keterampilan yang relevan, mereka terjebak dalam pekerjaan informal dengan upah rendah dan tanpa jaminan sosial.'],
+      ['Mobilitas Sosial yang Terbatas','Individu dari latar belakang ekonomi rendah seringkali kekurangan jaminan sosial yang dapat membuka peluang baru. Mereka juga merasa terisolasi dari komunitas yang lebih maju, sehingga kesempatan untuk memperbaiki kehidupan terasa sangat terbatas.']
+    ],
+    kemiskinan_readfmt:m=>'±'+m+' MENIT BACA'
+  },
+  en: {
+    kemiskinan_skip:'Skip to the article ↓',
+    kemiskinan_nav_back:'Back to Journal',
+    kemiskinan_tag_sosial:'Social',
+    kemiskinan_tag_opini:'Opinion',
+    kemiskinan_intro:'What and Why?, Contributing Factors, Expert Views, Economic Inequality, and a Conclusion from the Author.',
+    kemiskinan_hero_note:'heavy read \u2014 take it sitting down',
+    kemiskinan_toc:'Contents',
+    kemiskinan_read_pct:'read',
+    kemiskinan_h2_1:'Structural Poverty: What and Why?',
+    kemiskinan_p1:'<strong>Structural Poverty</strong> is not merely about lacking money. It is a condition where people are trapped in poverty due to social, economic, and political systems that affect people\u2019s lives.',
+    kemiskinan_p2:'Even if someone works hard, without access to education, healthcare, or decent employment, it is difficult to escape the cycle of poverty.',
+    kemiskinan_h2_2:'What Causes Structural Poverty?',
+    kemiskinan_p3:'In short, let\u2019s examine the social and economic factors, as well as the behavior of the people themselves:',
+    kemiskinan_p4:'These factors reflect how poverty is not just an economic issue, but also related to individual behavior and mindsets that are often influenced by social environments and societal structures that do not support change.',
+    kemiskinan_h2_3:'Expert Views on Structural Poverty',
+    kemiskinan_ex1:'Explains that poverty is not caused by laziness, but because people are not given equal access to economic and social opportunities.',
+    kemiskinan_ex2:'Emphasizes that this poverty involves both economic and psychological issues. Low quality of education and employment creates despair, making it difficult for people to advance.',
+    kemiskinan_h2_4:'Urbanization and Economic Inequality',
+    kemiskinan_p7:'Many rural residents move to big cities seeking a better life. However, poorly planned urbanization instead creates slums and informal employment.',
+    kemiskinan_p8:'<em>Without access to formal employment, these low-income urban residents remain trapped in poverty.</em>',
+    kemiskinan_p9:'A continuously growing population without adequate individual skills and job opportunities makes competition increasingly fierce just to improve or sustain their standard of living. A condition that worsens economic inequality between those living in city centers and those in slum areas.',
+    kemiskinan_p10:'Population density also adds pressure on regional resources such as water, electricity, and transportation. Big cities are generally overwhelmed meeting the needs of an ever-growing population, causing basic services to become unevenly distributed.',
+    kemiskinan_h2_5:'Conclusion',
+    kemiskinan_blockquote:'Structural poverty is not an individual problem, but a systemic one. Collaboration between government, society, and the private sector is needed to create inclusive and fair policies, so that everyone has the opportunity for a better life.',
+    kemiskinan_outro_note:'reading can be solo \u2014 fixing it takes everyone.',
+    kemiskinan_medium:'This article was also posted on <a href="https://medium.com/komunitas-blogger-m/mengurai-kemiskinan-struktural-mengapa-usaha-individu-saja-tidak-cukup-695745d5de19" target="_blank" rel="noopener noreferrer">Medium</a>',
+    kemiskinan_copy:'Copy link',
+    kemiskinan_copied:'copied, ready to paste ✓',
+    kemiskinan_share:'Share',
+    kemiskinan_back_link:'All Journals',
+    kemiskinan_footer:'Made from Bekasi with Coffee and Pollution',
+    kemiskinan_footer_note:'if something breaks, refresh. if it still breaks, that\u2019s the system for you ¯\\_(ツ)_/¯',
+    kemiskinan_marquee:['it\u2019s not about laziness','access determines','systemic, not individual','opportunity must be opened'],
+    kemiskinan_factors:[
+      ['Education','Quality education that is hard to reach for the poor, especially in underdeveloped areas, limiting their future job opportunities.'],
+      ['Healthcare','High healthcare costs and difficult access can worsen poverty conditions, as sick people cannot work optimally.'],
+      ['Economic Policy','Subsidies and investments often benefit the wealthy more, while the poor do not receive enough benefits to continue developing.'],
+      ['Social Discrimination','Discrimination against certain groups, such as women or informal workers, narrows their opportunities for economic improvement.'],
+      ['Development & Infrastructure Inequality','In some areas, economic development and infrastructure are uneven, making it difficult for people in underdeveloped regions to access decent jobs, technology, and basic services \u2014 this is also one of the factors driving people to flock to big cities to try their luck.'],
+      ['Helplessness and Apathy','People trapped in structural poverty often feel that their efforts will not bear fruit because <em>\u201cit\u2019s already fate\u201d</em>, fostering apathy and low motivation to change.'],
+      ['Culture of Poverty','The community environment plays a major role in shaping mindsets and values that make individuals comfortable in their condition. They believe the situation cannot be changed, so they lack motivation to seek solutions or new opportunities.'],
+      ['Reliance on Aid','Some groups become quite dependent on social assistance or charity. This dependency can create a passive mindset where individuals do not strive to improve their skills for better employment.'],
+      ['Lack of Education and Skills','Limited education and training can limit an individual\u2019s ability to compete in the job market. Without relevant skills, they are trapped in informal jobs with low wages and no social security.'],
+      ['Limited Social Mobility','Individuals from low economic backgrounds often lack the social safety nets that can open new opportunities. They also feel isolated from more advanced communities, making opportunities to improve their lives feel very limited.']
+    ],
+    kemiskinan_readfmt:m=>'ABOUT '+m+' MIN READ'
+  }
+};
+let curLang = 'id';
 
-  <script>
-    (function () {
-      const nav = document.getElementById('main-nav');
-      const bar = document.getElementById('progress-bar');
-      const onScroll = () => {
-        const y = window.scrollY || document.documentElement.scrollTop;
-        nav.classList.toggle('scrolled', y > 16);
-        const doc = document.documentElement;
-        const total = doc.scrollHeight - doc.clientHeight;
-        const progress = total > 0 ? (doc.scrollTop / total) * 100 : 0;
-        bar.style.width = progress + '%';
+/* ═══ 1. TEMA — wipe lingkaran dari titik klik ═══ */
+const THEME_BG = {sore:'#f2ecdf', malem:'#131009'};
+const themeTg = $('#themeTg');
+let curTheme = root.dataset.theme || 'sore';
+const metaTheme = document.createElement('meta');
+metaTheme.name = 'theme-color';
+document.head.appendChild(metaTheme);
+
+function paintThemeState(name){
+  themeTg.dataset.active = (name==='malem') ? '1' : '0';
+  $$('button', themeTg).forEach(b=> b.classList.toggle('on', b.dataset.tset===name));
+  metaTheme.content = THEME_BG[name];
+  window.__dustColor = null;
+}
+function setTheme(name){
+  curTheme = name;
+  root.dataset.theme = name;
+  try{ localStorage.setItem('nang-theme', name); }catch(e){}
+  paintThemeState(name);
+}
+function themeTo(name, x, y){
+  if(name === curTheme) return;
+  if(REDUCED){ setTheme(name); return; }
+  const wipe = document.createElement('div');
+  wipe.setAttribute('aria-hidden','true');
+  wipe.style.cssText = 'position:fixed;inset:0;z-index:500;pointer-events:none;'
+    + 'background:' + THEME_BG[name] + ';'
+    + 'clip-path:circle(0px at ' + x + 'px ' + y + 'px);'
+    + 'transition:clip-path .75s cubic-bezier(.22,1,.36,1);';
+  document.body.appendChild(wipe);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    const r = Math.hypot(Math.max(x, innerWidth-x), Math.max(y, innerHeight-y)) + 40;
+    wipe.style.clipPath = 'circle(' + r + 'px at ' + x + 'px ' + y + 'px)';
+  }));
+  setTimeout(()=>{ setTheme(name); }, 380);
+  setTimeout(()=>{
+    wipe.style.transition = 'opacity .3s';
+    wipe.style.opacity = '0';
+    setTimeout(()=> wipe.remove(), 320);
+  }, 800);
+}
+$$('button', themeTg).forEach(b=>{
+  b.addEventListener('click', ()=>{
+    const r = b.getBoundingClientRect();
+    themeTo(b.dataset.tset, r.left + r.width/2, r.top + r.height/2);
+  });
+});
+paintThemeState(curTheme);
+
+/* ═══ 2. DEBU LATAR ═══ */
+(function(){
+  const cv = $('#dust'), ctx = cv.getContext('2d');
+  let W, H, pts = [], mouse = {x:-9999, y:-9999};
+  const N = ()=> Math.min(70, Math.floor(innerWidth/18));
+  function size(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+  function colors(){
+    if(!window.__dustColor){
+      const cs = getComputedStyle(root);
+      window.__dustColor = {
+        dot: cs.getPropertyValue('--particle').trim(),
+        line: cs.getPropertyValue('--line').trim()
       };
-      onScroll();
-      window.addEventListener('scroll', onScroll, { passive: true });
-    })();
-  </script>
+    }
+    return window.__dustColor;
+  }
+  function seed(){
+    pts = [];
+    const n = N();
+    for(let i=0;i<n;i++) pts.push({
+      x: Math.random()*W, y: Math.random()*H,
+      vx:(Math.random()-.5)*.35, vy:(Math.random()-.5)*.35,
+      r: Math.random()*1.8+.6
+    });
+  }
+  size(); seed();
+  addEventListener('resize', ()=>{ size(); seed(); });
+  addEventListener('mousemove', e=>{ mouse.x=e.clientX; mouse.y=e.clientY; }, {passive:true});
+  function tick(){
+    const c = colors();
+    ctx.clearRect(0,0,W,H);
+    for(const p of pts){
+      p.x += p.vx; p.y += p.vy;
+      if(p.x < -20) p.x = W+20; if(p.x > W+20) p.x = -20;
+      if(p.y < -20) p.y = H+20; if(p.y > H+20) p.y = -20;
+      const dx = p.x - mouse.x, dy = p.y - mouse.y, d = Math.hypot(dx,dy);
+      if(d < 110 && d > 0){ p.x += dx/d * .7; p.y += dy/d * .7; }
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, 7);
+      ctx.fillStyle = c.dot;
+      ctx.fill();
+    }
+    for(let i=0;i<pts.length;i++){
+      for(let j=i+1;j<pts.length;j++){
+        const a=pts[i], b=pts[j];
+        const d = Math.hypot(a.x-b.x, a.y-b.y);
+        if(d < 130){
+          ctx.beginPath();
+          ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+          ctx.strokeStyle = c.line;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+  if(!REDUCED) tick();
+})();
 
-  <script src="../js/i18n.js"></script>
+/* ═══ 3. KURSOR CUSTOM ═══ */
+if(FINE && !REDUCED){
+  const dot = $('#cdot'), ring = $('#cring');
+  let mx=innerWidth/2, my=innerHeight/2, rx=mx, ry=my;
+  addEventListener('mousemove', e=>{
+    mx=e.clientX; my=e.clientY;
+    dot.style.transform = `translate(${mx}px,${my}px) translate(-50%,-50%)`;
+  }, {passive:true});
+  (function follow(){
+    rx += (mx-rx)*.16; ry += (my-ry)*.16;
+    ring.style.transform = `translate(${rx}px,${ry}px) translate(-50%,-50%)`;
+    requestAnimationFrame(follow);
+  })();
+  document.addEventListener('mouseover', e=>{
+    if(e.target.closest('a,button,[data-hot]')) document.body.classList.add('cursor-hot');
+  });
+  document.addEventListener('mouseout', e=>{
+    if(e.target.closest('a,button,[data-hot]')) document.body.classList.remove('cursor-hot');
+  });
+  addEventListener('mousedown', ()=> document.body.classList.add('cursor-down'));
+  addEventListener('mouseup',   ()=> document.body.classList.remove('cursor-down'));
+}
+
+/* ═══ 4. MAGNET TOMBOL ═══ */
+if(FINE && !REDUCED){
+  $$('.share-btn,.back-pill,.topfab').forEach(el=>{
+    el.addEventListener('mousemove', e=>{
+      const r = el.getBoundingClientRect();
+      const dx = e.clientX - (r.left + r.width/2);
+      const dy = e.clientY - (r.top + r.height/2);
+      el.style.transform = `translate(${dx*.12}px,${dy*.18}px)`;
+    });
+    el.addEventListener('mouseleave', ()=>{ el.style.transform=''; });
+  });
+  const fig = $('#heroFig');
+  if(fig){
+    fig.addEventListener('mousemove', e=>{
+      const r = fig.getBoundingClientRect();
+      const gx=(e.clientX-r.left)/r.width-.5, gy=(e.clientY-r.top)/r.height-.5;
+      fig.style.transform=`perspective(900px) rotateY(${gx*3.5}deg) rotateX(${-gy*3.5}deg)`;
+    });
+    fig.addEventListener('mouseleave', ()=>{ fig.style.transform=''; });
+  }
+}
+
+/* ═══ 5. REVEAL — termasuk kartu yang lahir belakangan ═══ */
+const revealObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('on'); revealObs.unobserve(e.target); }
+  });
+},{threshold:.1, rootMargin:'0px 0px -36px 0px'});
+function watchReveals(scope){
+  $$('.rv,.rv-pop', scope||document).forEach(el=>{
+    if(!el.classList.contains('on')) revealObs.observe(el);
+  });
+}
+
+/* ═══ 6. JUDUL NAIK SATU-SATU ═══ */
+const titleEl = $('#artTitle');
+function renderTitle(){
+  const txt = titleEl.dataset['title'+ (curLang==='en' ? 'En' : 'Id')] || titleEl.dataset.titleId;
+  const words = txt.split(' ');
+  titleEl.innerHTML = words.map((w,i)=>{
+    return `<span class="word"><i style="--wd:${(i*0.05).toFixed(2)}s">${w}</i></span>`;
+  }).join(' ');
+  /* kata pembuka dipakaikan italic accent: Kemiskinan / Structural */
+  const first = titleEl.querySelector('.word > i');
+  if(first){ first.style.fontStyle='italic'; first.style.color='var(--accent)'; }
+}
+
+/* ═══ 7. SEPULUH FAKTOR — dirender JS biar terjemahnya satset ═══ */
+const factorList = $('#factorList');
+function renderFactors(){
+  const items = T[curLang].kemiskinan_factors;
+  factorList.innerHTML = items.map((f,i)=>
+    `<div class="factor-item rv-pop" style="--d:${(i*0.05).toFixed(2)}s" data-hot>
+       <span class="factor-num">${String(i+1).padStart(2,'0')}</span>
+       <p><strong>${f[0]}</strong>${f[1]}</p>
+     </div>`
+  ).join('');
+  watchReveals(factorList);
+}
+
+/* ═══ 8. MARQUEE ═══ */
+function renderMarquee(){
+  const items = T[curLang].kemiskinan_marquee;
+  const half = items.concat(items).concat(items).map(s=>`<span>${s}</span><b>\u00b7</b>`).join('');
+  $('#marqueeTrack').innerHTML = half + half;
+}
+
+/* ═══ 9. WAKTU BACA REAL ═══ */
+function renderReadTime(){
+  const words = $('#article-body').innerText.trim().split(/\s+/).length;
+  const mins = Math.max(1, Math.round(words/200));
+  $('#readTime').textContent = T[curLang].kemiskinan_readfmt(mins);
+}
+
+/* ═══ 10. DAFTAR ISI + MATA-MATA ═══ */
+const tocList = $('#tocList'), tocPct = $('#tocPct');
+function buildTOC(){
+  tocList.innerHTML = '';
+  $$('.sect-h').forEach(h=>{
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#' + h.parentElement.id;
+    a.textContent = h.querySelector('[data-i18n]').textContent;
+    a.setAttribute('data-hot','');
+    li.appendChild(a);
+    tocList.appendChild(li);
+  });
+}
+let spyTarget = {id:null};
+const spy = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) spyTarget.id = e.target.id; });
+  $$('#tocList a').forEach(a=>{
+    a.classList.toggle('act', a.getAttribute('href') === '#'+spyTarget.id);
+  });
+},{rootMargin:'-30% 0px -60% 0px'});
+function armSpy(){ $$('.read-layout section[id]').forEach(s=> spy.observe(s)); }
+
+/* ═══ 11. NAV + PROGRESS + NAIK ═══ */
+const navbar = $('#navbar'), sprog = $('#sprog'), topFab = $('#topFab');
+function onScroll(){
+  navbar.classList.toggle('stuck', scrollY > 24);
+  topFab.classList.toggle('show', scrollY > 700);
+  const h = document.documentElement;
+  const pct = Math.min(scrollY / Math.max(h.scrollHeight - innerHeight, 1), 1);
+  sprog.style.width = (pct*100) + '%';
+  tocPct.textContent = Math.round(pct*100) + '%';
+}
+addEventListener('scroll', onScroll, {passive:true});
+topFab.addEventListener('click', ()=> scrollTo({top:0, behavior: REDUCED ? 'auto' : 'smooth'}));
+
+/* ═══ 12. SALIN & BAGIKAN ═══ */
+async function copyText(t){
+  try{ await navigator.clipboard.writeText(t); }
+  catch(e){
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); }catch(_){/* tetap semangat */}
+    ta.remove();
+  }
+}
+const copyBtn = $('#copyBtn'), copyLbl = $('#copyLbl');
+let copyTimer = null;
+function flashOk(btnEl){
+  copyLbl.textContent = T[curLang].kemiskinan_copied;
+  btnEl.classList.add('ok');
+  clearTimeout(copyTimer);
+  copyTimer = setTimeout(()=>{
+    copyLbl.textContent = T[curLang].kemiskinan_copy;
+    btnEl.classList.remove('ok');
+  }, 1600);
+}
+copyBtn.addEventListener('click', async ()=>{ await copyText(location.href); flashOk(copyBtn); });
+$('#shareBtn').addEventListener('click', async function(){
+  if(navigator.share){
+    try{ await navigator.share({ title: document.title, url: location.href }); }catch(_){/* gapapa */}
+  } else {
+    await copyText(location.href); flashOk(this);
+  }
+});
+$$('.h-link').forEach(a=>{
+  a.addEventListener('click', async e=>{
+    e.preventDefault();
+    await copyText(location.origin + location.pathname + a.getAttribute('href'));
+    a.style.color = 'var(--accent)';
+    setTimeout(()=> a.style.color = '', 900);
+  });
+});
+
+/* ═══ 13. JAM BEKASI ═══ */
+const clockEl = $('#clock');
+function tickClock(){
+  clockEl.textContent = new Intl.DateTimeFormat('id-ID',{
+    timeZone:'Asia/Jakarta', hour:'2-digit', minute:'2-digit', hour12:false
+  }).format(new Date()).replace('.',':');
+}
+tickClock(); setInterval(tickClock, 10000);
+
+/* ═══ 14. BAHASA ═══ */
+const langTg = $('#langTg');
+function applyLang(l){
+  if(!T[l]) return;
+  curLang = l;
+  document.documentElement.lang = l;
+  $$('[data-i18n]').forEach(el=>{
+    const k = el.dataset.i18n;
+    if(T[l][k] !== undefined) el.innerHTML = T[l][k];
+  });
+  langTg.dataset.active = (l==='en') ? '1' : '0';
+  $$('button', langTg).forEach(b=> b.classList.toggle('on', b.dataset.lang===l));
+  renderTitle();
+  renderFactors();
+  renderMarquee();
+  renderReadTime();
+  buildTOC();
+}
+$$('button', langTg).forEach(b=> b.addEventListener('click', ()=> applyLang(b.dataset.lang)));
+
+/* ═══ 15. KONAMI ═══ */
+(function(){
+  const seq=['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a'];
+  let i=0;
+  addEventListener('keydown', e=>{
+    const k = e.key.toLowerCase();
+    i = (k===seq[i]) ? i+1 : (k===seq[0] ? 1 : 0);
+    if(i===seq.length){
+      i=0;
+      root.classList.add('konami');
+      const note=document.createElement('div');
+      note.className='konami-note';
+      note.textContent = curLang==='en'
+        ? 'easter egg found. systemic issues also require cheat codes.'
+        : 'ketemu. masalah sistemik ternyata butuh kode curang juga.';
+      document.body.appendChild(note);
+      setTimeout(()=>{ root.classList.remove('konami'); note.remove(); }, 3600);
+    }
+  });
+})();
+
+/* gas */
+applyLang('id');
+watchReveals();
+armSpy();
+onScroll();
+spyTarget.id = 's-apa';
+
+console.log('%c woi, pembaca source %c semoga kebijakan publik juga setransparan halaman ini. — nang ',
+  'background:#c75f3a;color:#fff;padding:4px 8px;border-radius:4px 0 0 4px',
+  'background:#221a10;color:#ede4cf;padding:4px 8px;border-radius:0 4px 4px 0');
+})();
+</script>
 </body>
 </html>
